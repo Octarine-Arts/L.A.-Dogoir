@@ -1,31 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using WebSocketSharp;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Random = UnityEngine.Random;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public static Launcher current;
     
+    [Header("Create Room")]
     public TMP_InputField roomInputField;
     public TMP_Text roomDisplayName;
     public TMP_Text errorDisplay;
 
+    [Header("Find Room")]
     public Transform roomListContent;
     public GameObject roomListItemPrefab;
 
+    [Header("Room")]
     public TMP_Text player1Name;
     public TMP_Text player2Name;
 
     private int _playerSlotNumber;
 
-    private ExitGames.Client.Photon.Hashtable _myCustomProperties = new ExitGames.Client.Photon.Hashtable();
-    
     private void Awake()
     {
         current = this;
@@ -41,6 +44,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     public override void OnJoinedLobby()
@@ -51,68 +55,98 @@ public class Launcher : MonoBehaviourPunCallbacks
     #endregion
     
     #region Misc Functions
+    private void SwapSlots()
+    {
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+        
+        int hostSlot = (int) hashtable["HSlot"];
+        int guestSlot = (int) hashtable["GSlot"];
+
+        if (hostSlot == 1)
+        {
+            hashtable["HSlot"] = 2;
+            if (guestSlot != 0) hashtable["GSlot"] = 1;
+        }
+        else if (hostSlot == 2)
+        {
+            hashtable["HSlot"] = 1;
+            if (guestSlot != 0) hashtable["GSlot"] = 2;
+        }
+
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
+    }
 
     private void ShowNames()
     {
+        if (!PhotonNetwork.InRoom) return;
         
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+        int hostSlot = (int) hashtable["HSlot"];
+
+        if (hostSlot == 1)
+        {
+            player1Name.text = (string) hashtable["HName"];
+            if (PhotonNetwork.PlayerList.Length > 1) player2Name.text = (string) hashtable["GName"];
+            else player2Name.text = "";
+
+        }
+        else if (hostSlot == 2)
+        {
+            player2Name.text = (string) hashtable["HName"];
+            if(PhotonNetwork.PlayerList.Length > 1) player1Name.text = (string) hashtable["GName"];
+            else player1Name.text = "";
+        }
     }
 
-    private void RemoveName()
+    private void AssignSlotValue()
     {
-        if (_playerSlotNumber == 1)
-        {
-            player1Name.text = "";
-        }
-        else if (_playerSlotNumber == 2)
-        {
-            player2Name.text = "";
-        }
-
-        SetSlotValue();
-    }
-
-    private void SetSlotValue()
-    {
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+        
         if (PhotonNetwork.IsMasterClient)
         {
-            _myCustomProperties["HostSlotValue"] = _playerSlotNumber;
-            _myCustomProperties["HostName"] = PhotonNetwork.LocalPlayer.NickName;
+            hashtable["HSlot"] = 1;
+            hashtable["HName"] = PhotonNetwork.MasterClient.NickName;
         }
-        else
+        else if(!PhotonNetwork.IsMasterClient)
         {
-            switch ((int) _myCustomProperties["HostSlotValue"])
+            switch ((int) hashtable["HSlot"])
             {
                 case 1:
-                    _myCustomProperties["GuestSlotValue"] = 2;
+                    hashtable["GSlot"] = 2;
                     break;
                 case 2:
-                    _myCustomProperties["GuestSlotValue"] = 1;
+                    hashtable["GSlot"] = 1;
                     break;
             }
-            _myCustomProperties["GuestName"] = PhotonNetwork.LocalPlayer.NickName;
+            hashtable["GName"] = PhotonNetwork.LocalPlayer.NickName;
         }
+
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
+    }
+
+    private void ClearSlotValue()
+    {
+        if (PhotonNetwork.IsMasterClient) return;
         
-        PhotonNetwork.LocalPlayer.CustomProperties = _myCustomProperties;
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        hashtable["GSlot"] = 0;
+        hashtable["GName"] = "";
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
     }
     #endregion
     
-    #region Room Functions
+    #region Override Functions
     public override void OnJoinedRoom()
     {
         MainMenu_Manager.current.OpenMenu("Room Menu");
         roomDisplayName.text = PhotonNetwork.CurrentRoom.Name;
 
-        SetSlotValue();
+        AssignSlotValue();
     }
-
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        
-    }
-
+    
     public override void OnLeftRoom()
     {
-        RemoveName();
         MainMenu_Manager.current.OpenMenu("Title Menu");
     }
 
@@ -131,24 +165,38 @@ public class Launcher : MonoBehaviourPunCallbacks
         
         foreach (RoomInfo info in roomList)
         {
+            if (info.RemovedFromList) continue;
             Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUpRoom(info);
         }
     }
-
+    
+    public override void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
+    {
+        ShowNames();
+    }
+    #endregion
+    
+    #region Create Room Functions
     public void CreateRoom()
     {
         if (string.IsNullOrEmpty(roomInputField.text)) return;
 
-        PhotonNetwork.CreateRoom(roomInputField.text);
+        RoomOptions options = new RoomOptions();
+        options.MaxPlayers = 2;
+        options.CustomRoomProperties = new Hashtable
+        {
+            {"HSlot", 0},
+            {"HName", ""},
+            {"GSlot", 0},
+            {"GName", ""}
+        };
+        
+        PhotonNetwork.CreateRoom(roomInputField.text, options);
         MainMenu_Manager.current.OpenMenu("Loading Page");
     }
+    #endregion
     
-    public void LeaveRoom()
-    {
-        PhotonNetwork.LeaveRoom();
-        MainMenu_Manager.current.OpenMenu("Loading Page");
-    }
-
+    #region Find Room Functions
     public void JoinRoom(RoomInfo info)
     {
         PhotonNetwork.JoinRoom(info.Name);
@@ -156,20 +204,28 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     #endregion
     
+    #region In Room Functions
+    public void LeaveRoom()
+    {
+        ClearSlotValue();
+        
+        PhotonNetwork.LeaveRoom();
+        MainMenu_Manager.current.OpenMenu("Loading Page");
+    }
+    
+    public void SwapSlotClicked()
+    {
+        SwapSlots();
+    }
+
+    public void StartGameClicked()
+    {
+        PhotonNetwork.LoadLevel(1);
+    }
+    #endregion
+
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    [PunRPC]
-    private int RPC_GetSlotValue()
-    {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            if (_playerSlotNumber == 1) return 2;
-            return 1;
-        }
-
-        return 0;
     }
 }
