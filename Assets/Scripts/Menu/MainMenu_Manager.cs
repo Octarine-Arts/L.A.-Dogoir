@@ -21,4 +21,12 @@ public class MainMenu_Manager : MonoBehaviour
             menu.SetActive(menu.name == menuName);
         }
     }
+    
+    public void CloseAllMenus()
+    {
+        foreach (GameObject menu in listOfMenus)
+        {
+            menu.SetActive(false);
+        }
+    }
 }
