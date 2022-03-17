@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class DogController : MonoBehaviour
 {
+    public Animator anim;
     public NavMeshAgent dog;
     public Transform camPivot;
     public float rotateSpeed;
@@ -38,7 +39,7 @@ public class DogController : MonoBehaviour
         if (dog.desiredVelocity.magnitude > 0.1f)
         {
             Quaternion targetRot = Quaternion.Euler (dog.transform.rotation.eulerAngles.x,
-                dog.desiredVelocity.Angle (),
+                input.Angle(),//dog.desiredVelocity.Angle (),
                 dog.transform.rotation.eulerAngles.z);
 
             dog.transform.rotation = Quaternion.Lerp (dog.transform.rotation, targetRot, Time.deltaTime * rotateSpeed * (angleDif + 0.2f) / 1.2f);
@@ -46,7 +47,10 @@ public class DogController : MonoBehaviour
 
         dog.speed = Mathf.Lerp (0.1f, speed, angleDif);
 
-        dog.SetDestination (dog.transform.position + input);
+        //dog.SetDestination (dog.transform.position + input.normalized);
+        dog.SetDestination (dog.transform.position + dog.transform.forward * input.magnitude);
+        anim.SetFloat ("MoveSpeed", dog.velocity.magnitude);
+        print (anim.GetFloat ("MoveSpeed"));
         Debug.DrawRay (dog.transform.position + input, Vector3.up, Color.blue);
     }
 }

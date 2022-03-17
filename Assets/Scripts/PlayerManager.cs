@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System.IO;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -22,14 +23,27 @@ public class PlayerManager : MonoBehaviour
     private void CreateController ()
     {
         //FindObjectOfType<SpawnPoint> ();
-        //PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", IdentifyPlayer() == 0 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
+        Hashtable h = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        int hostSlot = (int)h["HSlot"];
+        int guestSlot = (int)h["GSlot"];
+
+        if(PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", hostSlot == 1 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
+        }
+        else
+        {
+            PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
+        }
+
         print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
     }
 
-    private int IdentifyPlayer ()
+    private int IdentifyPlayer (string name)
     {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
-            if (PhotonNetwork.PlayerList[i].ActorNumber == pview.ControllerActorNr)
+            if (PhotonNetwork.PlayerList[i].NickName == name)
                 return i;
 
         return -1;
