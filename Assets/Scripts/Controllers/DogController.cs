@@ -50,7 +50,7 @@ public class DogController : MonoBehaviour
         //dog.SetDestination (dog.transform.position + input.normalized);
         dog.SetDestination (dog.transform.position + dog.transform.forward * input.magnitude);
         anim.SetFloat ("MoveSpeed", dog.velocity.magnitude);
-        print (anim.GetFloat ("MoveSpeed"));
+        //print (anim.GetFloat ("MoveSpeed"));
         Debug.DrawRay (dog.transform.position + input, Vector3.up, Color.blue);
     }
 }

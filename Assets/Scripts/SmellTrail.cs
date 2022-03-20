@@ -4,86 +4,137 @@ using UnityEngine;
 
 public class SmellTrail : MonoBehaviour
 {
-    public Transform[] points;
+    public GameObject lineObject;
+    public int poolSize;
+    public Transform[] pointsTransforms;
     public Transform target;
+    public float radius;
 
-    private LineRenderer line;
+    private TrailPoint[] points;
+    private LineRenderer[] _renderers;
+    private LineRenderer[] renderers { get { if (_renderers == null) AttachRenderers (poolSize); return _renderers; } }
+    private int activeRenderer;
 
     private void Awake ()
     {
-        line = GetComponent<LineRenderer> ();
+        radius *= radius;
+
+        points = new TrailPoint[pointsTransforms.Length];
+        for (int i = 0; i < pointsTransforms.Length; i++)
+        {
+            points[i] = new TrailPoint (pointsTransforms[i].position);
+            if (i > 0)
+            {
+                points[i].SetPrevious (points[i - 1]);
+                points[i - 1].SetNext (points[i]);
+            }
+        }
     }
 
     private void Update ()
     {
-        for (int i = 0; i < points.Length - 1; i++)
-        {
-            Debug.DrawLine (points[i].position, points[i + 1].position, Color.white);
-            Debug.DrawRay (NearestPointOnLine (points[i].position, points[i + 1].position, target.position, out float ta), Vector3.up * 0.2f, Color.red);
-        }
+        foreach (TrailPoint point in points) if (point.Next != null)
+            Debug.DrawLine (point, point.Next, Color.white);
 
-        Vector3 nearestPoint = NearestPointOnPath (points, target.position, out int pathIndex, out float t);
-
-        Debug.DrawRay (nearestPoint, Vector3.up * 0.5f, Color.blue);
-
-        float pathExtension = Mathf.Clamp (t + 3.5f, 0, points.Length - pathIndex - 1);
-        Vector3[] pathPoints = new Vector3[Mathf.CeilToInt (pathExtension + 1)];
-        pathPoints[0] = nearestPoint;
-        for (int i = 1; i < pathExtension; i++)
-        {
-            pathPoints[i] = points[Mathf.Clamp (i + pathIndex, 0, points.Length - 1)].position;
-        }
-
-        if (pathExtension < points.Length - pathIndex - 1)
-        {
-            Vector3 start = points[pathPoints.Length + pathIndex - 2].position;
-            Vector3 end = points[pathPoints.Length + pathIndex - 1].position;
-            pathPoints[pathPoints.Length - 1] = start + (pathExtension % 1f) * (end - start);
-        }
-        else
-            pathPoints[pathPoints.Length - 1] = points[points.Length - 1].position;
-
-        line.positionCount = pathPoints.Length;
-        line.SetPositions (pathPoints);
+        RenderTrail (GetTrailSegments ());
     }
 
-    private Vector3 NearestPointOnPath (Transform[] path, Vector3 point, out int pathIndex, out float t)
+    private List<List<Vector3>> GetTrailSegments ()
     {
-        Vector3 nearestPoint = Vector3.zero;
-        float nearestDist = 99999999;
-        pathIndex = 0;
-        t = 0;
-        for (int i = 0; i < path.Length - 1; i++)
+        List<List<Vector3>> segments = new List<List<Vector3>> ();
+
+        foreach (TrailPoint point in points)
+            point.UpdateDistance (target.position);
+
+        foreach (TrailPoint point in points)
         {
-            Vector3 currentPoint = NearestPointOnLine (path[i].position, path[i + 1].position, point, out float currentT);
-            float currentDist = F.FastDistance (currentPoint, point);
-            if (currentDist <= nearestDist)
+            //if point in threshold
+            if (point.Distance <= radius)
             {
-                pathIndex = i;
-                t = currentT;
-                nearestPoint = currentPoint;
-                nearestDist = currentDist;
+                //if last point wasn't in threshold or segments is zero, add a segment
+                if (segments.Count <= 0 || (point.Previous != null && point.Previous.Distance > radius)) segments.Add (new List<Vector3> ());
+
+                //if last point wasn't in threshold add first intermediate point
+                if (point.Previous != null && point.Previous.Distance > radius)
+                {
+                    // calculate point along line
+                    float t = Mathf.InverseLerp (point.Previous.Distance, point.Distance, radius);
+                    segments.Last ().Add ((point.Point - point.Previous.Point) * t + point.Previous.Point);
+                }
+                segments.Last ().Add (point);
+            }
+            //if last point was in threshold add intermediate point
+            else if (point.Previous != null && point.Previous.Distance < radius)
+            {
+                float t = Mathf.InverseLerp (point.Previous.Distance, point.Distance, radius);
+                segments.Last ().Add ((point.Point - point.Previous.Point) * t + point.Previous.Point);
             }
         }
 
-        return nearestPoint;
+        return segments;
     }
 
-    private Vector3 NearestPointOnLine (Vector3 start, Vector3 end, Vector3 point, out float t)
+    public void RenderTrail (List<List<Vector3>> segments)
     {
-        float length = F.FastDistance (start, end);
+        UnrenderBeams ();
 
-        if (length == 0)
+        foreach (List<Vector3> segment in segments)
         {
-            t = 0;
-            return start;
+            LineRenderer line = renderers[activeRenderer];
+            line.enabled = true;
+            line.positionCount = segment.Count;
+            line.SetPositions (segment.ToArray());
+
+            if (++activeRenderer >= renderers.Length)
+                throw new System.Exception ("All line renderers used up, try increasing pool size");
         }
-
-        t = Mathf.Clamp01 (Vector3.Dot (point - start, end - start) / length);
-
-        if (t <= 0) return start;
-        else if (t >= 1) return end;
-
-        return start + t * (end - start);
     }
+
+    private void UnrenderBeams ()
+    {
+        for (; activeRenderer > 0; activeRenderer--)
+            renderers[activeRenderer].enabled = false;
+    }
+
+    private void AttachRenderers (int amount)
+    {
+        _renderers = new LineRenderer[amount];
+        for (int i = 0; i < amount; i++)
+            _renderers[i] = Instantiate (lineObject, transform).GetComponent<LineRenderer> ();
+    }
+
+    private void OnDrawGizmos ()
+    {
+        Gizmos.DrawWireSphere (target.position, Mathf.Sqrt (radius));
+    }
+}
+
+public class TrailPoint
+{
+    public Vector3 Point => point;
+    public TrailPoint Previous => previous;
+    public TrailPoint Next => next;
+    public float Distance => distance;
+
+    private Vector3 point;
+    private TrailPoint previous, next;
+    private float distance;
+
+    public TrailPoint (Vector3 point)
+    {
+        this.point = point;
+        this.previous = previous;
+        this.next = next;
+    }
+
+    public float UpdateDistance (Vector3 target)
+    {
+        distance = F.FastDistance (point, target);
+        return distance;
+    }
+
+    public void SetPrevious (TrailPoint previous) => this.previous = previous;
+    public void SetNext (TrailPoint next) => this.next = next;
+
+    public static implicit operator Vector3 (TrailPoint point) => point.Point;
 }
