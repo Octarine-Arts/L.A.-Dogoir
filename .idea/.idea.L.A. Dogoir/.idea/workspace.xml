@@ -20,6 +20,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/HostOnlyButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/JournalEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/Pages/Suspect Diagram/SuspectDiagram.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/Journal_Manager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="26EmtJ6Z1SmqkbEhpvWYx312UtU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

@@ -9,16 +9,34 @@ public class MainMenu_Manager : MonoBehaviour
     
     public List<GameObject> listOfMenus;
 
+    private int _currentMenuIndex;
+    
     private void Awake()
     {
         current = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OpenMenu("Contents Page");
+        }
+    }
+
     public void OpenMenu(string menuName)
     {
-        foreach (GameObject menu in listOfMenus)
+        for (int ii = 0; ii < listOfMenus.Count; ii++)
         {
-            menu.SetActive(menu.name == menuName);
+            if (listOfMenus[ii].name == menuName)
+            {
+                listOfMenus[ii].SetActive(true);
+                _currentMenuIndex = ii;
+            }
+            else
+            {
+                listOfMenus[ii].SetActive(false);
+            }
         }
     }
     
@@ -28,5 +46,19 @@ public class MainMenu_Manager : MonoBehaviour
         {
             menu.SetActive(false);
         }
+    }
+
+    public void OpenNextPage()
+    {
+        listOfMenus[_currentMenuIndex].SetActive(false);
+        _currentMenuIndex++;
+        listOfMenus[_currentMenuIndex].SetActive(true);
+    }
+
+    public void OpenPreviousPage()
+    {
+        listOfMenus[_currentMenuIndex].SetActive(false);
+        _currentMenuIndex--;
+        listOfMenus[_currentMenuIndex].SetActive(true);
     }
 }
