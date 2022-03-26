@@ -15,8 +15,8 @@ public class DogCameraMovement : MonoBehaviour
 	private void Awake ()
 	{
 		offset = transform.position - target.position;
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.lockState = CursorLockMode.Locked;
+		//Cursor.lockState = CursorLockMode.None;
+		//Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	private void Update ()
