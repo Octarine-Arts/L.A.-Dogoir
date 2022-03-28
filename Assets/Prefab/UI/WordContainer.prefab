@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4233294594440936543}
   - component: {fileID: 3584154829275645648}
   m_Layer: 5
-  m_Name: WordButtons
+  m_Name: WordContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
