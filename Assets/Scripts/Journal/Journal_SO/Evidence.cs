@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Journal;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Journal
@@ -11,13 +13,16 @@ namespace Journal
         [Header("Default Values")]
         public Sprite displayImage;
         public string displayName;
-        public Locations locationFound;
+        public Location locationFound;
         public string description;
 
-        public bool isFound;
 
         [Header("Player Input")] 
-        public Suspects currentSuspect;
-        public SuspectColors currentColor;
+        public bool isFound;
+
+        public void ResetValues()
+        {
+            isFound = false;
+        }
     }
 }

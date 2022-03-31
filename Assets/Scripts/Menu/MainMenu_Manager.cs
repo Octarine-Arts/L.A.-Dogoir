@@ -6,14 +6,21 @@ using UnityEngine;
 public class MainMenu_Manager : MonoBehaviour
 {
     public static MainMenu_Manager current;
-    
-    public List<GameObject> listOfMenus;
 
+    public Transform menuParent;
+    
+    private List<GameObject> listOfMenus;
     private int _currentMenuIndex;
     
     private void Awake()
     {
         current = this;
+
+        listOfMenus = new List<GameObject>();
+        foreach (Transform child in menuParent)
+        {
+            listOfMenus.Add(child.gameObject);
+        }
     }
 
     private void Update()

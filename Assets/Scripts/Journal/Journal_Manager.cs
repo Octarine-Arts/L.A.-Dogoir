@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Journal;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Journal_Manager : MonoBehaviour
@@ -14,5 +16,17 @@ public class Journal_Manager : MonoBehaviour
     private void Awake()
     {
         current = this;
+    }
+
+    private void OnApplicationQuit()
+    {
+        foreach (var evidence in Resources.LoadAll<Evidence>(evidencePath))
+        {
+            evidence.ResetValues();
+        }
+        foreach (var suspect in Resources.LoadAll<Suspect>(suspectsPath))
+        {
+            suspect.ResetValues();
+        }
     }
 }

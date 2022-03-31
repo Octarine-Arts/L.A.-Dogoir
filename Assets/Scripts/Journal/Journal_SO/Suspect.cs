@@ -51,6 +51,13 @@ namespace Journal
 
             return returnList;
         }
+
+        public void ResetValues()
+        {
+            inputMotive = null;
+            inputLocation = null;
+            inputColor = SuspectColors.None;
+        }
     }
 }
 

@@ -21,6 +21,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu/HostOnlyButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/JournalEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/Pages/Suspect Diagram/SuspectDiagram.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/Journal_Manager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -77,6 +78,7 @@
       <updated>1646997333395</updated>
       <workItem from="1646997340621" duration="3985000" />
       <workItem from="1647001345768" duration="2655000" />
+      <workItem from="1648563382920" duration="4507000" />
     </task>
     <servers />
   </component>

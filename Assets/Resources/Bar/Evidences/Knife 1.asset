@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Knife 1
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 1440741607260526044, guid: e02f596140eb70143b81f54ccf17d177, type: 3}
+  displayImage: {fileID: 1430072925888929082, guid: e02f596140eb70143b81f54ccf17d177, type: 3}
   displayName: Knife
-  locationFound: 0
+  locationFound: {fileID: 11400000, guid: d73b780cc15b1c94a829175fe4efa446, type: 2}
   description: Bloody Knife
-  isFound: 1
-  currentSuspect: 5
-  currentColor: 5
+  isFound: 0

@@ -11,7 +11,8 @@ public class EvidencePage : MonoBehaviour
     public Image evidenceImage;
     public TMP_Text evidenceName;
     public TMP_Text evidenceDescription;
-
+    public TMP_Text evidenceLocation;
+    
     public GameObject buttonGO;
     public Transform buttonParent;
     
@@ -58,6 +59,7 @@ public class EvidencePage : MonoBehaviour
     {
         evidenceImage.sprite = _listOfEvidence[index].displayImage;
         evidenceName.text = _listOfEvidence[index].displayName;
+        evidenceLocation.text = "Location: " + _listOfEvidence[index].locationFound.displayName;
         evidenceDescription.text = _listOfEvidence[index].description;
     }
 }
