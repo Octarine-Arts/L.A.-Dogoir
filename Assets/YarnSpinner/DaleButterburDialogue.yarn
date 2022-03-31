@@ -1,4 +1,4 @@
-﻿title: InitialGreeting
+﻿title: Start
 tags:NPC
 position: -522,-132
 ---
@@ -68,7 +68,7 @@ position: -307,-131
 ===
 
 title: WhoAreYou
-position: 98,-71
+position: 204,-140
 ---
 Detective: Who are you, exactly?
 Butterbur: Dale Butterbur, I own this bar. It was used by bootleggers during the prohibition, would you believe, but the old owner went to the big house for brewing his own hooch, and viola, it was mine for the buying, right as the prohibition ended.
@@ -95,7 +95,7 @@ Butterbur: Now that you mention it, Loretta was the closest to Harlow when I cam
 ===
 
 title: DoYouKnowJack
-position: 83,-176
+position: 191,-236
 ---
 Detective: How well do you know Jack Harlow?
 Butterbur: Not particularly well. He was a semi-regular here, I guess you could say. But to be honest with you detective, he was a real drip. A real greaseball, from what I could tell. Never liked to serve him, but a few lincolns is a few lincolns, no matter the customer.
@@ -104,7 +104,7 @@ Butterbur: Not particularly well. He was a semi-regular here, I guess you could 
 <<jump Questions>>
 ===
 title: WhoWantsJackDead
-position: 104,-3
+position: 216,-49
 ---
 Detective: Do you know of anyone here who would want Jack Harlow dead?
 Butterbur: Well, he didn’t seem like a stand-up gent in general. But I just can’t imagine someone would want to kill him, even so.
@@ -114,7 +114,7 @@ Butterbur: Well, he didn’t seem like a stand-up gent in general. But I just ca
 ===
 
 title: Peggy
-position: 104,102
+position: 209,53
 ---
 Detective: How well do you know Peggy Harlow?
 Butterbur: I hardly know her at all. She came in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
@@ -123,7 +123,7 @@ Butterbur: I hardly know her at all. She came in sometimes to pick up her drunk 
 ===
 
 title: Loretta
-position: 88,186
+position: 171,192
 ---
 Detective: What do you know about Loretta Dubois?
 Butterbur: She performs here once a week - she’s a great singer. Obviously she’s a bit of a dish too, which brings in the customers. I think Harlow got it for her bad. Never missed a performance. He was more likely to pay her just for existing than me was to pay me for booze.
@@ -132,14 +132,14 @@ Butterbur: She performs here once a week - she’s a great singer. Obviously she
 ===
 
 title: Johhny
-position: 63,280
+position: 181,302
 ---
 Detective: What’s the deal with Johnny Malone?
 Butterbur: I know he looks rough, but he’s a swell guy. He’s got a little share in the bar with me, so we’re sort of like business partners. He’s my security on busier nights. He’s got such a sour puss people tend to behave when he’s around. Until now, I guess…
 
 ===
 title: Storeroom
-position: -29,424
+position: 141,457
 ---
 Detective: Can you let me into the storeroom? I’d like to look around.
 Butterbur: I’d love to help, Detective, but I’m a little busy right now. I’ll open it up when I’ve cleaned up the mess here.
@@ -151,18 +151,18 @@ title: Goodbye
 position: -211,486
 ---
 
-<<set $randomGreeting to random_range(0,2)>>
-<<if $randomGreeting == 0 >>
+<<set $randomGoodbye to random_range(0,2)>>
+<<if $randomGoodbye == 0 >>
 <<Animate Dale "GoodbyeWave">>
 Detective: Thanks for your help
 Butterbur: Anytime!
 
-<<elseif $randomGreeting == 1>>
+<<elseif $randomGoodbye == 1>>
 <<Animate Dale "GoodbyeWave">>
 Detective: I appreciate your help.
 Butterbur: No problems at all, Detective.
 
-<<elseif $randomGreeting == 2>>
+<<elseif $randomGoodbye == 2>>
 <<Animate Dale "GoodbyeWave">>
 Detective: That’s all for now.
 Butterbur: Bye.
