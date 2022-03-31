@@ -11,6 +11,7 @@ public class DogController : MonoBehaviour
     public Transform camPivot;
     public float rotateSpeed;
 
+    private bool canMove = true; 
     private PhotonView pview;
     private float speed;
 
@@ -28,10 +29,15 @@ public class DogController : MonoBehaviour
             Destroy (this);
             return;
         }
+        
+        Player_StaticActions.OnDisableDogMovement += DisableMovement;
+        Player_StaticActions.OnEnableDogMovement += EnableMovement;
     }
 
     private void Update ()
     {
+        if (!canMove) return;
+        
         Vector3 input = Quaternion.Euler (0, camPivot.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
         float angleDif = (1 - (Vector3.Angle (input, dog.transform.forward) / 180f));
@@ -52,5 +58,15 @@ public class DogController : MonoBehaviour
         anim.SetFloat ("MoveSpeed", dog.velocity.magnitude);
         //print (anim.GetFloat ("MoveSpeed"));
         Debug.DrawRay (dog.transform.position + input, Vector3.up, Color.blue);
+    }
+
+    private void EnableMovement()
+    {
+        canMove = true;
+    }
+
+    private void DisableMovement()
+    {
+        canMove = false;
     }
 }
