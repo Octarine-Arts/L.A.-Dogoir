@@ -5,28 +5,26 @@ using TMPro;
 
 public class SpeechBubble : MonoBehaviour
 {
-    public string testMessage;
+    public float BubbleHeight => targetSize.y;
+    public BubbleManager manager;
+    public float sizePercentage;
     [SerializeField] private Vector2 padding;
 
     private SpriteRenderer sprite;
     private TextMeshPro text;
+    private Animator anim;
+    private Vector2 targetSize;
 
     private void Awake ()
     {
-        sprite = GetComponent<SpriteRenderer> ();
+        sprite = GetComponentInChildren<SpriteRenderer> ();
         text = GetComponentInChildren<TextMeshPro> ();
-    }
-
-    private void Start ()
-    {
-        SetMessage ("Walnuts, Peanuts, Pineapple Smells");
+        anim = GetComponent<Animator> ();
     }
 
     private void Update ()
     {
-        //sprite.size = (Vector2) text.textBounds.size + padding;
-        if (text.text != testMessage)
-            SetMessage (testMessage);
+        sprite.size = targetSize * sizePercentage;
     }
 
     public void SetMessage (string message)
@@ -36,21 +34,26 @@ public class SpeechBubble : MonoBehaviour
 
     private IEnumerator ISetMessage (string message)
     {
-        text.enabled = false;
+        Color textColour = text.color;
+        text.color = Color.clear;
+
         text.text = message;
 
         yield return null;
 
-        float time = 0.5f;
-        Vector2 targetSize = (Vector2) text.textBounds.size + padding;
+        targetSize = (Vector2) text.textBounds.size + padding;
+        manager.UpdatePositions ();
 
-        for (float elapsed = 0; elapsed < time; elapsed += Time.deltaTime)
-        {
-            float t = elapsed / time;
-            sprite.size = Vector2.Lerp (Vector2.zero, targetSize, t);
-            yield return null;
-        }
+        yield return new WaitForSeconds (0.5f);
 
-        text.enabled = true;
+        text.color = textColour;
+
+        yield return new WaitForSeconds (30f);
+
+        anim.SetTrigger ("Exit");
+
+        yield return new WaitForSeconds (0.5f);
+
+        Destroy (gameObject);
     }
 }
