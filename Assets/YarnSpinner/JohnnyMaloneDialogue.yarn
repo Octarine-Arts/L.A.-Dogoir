@@ -1,0 +1,169 @@
+﻿title: JohnnyMaloneDialogue
+tags:NPC, Detective
+position: -338,-113
+---
+<<if $JohnnyIsInitialGreeting == true>>
+
+Johnny: You buttons ain’t behind the eight-ball, are you?
+Detective: Excuse me?
+Johnny: Here before the body’s even cold. Got peepers on the bar or something?
+Detective: Why, anything we need to be peeping on? 
+<<set $JohnnyIsInitialGreeting to false>>
+
+<<elseif $JohnnyIsInitialGreeting == false>>
+
+<<set $JohnnyRandomGreeting to random_range(0,2)>>
+<<if $JohnnyRandomGreeting == 0 >>
+<<Animate "Wave">>
+Johnny: What now, buttons?
+<<elseif $JohnnyRandomGreeting == 1>>
+Johnny: Forget something, Dick?
+<<elseif $JohnnyRandomGreeting == 2>>
+Johnny: Mr. Gumshoe returns.
+<<endif>>
+
+<<endif>>
+
+<<jump JohnnyQuestions>>
+
+===
+title: JohnnyQuestions
+position: 69,-84
+---
+-> Detective: Who are you?
+<<jump JohnnyWhoAreYou>>
+
+-> Detective: Gunshot?
+<<jump JohnnyGunshot>>
+
+<<if $JohnnyKnowsSomething == true>>
+-> Detective: Seen anything suspiscious?
+<<jump JohnnyIsSuspiscious>>
+<<endif>>
+
+-> Detective: Mr.Harlow?
+<<jump JohnnyDoYouKnowJack>>
+
+-> Detective: How did you know him?
+<<jump JohnnyHowDidYouKnowHim>>
+
+<<if $Butterbur == true>> 
+-> Detective:  Butterbur?
+<<jump JohnnyKnowsButterbur>>
+<<endif>>
+
+<<if $Loretta == true>> 
+-> Detective:  Loretta?
+<<jump JohnnyKnowsLoretta>>
+<<endif>>
+
+<<if $Peggy == true>> 
+-> Detective:  Peggy?
+<<jump JohnnyKnowsPeggy>>
+<<endif>>
+
+-> Detective: Goodbye
+<<jump JohnnyGoodbye>>
+
+===
+title: JohnnyWhoAreYou
+position: 138,-404
+---
+DDetective: Who are you, exactly?
+Johnny: Johnny Malone. People call me Johnny “Two Sleeves”.
+
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyGunshot
+position: -111,-477
+---
+Detective: Where were you when the murder occurred?
+Johnny: I was in the men’s room. I assume you don’t need more detail than that? Because it was quite hard to aim when them lights went out, if you get my meaning. Then the gunshot happened, lights came back on, I came out to one dead Harlow.
+
+<<set $JohnnyKnowsSomething to true>>
+<<jump JohnnyQuestions>>
+
+===
+title: JohnnyIsSuspiscious
+position: 449,-578
+---
+Detective: You notice anything suspicious when you came out?
+Johnny: Yeah, his wife. She came running in from out the back. She was still in the bar when I left. Don’t know why a dame like her’d wanna go out into the back alley.
+
+<<set $Johnny to true>>
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyDoYouKnowJack
+position: 459,-353
+---
+Detective: You don’t seem too beat up about Mr. Harlow’s murder.
+Johnny: Jack Harlow got what was coming to him. Guy couldn’t buy dog soup, but he’s in here begging Butterbur for booze and chatting up broads most nights. Thinks he’s a hotshot, but he ain’t squat.
+
+<<set $Johnny to true>>
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyHowDidYouKnowHim
+position: 459,-353
+---
+Detective: You have a strong opinion of Jack Harlow, how did you know him so well?
+Johnny: Got myself a little share in the bar - all legal, so don’t blow your wig - so yeah, I see him in here, scaring the rest of the clientele back through the doors. That’s all I need to know about him.
+
+<<set $Johnny to true>>
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyKnowsButterbur
+position: 499,-164
+---
+Detective: You must know Dale Butterbur very well if you have a share in the bar?
+Johnny: I do. Real straight-edge guy, but a clever businessman.
+
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyKnowsLoretta
+position: 495,-14
+---
+Detective: How well do you know Loretta Dubois?
+Johnny: That little canary? I try to avoid her. A broad like her is only after one thing - moolah, and lots of it. Doubt she would’ve hung around Harlow so much if she’d known he didn’t have a checker to his name.
+
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyKnowsPeggy
+position: 358,167
+---
+Detective: Do you know much about Peggy Harlow?
+Johnny: Not a thing. She seems like one of those prim and proper broads, not the type I associate with.
+
+<<jump JohnnyQuestions>>
+
+===
+
+title: JohnnyGoodbye
+position: -191,263
+---
+
+<<set $johnnyRandomGoodbye to random_range(0,2)>>
+<<if $johnnyRandomGoodbye == 0 >>
+<<Animate Dale "GoodbyeWave">>
+Detective: That’s all I need for now.
+Johnny: Good.
+
+<<elseif $johnnyRandomGoodbye == 1>>
+<<Animate Dale "GoodbyeWave">>
+Detective: I appreciate the help.
+Johnny: Yeah, yeah.
+
+<<elseif $johnnyRandomGoodbye == 2>>
+<<Animate Dale "GoodbyeWave">>
+Detective: Thank you, Mr. Malone.
+Johnny: Just let me know when I can go home.
+
+<<endif>>
+
+<<stop>>
+===

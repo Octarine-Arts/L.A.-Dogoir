@@ -1,0 +1,160 @@
+﻿title: PeggyHarlowDialogue
+tags:NPC, Detective
+position: -338,-113
+---
+<<if $PeggyIsInitialGreeting == true>>
+
+Peggy: I suppose you think it was me, don’t you, Detective?
+Detective: And why would you say that?
+Peggy: It’s always the wife or husband, isn’t that true?
+Detective: Perhaps you can tell me that.
+Peggy: I’ve just lost my husband, Detective. Jack wasn’t John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack. I don’t know what I’ll do without him.
+<<set $PeggyIsInitialGreeting to false>>
+
+<<elseif $PeggyIsInitialGreeting == false>>
+
+<<set $PeggyRandomGreeting to random_range(0,2)>>
+<<if $PeggyRandomGreeting == 0 >>
+<<Animate "Wave">>
+Peggy: More interrogation, Detective?
+<<elseif $PeggyRandomGreeting == 1>>
+Peggy: Yes?
+<<elseif $PeggyRandomGreeting == 2>>
+Peggy: Hello again, Detective.
+<<endif>>
+
+<<endif>>
+
+<<jump PeggyQuestions>>
+===
+title: PeggyQuestions
+position: 69,-84
+---
+-> Detective: Who are you?
+<<jump PeggyWhoAreYou>>
+
+-> Detective: Gunshot?
+<<jump PeggyGunshot>>
+
+-> Detective: Come here often?
+<<jump PeggyComeHereOften>>
+
+-> Detective: Jack Harlow?
+<<jump PeggyDoYouKnowJack>>
+
+-> Detective: Enemies?
+<<jump PeggyWhoWantsJackDead>>
+
+<<if $Butterbur == true>> 
+-> Detective:  Butterbur?
+<<jump PeggyKnowsButterbur>>
+<<endif>>
+
+<<if $Loretta == true>> 
+-> Detective:  Loretta?
+<<jump PeggyKnowsLoretta>>
+<<endif>>
+
+<<if $Johhny == true>> 
+-> Detective:  Johnny?
+<<jump PeggyKnowsJohhny>>
+<<endif>>
+
+-> Detective: Goodbye
+<<jump PeggyGoodbye>>
+
+===
+
+title: PeggyWhoAreYou
+position: 283,-340
+---
+Detective: Can you tell me your name please, ma’am?
+Peggy: Peggy Harlow. Am I still a Harlow now that Jack’s gone?
+<<jump PeggyQuestions>>
+===
+
+title: PeggyGunshot
+position: -111,-477
+---
+Detective: Where were you when the gunshot went off?
+Peggy: I was sitting right here. The lights had just gone out. Scared me something horrid, I got up to help Dale- Mr. Butterbur, I mean - with the lights.
+
+<<set $Peggy to true>>
+<<jump PeggyQuestions>>
+===
+title: PeggyComeHereOften
+position: 252,-520
+---
+Detective: Do you come to the bar with your husband often?
+Peggy: Goodness me, no. Not if I can avoid it. An establishment like this is no place for a lady. Jack just…loses track of time, sometimes. I come to…collect him, occasionally. When he forgets.
+
+<<set $Peggy to true>>
+<<jump PeggyQuestions>>
+===
+
+title: PeggyWhoWantsJackDead
+position: 372,-273
+---
+Detective: Did your husband have any enemies, Mrs. Harlow?
+Peggy: Jack wasn’t the easiest man to get along with, but I couldn’t imagine he would have enemies!
+
+<<set $Peggy to true>>
+<<jump PeggyQuestions>>
+===
+
+title: PeggyKnowsButterbur
+position: 360,-36
+---
+Detective: How well do you know the bartender, Mr. Butterbur?
+Peggy: Oh, not very well at all.
+Detective: And yet you referred to him by his first name - Dale.
+Peggy: Well - yes, coming to collect Jack as I do, we have spoken a few times. He seems like a very decent man, as far as bar owner’s go.
+
+<<jump PeggyQuestions>>
+===
+
+title: PeggyKnowsLoretta
+position: 368,82
+---
+Detective: Do you know much about Loretta Dubois?
+Peggy: I know she’s no respectable woman.
+Detective: And why is that? 
+Peggy: Forgive me for being harsh, Detective, but that woman is a golddigger and nothing more.
+
+<<jump PeggyQuestions>>
+===
+
+title: PeggyKnowsJohhny
+position: 264,227
+---
+Detective: You were seen running in from the back alley when the lights turned back on - any reason you were outside?
+Peggy: I’m not sure why that matters, Detective. I could have hardly murdered my husband from outside. Surely that proves my innocence.
+Detective: Just answer the question, Mrs. Harlow.
+Peggy: Can’t a woman go out for a breath of fresh air?
+
+//if after hearing this, the player goes outside, they  will remark, “Mrs. Harlow came out for a breath of fresh air…next to the bins?”
+<<jump PeggyQuestions>>
+
+===
+
+title: PeggyGoodbye
+position: -191,263
+---
+
+<<set $peggyRandomGoodbye to random_range(0,2)>>
+<<if $peggyRandomGoodbye == 0 >>
+<<Animate Dale "GoodbyeWave">>
+Detective: Thank you for your time, Mrs. Harlow.
+Peggy: May I grieve in peace, now?
+<<elseif $peggyRandomGoodbye == 1>>
+<<Animate Dale "GoodbyeWave">>
+Detective: That’ll be all, ma’am.
+Peggy: Find Jack’s murderer, Detective. 
+<<elseif $peggyRandomGoodbye == 2>>
+<<Animate Dale "GoodbyeWave">>
+Detective: Thanks.
+Peggy: Farewell.
+<<endif>>
+
+<<stop>>
+===

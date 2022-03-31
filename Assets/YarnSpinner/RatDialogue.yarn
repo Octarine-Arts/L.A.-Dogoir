@@ -1,0 +1,128 @@
+﻿title: RatDialogue
+tags:NPC, Detective
+position: -338,-113
+---
+<<if $RatIsInitialGreeting == true>>
+
+Rat: What the hell do you want?
+Archie: Pleased to meet you, too. I’d like to ask you some questions about the murder that’s just taken place.
+Rat: Hmmph.
+<<set $RatIsInitialGreeting to false>>
+
+<<elseif $RatIsInitialGreeting == false>>
+
+<<set $RatRandomGreeting to random_range(0,2)>>
+<<if $RatRandomGreeting == 0 >>
+<<Animate "Wave">>
+Rat: What now?
+<<elseif $RatRandomGreeting == 1>>
+Rat: What?
+<<elseif $RatRandomGreeting == 2>>
+Rat: You just don’t get the message, do you?
+<<endif>>
+
+<<endif>>
+
+<<jump RatQuestions>>
+===
+title: RatQuestions
+position: 69,-84
+---
+-> Detective: Who are you?
+<<jump RatWhoAreYou>>
+
+-> Detective: Gunshot?
+<<jump RatGunshot>>
+
+-> Detective: Come here often?
+<<jump RatComeHereOften>>
+
+-> Detective: Did you see anything?
+<<jump RatDidYouSeeAnything>>
+
+
+<<if $FoundTheCheese == true>> 
+-> Detective:  I've got some cheese for you?
+<<jump FoundTheCheese>>
+<<endif>>
+
+//need to set bool for when archie shows feather to human detective
+<<if $HasArchieShownFeather == true>> 
+-> Detective:  Friendly with Jack?
+<<jump FriendlyWithJack>>
+<<endif>>
+
+-> Detective: Goodbye
+<<jump RatGoodbye>>
+
+===
+
+title: RatWhoAreYou
+position: 283,-340
+---
+Archie: Who are you, exactly?
+Rat: Call me Rattus, if you have to call me anything.
+
+<<jump RatQuestions>>
+===
+
+title: RatGunshot
+position: -111,-477
+---
+
+Archie: Where were you when the shot rang out, Rattus?
+Rat: Right here.
+
+<<jump RatQuestions>>
+
+===
+
+title: RatDidYouSeeAnything
+position: -111,-477
+---
+
+Archie: If you were here, you must have seen something?
+Rat: You sure ask a lot of questions. Maybe I saw something, maybe I didn’t. What’s in it for me if I tell you what I saw? Tell you what, I’m awfully hungry. Find me some food and then maybe I’ll talk.
+Archie: Some food?
+Rat: Yeah, yeah… some cheese would be nice. Run along now, little pet.
+
+<<jump RatQuestions>>
+===
+
+title: RatCheese
+position: -111,-477
+---
+
+Archie: I got you some cheese like you asked.
+Rat: Give it here!
+Archie: I’ll give it to you, but first you have to follow me. 
+Rat: Is this a joke? I said GIVE IT
+//player then leads rat outside to the cat
+
+<<jump RatQuestions>>
+===
+
+title: RatGoodbye
+position: -191,263
+---
+
+<<set $RatRandomGoodbye to random_range(0,2)>>
+<<if $RatRandomGoodbye == 0 >>
+<<Animate Dale "GoodbyeWave">>
+Archie: Thanks.
+Rat: Whatever.
+
+<<elseif $RatRandomGoodbye == 1>>
+<<Animate Dale "GoodbyeWave">>
+Archie: That’s all for now.
+Rat: Now and forever, I hope.
+
+<<elseif $RatRandomGoodbye == 2>>
+<<Animate Dale "GoodbyeWave">>
+Archie: I appreciate it.
+Rat: Well I don’t.
+
+<<endif>>
+
+<<stop>>
+===
