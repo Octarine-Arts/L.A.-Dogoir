@@ -15,7 +15,7 @@ namespace Journal
         public string displayName;
         public Location locationFound;
         public string description;
-
+        public string yarnString;
 
         [Header("Player Input")] 
         public bool isFound;

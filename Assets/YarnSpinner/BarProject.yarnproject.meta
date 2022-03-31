@@ -10,8 +10,73 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
   - {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - {fileID: 6391573757903218779, guid: 32d45defb6216e2479c96e335effbddf, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $IsInitialGreeting
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Start, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $randomGreeting
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Start, line 10
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $Peggy
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 12
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $Loretta
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 17
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $Johhny
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 22
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $triedToOpenDoor
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 27
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $Butterbur
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Lights, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $randomGoodbye
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Goodbye, line 2
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   defaultLanguage: en-AU
   languagesToSourceAssets: []
   useAddressableAssets: 0

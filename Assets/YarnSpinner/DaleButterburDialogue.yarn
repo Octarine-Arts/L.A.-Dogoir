@@ -2,26 +2,26 @@
 tags:NPC
 position: -522,-132
 ---
+<<set $IsInitialGreeting = true>>
 <<if $IsInitialGreeting == true>>
-
-    Butterbur: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
-    Detective: I’d like to ask you some questions, actually.
-    Butterbur: Of course.
-    <<set $IsInitialGreeting to false>>
+Butterbur: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
+Detective: I’d like to ask you some questions, actually.
+Butterbur: Of course.
+<<set $IsInitialGreeting to false>>
 
 <<elseif $IsInitialGreeting == false>>
 
-    <<set $randomGreeting to random_range(0,3)>>
-    <<if $randomGreeting == 0 >>
-    <<Animate "Wave">>
-    Butterbur: How can I help, Detective?
-    <<elseif $randomGreeting == 1>>
-    Butterbur: Any leads, Detective?
-    <<elseif $randomGreeting == 2>>
-    Butterbur: What do you need?
-    <<elseif $randomGreeting == 3>>
-    Butterbur: How’s the investigation going?
-    <<endif>>
+<<set $randomGreeting to random_range(0,3)>>
+<<if $randomGreeting == 0 >>
+<<Animate "Wave">>
+Butterbur: How can I help, Detective?
+<<elseif $randomGreeting == 1>>
+Butterbur: Any leads, Detective?
+<<elseif $randomGreeting == 2>>
+Butterbur: What do you need?
+<<elseif $randomGreeting == 3>>
+Butterbur: How’s the investigation going?
+<<endif>>
 
 <<endif>>
 
@@ -32,30 +32,30 @@ title: Questions
 position: -307,-131
 ---
 -> Detective: Who are you?
-<<jump WhoAreYou>>
+    <<jump WhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump Gunshot>>
+    <<jump Gunshot>>
 
 -> Detective: Jack Harlow?
-<<jump DoYouKnowJack>>
+    <<jump DoYouKnowJack>>
 
 -> Detective: Enemies?
-<<jump WhoWantsJackDead>>
+    <<jump WhoWantsJackDead>>
 
 <<if $Peggy == true>> 
 -> Detective:  Peggy?
-<<jump Peggy>>
+    <<jump Peggy>>
 <<endif>>
 
 <<if $Loretta == true>> 
 -> Detective:  Loretta?
-<<jump Loretta>>
+    <<jump Loretta>>
 <<endif>>
 
 <<if $Johhny == true>> 
 -> Detective:  Johnny?
-<<jump Johhny>>
+    <<jump Johhny>>
 <<endif>>
 
 <<if $triedToOpenDoor == true>>

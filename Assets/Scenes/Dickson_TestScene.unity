@@ -3542,6 +3542,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &349243942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349243944}
+  - component: {fileID: 349243943}
+  m_Layer: 0
+  m_Name: YarnSpinnerMemory
+  m_TagString: YarnMemory
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &349243943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349243942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebug: 1
+  debugTextView: {fileID: 0}
+--- !u!4 &349243944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349243942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.56573, y: 143.92375, z: -5.5717225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370386802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4776,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogCanvas: {fileID: 520565255}
-  script: {fileID: 7545569452688597077, guid: a9b357f08075f43cbad81d8ec757e1f7, type: 3}
+  script: {fileID: 7545569452688597077, guid: 018d3d583f6a9e34791f309927ab4ff9, type: 3}
+  canBeTriggeredByHuman: 1
+  canBeTriggeredByDog: 0
+  startNode: Start
 --- !u!1 &460470743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5820,44 +5869,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: yarnProject
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 458775967}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EndDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TriggerDialogue, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608375, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1378669421697608382, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_Name
       value: Dialog Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378669421697608382, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
