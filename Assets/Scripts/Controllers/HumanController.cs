@@ -12,6 +12,7 @@ public class HumanController : MonoBehaviour
 
     [SerializeField] private Vector2 verticalLookRange, lookSensitivity;
 
+    private bool canMove = true;
     private PhotonView pview;
     private float pitch;
 
@@ -29,10 +30,14 @@ public class HumanController : MonoBehaviour
             return;
         }
         else Destroy (avatar);
+
+        Player_StaticActions.OnDisableHumanMovement += DisableMovement;
+        Player_StaticActions.OnEnableHumanMovement += EnableMovement;
     }
 
     private void Update ()
     {
+        if (!canMove) return;
         Look ();
         Move ();
     }
@@ -58,5 +63,15 @@ public class HumanController : MonoBehaviour
 
         if (input.sqrMagnitude > 0.1f)
             agent.SetDestination (agent.transform.position + input.normalized * 0.25f);
+    }
+
+    private void EnableMovement()
+    {
+        canMove = true;
+    }
+    
+    private void DisableMovement()
+    {
+        canMove = false;
     }
 }

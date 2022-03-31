@@ -22,7 +22,7 @@ public class SmellTrail : MonoBehaviour
         points = new TrailPoint[pointsTransforms.Length];
         for (int i = 0; i < pointsTransforms.Length; i++)
         {
-            points[i] = new TrailPoint (pointsTransforms[i].position);
+            points[i] = new TrailPoint (pointsTransforms[i].position, Mathf.Sin ((float)i / (points.Length - 1) * Mathf.PI) * 0.2f, i*4);
             if (i > 0)
             {
                 points[i].SetPrevious (points[i - 1]);
@@ -111,7 +111,18 @@ public class SmellTrail : MonoBehaviour
 
 public class TrailPoint
 {
-    public Vector3 Point => point;
+    public Vector3 Point
+    {
+        get
+        {
+            float noiseY = Time.time * noiseSpeed + noiseOffset;
+            float x = Mathf.PerlinNoise (-1000, noiseY);
+            float y = Mathf.PerlinNoise (0, noiseY);
+            float z = Mathf.PerlinNoise (1000, noiseY);
+            Vector3 offset = new Vector3 (x, y, z);
+            return point + offset * noiseAmount;
+        }
+    }
     public TrailPoint Previous => previous;
     public TrailPoint Next => next;
     public float Distance => distance;
@@ -119,12 +130,16 @@ public class TrailPoint
     private Vector3 point;
     private TrailPoint previous, next;
     private float distance;
+    private float noiseOffset;
+    private float noiseAmount;
 
-    public TrailPoint (Vector3 point)
+    private readonly float noiseSpeed = 0.25f;
+
+    public TrailPoint (Vector3 point, float noiseAmount, float noiseOffset)
     {
         this.point = point;
-        this.previous = previous;
-        this.next = next;
+        this.noiseOffset = noiseOffset;
+        this.noiseAmount = noiseAmount;
     }
 
     public float UpdateDistance (Vector3 target)
