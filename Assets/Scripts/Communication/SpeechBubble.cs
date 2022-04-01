@@ -34,8 +34,8 @@ public class SpeechBubble : MonoBehaviour
 
     private IEnumerator ISetMessage (string message)
     {
-        Color textColour = text.color;
-        text.color = Color.clear;
+        //Color textColour = text.color;
+        //text.color = Color.clear;
 
         text.text = message;
 
@@ -46,11 +46,12 @@ public class SpeechBubble : MonoBehaviour
 
         yield return new WaitForSeconds (0.5f);
 
-        text.color = textColour;
+        //text.color = textColour;
 
-        yield return new WaitForSeconds (30f);
+        yield return new WaitForSeconds (10f);
 
         anim.SetTrigger ("Exit");
+        manager.RemoveBubble (this);
 
         yield return new WaitForSeconds (0.5f);
 

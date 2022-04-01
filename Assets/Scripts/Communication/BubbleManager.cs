@@ -5,34 +5,50 @@ using UnityEngine;
 public class BubbleManager : MonoBehaviour
 {
     public GameObject prefab;
+    private List<SpeechBubble> messageQueue = new List<SpeechBubble> ();
 
     public void SpawnBubble (string message)
     {
         SpeechBubble bubble = Instantiate (prefab, transform).GetComponentInChildren<SpeechBubble> ();
         bubble.manager = this;
         bubble.SetMessage (message);
+        messageQueue.Add (bubble);
     }
 
-    public void UpdatePositions () => StartCoroutine (IUpdatePositions ());
+    public void RemoveBubble (SpeechBubble bubble)
+    {
+        messageQueue.Remove (bubble);
+        UpdatePositions ();
+    }
+
+    public void UpdatePositions ()
+    {
+        StopAllCoroutines ();
+        StartCoroutine (IUpdatePositions ());
+    }
 
     private IEnumerator IUpdatePositions ()
     {
         float currentHeight = 0;
-        float[] bubbleHeights = new float[transform.childCount];
-        for (int i = 0; i < bubbleHeights.Length; i++)
+        float[] toHeights = new float[messageQueue.Count];
+        float[] fromHeights = new float[messageQueue.Count];
+        for (int i = 0; i < toHeights.Length; i++)
         {
-            bubbleHeights[i] = currentHeight;
-            currentHeight += transform.GetChild (i).GetComponentInChildren<SpeechBubble> ().BubbleHeight;
+            fromHeights[i] = messageQueue[i].transform.localPosition.y;
+            toHeights[toHeights.Length - i - 1] = currentHeight;
+            currentHeight += messageQueue[i].BubbleHeight;
         }
 
-        float time = 1.5f;
+        float time = 0.3f;
         for (float elapsed = 0; elapsed < time; elapsed += Time.deltaTime)
         {
             float t = elapsed / time;
-            for (int i = 0; i < bubbleHeights.Length; i++)
+            t *= t * (3f - 2f * t);
+            for (int i = 0; i < toHeights.Length; i++)
             {
-                float lerpHeight = Mathf.Lerp (transform.GetChild (i).localPosition.y, bubbleHeights[bubbleHeights.Length - i - 1], t);
-                transform.GetChild (i).localPosition = new Vector3 (0, lerpHeight);
+                float lerpHeight = Mathf.Lerp (fromHeights[i], toHeights[i], t);
+                messageQueue[i].transform.localPosition = new Vector3 (0, lerpHeight);
+                print (lerpHeight);
             }
             yield return null;
         }
