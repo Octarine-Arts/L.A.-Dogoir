@@ -1,5 +1,129 @@
 ﻿title: AlleyCatDialogue
-tags:
+tags:NPC, Detective, Dog
+position: -338,-113
+---
+<<if $CatIsInitialGreeting == true>>
+
+Cat: I don’t do the whole dog-cat thing so don’t even try, pal. I could eat a mutt like you for breakfast.
+Archie: I’m just here to ask you some questions, sir, about the gunshot that sounded earlier.
+Cat: Oh. I don’t know much about that.
+<<set $CatIsInitialGreeting to false>>
+
+<<elseif $CatIsInitialGreeting == false>>
+
+<<set $CatRandomGreeting to random_range(0,2)>>
+<<if $CatRandomGreeting == 0 >>
+<<Animate "Wave">>
+Cat: What do you want now?
+<<elseif $CatRandomGreeting == 1>>
+Cat: You don’t quit, do you?
+<<elseif $CatRandomGreeting == 2>>
+Cat: Can’t you see I’m busy?
+<<endif>>
+
+<<endif>>
+
+<<jump CatQuestions>>
+===
+title: CatQuestions
+position: 69,-84
+---
+-> Detective: Who are you?
+<<jump CatWhoAreYou>>
+
+
+<<if $CatAskedForName == true>> 
+-> Detective: Gunshot?
+<<jump CatGunshot>>
+<<endif>>
+
+<<if $CatAskedAboutThrow == true>> 
+-> Detective: What did they throw at you??
+<<jump CatWhatDidTheyThrow>>
+<<endif>>
+
+<<if $CatAskedGetIt == true>> 
+-> Detective: Can you get it?
+<<jump CatCanYouGetIt>>
+<<endif>>
+
+
+
+-> Detective: Goodbye
+<<jump CatGoodbye>>
+
+===
+
+title: CatWhoAreYou
+position: 283,-340
+---
+Archie: You got a name?
+Cat: Yeah, O’Malley.
+
+<<set $CatAskedForName = true>>
+
+<<jump CatQuestions>>
+===
+
+title: CatGunshot
+position: -111,-477
 ---
 
+Archie: Were you out here when the gunshot rang out, Mr. O’Malley?
+Cat: Well they don’t let me inside, do they? Only you dogs get that pleasure. Yeah, I was here. I was trying to dig through these bins, find a little dinner. Next thing you know, ka-boom! Scared the hairballs out of me… finally got back to the task at hand and some damn human comes out here and throws something at me. What a night, huh!
+Archie: Some human?
+Cat: I don’t know, I was a bit dazed on account of their aim. Only saw the back of them as they went back inside. But I smelt them - they smelt like a garden. Hard to miss a smell like that out here.
+
+<<set $CatAskedAboutThrow = true>>
+<<jump CatQuestions>>
+
+===
+
+title: CatWhatDidTheyThrow
+position: -111,-477
+---
+
+Archie: What did they throw at you?
+Cat: A little tube or something, I don’t know. It’s in this here bin somewhere.
+<<set $CatAskedGetIt = true>>
+<<jump CatQuestions>>
+===
+
+title: CatCanYouGetIt
+position: -111,-477
+---
+
+Archie: Can you get it for me?
+Cat: Now why would I do extra work for something that got nothing to do with me?
+Archie: I’ll get it myself then.
+Cat: I don’t think so. This is my turf, pal. I’ve answered your dumb questions real nice, so how about you leave me alone? I still got food to find.
+
+//player needs to lead cat away with rat
+
+<<jump CatQuestions>>
+===
+
+title: CatGoodbye
+position: -191,263
+---
+
+<<set $CatRandomGoodbye to random_range(0,2)>>
+<<if $CatRandomGoodbye == 0 >>
+<<Animate Dale "GoodbyeWave">>
+Archie: Thanks.
+Cat: Whatever.
+
+<<elseif $CatRandomGoodbye == 1>>
+<<Animate Dale "GoodbyeWave">>
+Archie: That’s all for now.
+Cat: Now and forever, I hope.
+
+<<elseif $CatRandomGoodbye == 2>>
+<<Animate Dale "GoodbyeWave">>
+Archie: I appreciate it.
+Cat: Well I don’t.
+
+<<endif>>
+
+<<stop>>
 ===

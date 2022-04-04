@@ -1,5 +1,5 @@
 ﻿title: RatDialogue
-tags:NPC, Detective
+tags:NPC, Detective, Dog
 position: -338,-113
 ---
 <<if $RatIsInitialGreeting == true>>
@@ -42,7 +42,7 @@ position: 69,-84
 
 
 <<if $FoundTheCheese == true>> 
--> Detective:  I've got some cheese for you?
+-> Detective:  I've got some cheese for you
 <<jump FoundTheCheese>>
 <<endif>>
 

@@ -1,5 +1,145 @@
 ﻿title: FrouFrouDialogue
-tags:
+tags:NPC, Detective, Dog
+position: -338,-113
+---
+<<if $FrouFrouIsInitialGreeting == true>>
+
+FrouFrou: Goodness Gracious, what breed are you, darling, you look positively novel! No, don’t tell me, let me guess…. You are a…pointer of some kind?
+Archie: I’m a collie, actually.
+FrouFrou: A collie! How delightful! I’m not used to conversing with what you might call lesser breeds, you see. Not that you seem lesser, darling! You seem simply enchanting.
+<<set $FrouFrouIsInitialGreeting to false>>
+
+<<elseif $FrouFrouIsInitialGreeting == false>>
+
+<<set $FrouFrouRandomGreeting to random_range(0,2)>>
+<<if $FrouFrouRandomGreeting == 0 >>
+<<Animate "Wave">>
+FrouFrou: Yes?
+<<elseif $FrouFrouRandomGreeting == 1>>
+FrouFrou: May I be of service, detective?
+<<elseif $FrouFrouRandomGreeting == 2>>
+FrouFrou: Anything you need, detective?
+<<endif>>
+
+<<endif>>
+
+<<jump FrouFrouQuestions>>
+===
+title: FrouFrouQuestions
+position: 69,-84
+---
+-> Detective: Who are you?
+<<jump FrouFrouWhoAreYou>>
+
+-> Detective: Gunshot?
+<<jump FrouFrouGunshot>>
+
+-> Detective: What were you doing there?
+<<jump FrouFrouWhatWereYouDoingInTheStoreroom>>
+
+<<if $HeathenMan == true>>
+-> Detective: Heathen man?
+<<jump FrouFrouHeathenMan>>
+<<endif>>
+
+<<if $Storeroom == true>>
+-> Detective: Did you see or hear anything?
+<<jump FrouFrouSeeOrHearAnything>>
+<<endif>>
+
+-> Detective: Do you know the murdered man?
+<<jump FrouFrouDoYouKnowHim>>
+
+-> Detective: Goodbye
+<<jump FrouFrouGoodbye>>
+
+===
+
+title: FrouFrouWhoAreYou
+position: 211,-477
+---
+Archie: What is your name, ma’am?
+FrouFrou: Frou-Frou, darling, Frou-Frou Dubois. That’s “miss” Dubois, by the by.
+
+
+<<jump FrouFrouQuestions>>
+===
+
+title: FrouFrouGunshot
+position: -300,-305
 ---
 
+Archie: Where were you when the gunshot rang out?
+FrouFrou: Oh yes, that frightful business. I was in the storeroom.
+
+<<jump FrouFrouQuestions>>
+
+===
+
+title: FrouFrouWhatWereYouDoingInTheStoreroom
+position: -248,-453
+---
+
+Archie: What were you doing in the storeroom?
+FrouFrou: I had been in the ladies room with my Mistress - she and I are rarely separated, you see - when that heathen man came in. How I despise him! So as he entered I slipped out the door and hid in the storeroom. Then with all that happened afterwards…well, I was just too scared to move! Perhaps I am a coward for not being with my Mistress, but there is something ever so sinister about him. ‘Tis a shame I have no strong, brave dog in my life, such as yourself, else I might not feel so afraid. 
+
+<<set $HeathenMan to true>>
+<<set $Storeroom to true>>
+<<jump FrouFrouQuestions>>
+===
+title: FrouFrouHeathenMan
+position: -39,-503
+---
+
+Archie: Who is the “heathen man” you’re referring to?
+FrouFrou: The one who smells like red smoke. You shall know him the instant you get a whiff of him. He is simply frightful!
+
+<<jump FrouFrouQuestions>>
+===
+title: FrouFrouSeeOrHearAnything
+position: -39,-503
+---
+
+Archie: Did you happen to see, or hear anything from the storeroom? 
+FrouFrou: Well…no, not particularly. I’m ashamed to admit that at that deafening sound, and with the business of the lights going out, I was rather shaken. I stayed in the storeroom even after that servant man Butterbur came in and turned on the lights.
+
+<<jump FrouFrouQuestions>>
+===
+
+title: FrouFrouDoYouKnowHim
+position: -39,-503
+---
+
+Archie: Does your mistress have anything connection to the murdered man?
+FrouFrou: Yes, though we should hardly associate with one so beneath our pedigree. Often he came to our residence. I hated it. I sleep on a silk pillow beside my Mistress every night without fail, except when he shows up. Then I am locked out of the bedroom! Did you ever hear of such injustice?
+
+<<jump FrouFrouQuestions>>
+===
+
+title: FrouFrouGoodbye
+position: 203,212
+---
+
+<<set $FrouFrouRandomGoodbye to random_range(0,2)>>
+<<if $FrouFrouRandomGoodbye == 0 >>
+<<Animate Dale "GoodbyeWave">>
+Archie: Thank you for your time, ma’am.
+FrouFrou: No thank you, darling.
+
+
+<<elseif $FrouFrouRandomGoodbye == 1>>
+<<Animate Dale "GoodbyeWave">>
+Archie: That’ll be all.
+FrouFrou: Toodles!
+
+
+<<elseif $FrouFrouRandomGoodbye == 2>>
+<<Animate Dale "GoodbyeWave">>
+Archie: Thanks for your help.
+FrouFrou: Ta-ta, darling!
+
+
+<<endif>>
+
+<<stop>>
 ===
