@@ -11,11 +11,11 @@ public class CommunicationUI : MonoBehaviour
     public LexiconEntry[] categories;
 
     public GameObject button, phraseText, blankSpace, wordSelector;
-    public Transform phraseSelectPanel, phraseContainer, phrasePanel, categorySelectPanel, wordSelectPanel;
+    public Transform UIContainer, phraseSelectPanel, phraseContainer, phrasePanel, categorySelectPanel, wordSelectPanel;
     //public UnityEngine.EventSystems.EventSystem eventSystem;
 
     private int activeWordIndex;
-    private int activePanel;
+    private int activePanel = -1;
     //private string[] history = new string[3];
     private Queue<string> history = new Queue<string> ();
 
@@ -45,9 +45,10 @@ public class CommunicationUI : MonoBehaviour
             sb.Append (text.text + " ");
         }
         string message = sb.ToString ();
+        FindObjectOfType<BubbleManager> ().SpawnBubble (message);
 
         //print (sb.ToString ());
-        //Close ();
+        Close ();
         if (!history.Contains (message))
         {
             history.Enqueue (message);
@@ -102,16 +103,14 @@ public class CommunicationUI : MonoBehaviour
 
     private void NextPanel () => SetPanel (activePanel + 1);
     private void PreviousPanel () => SetPanel (activePanel - 1);
+    private void Open () => SetPanel (0);
     private void Close () => SetPanel (-1);
     private void SetPanel (int panelIndex)
     {
         activePanel = panelIndex;
         print (activePanel);
         if (activePanel < 0)
-        {
-            activePanel = 0;
-            gameObject.SetActive (false);
-        }
+            activePanel = -1;
         else if (activePanel > 3)
             activePanel = 1;
 
@@ -127,6 +126,7 @@ public class CommunicationUI : MonoBehaviour
                 break;
         }
 
+        UIContainer.gameObject.SetActive (activePanel >= 0);
         phraseSelectPanel.gameObject.SetActive (activePanel == 0);
         phrasePanel.gameObject.SetActive (activePanel == 1);
         categorySelectPanel.gameObject.SetActive (activePanel == 2);
@@ -198,9 +198,18 @@ public class CommunicationUI : MonoBehaviour
     private void SelectFirstButton (Transform parent) => parent.GetComponentInChildren<Button> ()?.Select ();
 
     private bool cancelHeld = true;
+    private bool openHeld = true;
     private void Update ()
     {
-        if (!cancelHeld && Input.GetAxis ("Cancel") > 0)
+        if (activePanel < 0 && !openHeld && Input.GetAxis ("Jump") > 0)
+        {
+            openHeld = true;
+            Open ();
+        }
+        else if (Input.GetAxis ("Jump") <= 0)
+            openHeld = false;
+
+        if (activePanel >= 0 && !cancelHeld && Input.GetAxis ("Cancel") > 0)
         {
             cancelHeld = true;
             PreviousPanel ();

@@ -32,30 +32,30 @@ title: Questions
 position: -307,-131
 ---
 -> Detective: Who are you?
-<<jump WhoAreYou>>
+    <<jump WhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump Gunshot>>
+    <<jump Gunshot>>
 
 -> Detective: Jack Harlow?
-<<jump DoYouKnowJack>>
+    <<jump DoYouKnowJack>>
 
 -> Detective: Enemies?
-<<jump WhoWantsJackDead>>
+    <<jump WhoWantsJackDead>>
 
 <<if $Peggy == true>> 
 -> Detective:  Peggy?
-<<jump Peggy>>
+    <<jump Peggy>>
 <<endif>>
 
 <<if $Loretta == true>> 
 -> Detective:  Loretta?
-<<jump Loretta>>
+    <<jump Loretta>>
 <<endif>>
 
 <<if $Johhny == true>> 
 -> Detective:  Johnny?
-<<jump Johhny>>
+    <<jump Johhny>>
 <<endif>>
 
 <<if $triedToOpenDoor == true>>

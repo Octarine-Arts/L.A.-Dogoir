@@ -10,7 +10,7 @@ public class TriggerDialogue : MonoBehaviour
     public YarnProject script;
     public bool canBeTriggeredByHuman;
     public bool canBeTriggeredByDog;
-    
+    public string startNode;
     
     private DialogueRunner _currentDialogueRunner;
     private bool _isHumanInRange;
@@ -20,10 +20,17 @@ public class TriggerDialogue : MonoBehaviour
     {
         _currentDialogueRunner = dialogCanvas.GetComponent<DialogueRunner>();
         _currentDialogueRunner.yarnProject = script;
+        _currentDialogueRunner.VariableStorage = GameObject.FindGameObjectWithTag("YarnMemory").GetComponent<InMemoryVariableStorage>();
+        _currentDialogueRunner.startNode = startNode;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartDialogue();
+        }
+        
         if (Input.GetKeyDown(KeyCode.E) && _isHumanInRange && canBeTriggeredByHuman)
         {
             Player_StaticActions.DisableHumanMovement();
