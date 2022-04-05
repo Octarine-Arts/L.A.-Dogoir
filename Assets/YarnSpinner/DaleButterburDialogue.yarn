@@ -1,25 +1,25 @@
-﻿title: Start
-tags:NPC
+﻿title: DaleButterburDialogue
+tags:NPC, Detective
 position: -522,-132
 ---
-<<set $IsInitialGreeting = true>>
-<<if $IsInitialGreeting == true>>
+<<if $DaleIsInitialGreeting == true>>
+
 Butterbur: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
 Detective: I’d like to ask you some questions, actually.
 Butterbur: Of course.
-<<set $IsInitialGreeting to false>>
+<<set $DaleIsInitialGreeting to false>>
 
-<<elseif $IsInitialGreeting == false>>
+<<elseif $DaleIsInitialGreeting == false>>
 
-<<set $randomGreeting to random_range(0,3)>>
-<<if $randomGreeting == 0 >>
+<<set $daleRandomGreeting to random_range(0,3)>>
+<<if $daleRandomGreeting == 0 >>
 <<Animate "Wave">>
 Butterbur: How can I help, Detective?
-<<elseif $randomGreeting == 1>>
+<<elseif $daleRandomGreeting == 1>>
 Butterbur: Any leads, Detective?
-<<elseif $randomGreeting == 2>>
+<<elseif $daleRandomGreeting == 2>>
 Butterbur: What do you need?
-<<elseif $randomGreeting == 3>>
+<<elseif $daleRandomGreeting == 3>>
 Butterbur: How’s the investigation going?
 <<endif>>
 
@@ -91,6 +91,7 @@ Detective: When you turned the lights back on, did you see anyone around the bod
 Butterbur: Now that you mention it, Loretta was the closest to Harlow when I came back out. That was odd as she hadn’t been in the room when I left.
 
 <<set $Butterbur to true>>
+<<set $ButterburKnowsAboutLoretta to true>>
 <<jump Questions>>
 ===
 
@@ -151,22 +152,19 @@ title: Goodbye
 position: -211,486
 ---
 
-<<set $randomGoodbye to random_range(0,2)>>
-<<if $randomGoodbye == 0 >>
+<<set $daleRandomGoodbye to random_range(0,2)>>
+<<if $daleRandomGoodbye == 0>>
 <<Animate Dale "GoodbyeWave">>
 Detective: Thanks for your help
 Butterbur: Anytime!
-
-<<elseif $randomGoodbye == 1>>
+<<elseif $daleRandomGoodbye == 1>>
 <<Animate Dale "GoodbyeWave">>
 Detective: I appreciate your help.
 Butterbur: No problems at all, Detective.
-
-<<elseif $randomGoodbye == 2>>
+<<elseif $daleRandomGoodbye == 2>>
 <<Animate Dale "GoodbyeWave">>
 Detective: That’s all for now.
 Butterbur: Bye.
-
 <<endif>>
 
 <<stop>>

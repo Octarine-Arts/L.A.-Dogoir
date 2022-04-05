@@ -696,7 +696,7 @@ MonoBehaviour:
   - {fileID: 954170556}
   - {fileID: 1378669420996275568}
   startNode: 
-  startAutomatically: 1
+  startAutomatically: 0
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 1378669421697608369}
   verboseLogging: 1
@@ -708,19 +708,7 @@ MonoBehaviour:
       m_Calls: []
   onDialogueComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TriggerDialogue, Assembly-CSharp
-        m_MethodName: EndDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onCommand:
     m_PersistentCalls:
       m_Calls: []
@@ -941,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 2045514032}
   useFadeEffect: 1
-  fadeInTime: 0.1
+  fadeInTime: 0.3
   fadeOutTime: 0
   lineText: {fileID: 1378669422212977336}
   showCharacterNameInLineView: 0

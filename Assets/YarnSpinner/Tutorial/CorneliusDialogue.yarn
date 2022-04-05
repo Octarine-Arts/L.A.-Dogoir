@@ -1,0 +1,23 @@
+﻿title: CorneliusDialogue
+tags: Dog
+---
+Cornelius: Hey! Wait up! Are you a police dog? 
+Archie: Well, I’m off duty now and today was actually my first day but yes, I am.
+Cornelius: You’ve got to help me! I was chasing a squirrel - and I almost got him, too - but when I came back my master was gone! I can’t find him anywhere and I don’t know what to do! I think he’s left me for good!
+Archie: Calm down, I’m sure he hasn’t abandoned you. Take some deep breaths. 
+Cornelius: Can you help me? Please!
+Archie: Of course I’ll help you. What have you got there?
+Cornelius: My master’s wallet, I found it where I left him. I guess he abandoned the wallet too!
+Archie: My master should be able to use that wallet to help you.
+
+<<stop>>
+===
+
+title: EndScene
+position: 1,148
+---
+Cornelius: Master! Master! It’s me, it’s your little Cornelius! I thought I’d never see you again!! Thank you so much, Detective, you found my Master for me!
+Archie: Happy to help, Cornelius. Humans like to wander, so you have to make sure you keep a good eye on them, unless they’re well trained.
+
+<<stop>>
+===
