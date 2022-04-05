@@ -45,7 +45,8 @@ public class CommunicationUI : MonoBehaviour
             sb.Append (text.text + " ");
         }
         string message = sb.ToString ();
-        FindObjectOfType<BubbleManager> ().SpawnBubble (message);
+        //FindObjectOfType<BubbleManager> ().SpawnBubble (message);
+        FindObjectOfType<ChatTest> ().PublishMessage (message);
 
         //print (sb.ToString ());
         Close ();

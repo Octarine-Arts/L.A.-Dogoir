@@ -8,8 +8,9 @@ public class SmellTrail : MonoBehaviour
     public int poolSize;
     public Transform[] pointsTransforms;
     public Transform target;
-    public float radius;
+    public float activeRadius;
 
+    private float radius;
     private TrailPoint[] points;
     private LineRenderer[] _renderers;
     private LineRenderer[] renderers { get { if (_renderers == null) AttachRenderers (poolSize); return _renderers; } }
@@ -17,12 +18,10 @@ public class SmellTrail : MonoBehaviour
 
     private void Awake ()
     {
-        radius *= radius;
-
         points = new TrailPoint[pointsTransforms.Length];
         for (int i = 0; i < pointsTransforms.Length; i++)
         {
-            points[i] = new TrailPoint (pointsTransforms[i].position, Mathf.Sin ((float)i / (points.Length - 1) * Mathf.PI) * 0.2f, i*4);
+            points[i] = new TrailPoint (pointsTransforms[i].position, Mathf.Sin ((float)i / (points.Length - 1) * Mathf.PI) * 0.2f, i*200);
             if (i > 0)
             {
                 points[i].SetPrevious (points[i - 1]);
@@ -33,13 +32,16 @@ public class SmellTrail : MonoBehaviour
 
     private void Update ()
     {
+        float radiusDelta = Input.GetAxis ("Smell") > 0 ? 5 : -5;
+        radius = Mathf.Clamp (radius + radiusDelta * Time.deltaTime, 0, activeRadius);
+
         foreach (TrailPoint point in points) if (point.Next != null)
             Debug.DrawLine (point, point.Next, Color.white);
 
-        RenderTrail (GetTrailSegments ());
+        RenderTrail (GetTrailSegments (radius * radius));
     }
 
-    private List<List<Vector3>> GetTrailSegments ()
+    private List<List<Vector3>> GetTrailSegments (float radius)
     {
         List<List<Vector3>> segments = new List<List<Vector3>> ();
 
@@ -92,8 +94,10 @@ public class SmellTrail : MonoBehaviour
 
     private void UnrenderBeams ()
     {
-        for (; activeRenderer > 0; activeRenderer--)
+        for (; activeRenderer >= 0; activeRenderer--)
             renderers[activeRenderer].enabled = false;
+
+        activeRenderer = 0;
     }
 
     private void AttachRenderers (int amount)
@@ -144,7 +148,7 @@ public class TrailPoint
 
     public float UpdateDistance (Vector3 target)
     {
-        distance = F.FastDistance (point, target);
+        distance = F.FastDistance (Point, target);
         return distance;
     }
 
