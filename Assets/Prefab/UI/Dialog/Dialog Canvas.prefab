@@ -107,7 +107,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 52.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -593,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1378669421697608370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 11.518639, y: 212}
-  m_SizeDelta: {x: 706.9626, y: 225.0418}
+  m_SizeDelta: {x: 706.9626, y: 444.5987}
   m_Pivot: {x: 0.5, y: 0.99999976}
 --- !u!222 &1378669422212977343
 CanvasRenderer:
@@ -832,9 +832,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis est
     sed orci volutpat semper eget et ex. Morbi a ipsum nisl. Vestibulum pellentesque
-    sem sed libero viverra, ac feugiat felis ultricies. Maecenas bibendum sollicitudin
-    risus id tincidunt. Pellentesque ultrices odio lorem, quis viverra nunc vulputate
-    ut.
+    sem sed libero viverra, ac feugiat felis ultricies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9aa0e9c191c8d4341bc4ffe1c10cd5ca, type: 2}
   m_sharedMaterial: {fileID: 7631118025179627633, guid: 9aa0e9c191c8d4341bc4ffe1c10cd5ca, type: 2}
@@ -873,7 +871,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 52.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

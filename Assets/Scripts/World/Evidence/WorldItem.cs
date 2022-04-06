@@ -10,7 +10,7 @@ public class WorldItem : MonoBehaviour, IInteractable
 {
     public Evidence evidence_SO;
 
-    public InMemoryVariableStorage memoryVariableStorage;
+    private InMemoryVariableStorage memoryVariableStorage;
 
     private void Awake()
     {

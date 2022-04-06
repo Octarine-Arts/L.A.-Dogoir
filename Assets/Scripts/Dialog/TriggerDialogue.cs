@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using Photon.Pun;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
+[RequireComponent(typeof(BoxCollider))]
 public class TriggerDialogue : MonoBehaviour
 {
     public GameObject dialogCanvas;
@@ -12,11 +15,14 @@ public class TriggerDialogue : MonoBehaviour
     public bool canBeTriggeredByDog;
     public string startNode;
 
-    private GameObject _playerCamera;
-    private GameObject _npcCamera;
+    private Camera _playerCamera;
+    private Camera _npcCamera;
     private DialogueRunner _currentDialogueRunner;
     private bool _isHumanInRange;
     private bool _isDogInRange;
+    private Hashtable _hashtable = new Hashtable();
+
+    private bool isHumanPlayer;
 
     private void Awake()
     {
@@ -24,26 +30,47 @@ public class TriggerDialogue : MonoBehaviour
         _currentDialogueRunner.yarnProject = script;
         _currentDialogueRunner.VariableStorage = GameObject.FindGameObjectWithTag("YarnMemory").GetComponent<InMemoryVariableStorage>();
         _currentDialogueRunner.startNode = startNode;
-        _npcCamera = transform.GetChild(0).gameObject;
-        _playerCamera = Camera.main.gameObject;
+        _npcCamera = transform.GetChild(0).GetComponent<Camera>();
+        _playerCamera = Camera.main.GetComponent<Camera>();
 
         _currentDialogueRunner.onDialogueComplete.AddListener(delegate { ChangeCamera(true);  });
+        _hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            if ((int)_hashtable["HSlot"] == 1)
+            {
+                isHumanPlayer = true;
+            }
+            else
+            {
+                isHumanPlayer = false;
+            }
+        }
+        else
+        {
+            if ((int)_hashtable["GSlot"] == 1)
+            {
+                isHumanPlayer = true;
+            }
+            else
+            {
+                isHumanPlayer = false;
+            }
+        }
+
+        
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StartDialogue();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.E) && _isHumanInRange && canBeTriggeredByHuman)
+        if (Input.GetKeyDown(KeyCode.E) && _isHumanInRange && canBeTriggeredByHuman && isHumanPlayer)
         {
             Player_StaticActions.DisableHumanMovement();
             StartDialogue();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && _isDogInRange && canBeTriggeredByDog)
+        if (Input.GetKeyDown(KeyCode.E) && _isDogInRange && canBeTriggeredByDog && !isHumanPlayer)
         {
             Player_StaticActions.DisableDogMovement();
             StartDialogue();
@@ -62,14 +89,14 @@ public class TriggerDialogue : MonoBehaviour
 
     private void ChangeToNPCCamera()
     {
-        _playerCamera.SetActive(false);
-        _npcCamera.SetActive(true);
+        _playerCamera.enabled = false;
+        _npcCamera.enabled = true;
     }
     
     private void ChangeToPlayerCamera()
     {
-        _playerCamera.SetActive(true);
-        _npcCamera.SetActive(false);
+        _playerCamera.enabled = true;
+        _npcCamera.enabled = false;
     }
 
     private void ChangeCamera(bool changeToPlayer)
