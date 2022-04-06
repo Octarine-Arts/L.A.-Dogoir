@@ -25,6 +25,7 @@ public class CommunicationUI : MonoBehaviour
     private void Awake ()
     {
         photonView = GetComponent<PhotonView> ();
+        photonView.ViewID = 69;
         
         foreach (string phrase in phrases)
             PlaceButton (phrase, phraseSelectPanel, () => OnPhraseSelected (phrase));
@@ -44,8 +45,10 @@ public class CommunicationUI : MonoBehaviour
 
     private void OnPlayersSpawned (PlayerSpecies player, GameObject gameObject)
     {
+        print (player + ", " + gameObject.name);
         if (player == PlayerSpecies.Dog) dogBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
-        else if (player == PlayerSpecies.Human) humanBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
+        else humanBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
+        print ("dog: " + (dogBubbles ? dogBubbles.transform.root.name : "null") + ", human: " + (humanBubbles ? humanBubbles.transform.root.name : "null"));
     }
 
     public void Submit ()
@@ -58,7 +61,7 @@ public class CommunicationUI : MonoBehaviour
             sb.Append (text.text + " ");
         }
         string message = sb.ToString ();
-        photonView.RPC ("PublishMessage", RpcTarget.All,/*getplayer*/ PlayerSpecies.Dog, message);
+        photonView.RPC ("PublishMessage", RpcTarget.All,/*getplayer*/ PlayerManager.ThisPlayer, message);
 
         //print (sb.ToString ());
         Close ();

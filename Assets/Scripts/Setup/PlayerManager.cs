@@ -7,6 +7,9 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerSpecies ThisPlayer => thisPlayer;
+    private static PlayerSpecies thisPlayer;
+
     PhotonView pview;
 
     private void Awake ()
@@ -31,10 +34,12 @@ public class PlayerManager : MonoBehaviour
         if(PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", hostSlot == 1 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
+            thisPlayer = hostSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
         }
         else
         {
             PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
+            thisPlayer = guestSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
         }
 
         print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
