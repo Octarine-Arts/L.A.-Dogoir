@@ -18,16 +18,10 @@ MonoBehaviour:
   description: asdwqw
   occupation: 
   personality: 
-  correctMotive: 0
-  correctLocation: 0
+  correctMotive: {fileID: 0}
+  correctLocation: {fileID: 0}
   correctColor: 0
-  listOfTestimonies:
-  - testimonyTitle: 2
-    testimonyDescription: qweqwd
-    testimonyHeard: 1
-  - testimonyTitle: 64
-    testimonyDescription: asdawq
-    testimonyHeard: 1
-  inputMotive: 6
-  inputLocation: 4
+  listOfTestimonies: []
+  inputMotive: {fileID: 0}
+  inputLocation: {fileID: 0}
   inputColor: 5
