@@ -23,6 +23,7 @@ public class HumanController : MonoBehaviour
 
     private void Start ()
     {
+        EventManager.I.PlayerSpawned (PlayerSpecies.Human, gameObject);
         if (!pview.IsMine)
         {
             Destroy (GetComponentInChildren<Camera> ().gameObject);

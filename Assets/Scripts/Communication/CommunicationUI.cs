@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Text;
+using Photon.Pun;
 
 public class CommunicationUI : MonoBehaviour
 {
@@ -18,9 +19,13 @@ public class CommunicationUI : MonoBehaviour
     private int activePanel = -1;
     //private string[] history = new string[3];
     private Queue<string> history = new Queue<string> ();
+    private PhotonView photonView;
+    private BubbleManager dogBubbles, humanBubbles;
 
     private void Awake ()
     {
+        photonView = GetComponent<PhotonView> ();
+        
         foreach (string phrase in phrases)
             PlaceButton (phrase, phraseSelectPanel, () => OnPhraseSelected (phrase));
         for (int c = 0; c < categories.Length; c++)
@@ -33,6 +38,14 @@ public class CommunicationUI : MonoBehaviour
         }
 
         SelectFirstButton (phraseSelectPanel);
+
+        EventManager.I.OnPlayerSpawned += OnPlayersSpawned;
+    }
+
+    private void OnPlayersSpawned (PlayerSpecies player, GameObject gameObject)
+    {
+        if (player == PlayerSpecies.Dog) dogBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
+        else if (player == PlayerSpecies.Human) humanBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
     }
 
     public void Submit ()
@@ -45,8 +58,7 @@ public class CommunicationUI : MonoBehaviour
             sb.Append (text.text + " ");
         }
         string message = sb.ToString ();
-        //FindObjectOfType<BubbleManager> ().SpawnBubble (message);
-        FindObjectOfType<ChatTest> ().PublishMessage (message);
+        photonView.RPC ("PublishMessage", RpcTarget.All,/*getplayer*/ PlayerSpecies.Dog, message);
 
         //print (sb.ToString ());
         Close ();
@@ -59,6 +71,18 @@ public class CommunicationUI : MonoBehaviour
         }
 
         foreach (string h in history) print (h);
+    }
+
+    [PunRPC]
+    public void PublishMessage (PlayerSpecies player, string message)
+    {
+        switch (player)
+        {
+            case PlayerSpecies.Dog: dogBubbles.SpawnBubble (message);
+                break;
+            case PlayerSpecies.Human: humanBubbles.SpawnBubble (message);
+                break;
+        }
     }
 
     private void OnPhraseSelected (string phrase)
