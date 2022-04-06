@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager current;
+
     public static PlayerSpecies ThisPlayer => thisPlayer;
     private static PlayerSpecies thisPlayer;
 
@@ -14,6 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake ()
     {
+        current = this;
         pview = GetComponent<PhotonView> ();
     }
 
@@ -23,6 +27,7 @@ public class PlayerManager : MonoBehaviour
             CreateController ();
     }
 
+    public event Action onPlayersSpawned;
     private void CreateController ()
     {
         //FindObjectOfType<SpawnPoint> ();
@@ -42,6 +47,7 @@ public class PlayerManager : MonoBehaviour
             thisPlayer = guestSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
         }
 
+        onPlayersSpawned?.Invoke();
         print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
     }
 

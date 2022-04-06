@@ -29,6 +29,11 @@ public class MainMenu_Manager : MonoBehaviour
         {
             OpenMenu("Contents Page");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseAllMenus();
+        }
     }
 
     public void OpenMenu(string menuName)

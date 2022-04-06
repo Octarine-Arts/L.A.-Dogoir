@@ -5,10 +5,12 @@ using UnityEngine;
 using Yarn.Unity;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+using Journal;
 
 [RequireComponent(typeof(BoxCollider))]
 public class TriggerDialogue : MonoBehaviour
 {
+    public Suspect suspectSO;
     public GameObject dialogCanvas;
     public YarnProject script;
     public bool canBeTriggeredByHuman;
@@ -18,10 +20,14 @@ public class TriggerDialogue : MonoBehaviour
     private Camera _playerCamera;
     private Camera _npcCamera;
     private DialogueRunner _currentDialogueRunner;
-    private bool _isHumanInRange;
-    private bool _isDogInRange;
     private Hashtable _hashtable = new Hashtable();
 
+    private GameObject _humanGO;
+    private GameObject _dogGO;
+    private Vector3 _humanPosition;
+    private Vector3 _dogPosition;
+
+    private bool isInitialised;
     private bool isHumanPlayer;
 
     private void Awake()
@@ -31,9 +37,9 @@ public class TriggerDialogue : MonoBehaviour
         _currentDialogueRunner.VariableStorage = GameObject.FindGameObjectWithTag("YarnMemory").GetComponent<InMemoryVariableStorage>();
         _currentDialogueRunner.startNode = startNode;
         _npcCamera = transform.GetChild(0).GetComponent<Camera>();
-        _playerCamera = Camera.main.GetComponent<Camera>();
+       
 
-        _currentDialogueRunner.onDialogueComplete.AddListener(delegate { ChangeCamera(true);  });
+        _currentDialogueRunner.onDialogueComplete.AddListener(delegate { ChangeCamera(true); });
         _hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
 
         if (PhotonNetwork.IsMasterClient)
@@ -59,26 +65,48 @@ public class TriggerDialogue : MonoBehaviour
             }
         }
 
-        
+        Invoke("SetupPlayers", 2f);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _isHumanInRange && canBeTriggeredByHuman && isHumanPlayer)
-        {
-            Player_StaticActions.DisableHumanMovement();
-            StartDialogue();
-        }
+        if (!isInitialised) return;
 
-        if (Input.GetKeyDown(KeyCode.E) && _isDogInRange && canBeTriggeredByDog && !isHumanPlayer)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Player_StaticActions.DisableDogMovement();
-            StartDialogue();
+            if (isHumanPlayer && canBeTriggeredByHuman)
+            {
+                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 5f)
+                {
+                    Player_StaticActions.DisableHumanMovement();
+                    StartDialogue();
+                }
+            }
+            else if (!isHumanPlayer && canBeTriggeredByDog)
+            {
+                _dogPosition = _dogGO.transform.position;
+
+                if (Vector3.Distance(_dogGO.transform.position, transform.position) < 5f)
+                {
+                    Player_StaticActions.DisableDogMovement();
+                    StartDialogue();
+                }
+            }
         }
+        
+    }
+
+    private void SetupPlayers()
+    {
+        _playerCamera = Camera.main.GetComponent<Camera>();
+        _humanGO = GameObject.FindGameObjectWithTag("HumanAgent");
+        _dogGO = GameObject.FindGameObjectWithTag("DogAgent");
+        isInitialised = true;
     }
 
     private void StartDialogue()
     {
+        suspectSO.hasTalked = true;
         ChangeCamera(false);
     }
 
@@ -130,34 +158,15 @@ public class TriggerDialogue : MonoBehaviour
         {
             yield return null;
         }
-        
+
         if (!changeToPlayer)
         {
             _currentDialogueRunner.StartDialogue(startNode);
         }
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("HumanPlayer"))
+        else
         {
-            _isHumanInRange = true;
-        }
-        else if (other.CompareTag("DogPlayer"))
-        {
-            _isDogInRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("HumanPlayer"))
-        {
-            _isHumanInRange = false;
-        }
-        else if (other.CompareTag("DogPlayer"))
-        {
-            _isDogInRange = false;
+            Player_StaticActions.EnableHumanMovement();
+            Player_StaticActions.EnableDogMovement();
         }
     }
 }

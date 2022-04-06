@@ -37,7 +37,8 @@ namespace Journal
         public Location inputLocation;
         public SuspectColors inputColor = SuspectColors.None;
 
-        
+        public bool hasTalked;
+
         public List<Testimony> GetAllFoundTestimonies()
         {
             List<Testimony> returnList = new List<Testimony>();
@@ -54,6 +55,7 @@ namespace Journal
 
         public void ResetValues()
         {
+            hasTalked = false;
             inputMotive = null;
             inputLocation = null;
             inputColor = SuspectColors.None;

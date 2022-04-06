@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
@@ -33,6 +34,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    
     private void OnSceneLoaded (Scene scene, LoadSceneMode loadSceneMode)
     {
         if (scene.buildIndex == 0) return;

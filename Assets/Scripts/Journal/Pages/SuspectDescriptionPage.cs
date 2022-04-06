@@ -18,10 +18,13 @@ namespace Journal.Pages
         public TMP_Text personalityText;
 
         private List<Suspect> _suspectList;
+        private List<GameObject> _suspectButtons;
+        private bool isInstantiated;
 
         private void Awake()
         {
             _suspectList = new List<Suspect>();
+            _suspectButtons = new List<GameObject>();
 
             foreach (var suspect in Resources.LoadAll(Journal_Manager.current.suspectsPath))
             {
@@ -30,7 +33,27 @@ namespace Journal.Pages
             CreateButtons();
         }
 
-        private void CreateButtons()
+		private void OnEnable()
+		{
+            RefreshImages();
+        }
+
+        private void RefreshImages()
+        {
+            for (int ii = 0; ii < _suspectList.Count; ii++)
+            {
+                if (_suspectList[ii].hasTalked)
+                {
+                    _suspectButtons[ii].SetActive(true);
+                }
+                else
+                {
+                    _suspectButtons[ii].SetActive(false);
+                }
+            }
+        }
+
+		private void CreateButtons()
         {
             for (int ii = 0; ii < _suspectList.Count; ii++)
             {
@@ -48,9 +71,12 @@ namespace Journal.Pages
                 }
 
                 if (instantiatedObject == null) return;
+                _suspectButtons.Add(instantiatedObject);
                 instantiatedObject.GetComponent<Image>().sprite = _suspectList[ii].displayImage;
                 instantiatedObject.GetComponent<Button>().onClick.AddListener(delegate { ShowDetails(index); });
             }
+            isInstantiated = true;
+            RefreshImages();
         }
 
         private void ShowDetails(int index)
