@@ -19,7 +19,7 @@ public class WorldItem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        memoryVariableStorage.SetValue(evidence_SO.yarnString, true);   
+        //memoryVariableStorage.SetValue(evidence_SO.yarnString, true);   
         evidence_SO.isFound = true;
         Destroy(gameObject);
     }

@@ -13,9 +13,11 @@ public class HumanController : MonoBehaviour
     public Transform headLookTarget;
     public float rotateSpeed;
 
+    public GameObject displayText;
+
     [SerializeField] private Vector2 verticalLookRange, lookSensitivity;
 
-    private bool canMove = true;
+    private bool canMove;
     private PhotonView pview;
     private float pitch;
 
@@ -35,6 +37,7 @@ public class HumanController : MonoBehaviour
         }
         //else avatar.SetActive (false);
 
+        Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableHumanMovement += DisableMovement;
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;
     }
@@ -45,6 +48,7 @@ public class HumanController : MonoBehaviour
         Look ();
         Move ();
         Rotate ();
+        PlayerRaycast();
     }
 
     private void Look ()
@@ -89,6 +93,27 @@ public class HumanController : MonoBehaviour
 
         //    avatar.transform.rotation = Quaternion.Lerp (avatar.transform.rotation, targetRot, Time.deltaTime * rotateSpeed);// * (angleDif + 0.2f) / 1.2f);
         //}
+    }
+
+    private void PlayerRaycast()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(cam.position, cam.forward, out hit, 5f))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                displayText.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interactable.Interact();
+                }
+            }
+            else
+            {
+                displayText.SetActive(false);
+            }
+        }
     }
 
     private void EnableMovement()

@@ -11,7 +11,7 @@ public class DogController : MonoBehaviour
     public Transform camPivot;
     public float rotateSpeed;
 
-    private bool canMove = true; 
+    private bool canMove; 
     private PhotonView pview;
     private float speed;
 
@@ -30,7 +30,8 @@ public class DogController : MonoBehaviour
             Destroy (this);
             return;
         }
-        
+
+        Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableDogMovement += DisableMovement;
         Player_StaticActions.OnEnableDogMovement += EnableMovement;
     }

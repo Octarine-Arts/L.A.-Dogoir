@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 8667507322377020237}
   - component: {fileID: 8667507322377020234}
   - component: {fileID: 8667507322377020239}
+  - component: {fileID: 5011085679525341191}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -396,6 +397,66 @@ MonoBehaviour:
   - {fileID: 8667507321751701706}
   - {fileID: 8667507323260139301}
   - {fileID: 8667507322958674106}
+--- !u!114 &5011085679525341191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667507322377020235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 8667507322377020236}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &8667507322513955993
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +615,6 @@ GameObject:
   - component: {fileID: 8667507323170146253}
   - component: {fileID: 8667507323170146255}
   - component: {fileID: 8667507323170146252}
-  - component: {fileID: 9015513282532777280}
   m_Layer: 7
   m_Name: Dog
   m_TagString: DogAgent
@@ -618,19 +678,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!65 &9015513282532777280
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8667507323170146249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.27578047, y: 0.38981867, z: 0.75213873}
-  m_Center: {x: -0.0019364208, y: 0.35156465, z: 0.054219663}
 --- !u!1 &8667507323254243020
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,23 +32,26 @@ public class PlayerManager : MonoBehaviour
     {
         //FindObjectOfType<SpawnPoint> ();
         Hashtable h = PhotonNetwork.CurrentRoom.CustomProperties;
+        GameObject spawnedPrefab;
 
         int hostSlot = (int)h["HSlot"];
         int guestSlot = (int)h["GSlot"];
 
         if(PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", hostSlot == 1 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
             thisPlayer = hostSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
+            Vector3 spawnPosition = ThisPlayer == PlayerSpecies.Human ? GameObject.Find("HumanSpawnPoint").transform.position : GameObject.Find("DogSpawnPoint").transform.position;
+            spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", hostSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition, Quaternion.identity);
         }
         else
         {
-            PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), Vector3.zero, Quaternion.identity);
             thisPlayer = guestSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
+            Vector3 spawnPosition = ThisPlayer == PlayerSpecies.Human ? GameObject.Find("HumanSpawnPoint").transform.position : GameObject.Find("DogSpawnPoint").transform.position;
+            spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition, Quaternion.identity);
         }
 
         onPlayersSpawned?.Invoke();
-        print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
+        //print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
     }
 
     private int IdentifyPlayer (string name)
