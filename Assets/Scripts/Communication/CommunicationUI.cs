@@ -144,13 +144,22 @@ public class CommunicationUI : MonoBehaviour
 
     private void NextPanel () => SetPanel (activePanel + 1);
     private void PreviousPanel () => SetPanel (activePanel - 1);
-    private void Open () => SetPanel (0);
-    private void Close () => SetPanel (-1);
+    private void Open()
+    {
+        Player_StaticActions.DisableDogMovement();
+        SetPanel(0);
+    }
+    private void Close()
+    {
+        SetPanel(-1);
+    }
     private void SetPanel (int panelIndex)
     {
         activePanel = panelIndex;
         print (activePanel);
         if (activePanel < 0)
+        {
+            Player_StaticActions.EnableDogMovement();
             activePanel = -1;
         else if (activePanel > 5)
             activePanel = 3;

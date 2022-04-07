@@ -23,19 +23,6 @@ public class MainMenu_Manager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OpenMenu("Contents Page");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseAllMenus();
-        }
-    }
-
     public void OpenMenu(string menuName)
     {
         for (int ii = 0; ii < listOfMenus.Count; ii++)

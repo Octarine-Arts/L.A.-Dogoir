@@ -13,13 +13,16 @@ public class CustomLineView : LineView
     
     public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {
-        if (isDetectiveBox && dialogueLine.CharacterName == "Detective")
+        if (isDetectiveBox && (dialogueLine.CharacterName == "Detective" || dialogueLine.CharacterName == "Archie"))
         {
             base.RunLine(dialogueLine, onDialogueLineFinished);
         }
-        else if(!isDetectiveBox && dialogueLine.CharacterName != "Detective")
+        else if(!isDetectiveBox)
         {
-            base.RunLine(dialogueLine, onDialogueLineFinished);
+            if (dialogueLine.CharacterName != "Detective" && dialogueLine.CharacterName != "Archie")
+            {
+                base.RunLine(dialogueLine, onDialogueLineFinished);
+            }
         }
     }
 }

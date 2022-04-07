@@ -12,10 +12,6 @@ public class VideoController : MonoBehaviour
     {
         _videoPlayer = GetComponent<VideoPlayer>();
         _videoPlayer.loopPointReached += EndVideo;
-
-        Player_StaticActions.DisableHumanMovement();
-        Player_StaticActions.DisableDogMovement();
-        ScreenFade.current.FadeToBlack();
     }
 
     // Update is called once per frame
