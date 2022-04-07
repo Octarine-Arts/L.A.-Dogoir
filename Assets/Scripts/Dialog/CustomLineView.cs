@@ -17,9 +17,12 @@ public class CustomLineView : LineView
         {
             base.RunLine(dialogueLine, onDialogueLineFinished);
         }
-        else if(!isDetectiveBox && (dialogueLine.CharacterName != "Detective" || dialogueLine.CharacterName != "Archie"))
+        else if(!isDetectiveBox)
         {
-            base.RunLine(dialogueLine, onDialogueLineFinished);
+            if (dialogueLine.CharacterName != "Detective" && dialogueLine.CharacterName != "Archie")
+            {
+                base.RunLine(dialogueLine, onDialogueLineFinished);
+            }
         }
     }
 }

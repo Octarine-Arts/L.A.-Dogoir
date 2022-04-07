@@ -14,6 +14,7 @@ public class HumanController : MonoBehaviour
     public float rotateSpeed;
 
     public GameObject displayText;
+    public GameObject humanCanvas;
 
     [SerializeField] private Vector2 verticalLookRange, lookSensitivity;
 
@@ -36,7 +37,6 @@ public class HumanController : MonoBehaviour
             return;
         }
         //else avatar.SetActive (false);
-
         Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableHumanMovement += DisableMovement;
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;

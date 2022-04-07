@@ -38,6 +38,8 @@ MonoBehaviour:
   - DestroyRpc
   - RPC_GetSlotValue
   - PublishMessage
+  - Interact
+  - ItemInteracted
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
