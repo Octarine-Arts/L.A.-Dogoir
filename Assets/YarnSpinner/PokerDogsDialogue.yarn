@@ -63,9 +63,10 @@ Archie: How would you fellas like to split a bone / I’ve got a bone to pick wi
 Bean: Did he just say bone!?
 Lean: He couldn’t have, we lost our bone
 Mean: Well he’s back now, must have something important to say otherwise he’s dead meat
-Archie: Don’t get your hair in a mess, I’ve brought out my own bargaining chip.
+Archie: Don’t get your hair in a mess, I’ve brought my own bargaining chip.
 //Gives bone over
 Bean: It’s a deal!
+<<set $DetectiveHasFoundPistol to true>>
 
 <<endif>>
 <<endif>>

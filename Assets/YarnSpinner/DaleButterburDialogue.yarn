@@ -4,23 +4,23 @@ position: -522,-132
 ---
 <<if $DaleIsInitialGreeting == true>>
 
-Butterbur: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
+Dale: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
 Detective: I’d like to ask you some questions, actually.
-Butterbur: Of course.
+Dale: Of course.
 <<set $DaleIsInitialGreeting to false>>
 
 <<elseif $DaleIsInitialGreeting == false>>
 
-<<set $daleRandomGreeting to random_range(0,3)>>
-<<if $daleRandomGreeting == 0 >>
+<<set $DaleRandomGreeting to random_range(0,3)>>
+<<if $DaleRandomGreeting == 0 >>
 <<Animate "Wave">>
-Butterbur: How can I help, Detective?
-<<elseif $daleRandomGreeting == 1>>
-Butterbur: Any leads, Detective?
-<<elseif $daleRandomGreeting == 2>>
-Butterbur: What do you need?
-<<elseif $daleRandomGreeting == 3>>
-Butterbur: How’s the investigation going?
+Dale: How can I help, Detective?
+<<elseif $DaleRandomGreeting == 1>>
+Dale: Any leads, Detective?
+<<elseif $DaleRandomGreeting == 2>>
+Dale: What do you need?
+<<elseif $DaleRandomGreeting == 3>>
+Dale: How’s the investigation going?
 <<endif>>
 
 <<endif>>
@@ -58,8 +58,26 @@ position: -307,-131
 <<jump Johhny>>
 <<endif>>
 
-<<if $triedToOpenDoor == true>>
+<<if $DetectiveTriedToOpenDoor == true>>
 -> Detective: The door?
+<<jump Storeroom>>
+<<endif>>
+
+<<if $DetectiveHasFoundShotgun == true>>
+-> Detective: About that there shotgun
+<<jump Shotgun>>
+<<endif>>
+
+<<if $DetectiveHasFoundDrugs == true>>
+-> Detective: We found the drugs Dale
+<<jump Drugs>>
+<<endif>>
+
+<<if $DetectiveHasFoundFlask == true>>
+<<if $JohnnyHasSpokenAboutFlask == true>>
+-> Detective: Peggy visits often?
+<<jump PeggyVisitsOften>>
+<<endif>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -71,7 +89,7 @@ title: WhoAreYou
 position: 204,-140
 ---
 Detective: Who are you, exactly?
-Butterbur: Dale Butterbur, I own this bar. It was used by bootleggers during the prohibition, would you believe, but the old owner went to the big house for brewing his own hooch, and viola, it was mine for the buying, right as the prohibition ended.
+Dale: Dale Butterbur, I own this bar. It was used by bootleggers during the prohibition, would you believe, but the old owner went to the big house for brewing his own hooch, and viola, it was mine for the buying, right as the prohibition ended.
 
 <<jump Questions>>
 ===
@@ -80,7 +98,7 @@ title: Gunshot
 position: -77,-430
 ---
 Detective: Tell me exactly where you were when the gunshot occurred?
-Butterbur: The lights had just gone out, so I was in the storeroom turning the breaker back on. Faulty wiring, it trips every now and then.
+Dale: The lights had just gone out, so I was in the storeroom turning the breaker back on. Faulty wiring, it trips every now and then.
 
 <<jump Lights>>
 ===
@@ -88,10 +106,10 @@ title: Lights
 position: 237,-418
 ---
 Detective: When you turned the lights back on, did you see anyone around the body, anyone acting suspiciously?
-Butterbur: Now that you mention it, Loretta was the closest to Harlow when I came back out. That was odd as she hadn’t been in the room when I left.
+Dale: Now that you mention it, Loretta was the closest to Harlow when I came back out. That was odd as she hadn’t been in the room when I left.
 
-<<set $Butterbur to true>>
-<<set $ButterburKnowsAboutLoretta to true>>
+<<set $Dale to true>>
+<<set $DaleKnowsAboutLoretta to true>>
 <<jump Questions>>
 ===
 
@@ -99,18 +117,18 @@ title: DoYouKnowJack
 position: 191,-236
 ---
 Detective: How well do you know Jack Harlow?
-Butterbur: Not particularly well. He was a semi-regular here, I guess you could say. But to be honest with you detective, he was a real drip. A real greaseball, from what I could tell. Never liked to serve him, but a few lincolns is a few lincolns, no matter the customer.
+Dale: Not particularly well. He was a semi-regular here, I guess you could say. But to be honest with you detective, he was a real drip. A real greaseball, from what I could tell. Never liked to serve him, but a few lincolns is a few lincolns, no matter the customer.
 
-<<set $Butterbur to true>>
+<<set $Dale to true>>
 <<jump Questions>>
 ===
 title: WhoWantsJackDead
 position: 216,-49
 ---
 Detective: Do you know of anyone here who would want Jack Harlow dead?
-Butterbur: Well, he didn’t seem like a stand-up gent in general. But I just can’t imagine someone would want to kill him, even so.
+Dale: Well, he didn’t seem like a stand-up gent in general. But I just can’t imagine someone would want to kill him, even so.
 
-<<set $Butterbur to true>>
+<<set $Dale to true>>
 <<jump Questions>>
 ===
 
@@ -118,7 +136,7 @@ title: Peggy
 position: 209,53
 ---
 Detective: How well do you know Peggy Harlow?
-Butterbur: I hardly know her at all. She came in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
+Dale: I hardly know her at all. She came in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
 
 <<jump Questions>>
 ===
@@ -127,7 +145,7 @@ title: Loretta
 position: 171,192
 ---
 Detective: What do you know about Loretta Dubois?
-Butterbur: She performs here once a week - she’s a great singer. Obviously she’s a bit of a dish too, which brings in the customers. I think Harlow got it for her bad. Never missed a performance. He was more likely to pay her just for existing than me was to pay me for booze.
+Dale: She performs here once a week - she’s a great singer. Obviously she’s a bit of a dish too, which brings in the customers. I think Harlow got it for her bad. Never missed a performance. He was more likely to pay her just for existing than me was to pay me for booze.
 
 <<jump Questions>>
 ===
@@ -136,14 +154,43 @@ title: Johhny
 position: 181,302
 ---
 Detective: What’s the deal with Johnny Malone?
-Butterbur: I know he looks rough, but he’s a swell guy. He’s got a little share in the bar with me, so we’re sort of like business partners. He’s my security on busier nights. He’s got such a sour puss people tend to behave when he’s around. Until now, I guess…
+Dale: I know he looks rough, but he’s a swell guy. He’s got a little share in the bar with me, so we’re sort of like business partners. He’s my security on busier nights. He’s got such a sour puss people tend to behave when he’s around. Until now, I guess…
 
 ===
 title: Storeroom
 position: 141,457
 ---
 Detective: Can you let me into the storeroom? I’d like to look around.
-Butterbur: I’d love to help, Detective, but I’m a little busy right now. I’ll open it up when I’ve cleaned up the mess here.
+Dale: I’d love to help, Detective, but I’m a little busy right now. I’ll open it up when I’ve cleaned up the mess here.
+
+<<jump Questions>>
+===
+title: Shotgun
+position: 141,457
+---
+Detective: You gotta license for that buttercup?
+Dale: Yeah 
+Detective: Do you have any other weapons I should know about 
+Dale: oh yeah, i gave one to ms.dubois to look after herself, lotsa unsavourvy characters hanging about.
+<<set $DaleHasSpokenAboutShotgun to true>>
+
+<<jump Questions>>
+===
+title: Drugs
+position: 141,457
+---
+Detective: You realise that’s illegal right fella?
+Dale: we’ll ive got some friends in the force that’ll vouch for me
+<<set $DaleHasSpokenAboutDrugs to true>>
+
+<<jump Questions>>
+===
+title: PeggyVisitsOften
+position: 141,457
+---
+Detective: You enjoy Peggy coming around to pick up Jack?
+Dale: Hey I dont mind seeing that piece of ass swinging around
+<<set $DaleHasSpokenAboutPeggy to true>>
 
 <<jump Questions>>
 ===
@@ -152,19 +199,19 @@ title: Goodbye
 position: -211,486
 ---
 
-<<set $daleRandomGoodbye to random_range(0,2)>>
-<<if $daleRandomGoodbye == 0>>
+<<set $DaleRandomGoodbye to random_range(0,2)>>
+<<if $DaleRandomGoodbye == 0>>
 <<Animate Dale "GoodbyeWave">>
 Detective: Thanks for your help
-Butterbur: Anytime!
-<<elseif $daleRandomGoodbye == 1>>
+Dale: Anytime!
+<<elseif $DaleRandomGoodbye == 1>>
 <<Animate Dale "GoodbyeWave">>
 Detective: I appreciate your help.
-Butterbur: No problems at all, Detective.
-<<elseif $daleRandomGoodbye == 2>>
+Dale: No problems at all, Detective.
+<<elseif $DaleRandomGoodbye == 2>>
 <<Animate Dale "GoodbyeWave">>
 Detective: That’s all for now.
-Butterbur: Bye.
+Dale: Bye.
 <<endif>>
 
 <<stop>>

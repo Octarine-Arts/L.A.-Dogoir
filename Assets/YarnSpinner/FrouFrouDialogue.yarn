@@ -34,15 +34,17 @@ position: 69,-84
 -> Detective: Gunshot?
 <<jump FrouFrouGunshot>>
 
+<<if $HidInOffice == true>>
 -> Detective: What were you doing there?
-<<jump FrouFrouWhatWereYouDoingInTheStoreroom>>
+<<jump FrouFrouWhatWereYouDoingInTheOffice>>
+<<endif>>
 
 <<if $HeathenMan == true>>
 -> Detective: Heathen man?
 <<jump FrouFrouHeathenMan>>
 <<endif>>
 
-<<if $Storeroom == true>>
+<<if $Office == true>>
 -> Detective: Did you see or hear anything?
 <<jump FrouFrouSeeOrHearAnything>>
 <<endif>>
@@ -70,21 +72,21 @@ position: -300,-305
 ---
 
 Archie: Where were you when the gunshot rang out?
-FrouFrou: Oh yes, that frightful business. I was in the storeroom.
-
+FrouFrou: Oh yes, that frightful business. I was in the Office.
+<<set $HidInOffice to true>>
 <<jump FrouFrouQuestions>>
 
 ===
 
-title: FrouFrouWhatWereYouDoingInTheStoreroom
+title: FrouFrouWhatWereYouDoingInTheOffice
 position: -248,-453
 ---
 
-Archie: What were you doing in the storeroom?
-FrouFrou: I had been in the ladies room with my Mistress - she and I are rarely separated, you see - when that heathen man came in. How I despise him! So as he entered I slipped out the door and hid in the storeroom. Then with all that happened afterwards…well, I was just too scared to move! Perhaps I am a coward for not being with my Mistress, but there is something ever so sinister about him. ‘Tis a shame I have no strong, brave dog in my life, such as yourself, else I might not feel so afraid. 
+Archie: What were you doing in the Office?
+FrouFrou: I had been in the ladies room with my Mistress - she and I are rarely separated, you see - when that heathen man came in. How I despise him! So as he entered I slipped out the door and hid in the Office. Then with all that happened afterwards…well, I was just too scared to move! Perhaps I am a coward for not being with my Mistress, but there is something ever so sinister about him. ‘Tis a shame I have no strong, brave dog in my life, such as yourself, else I might not feel so afraid. 
 
 <<set $HeathenMan to true>>
-<<set $Storeroom to true>>
+<<set $Office to true>>
 <<jump FrouFrouQuestions>>
 ===
 title: FrouFrouHeathenMan
@@ -100,8 +102,8 @@ title: FrouFrouSeeOrHearAnything
 position: -39,-503
 ---
 
-Archie: Did you happen to see, or hear anything from the storeroom? 
-FrouFrou: Well…no, not particularly. I’m ashamed to admit that at that deafening sound, and with the business of the lights going out, I was rather shaken. I stayed in the storeroom even after that servant man Butterbur came in and turned on the lights.
+Archie: Did you happen to see, or hear anything from the Office? 
+FrouFrou: Well…no, not particularly. I’m ashamed to admit that at that deafening sound, and with the business of the lights going out, I was rather shaken. I stayed in the Office even after that servant man Butterbur came in and turned on the lights.
 
 <<jump FrouFrouQuestions>>
 ===

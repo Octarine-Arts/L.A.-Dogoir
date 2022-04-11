@@ -47,9 +47,9 @@ position: 69,-84
 -> Detective: How did you know him?
 <<jump JohnnyHowDidYouKnowHim>>
 
-<<if $Butterbur == true>> 
--> Detective:  Butterbur?
-<<jump JohnnyKnowsButterbur>>
+<<if $Dale == true>> 
+-> Detective:  Dale?
+<<jump JohnnyKnowsDale>>
 <<endif>>
 
 <<if $Loretta == true>> 
@@ -60,6 +60,27 @@ position: 69,-84
 <<if $Peggy == true>> 
 -> Detective:  Peggy?
 <<jump JohnnyKnowsPeggy>>
+<<endif>>
+
+<<if $DetectiveHasFoundHorseTicket == true>> 
+-> Detective:  I found these horse tickets
+<<jump AboutHorseTickets>>
+<<endif>>
+
+<<if $DetectiveHasSpokenToJohnnyHorseTicket == true>>
+<<if $DetectiveHasFoundBlood == true>>
+<<if $DetectiveHasSpokenToLorettaBlood == true>>
+-> Detective:  What where you doing in the ladies?
+<<jump AboutTheBloodInTheLadies>>
+<<endif>>
+<<endif>>
+<<endif>>
+
+<<if $DetectiveHasFoundFlask == true>>
+<<if $DetectiveHasSpokenToPeggyFlask == true>>
+-> Detective: You know Jack brings his own flask to a bar?
+<<jump AboutTheFlaskAndDale>>
+<<endif>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -99,7 +120,7 @@ title: JohnnyDoYouKnowJack
 position: 459,-353
 ---
 Detective: You don’t seem too beat up about Mr. Harlow’s murder.
-Johnny: Jack Harlow got what was coming to him. Guy couldn’t buy dog soup, but he’s in here begging Butterbur for booze and chatting up broads most nights. Thinks he’s a hotshot, but he ain’t squat.
+Johnny: Jack Harlow got what was coming to him. Guy couldn’t buy dog soup, but he’s in here begging Dale for booze and chatting up broads most nights. Thinks he’s a hotshot, but he ain’t squat.
 
 <<set $Johnny to true>>
 <<jump JohnnyQuestions>>
@@ -115,7 +136,7 @@ Johnny: Got myself a little share in the bar - all legal, so don’t blow your w
 <<jump JohnnyQuestions>>
 ===
 
-title: JohnnyKnowsButterbur
+title: JohnnyKnowsDale
 position: 499,-164
 ---
 Detective: You must know Dale Butterbur very well if you have a share in the bar?
@@ -141,6 +162,39 @@ Johnny: Not a thing. She seems like one of those prim and proper broads, not the
 
 <<jump JohnnyQuestions>>
 
+===
+title: AboutHorseTickets
+position: 495,-14
+---
+Detective: I found a horse ticket debt in Jacks pocket, you wouldnt know anything about that
+Johnny: Alright, alright I hold a little games night for the regulars, Jack likes to come play but lately he hasnt been paying up his dues. Dale knows about it, we run it in the bar. HE’s totally cool about it. Hes a  good guy like that.
+<<set $DetectiveHasSpokenToJohnnyHorseTicket to true>>
+
+<<jump JohnnyQuestions>>
+===
+title: AboutTheBloodInTheLadies
+position: 495,-14
+---
+Detective:So I can place you in the bathroom. I have an eye witness
+Johnny: You ain’t got shit m8
+Detective: Loretta says you been roughing her up
+Johnny: Look, her fella owes us some money.
+Detective: Fella being?
+Johnny: JACK OF COURSE
+<<set $DetectiveHasSpokenToJohnnyBlood to true>>
+
+<<jump JohnnyQuestions>>
+===
+title: AboutTheFlaskAndDale
+position: 495,-14
+---
+Detective: You and Dale are in business together right?
+Johnny: What about it?
+Detective: Well did you know that hes allowed Jack to bring in his own booze and squeeze it
+Johnny: Hrrmmpppphhh. Well it would seem that everytime Jack is here drinking, that missus is here to pick his sorry ass up. Dale doesn’t seem to mind. 
+<<set $DetectiveHasSpokenToJohnnyDebt to true>>
+
+<<jump JohnnyQuestions>>
 ===
 
 title: JohnnyGoodbye

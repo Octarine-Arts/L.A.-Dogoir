@@ -45,9 +45,9 @@ position: 69,-84
 -> Detective: Enemies?
 <<jump PeggyWhoWantsJackDead>>
 
-<<if $Butterbur == true>> 
--> Detective:  Butterbur?
-<<jump PeggyKnowsButterbur>>
+<<if $Dale == true>> 
+-> Detective:  Dale?
+<<jump PeggyKnowsDale>>
 <<endif>>
 
 <<if $Loretta == true>> 
@@ -58,6 +58,26 @@ position: 69,-84
 <<if $Johhny == true>> 
 -> Detective:  Johnny?
 <<jump PeggyKnowsJohhny>>
+<<endif>>
+
+<<if $DetectiveHasFoundTickets == true>>
+-> Detective:  These tickets I've found
+<<jump TicketsToKingKong>>
+<<endif>>
+
+<<if $DetectiveHasFoundMissingRing == true>>
+-> Detective:  Jack doesn't wear his ring anymore?
+<<jump WhereIsTheRing>>
+<<endif>>
+
+<<if $DetectiveHasFoundFlask == true>>
+-> Detective:  Flask to a bar?
+<<jump AboutTheFlask>>
+<<endif>>
+
+<<if $DetectiveHasFoundSyringe == true>>
+-> Detective:  Drugs in the alley?
+<<jump AboutTheSyringe>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -102,7 +122,7 @@ Peggy: Jack wasn’t the easiest man to get along with, but I couldn’t imagine
 <<jump PeggyQuestions>>
 ===
 
-title: PeggyKnowsButterbur
+title: PeggyKnowsDale
 position: 360,-36
 ---
 Detective: How well do you know the bartender, Mr. Butterbur?
@@ -135,6 +155,42 @@ Peggy: Can’t a woman go out for a breath of fresh air?
 //if after hearing this, the player goes outside, they  will remark, “Mrs. Harlow came out for a breath of fresh air…next to the bins?”
 <<jump PeggyQuestions>>
 
+===
+title: TicketsToKingKong
+position: 368,82
+---
+Detective: I found two tickets to see King Kong in Mr. Harlow’s pocket. I don’t suppose you know anything about that?
+Peggy:i aint know anything about that detective, maybe you should talk to that “professional” over there. 
+<<set $DetectiveHasSpokenToPeggyTickets to true>>
+
+<<jump PeggyQuestions>>
+===
+title: WhereIsTheRing
+position: 368,82
+---
+Detective: I noticed Jack isn’t wearing his wedding ring, any thoughts on the matter?
+Peggy: Yeah, me and ol’ Jack are having a break. I just like to make sure he’s looked after.
+<<set $DetectiveHasSpokenToPeggyMissingRing to true>>
+
+<<jump PeggyQuestions>>
+===
+title: AboutTheFlask
+position: 368,82
+---
+Detective: You’re husband has been bring drinks to a bar. Got anything to say about that?
+Peggy: yeah hes a boozer, Dale has been supporting him while hes been laid off.
+<<set $DetectiveHasSpokenToPeggyFlask to true>>
+
+<<jump PeggyQuestions>>
+===
+title: AboutTheSyringe
+position: 368,82
+---
+Detective: you were seen out in the alleyway and theres a syringe out there, know anything about that?
+Peggy: yeah dale gave me some to sleep
+<<set $DetectiveHasSpokenToPeggySyringe to true>>
+
+<<jump PeggyQuestions>>
 ===
 
 title: PeggyGoodbye
