@@ -574,6 +574,7 @@ MonoBehaviour:
   phraseText: {fileID: 1684018891992331752, guid: dd1d37184a67e534fb71ae52ce0c23de, type: 3}
   blankSpace: {fileID: 3185624825457323669, guid: 38a900f31dd599943adc8a9f70b9079e, type: 3}
   wordSelector: {fileID: 6652604005766561590, guid: 4b5f219829c5df54d868f75d451b1a34, type: 3}
+  historyButton: {fileID: 354453102435569830}
   UIContainer: {fileID: 7111393128776088404}
   oldOrNewPanel: {fileID: 6524807761014224558}
   historyPanel: {fileID: 6194424407728137285}
@@ -1222,7 +1223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7111393128776088404
 RectTransform:
   m_ObjectHideFlags: 0

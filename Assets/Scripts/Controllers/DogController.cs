@@ -11,7 +11,7 @@ public class DogController : MonoBehaviour
     public Transform camPivot;
     public float rotateSpeed;
 
-    private bool canMove; 
+    private bool canMove = true; 
     private PhotonView pview;
     private float speed;
 

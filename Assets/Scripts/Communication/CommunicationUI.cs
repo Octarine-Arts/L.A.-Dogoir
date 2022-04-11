@@ -11,7 +11,7 @@ public class CommunicationUI : MonoBehaviour
     public LexiconEntry phrases;
     public LexiconEntry[] categories;
 
-    public GameObject button, phraseText, blankSpace, wordSelector;
+    public GameObject button, phraseText, blankSpace, wordSelector, historyButton;
     public Transform UIContainer, oldOrNewPanel, historyPanel, phraseSelectPanel, phraseContainer, phrasePanel, categorySelectPanel, wordSelectPanel;
     //public UnityEngine.EventSystems.EventSystem eventSystem;
 
@@ -64,10 +64,8 @@ public class CommunicationUI : MonoBehaviour
             sb.Append (text.text + " ");
         }
         string message = sb.ToString ();
-        photonView.RPC ("PublishMessage", RpcTarget.All,/*getplayer*/ PlayerManager.ThisPlayer, message);
+        SubmitMessage (message);
 
-        //print (sb.ToString ());
-        Close ();
         if (!history.Contains (message))
         {
             history.Enqueue (message);
@@ -77,6 +75,12 @@ public class CommunicationUI : MonoBehaviour
         }
 
         foreach (string h in history) print (h);
+    }
+
+    private void SubmitMessage (string message)
+    {
+        photonView.RPC ("PublishMessage", RpcTarget.All, PlayerManager.ThisPlayer, message);
+        Close ();
     }
 
     [PunRPC]
@@ -93,12 +97,17 @@ public class CommunicationUI : MonoBehaviour
 
     public void OnOldNewSelected (bool newPhrase)
     {
-        SetPanel (newPhrase ? 1 : 2);
-    }
-
-    public void OnHistorySelected (int button)
-    {
-
+        if (newPhrase)
+            SetPanel (2);
+        else
+        {
+            historyPanel.OffTheWeans ();
+            foreach (string h in history)
+                PlaceButton (h, historyPanel, () => SubmitMessage (h));
+            
+            SetPanel (1);
+            SelectFirstButton (historyPanel);
+        }
     }
 
     private void OnPhraseSelected (string phrase)
@@ -159,14 +168,16 @@ public class CommunicationUI : MonoBehaviour
         print (activePanel);
         if (activePanel < 0)
         {
-            Player_StaticActions.EnableDogMovement();
+            Player_StaticActions.EnableDogMovement ();
             activePanel = -1;
+        }
         else if (activePanel > 5)
             activePanel = 3;
 
         switch (activePanel)
         {
             case 0: SelectFirstButton (oldOrNewPanel);
+                historyButton.SetActive (history.Count > 0);
                 break;
             case 1: SelectFirstButton (historyPanel);
                 break;
@@ -181,8 +192,8 @@ public class CommunicationUI : MonoBehaviour
         }
 
         UIContainer.gameObject.SetActive (activePanel >= 0);
-        oldOrNewPanel.gameObject.SetActive (activePanel >= 0);
-        historyPanel.gameObject.SetActive (activePanel >= 1);
+        oldOrNewPanel.gameObject.SetActive (activePanel == 0);
+        historyPanel.gameObject.SetActive (activePanel == 1);
         phraseSelectPanel.gameObject.SetActive (activePanel == 2);
         phrasePanel.gameObject.SetActive (activePanel == 3);
         categorySelectPanel.gameObject.SetActive (activePanel == 4);
