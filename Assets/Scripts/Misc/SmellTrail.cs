@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SmellTrail : MonoBehaviour
 {
+    public static SmellTrail activeTrail;
+
     public GameObject lineObject;
     public int poolSize;
-    public Transform[] pointsTransforms;
+    public List<Vector3> pathPoints;
     public Transform target;
     public float activeRadius;
 
@@ -18,10 +20,10 @@ public class SmellTrail : MonoBehaviour
 
     private void Awake ()
     {
-        points = new TrailPoint[pointsTransforms.Length];
-        for (int i = 0; i < pointsTransforms.Length; i++)
+        points = new TrailPoint[pathPoints.Count];
+        for (int i = 0; i < pathPoints.Count; i++)
         {
-            points[i] = new TrailPoint (pointsTransforms[i].position, Mathf.Sin ((float)i / (points.Length - 1) * Mathf.PI) * 0.2f, i*200);
+            points[i] = new TrailPoint (pathPoints[i], Mathf.Sin ((float)i / (points.Length - 1) * Mathf.PI) * 0.2f, i*200);
             if (i > 0)
             {
                 points[i].SetPrevious (points[i - 1]);
@@ -34,9 +36,6 @@ public class SmellTrail : MonoBehaviour
     {
         float radiusDelta = Input.GetAxis ("Smell") > 0 ? 5 : -5;
         radius = Mathf.Clamp (radius + radiusDelta * Time.deltaTime, 0, activeRadius);
-
-        foreach (TrailPoint point in points) if (point.Next != null)
-            Debug.DrawLine (point, point.Next, Color.white);
 
         RenderTrail (GetTrailSegments (radius * radius));
     }
@@ -110,6 +109,8 @@ public class SmellTrail : MonoBehaviour
     private void OnDrawGizmos ()
     {
         Gizmos.DrawWireSphere (target.position, Mathf.Sqrt (radius));
+        for (int i = 0; i < pathPoints.Count - 1; i++)
+            Debug.DrawLine (pathPoints[i], pathPoints[i + 1], Color.white);
     }
 }
 

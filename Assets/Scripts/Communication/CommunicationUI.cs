@@ -43,15 +43,14 @@ public class CommunicationUI : MonoBehaviour
 
         SelectFirstButton (phraseSelectPanel);
 
-        //EventManager.I.OnPlayerSpawned += OnPlayersSpawned;
+        if (EventManager.I != null)
+            EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
     }
 
-    private void OnPlayersSpawned (PlayerSpecies player, GameObject gameObject)
+    private void OnPlayersSpawned (GameObject human, GameObject dog)
     {
-        print (player + ", " + gameObject.name);
-        if (player == PlayerSpecies.Dog) dogBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
-        else humanBubbles = gameObject.GetComponentInChildren<BubbleManager> ();
-        print ("dog: " + (dogBubbles ? dogBubbles.transform.root.name : "null") + ", human: " + (humanBubbles ? humanBubbles.transform.root.name : "null"));
+        humanBubbles = human.transform.parent.GetComponentInChildren<BubbleManager> ();
+        dogBubbles = dog.transform.parent.GetComponentInChildren<BubbleManager> ();
     }
 
     public void Submit ()
@@ -156,6 +155,7 @@ public class CommunicationUI : MonoBehaviour
     private void Open()
     {
         Player_StaticActions.DisableDogMovement();
+        Player_StaticActions.DisableHumanMovement();
         SetPanel(0);
     }
     private void Close()
@@ -169,6 +169,7 @@ public class CommunicationUI : MonoBehaviour
         if (activePanel < 0)
         {
             Player_StaticActions.EnableDogMovement ();
+            Player_StaticActions.EnableHumanMovement ();
             activePanel = -1;
         }
         else if (activePanel > 5)

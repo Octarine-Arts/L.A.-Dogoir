@@ -8,8 +8,15 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager I;
 
-    public event Action<PlayerSpecies, GameObject> OnPlayerSpawned;
-    public void PlayerSpawned (PlayerSpecies player, GameObject gameObject) => OnPlayerSpawned?.Invoke (player, gameObject);
+    private GameObject humanPlayer, dogPlayer;
+    public event Action<GameObject, GameObject> OnPlayersSpawned;
+    public void PlayerSpawned (PlayerSpecies player, GameObject gameObject)
+    {
+        if (player == PlayerSpecies.Human) humanPlayer = gameObject;
+        else dogPlayer = gameObject;
+
+        if (dogPlayer != null && humanPlayer != null) OnPlayersSpawned?.Invoke (humanPlayer, dogPlayer);
+    }
 
     private void Awake ()
     {

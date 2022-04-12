@@ -5,7 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class PathCreatorTool : MonoBehaviour
 {
-    public Transform parent;
+    public SmellTrail targetTrail;
     public float distanceThreshold;
 
     private Vector3 lastPoint;
@@ -18,9 +18,7 @@ public class PathCreatorTool : MonoBehaviour
 
     private Vector3 CreatePoint ()
     {
-        GameObject spawn = new GameObject ();
-        spawn.transform.SetParent (parent);
-        spawn.transform.position = transform.position;
+        targetTrail.pathPoints.Add (transform.position);
         return transform.position;
     }
 }

@@ -35,7 +35,8 @@ public class TriggerDialogue : MonoBehaviour
 
         _currentDialogueRunner.onDialogueComplete.AddListener(delegate { ChangeCamera(true); });
 
-        Invoke("SetupPlayers", 2f);
+        if (EventManager.I != null)
+            EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
     }
 
     private void Update()
@@ -65,11 +66,11 @@ public class TriggerDialogue : MonoBehaviour
         
     }
 
-    private void SetupPlayers()
+    private void OnPlayersSpawned (GameObject humanPlayer, GameObject dogPlayer)
     {
-        _playerCamera = Camera.main.GetComponent<Camera>();
-        _humanGO = GameObject.FindGameObjectWithTag("HumanAgent");
-        _dogGO = GameObject.FindGameObjectWithTag("DogAgent");
+        _playerCamera = Camera.main.GetComponent<Camera> ();
+        _humanGO = humanPlayer;
+        _dogGO = dogPlayer;
         isInitialised = true;
     }
 

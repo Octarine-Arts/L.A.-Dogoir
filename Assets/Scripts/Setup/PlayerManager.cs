@@ -13,11 +13,16 @@ public class PlayerManager : MonoBehaviour
     public static PlayerSpecies ThisPlayer => thisPlayer;
     private static PlayerSpecies thisPlayer;
 
+    public GameObject HumanPlayer { get; private set; }
+    public GameObject DogPlayer { get; private set; }
+    public bool PlayersSpawned { get; private set; }
+
     PhotonView pview;
 
     private void Awake ()
     {
         current = this;
+        PlayersSpawned = false;
         pview = GetComponent<PhotonView> ();
     }
 
@@ -25,9 +30,11 @@ public class PlayerManager : MonoBehaviour
     {
         if (pview.IsMine)
             CreateController ();
+
+        if (EventManager.I != null)
+            EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
     }
 
-    public event Action onPlayersSpawned;
     private void CreateController ()
     {
         //FindObjectOfType<SpawnPoint> ();
@@ -50,8 +57,14 @@ public class PlayerManager : MonoBehaviour
             spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition, Quaternion.identity);
         }
 
-        onPlayersSpawned?.Invoke();
         //print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
+    }
+
+    private void OnPlayersSpawned (GameObject human, GameObject dog)
+    {
+        HumanPlayer = human;
+        DogPlayer = dog;
+        PlayersSpawned = true;
     }
 
     private int IdentifyPlayer (string name)

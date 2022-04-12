@@ -23,7 +23,9 @@ public class DogController : MonoBehaviour
 
     private void Start ()
     {
-        EventManager.I.PlayerSpawned (PlayerSpecies.Dog, gameObject);
+        if (EventManager.I != null)
+            EventManager.I.PlayerSpawned (PlayerSpecies.Dog, dog.gameObject);
+
         if (!pview.IsMine)
         {
             Destroy (GetComponentInChildren<Camera> ().gameObject);

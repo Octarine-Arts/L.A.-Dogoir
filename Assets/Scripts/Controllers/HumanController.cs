@@ -18,7 +18,7 @@ public class HumanController : MonoBehaviour
 
     [SerializeField] private Vector2 verticalLookRange, lookSensitivity;
 
-    private bool canMove;
+    private bool canMove = true;
     private PhotonView pview;
     private float pitch;
 
@@ -29,14 +29,21 @@ public class HumanController : MonoBehaviour
 
     private void Start ()
     {
-        EventManager.I.PlayerSpawned (PlayerSpecies.Human, gameObject);
+        if (EventManager.I != null)
+            EventManager.I.PlayerSpawned (PlayerSpecies.Human, avatar);
+
         if (!pview.IsMine)
         {
             Destroy (GetComponentInChildren<Camera> ().gameObject);
             Destroy (this);
             return;
         }
-        //else avatar.SetActive (false);
+        else
+        {
+            foreach (SkinnedMeshRenderer renderer in avatar.GetComponentsInChildren<SkinnedMeshRenderer> ())
+                renderer.enabled = false;
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableHumanMovement += DisableMovement;
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;
@@ -47,7 +54,6 @@ public class HumanController : MonoBehaviour
         if (!canMove) return;
         Look ();
         Move ();
-        Rotate ();
         PlayerRaycast();
     }
 
@@ -58,11 +64,13 @@ public class HumanController : MonoBehaviour
         float yRot = cam.transform.rotation.eulerAngles.y + lookInput.x * lookSensitivity.x;
         pitch = Mathf.Clamp (pitch - lookInput.y * lookSensitivity.y, verticalLookRange.x, verticalLookRange.y);
 
-        Vector3 newRot = cam.transform.rotation.eulerAngles;
-        newRot.y = yRot;
-        newRot.x = pitch;
+        //Vector3 newRot = cam.transform.rotation.eulerAngles;
+        //newRot.y = yRot;
+        //newRot.x = pitch;
 
-        cam.transform.rotation = Quaternion.Euler (newRot);
+        cam.transform.localRotation = Quaternion.Euler (pitch, 0, 0);
+        agent.transform.rotation = Quaternion.Euler (0, yRot, 0);
+        headLookTarget.position = cam.transform.position + cam.transform.forward;
     }
 
     private void Move ()
@@ -70,29 +78,10 @@ public class HumanController : MonoBehaviour
         Vector3 input = Quaternion.Euler (0, cam.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
 
-        if (input.sqrMagnitude > 0.1f)
+        //if (input.sqrMagnitude > 0.1f)
             agent.SetDestination (agent.transform.position + input.normalized * 0.25f);
 
-        anim.SetFloat ("MoveSpeed", agent.velocity.magnitude);
-    }
-
-    private void Rotate ()
-    {
-        headLookTarget.position = cam.transform.position + cam.transform.forward;
-        Vector3 newRot = avatar.transform.rotation.eulerAngles;
-        newRot.y = cam.transform.rotation.eulerAngles.y;
-        avatar.transform.rotation = Quaternion.Euler (newRot);
-
-        //if (agent.desiredVelocity.magnitude > 0.1f)
-        //{
-        //    float targetAngle = agent.desiredVelocity.Angle ();
-            
-        //    Quaternion targetRot = Quaternion.Euler (avatar.transform.rotation.eulerAngles.x,
-        //        agent.desiredVelocity.Angle (),
-        //        avatar.transform.rotation.eulerAngles.z);
-
-        //    avatar.transform.rotation = Quaternion.Lerp (avatar.transform.rotation, targetRot, Time.deltaTime * rotateSpeed);// * (angleDif + 0.2f) / 1.2f);
-        //}
+        anim.SetFloat ("MoveSpeed", Mathf.Clamp01 (agent.velocity.magnitude / (agent.speed / 3)));
     }
 
     private void PlayerRaycast()
@@ -100,19 +89,13 @@ public class HumanController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5f))
         {
-            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            if (interactable != null)
+            if (hit.collider.TryGetComponent<IInteractable> (out IInteractable interactable))
             {
                 displayText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
-                {
                     interactable.Interact();
-                }
             }
-            else
-            {
-                displayText.SetActive(false);
-            }
+            else displayText.SetActive(false);
         }
     }
 
