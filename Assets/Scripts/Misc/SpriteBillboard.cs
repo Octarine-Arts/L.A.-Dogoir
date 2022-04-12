@@ -10,7 +10,7 @@ public class SpriteBillboard : MonoBehaviour
     private void Start ()
     {
         if (PlayerManager.current.PlayersSpawned)
-            cam = Camera.current.transform;
+            cam = Camera.main.transform;
         else if (EventManager.I != null)
             EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
     }

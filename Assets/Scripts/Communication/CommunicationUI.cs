@@ -105,7 +105,6 @@ public class CommunicationUI : MonoBehaviour
                 PlaceButton (h, historyPanel, () => SubmitMessage (h));
             
             SetPanel (1);
-            SelectFirstButton (historyPanel);
         }
     }
 
@@ -151,7 +150,7 @@ public class CommunicationUI : MonoBehaviour
     }
 
     private void NextPanel () => SetPanel (activePanel + 1);
-    private void PreviousPanel () => SetPanel (activePanel - 1);
+    private void PreviousPanel () => SetPanel (activePanel - 1 == 1 ? 0 : activePanel - 1);
     private void Open()
     {
         Player_StaticActions.DisableDogMovement();
