@@ -108,6 +108,11 @@ public class CommunicationUI : MonoBehaviour
         }
     }
 
+    public void OnHistorySelected (int button)
+    {
+
+    }
+
     private void OnPhraseSelected (string phrase)
     {
         PlacePhrase (phrase);
@@ -172,7 +177,9 @@ public class CommunicationUI : MonoBehaviour
             activePanel = -1;
         }
         else if (activePanel > 5)
+        {
             activePanel = 3;
+        }
 
         switch (activePanel)
         {

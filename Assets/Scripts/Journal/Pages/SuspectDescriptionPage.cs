@@ -11,6 +11,7 @@ namespace Journal.Pages
         public GameObject suspectButtonGO;
         public Transform row1Parent;
         public Transform row2Parent;
+        public Transform row3Parent;
 
         public TMP_Text fullNameText;
         public TMP_Text occupationText;
@@ -19,14 +20,14 @@ namespace Journal.Pages
 
         private List<Suspect> _suspectList;
         private List<GameObject> _suspectButtons;
-        private bool isInstantiated;
 
         private void Awake()
         {
             _suspectList = new List<Suspect>();
             _suspectButtons = new List<GameObject>();
 
-            foreach (var suspect in Resources.LoadAll(Journal_Manager.current.suspectsPath))
+            //foreach (var suspect in Resources.LoadAll(Journal_Manager.current.suspectsPath))
+            foreach (var suspect in Resources.LoadAll("Bar/Suspects"))
             {
                 _suspectList.Add((Suspect)suspect);
             }
@@ -42,14 +43,7 @@ namespace Journal.Pages
         {
             for (int ii = 0; ii < _suspectList.Count; ii++)
             {
-                if (_suspectList[ii].hasTalked)
-                {
-                    _suspectButtons[ii].SetActive(true);
-                }
-                else
-                {
-                    _suspectButtons[ii].SetActive(false);
-                }
+                _suspectButtons[ii].SetActive(_suspectList[ii].hasTalked);
             }
         }
 
@@ -60,7 +54,7 @@ namespace Journal.Pages
                 GameObject instantiatedObject = null;
                 var index = ii;
 
-                switch (ii % 2)
+                switch (ii % 3)
                 {
                     case 0:
                         instantiatedObject = Instantiate(suspectButtonGO, row1Parent);
@@ -68,15 +62,18 @@ namespace Journal.Pages
                     case 1:
                         instantiatedObject = Instantiate(suspectButtonGO, row2Parent);
                         break;
+                    case 2:
+                        instantiatedObject = Instantiate(suspectButtonGO, row3Parent);
+                        break;
                 }
 
                 if (instantiatedObject == null) return;
                 _suspectButtons.Add(instantiatedObject);
-                instantiatedObject.GetComponent<Image>().sprite = _suspectList[ii].displayImage;
-                instantiatedObject.GetComponent<Button>().onClick.AddListener(delegate { ShowDetails(index); });
+                GameObject button = instantiatedObject.transform.GetChild(0).gameObject;
+                button.GetComponent<Image>().sprite = _suspectList[ii].displayImage;
+                button.GetComponent<Button>().onClick.AddListener(delegate { ShowDetails(index); });
             }
-            isInstantiated = true;
-            RefreshImages();
+            //RefreshImages();
         }
 
         private void ShowDetails(int index)

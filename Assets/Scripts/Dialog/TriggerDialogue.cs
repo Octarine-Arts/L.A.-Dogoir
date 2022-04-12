@@ -41,6 +41,11 @@ public class TriggerDialogue : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartDialogue();
+        }
+        
         if (!isInitialised) return;
         if (isTalking) return;
 
@@ -76,7 +81,7 @@ public class TriggerDialogue : MonoBehaviour
 
     private void StartDialogue()
     {
-        suspectSO.hasTalked = true;
+        //suspectSO.hasTalked = true;
         ChangeCamera(false);
     }
 
