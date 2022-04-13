@@ -1,5 +1,5 @@
 ﻿title: RatDialogue
-tags:NPC, Detective
+tags:NPC, Detective, Dog
 position: -338,-113
 ---
 <<if $RatIsInitialGreeting == true>>
@@ -34,23 +34,15 @@ position: 69,-84
 -> Detective: Gunshot?
 <<jump RatGunshot>>
 
--> Detective: Come here often?
-<<jump RatComeHereOften>>
-
 -> Detective: Did you see anything?
 <<jump RatDidYouSeeAnything>>
 
 
-<<if $FoundTheCheese == true>> 
--> Detective:  I've got some cheese for you?
-<<jump FoundTheCheese>>
+<<if $ArchieFoundTheCheese == true>> 
+-> Detective:  I've got some cheese for you
+<<jump RatFoundTheCheese>>
 <<endif>>
 
-//need to set bool for when archie shows feather to human detective
-<<if $HasArchieShownFeather == true>> 
--> Detective:  Friendly with Jack?
-<<jump FriendlyWithJack>>
-<<endif>>
 
 -> Detective: Goodbye
 <<jump RatGoodbye>>
@@ -89,7 +81,7 @@ Rat: Yeah, yeah… some cheese would be nice. Run along now, little pet.
 <<jump RatQuestions>>
 ===
 
-title: RatCheese
+title: RatFoundTheCheese
 position: -111,-477
 ---
 

@@ -1,8 +1,17 @@
 ﻿title: DanDialogue
 tags: Detective
 ---
-Hugh: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so worried, thank you so much Detective, I’ve been searching the streets for him everywhere.
+
+
+<<if $CorneliusMetDetectives == true>>
+Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so worried, thank you so much Detective, I’ve been searching the streets for him everywhere.
 Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
+
+<<elseif $CorneliusMetDetectives == false>>
+Dan: Something to eat officer? And something for the pooch?
+Detective: No thanks, we don’t eat garbage
+
+<<endif>>
 
 <<stop>>
 ===

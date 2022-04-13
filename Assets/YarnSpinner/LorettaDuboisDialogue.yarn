@@ -42,14 +42,14 @@ position: 69,-84
 -> Detective: Jack Harlow?
 <<jump LorettaDoYouKnowJack>>
 
-<<if $Butterbur == true>> 
--> Detective:  Butterbur?
-<<jump LorettaKnowsButterbur>>
+<<if $Dale == true>> 
+-> Detective:  Dale?
+<<jump LorettaKnowsDale>>
 <<endif>>
 
-<<if $ButterburKnowsAboutLoretta == true>> 
+<<if $DaleKnowsAboutLoretta == true>> 
 -> Detective:  Closest to the Victim?
-<<jump LorettaKnowsButterbur>>
+<<jump LorettaKnowsDale>>
 <<endif>>
 
 <<if $Peggy == true>> 
@@ -66,6 +66,18 @@ position: 69,-84
 <<if $HasArchieShownFeather == true>> 
 -> Detective:  Friendly with Jack?
 <<jump FriendlyWithJack>>
+<<endif>>.
+
+<<if $DetectiveHasFoundGun == false>>
+<<if $DaleHasSpokenAboutShotgun == true>>
+-> Detective:  Dale's gun?
+<<jump AboutThePistol>>
+<<endif>>
+<<endif>>
+
+<<if $DetectiveHasFoundBlood == true>>
+-> Detective:  Seen the bathroom lately? It's a real bloodbath in there
+<<jump AboutBathroomBlood>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -112,7 +124,7 @@ Loretta: A man has died, Detective! How cold-hearted do you think I am?
 <<jump LorettaQuestions>>
 ===
 
-title: LorettaKnowsButterbur
+title: LorettaKnowsDale
 position: 360,-36
 ---
 Detective: What do you think of Dale Butterbur?
@@ -136,7 +148,7 @@ Loretta: Indeed! And who told you that? Alright, I’ll admit it Detective, Jack
 
 <<jump LorettaQuestions>>
 ===
-title: ButterburKnowsAboutLoretta
+title: DaleKnowsAboutLoretta
 position: 360,-36
 ---
 Detective: Dale Butterbur says you were the closest to the victim when he returned from restoring the lights. Impressive journey to make in the dark from the bathroom.
@@ -164,6 +176,24 @@ Loretta: Well enough to know he is a grifter and a gangster and an all-round hor
 
 <<jump LorettaQuestions>>
 
+===
+title: AboutThePistol
+position: 368,82
+---
+Detective: Dale said he gave you a gun
+Loretta: Yeah I lost it weeks ago
+
+<<jump LorettaQuestions>>
+===
+
+title: AboutBathroomBlood
+position: 368,82
+---
+Detective: Lots of blood in the bathroom, know anything about that
+Loretta: yeah, that thug Johnny came in after me, said something about money that Jack owed, but i sure don't know nothing about that
+<<set $DetectiveHasSpokenToLorettaBlood to true>>
+
+<<jump LorettaQuestions>>
 ===
 
 title: LorettaGoodbye

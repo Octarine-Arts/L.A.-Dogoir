@@ -1,5 +1,74 @@
 ﻿title: PokerDogsDialogue
-tags:
+tags:NPC, Detective, Dog
+position: -193,-44
 ---
+<<if $PokerDogsIsInitialGreeting == true>>
+
+Bean: Do you mind?
+Mean: Not again!
+Lean: What now!?
+Archie: Uhh…what’s going on out here?
+Mean: Poker! What does it look like? 
+Lean: You want in?
+Archie: No thank you, I’m rather busy at the moment… 
+Bean: Probably for the best, we can’t even get through one game without something busting through that window.
+Archie: What do you mean?
+Lean: He’s talking about the gun. We were just minding our business, playing our game, when it came flying through that window. Just a little while ago.
+Bean: Something threw it.
+Mean: Something? Probably a human there, bud. 
+Lean: And how do you know? None of us saw what it was.
+Mean: Because of the opposable thumbs, you idiot. Who else could have thrown it but a human?
+Lean: Well I don’t know! There’s some really big rats around, ok?!
+Bean: You think a rat lugged a gun through the bathroom window?
+Lean: Well remember that really huge rat at last week’s poker session? She came in through the bathroom window.
+Mean: Protected by a silver spoon?
+Bean & Lean: What?
+Mean: Nevermind…
+Archie: Fellas, fellas, could we get back to the matter at hand?
+Bean & Mean & Lean: What?
+Archie: That someone disposed of a gun here!
+Bean: Such good timing too, because I was out of chips. Gave me something else to bet with.
+Archie: I don’t think you fellas understand the severity of the situation here. Someone here was shot with a gun.
+Mean: Yeah that was loud, huh?
+Lean: What are the odds that that happened and then a gun showed up here, huh? Weird.
+Archie: Indeed…I’m going to have to ask you to hand over that firearm, gentleman. That could be vital evidence.
+Bean: No way! I’m betting with that.
+Lean: Don’t go ruining our game!
+Archie: I need that gun.
+Mean: Then go get us something else to bet with!
+
+<<set $PokerDogsIsInitialGreeting = false>>
+<<stop>>
+<<endif>>
+
+<<if $FoundTheBone == false>>
+
+<<set $PokerDogsRandomGreeting to random_range(0,2)>>
+<<if $PokerDogsRandomGreeting == 0 >>
+Bean: You again? We told you we ain’t giving away our only betting piece
+Archie: I’ll be back with something tasty.
+
+<<elseif $PokerDogsRandomGreeting == 1>>
+Mean: You better scram before we make a meal outta you bud!
+Archie: I better high tail it!
+
+<<elseif $PokerDogsRandomGreeting == 2>>
+Lean: What do you want? Looking to smell some butts?
+Archie: Sorry, I'm on duty
+
+<<endif>>
+
+<<if $FoundTheBone == true>>
+Archie: How would you fellas like to split a bone / I’ve got a bone to pick with you fellas
+Bean: Did he just say bone!?
+Lean: He couldn’t have, we lost our bone
+Mean: Well he’s back now, must have something important to say otherwise he’s dead meat
+Archie: Don’t get your hair in a mess, I’ve brought my own bargaining chip.
+//Gives bone over
+Bean: It’s a deal!
+<<set $DetectiveHasFoundPistol to true>>
+
+<<endif>>
+<<endif>>
 
 ===
