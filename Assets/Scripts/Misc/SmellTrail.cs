@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class SmellTrail : MonoBehaviour
 {
-    public static SmellTrail activeTrail;
+    public static SmellTrail ActiveTrail;
 
     public GameObject lineObject;
+    public Color lineColour;
     public int poolSize;
     public List<Vector3> pathPoints;
-    public Transform target;
-    public float activeRadius;
+    public float renderRadius;
+    public float distanceToActivate;
 
+    private bool active;
     private float radius;
+    private Transform target;
     private TrailPoint[] points;
     private LineRenderer[] _renderers;
     private LineRenderer[] renderers { get { if (_renderers == null) AttachRenderers (poolSize); return _renderers; } }
     private int activeRenderer;
+    private float outOfRangeTime = 0;
 
     private void Awake ()
     {
@@ -30,14 +34,52 @@ public class SmellTrail : MonoBehaviour
                 points[i - 1].SetNext (points[i]);
             }
         }
+
+        if (EventManager.I != null)
+            EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
+        else target = FindObjectOfType<DogController> ().dog.transform;
+    }
+
+    public void Activate ()
+    {
+        print ($"Activating (current active is {ActiveTrail})");
+        if (ActiveTrail != null)
+            ActiveTrail.Deactivate ();
+        ActiveTrail = this;
+        active = true;
+    }
+
+    public void Deactivate ()
+    {
+        print ($"Deactivating (current active is {ActiveTrail})");
+        if (ActiveTrail == this)
+            ActiveTrail = null;
+        active = false;
     }
 
     private void Update ()
     {
-        float radiusDelta = Input.GetAxis ("Smell") > 0 ? 5 : -5;
-        radius = Mathf.Clamp (radius + radiusDelta * Time.deltaTime, 0, activeRadius);
+        print ($"active? {active}, radius: {radius}");
+        if (!active && radius <= 0)
+        {
+            if (Input.GetKeyDown (KeyCode.E) && F.FastDistance (transform.position, target.position) < distanceToActivate * distanceToActivate)
+                Activate ();
+            else return;
+        }
 
-        RenderTrail (GetTrailSegments (radius * radius));
+        float radiusDelta = active ? 5 : -5;
+        radius = Mathf.Clamp (radius + radiusDelta * Time.deltaTime, 0, renderRadius);
+
+        List<List<Vector3>> trailSegments = GetTrailSegments (radius * radius);
+        if (active && trailSegments.Count <= 0)
+        {
+            outOfRangeTime += Time.deltaTime;
+            if (outOfRangeTime > 6f)
+                Deactivate ();
+        }
+        else outOfRangeTime = 0;
+
+        RenderTrail (trailSegments);
     }
 
     private List<List<Vector3>> GetTrailSegments (float radius)
@@ -103,14 +145,22 @@ public class SmellTrail : MonoBehaviour
     {
         _renderers = new LineRenderer[amount];
         for (int i = 0; i < amount; i++)
+        {
             _renderers[i] = Instantiate (lineObject, transform).GetComponent<LineRenderer> ();
+            _renderers[i].startColor = lineColour;
+            _renderers[i].endColor = lineColour;
+        }
     }
+
+    private void OnPlayersSpawned (GameObject human, GameObject dog) => target = dog.transform;
 
     private void OnDrawGizmos ()
     {
-        Gizmos.DrawWireSphere (target.position, Mathf.Sqrt (radius));
+        if (target != null)
+            Gizmos.DrawWireSphere (target.position, Mathf.Sqrt (radius));
+        Gizmos.DrawWireSphere (transform.position, distanceToActivate);
         for (int i = 0; i < pathPoints.Count - 1; i++)
-            Debug.DrawLine (pathPoints[i], pathPoints[i + 1], Color.white);
+            Debug.DrawLine (pathPoints[i], pathPoints[i + 1], lineColour);
     }
 }
 

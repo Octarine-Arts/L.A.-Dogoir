@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667507321889729252, guid: e00cf6452ff7f224a88b5438e16fcff0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8667507321889729254, guid: e00cf6452ff7f224a88b5438e16fcff0, type: 3}
       propertyPath: m_RootOrder
@@ -192,11 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e00cf6452ff7f224a88b5438e16fcff0, type: 3}
---- !u!4 &32367779 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8667507323170146253, guid: e00cf6452ff7f224a88b5438e16fcff0, type: 3}
-  m_PrefabInstance: {fileID: 32367778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &161756560
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223550308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.967, y: 0, z: 3.883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -436,6 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineObject: {fileID: 1912823882649439587, guid: a92d919c0d81e71419dcd2a33b38e762, type: 3}
+  lineColour: {r: 1, g: 0.42138356, b: 0.43187267, a: 1}
   poolSize: 10
   pathPoints:
   - {x: 2.908, y: 0, z: 4.019}
@@ -495,34 +491,8 @@ MonoBehaviour:
   - {x: -0.74, y: 0, z: 2.24}
   - {x: -0.74, y: 0, z: 2.24}
   - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  - {x: -0.74, y: 0, z: 2.24}
-  target: {fileID: 32367779}
-  activeRadius: 4
+  renderRadius: 3
+  distanceToActivate: 1
 --- !u!1 &289346253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.459
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.z

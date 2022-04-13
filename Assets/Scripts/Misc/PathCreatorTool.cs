@@ -11,7 +11,13 @@ public class PathCreatorTool : MonoBehaviour
     private Vector3 lastPoint;
     private void Update ()
     {
-        if (lastPoint == null) lastPoint = CreatePoint ();
+        if (lastPoint == null)
+        {
+            if (targetTrail.pathPoints.Count <= 0)
+                lastPoint = CreatePoint ();
+            else
+                lastPoint = targetTrail.pathPoints[targetTrail.pathPoints.Count - 1];
+        }
 
         if (F.FastDistance (transform.position, lastPoint) > distanceThreshold) lastPoint = CreatePoint ();
     }
