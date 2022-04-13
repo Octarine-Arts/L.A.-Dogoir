@@ -18,6 +18,7 @@ public class TriggerDialogue : MonoBehaviour
     private Camera _playerCamera;
     private Camera _npcCamera;
     private DialogueRunner _currentDialogueRunner;
+    private CanvasGroup _canvasGroup;
 
     private GameObject _humanGO;
     private GameObject _dogGO;
@@ -32,8 +33,11 @@ public class TriggerDialogue : MonoBehaviour
         _currentDialogueRunner.VariableStorage = GameObject.FindGameObjectWithTag("YarnMemory").GetComponent<InMemoryVariableStorage>();
         _currentDialogueRunner.startNode = startNode;
         _npcCamera = transform.GetChild(0).GetComponent<Camera>();
+        _canvasGroup = dialogCanvas.GetComponent<CanvasGroup>();
 
         _currentDialogueRunner.onDialogueComplete.AddListener(delegate { ChangeCamera(true); });
+        _npcCamera.enabled = false;
+        HideCanvas();
 
         if (EventManager.I != null)
             EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
@@ -41,18 +45,15 @@ public class TriggerDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StartDialogue();
-        }
-        
         if (!isInitialised) return;
         if (isTalking) return;
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log(Vector3.Distance(_humanGO.transform.position, transform.position), this);
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
             {
+                
                 if (Vector3.Distance(_humanGO.transform.position, transform.position) < 5f)
                 {
                     Player_StaticActions.DisableHumanMovement();
@@ -74,9 +75,25 @@ public class TriggerDialogue : MonoBehaviour
     private void OnPlayersSpawned (GameObject humanPlayer, GameObject dogPlayer)
     {
         _playerCamera = Camera.main.GetComponent<Camera> ();
-        _humanGO = humanPlayer;
-        _dogGO = dogPlayer;
+        _humanGO = GameObject.FindGameObjectWithTag("HumanAgent");
+        _dogGO = GameObject.FindGameObjectWithTag("DogAgent");
         isInitialised = true;
+
+        Debug.Log(_humanGO);
+    }
+
+    private void ShowCanvas()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+    }
+
+    private void HideCanvas()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
     }
 
     private void StartDialogue()
@@ -87,7 +104,8 @@ public class TriggerDialogue : MonoBehaviour
 
     public void EndDialogue()
     {
-        dialogCanvas.SetActive(false);
+        _currentDialogueRunner.Stop();
+        HideCanvas();
     }
 
     private void ChangeToNPCCamera()
@@ -106,7 +124,7 @@ public class TriggerDialogue : MonoBehaviour
         _npcCamera.enabled = false;
     }
 
-    private void ChangeCamera(bool changeToPlayer)
+    public void ChangeCamera(bool changeToPlayer)
     {
         StartCoroutine(ChangeCamera_Coroutine(changeToPlayer));
     }
@@ -128,7 +146,7 @@ public class TriggerDialogue : MonoBehaviour
         else
         {
             ChangeToNPCCamera();
-            dialogCanvas.SetActive(true);
+            ShowCanvas();
         }
         
         ScreenFade.current.FadeToTransparent();
