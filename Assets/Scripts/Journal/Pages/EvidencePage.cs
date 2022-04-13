@@ -58,6 +58,7 @@ public class EvidencePage : MonoBehaviour
     private void ShowEvidenceDetails(int index)
     {
         evidenceImage.sprite = _listOfEvidence[index].displayImage;
+        evidenceImage.enabled = true;
         evidenceName.text = _listOfEvidence[index].displayName;
         evidenceLocation.text = "Location: " + _listOfEvidence[index].locationFound.displayName;
         evidenceDescription.text = _listOfEvidence[index].description;

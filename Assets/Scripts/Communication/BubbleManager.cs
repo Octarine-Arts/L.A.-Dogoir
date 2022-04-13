@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BubbleManager : MonoBehaviour
 {
+    public PlayerSpecies player;
     public GameObject prefab;
     private List<SpeechBubble> messageQueue = new List<SpeechBubble> ();
 
@@ -53,4 +54,10 @@ public class BubbleManager : MonoBehaviour
             yield return null;
         }
     }
+}
+
+public enum PlayerSpecies
+{
+    Dog,
+    Human
 }

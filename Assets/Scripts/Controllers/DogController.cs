@@ -23,13 +23,17 @@ public class DogController : MonoBehaviour
 
     private void Start ()
     {
+        if (EventManager.I != null)
+            EventManager.I.PlayerSpawned (PlayerSpecies.Dog, dog.gameObject);
+
         if (!pview.IsMine)
         {
             Destroy (GetComponentInChildren<Camera> ().gameObject);
             Destroy (this);
             return;
         }
-        
+
+        Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableDogMovement += DisableMovement;
         Player_StaticActions.OnEnableDogMovement += EnableMovement;
     }

@@ -4,23 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Text;
+using Photon.Pun;
 
 public class CommunicationUI : MonoBehaviour
 {
     public LexiconEntry phrases;
     public LexiconEntry[] categories;
 
-    public GameObject button, phraseText, blankSpace, wordSelector;
-    public Transform UIContainer, phraseSelectPanel, phraseContainer, phrasePanel, categorySelectPanel, wordSelectPanel;
+    public GameObject button, phraseText, blankSpace, wordSelector, historyButton;
+    public Transform UIContainer, oldOrNewPanel, historyPanel, phraseSelectPanel, phraseContainer, phrasePanel, categorySelectPanel, wordSelectPanel;
     //public UnityEngine.EventSystems.EventSystem eventSystem;
 
     private int activeWordIndex;
     private int activePanel = -1;
     //private string[] history = new string[3];
     private Queue<string> history = new Queue<string> ();
+    private Button[] historyButtons;
+    private PhotonView photonView;
+    private BubbleManager dogBubbles, humanBubbles;
 
     private void Awake ()
     {
+        photonView = GetComponent<PhotonView> ();
+        photonView.ViewID = 69;
+
+        //historyButtons = historyPanel.GetComponentsInChildren<Button> ();
+        
         foreach (string phrase in phrases)
             PlaceButton (phrase, phraseSelectPanel, () => OnPhraseSelected (phrase));
         for (int c = 0; c < categories.Length; c++)
@@ -33,6 +42,15 @@ public class CommunicationUI : MonoBehaviour
         }
 
         SelectFirstButton (phraseSelectPanel);
+
+        if (EventManager.I != null)
+            EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
+    }
+
+    private void OnPlayersSpawned (GameObject human, GameObject dog)
+    {
+        humanBubbles = human.transform.parent.GetComponentInChildren<BubbleManager> ();
+        dogBubbles = dog.transform.parent.GetComponentInChildren<BubbleManager> ();
     }
 
     public void Submit ()
@@ -45,10 +63,8 @@ public class CommunicationUI : MonoBehaviour
             sb.Append (text.text + " ");
         }
         string message = sb.ToString ();
-        FindObjectOfType<BubbleManager> ().SpawnBubble (message);
+        SubmitMessage (message);
 
-        //print (sb.ToString ());
-        Close ();
         if (!history.Contains (message))
         {
             history.Enqueue (message);
@@ -58,6 +74,43 @@ public class CommunicationUI : MonoBehaviour
         }
 
         foreach (string h in history) print (h);
+    }
+
+    private void SubmitMessage (string message)
+    {
+        photonView.RPC ("PublishMessage", RpcTarget.All, PlayerManager.ThisPlayer, message);
+        Close ();
+    }
+
+    [PunRPC]
+    public void PublishMessage (PlayerSpecies player, string message)
+    {
+        switch (player)
+        {
+            case PlayerSpecies.Dog: dogBubbles.SpawnBubble (message);
+                break;
+            case PlayerSpecies.Human: humanBubbles.SpawnBubble (message);
+                break;
+        }
+    }
+
+    public void OnOldNewSelected (bool newPhrase)
+    {
+        if (newPhrase)
+            SetPanel (2);
+        else
+        {
+            historyPanel.OffTheWeans ();
+            foreach (string h in history)
+                PlaceButton (h, historyPanel, () => SubmitMessage (h));
+            
+            SetPanel (1);
+        }
+    }
+
+    public void OnHistorySelected (int button)
+    {
+
     }
 
     private void OnPhraseSelected (string phrase)
@@ -102,35 +155,56 @@ public class CommunicationUI : MonoBehaviour
     }
 
     private void NextPanel () => SetPanel (activePanel + 1);
-    private void PreviousPanel () => SetPanel (activePanel - 1);
-    private void Open () => SetPanel (0);
-    private void Close () => SetPanel (-1);
+    private void PreviousPanel () => SetPanel (activePanel - 1 == 1 ? 0 : activePanel - 1);
+    private void Open()
+    {
+        Player_StaticActions.DisableDogMovement();
+        Player_StaticActions.DisableHumanMovement();
+        SetPanel(0);
+    }
+    private void Close()
+    {
+        SetPanel(-1);
+    }
     private void SetPanel (int panelIndex)
     {
         activePanel = panelIndex;
         print (activePanel);
         if (activePanel < 0)
+        {
+            Player_StaticActions.EnableDogMovement ();
+            Player_StaticActions.EnableHumanMovement ();
             activePanel = -1;
-        else if (activePanel > 3)
-            activePanel = 1;
+        }
+        else if (activePanel > 5)
+        {
+            activePanel = 3;
+        }
 
         switch (activePanel)
         {
-            case 0: SelectFirstButton (phraseSelectPanel);
+            case 0: SelectFirstButton (oldOrNewPanel);
+                historyButton.SetActive (history.Count > 0);
                 break;
-            case 1: phraseContainer.GetChild (activeWordIndex).GetComponent<Button> ().Select ();
+            case 1: SelectFirstButton (historyPanel);
                 break;
-            case 2: SelectFirstButton (categorySelectPanel);
+            case 2: SelectFirstButton (phraseSelectPanel);
                 break;
-            case 3: SelectFirstButton (wordSelectPanel);
+            case 3: phraseContainer.GetChild (activeWordIndex).GetComponent<Button> ().Select ();
+                break;
+            case 4: SelectFirstButton (categorySelectPanel);
+                break;
+            case 5: SelectFirstButton (wordSelectPanel);
                 break;
         }
 
         UIContainer.gameObject.SetActive (activePanel >= 0);
-        phraseSelectPanel.gameObject.SetActive (activePanel == 0);
-        phrasePanel.gameObject.SetActive (activePanel == 1);
-        categorySelectPanel.gameObject.SetActive (activePanel == 2);
-        wordSelectPanel.gameObject.SetActive (activePanel == 3);
+        oldOrNewPanel.gameObject.SetActive (activePanel == 0);
+        historyPanel.gameObject.SetActive (activePanel == 1);
+        phraseSelectPanel.gameObject.SetActive (activePanel == 2);
+        phrasePanel.gameObject.SetActive (activePanel == 3);
+        categorySelectPanel.gameObject.SetActive (activePanel == 4);
+        wordSelectPanel.gameObject.SetActive (activePanel == 5);
     }
 
     private void PlacePhrase (string phrase)
