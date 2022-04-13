@@ -27,12 +27,5 @@ public class WorldItem : MonoBehaviour, IInteractable
         //memoryVariableStorage.SetValue(evidence_SO.yarnString, true);   
         evidence_SO.isFound = true;
         photonView.RPC("ItemInteracted", RpcTarget.Others);
-        Destroy(gameObject);
-    }
-
-    [PunRPC]
-    private void ItemInteracted()
-    {
-        Destroy(gameObject);
     }
 }
