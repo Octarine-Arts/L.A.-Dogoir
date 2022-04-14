@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Phrases
   m_EditorClassIdentifier: 
   entries:
-  - I found _ near _
+  - Found _
+  - Found _ near _
+  - _ is _
   - _ smells like _
-  - Look at _
-  - Consider _
-  - _
+  - Need _
+  - Look for _
+  - Go _

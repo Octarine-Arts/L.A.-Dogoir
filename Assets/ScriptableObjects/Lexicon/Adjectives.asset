@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Adjectives
   m_EditorClassIdentifier: 
   entries:
-  - Angry
   - Loud
-  - Pointy
+  - Big
+  - Small
+  - Lost
+  - Sharp
   - Good
   - Bad
-  - Scary
+  - Brown
+  - Red

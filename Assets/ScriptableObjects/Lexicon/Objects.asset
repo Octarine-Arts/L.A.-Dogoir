@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - Stick
-  - Ball
-  - Food
-  - Water
+  - Bone
+  - Rubbish
+  - Cheese
+  - Medicine
+  - Window
