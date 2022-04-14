@@ -24,15 +24,8 @@ public class WorldItem : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        //memoryVariableStorage.SetValue(evidence_SO.yarnString, true);   
+        if(!string.IsNullOrEmpty(evidence_SO.yarnString)) memoryVariableStorage.SetValue(evidence_SO.yarnString, true);   
         evidence_SO.isFound = true;
         photonView.RPC("ItemInteracted", RpcTarget.Others);
-        Destroy(gameObject);
-    }
-
-    [PunRPC]
-    private void ItemInteracted()
-    {
-        Destroy(gameObject);
     }
 }

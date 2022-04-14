@@ -50,7 +50,6 @@ public class TriggerDialogue : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log(Vector3.Distance(_humanGO.transform.position, transform.position), this);
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
             {
                 
@@ -98,7 +97,7 @@ public class TriggerDialogue : MonoBehaviour
 
     private void StartDialogue()
     {
-        //suspectSO.hasTalked = true;
+        suspectSO.hasTalked = true;
         ChangeCamera(false);
     }
 
