@@ -25,9 +25,8 @@ public class Journal_Manager : MonoBehaviour
 
 	private void Update()
 	{
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            Debug.Log("ASd");
             _menuManager.OpenMenu("Contents Page");
             Cursor.lockState = CursorLockMode.None;
             Player_StaticActions.DisableHumanMovement();
@@ -43,7 +42,7 @@ public class Journal_Manager : MonoBehaviour
 
     private void RemoveObject()
     {
-        //if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) Destroy(gameObject);
+        if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) Destroy(gameObject);
     }
 
     private void OnApplicationQuit()

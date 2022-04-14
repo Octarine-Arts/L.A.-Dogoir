@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1802092079098578459}
   - component: {fileID: 1802092079098578452}
-  - component: {fileID: 1802092079098578453}
+  - component: {fileID: -1056206960827652395}
   m_Layer: 6
   m_Name: Post-process Volume
   m_TagString: Untagged
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1802092079098578453
+--- !u!114 &-1056206960827652395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,11 +55,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802092079098578454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 007764e224aee7c47a8ce425739d205f, type: 2}
-  isGlobal: 1
+  m_IsGlobal: 1
+  priority: 0
   blendDistance: 0
   weight: 1
-  priority: 0
+  sharedProfile: {fileID: 11400000, guid: 659b8e9adaa6b4947a011ae0915f68a7, type: 2}
