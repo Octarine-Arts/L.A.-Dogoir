@@ -1656,7 +1656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425624966886310272, guid: 3507914fa2ce46740b87f2750d7cd997, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6425624966886310273, guid: 3507914fa2ce46740b87f2750d7cd997, type: 3}
       propertyPath: m_Pivot.x
@@ -55710,7 +55710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -68062,7 +68062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1680229844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70937,6 +70937,10 @@ PrefabInstance:
     - target: {fileID: 3408113995394245773, guid: 5ae12f927b959f84daadd464cd9ece7f, type: 3}
       propertyPath: sceneViewId
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697682574655196511, guid: 5ae12f927b959f84daadd464cd9ece7f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae12f927b959f84daadd464cd9ece7f, type: 3}

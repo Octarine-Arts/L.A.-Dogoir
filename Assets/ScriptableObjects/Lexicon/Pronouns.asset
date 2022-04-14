@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Pronouns
   m_EditorClassIdentifier: 
   entries:
-  - Stick
-  - Ball
-  - Food
-  - Water
+  - I
+  - You
+  - Me
+  - He
+  - She
+  - They
