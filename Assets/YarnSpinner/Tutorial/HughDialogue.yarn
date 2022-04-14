@@ -1,7 +1,7 @@
 ﻿title: HughDialogue
 tags: Detective
 ---
-<<if $HughIsInitialGreeting ==  true>>
+<<if $HughIsInitialGreeting ==  false>>
 <<if $CorneliusMetDetectives == true>>
 
 Hugh: I’ve just eaten half a gallon of dog hair, so keep your dog away from me please. I don’t much feel like dessert.
@@ -10,21 +10,22 @@ Hugh: I didn’t do it deliberately! I made the mistake of buying a hotdog from 
 Detective: I’m looking for the vendor, actually. Where is he?
 Hugh: I think he wheeled his little stand out of the park a while ago. Probably for the best. I wouldn’t bother searching. I had to throw my hotdog in the bin.
 
-<<set $HughIsInitialGreeting = false>>
+<<set $HughIsInitialGreeting = true>>
 <<set $HughMetDetectives to true>>
 
 <<if $CorneliusMetDetectives == false>>
 Hugh: Can I help you?
-Detective: Just having a stroll, no need to worry there citizen
+Detective: Just enjoying an evening stroll, don’t mind me.
+
 <<endif>>
 
 <<stop>>
 <<endif>>
 <<endif>>
 
-<<if $HughIsInitialGreeting == false>>
+<<if $HughIsInitialGreeting == true>>
 
-Hugh: I already told ya, I don't know where he is! But if you find him you tell me so I can get my money back. I hate throwing food away
+Hugh: I already told ya, I don’t know where he is! But if you find him tell him I want my darn money back!
 
 //Need reworking
 

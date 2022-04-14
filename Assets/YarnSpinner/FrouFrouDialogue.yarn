@@ -2,14 +2,14 @@
 tags:NPC, Detective, Dog
 position: -338,-113
 ---
-<<if $FrouFrouIsInitialGreeting == true>>
+<<if $FrouFrouIsInitialGreeting == false>>
 
 FrouFrou: Goodness Gracious, what breed are you, darling, you look positively novel! No, don’t tell me, let me guess…. You are a…pointer of some kind?
 Archie: I’m a collie, actually.
 FrouFrou: A collie! How delightful! I’m not used to conversing with what you might call lesser breeds, you see. Not that you seem lesser, darling! You seem simply enchanting.
-<<set $FrouFrouIsInitialGreeting to false>>
+<<set $FrouFrouIsInitialGreeting to true>>
 
-<<elseif $FrouFrouIsInitialGreeting == false>>
+<<elseif $FrouFrouIsInitialGreeting == true>>
 
 <<set $FrouFrouRandomGreeting to random_range(0,2)>>
 <<if $FrouFrouRandomGreeting == 0 >>

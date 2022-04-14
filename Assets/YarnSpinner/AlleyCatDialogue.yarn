@@ -2,14 +2,14 @@
 tags:NPC, Detective, Dog
 position: -338,-113
 ---
-<<if $OMalleyIsInitialGreeting == true>>
+<<if $OMalleyIsInitialGreeting == false>>
 
 OMalley: I don’t do the whole dog-cat thing so don’t even try, pal. I could eat a mutt like you for breakfast.
 Archie: I’m just here to ask you some questions, sir, about the gunshot that sounded earlier.
 OMalley: Oh. I don’t know much about that.
-<<set $OMalleyIsInitialGreeting to false>>
+<<set $OMalleyIsInitialGreeting to true>>
 
-<<elseif $OMalleyIsInitialGreeting == false>>
+<<elseif $OMalleyIsInitialGreeting == true>>
 
 <<set $OMalleyRandomGreeting to random_range(0,2)>>
 <<if $OMalleyRandomGreeting == 0 >>
@@ -98,6 +98,7 @@ OMalley: Now why would I do extra work for something that got nothing to do with
 Archie: I’ll get it myself then.
 OMalley: I don’t think so. This is my turf, pal. I’ve answered your dumb questions real nice, so how about you leave me alone? I still got food to find.
 
+<<set $OMalleyWillNotGetSyringe to true>>
 //player needs to lead cat away with rat
 
 <<jump OMalleyQuestions>>

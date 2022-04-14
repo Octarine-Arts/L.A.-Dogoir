@@ -2,16 +2,16 @@
 tags:NPC, Detective
 position: -338,-113
 ---
-<<if $PeggyIsInitialGreeting == true>>
+<<if $PeggyIsInitialGreeting == false>>
 
 Peggy: I suppose you think it was me, don’t you, Detective?
 Detective: And why would you say that?
 Peggy: It’s always the wife or husband, isn’t that true?
 Detective: Perhaps you can tell me that.
 Peggy: I’ve just lost my husband, Detective. Jack wasn’t John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack. I don’t know what I’ll do without him.
-<<set $PeggyIsInitialGreeting to false>>
+<<set $PeggyIsInitialGreeting to true>>
 
-<<elseif $PeggyIsInitialGreeting == false>>
+<<elseif $PeggyIsInitialGreeting == true>>
 
 <<set $PeggyRandomGreeting to random_range(0,2)>>
 <<if $PeggyRandomGreeting == 0 >>
@@ -46,8 +46,12 @@ position: 69,-84
 <<jump PeggyWhoWantsJackDead>>
 
 <<if $Dale == true>> 
+<<if $DetectiveHasFoundSyringe == false>>
+<<if $PeggySpokenAboutGunshot == true>>
 -> Detective:  Dale?
 <<jump PeggyKnowsDale>>
+<<endif>>
+<<endif>>
 <<endif>>
 
 <<if $Loretta == true>> 
@@ -58,6 +62,11 @@ position: 69,-84
 <<if $Johhny == true>> 
 -> Detective:  Johnny?
 <<jump PeggyKnowsJohhny>>
+<<endif>>
+
+<<if $JohnnySawPeggyFromAlley == true>>
+-> Detective: Johnny saw you outside
+<<jump PeggySeenOutside>>
 <<endif>>
 
 <<if $DetectiveHasFoundTickets == true>>
@@ -76,8 +85,15 @@ position: 69,-84
 <<endif>>
 
 <<if $DetectiveHasFoundSyringe == true>>
+<<if $PeggySpokenAboutAlley == true>>
 -> Detective:  Drugs in the alley?
 <<jump AboutTheSyringe>>
+<<endif>>
+<<endif>>
+
+<<if $DetectiveHasSpokenToPeggySyringe == true>>
+-> Detective:  Why did you hide it?
+<<jump WhyDidYouHideIt>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -100,6 +116,7 @@ Detective: Where were you when the gunshot went off?
 Peggy: I was sitting right here. The lights had just gone out. Scared me something horrid, I got up to help Dale- Mr. Butterbur, I mean - with the lights.
 
 <<set $Peggy to true>>
+<<set $PeggySpokenAboutGunshot to true>>
 <<jump PeggyQuestions>>
 ===
 title: PeggyComeHereOften
@@ -147,20 +164,34 @@ Peggy: Forgive me for being harsh, Detective, but that woman is a golddigger and
 title: PeggyKnowsJohhny
 position: 264,227
 ---
+Detective: Are you familiar with Johnny “Two Sleeves” Malone:
+Peggy: Not at all, but even so he makes me quite uncomfortable. He seems like a real thug.
+
+<<jump PeggyQuestions>>
+
+===
+
+title: PeggySeenOutside
+position: 264,227
+---
 Detective: You were seen running in from the back alley when the lights turned back on - any reason you were outside?
 Peggy: I’m not sure why that matters, Detective. I could have hardly murdered my husband from outside. Surely that proves my innocence.
 Detective: Just answer the question, Mrs. Harlow.
 Peggy: Can’t a woman go out for a breath of fresh air?
 
-//if after hearing this, the player goes outside, they  will remark, “Mrs. Harlow came out for a breath of fresh air…next to the bins?”
+//
+<<set $PeggySpokenAboutAlley to true>>
 <<jump PeggyQuestions>>
 
 ===
 title: TicketsToKingKong
 position: 368,82
 ---
-Detective: I found two tickets to see King Kong in Mr. Harlow’s pocket. I don’t suppose you know anything about that?
-Peggy:i aint know anything about that detective, maybe you should talk to that “professional” over there. 
+Detective: I know this might seem irrelevant, ma’am, but did you and your husband go to see King Kong last night?
+Peggy: No… we didn’t. I was at home last night. Jack…well, I assumed Jack was here in the bar.
+Detective: Could he have been at the cinema with someone else? I found two King Kong tickets in your husband's pocket, you see.
+Peggy: I know nothing about that, Detective. I suppose you should go and ask that…that woman who calls herself an actress.
+ 
 <<set $DetectiveHasSpokenToPeggyTickets to true>>
 
 <<jump PeggyQuestions>>
@@ -168,8 +199,11 @@ Peggy:i aint know anything about that detective, maybe you should talk to that �
 title: WhereIsTheRing
 position: 368,82
 ---
-Detective: I noticed Jack isn’t wearing his wedding ring, any thoughts on the matter?
-Peggy: Yeah, me and ol’ Jack are having a break. I just like to make sure he’s looked after.
+Detective: I’m sorry I have to ask this, ma’am, but I noticed your husband didn’t have a wedding ring on his finger…?
+Peggy: I see what you’re insinuating, Detective. I’m not ashamed to admit that we had problems. But what marriage does not have its problems, for goodness sake?
+Detective: But I see you’re still wearing your ring?
+Peggy: Of course. Jack just… well, men deal with their problems differently, I suppose.
+
 <<set $DetectiveHasSpokenToPeggyMissingRing to true>>
 
 <<jump PeggyQuestions>>
@@ -177,8 +211,9 @@ Peggy: Yeah, me and ol’ Jack are having a break. I just like to make sure he�
 title: AboutTheFlask
 position: 368,82
 ---
-Detective: You’re husband has been bring drinks to a bar. Got anything to say about that?
-Peggy: yeah hes a boozer, Dale has been supporting him while hes been laid off.
+Detective: I found a flask on your husband. Did he drink a lot?
+Peggy: Jack had recently been laid off at work, I think he found it cheaper to simply bring in his own alcohol rather than buy drinks here. He told me Dale was fine with it. 
+
 <<set $DetectiveHasSpokenToPeggyFlask to true>>
 
 <<jump PeggyQuestions>>
@@ -186,9 +221,18 @@ Peggy: yeah hes a boozer, Dale has been supporting him while hes been laid off.
 title: AboutTheSyringe
 position: 368,82
 ---
-Detective: you were seen out in the alleyway and theres a syringe out there, know anything about that?
-Peggy: yeah dale gave me some to sleep
+Detective: The reason I ask about you being in the alleyway, Mrs. Harlow, is that there was a syringe out there that appears to have been recently used. I don’t suppose you know anything about that?
+Peggy: You don’t give up, do you Detective? Very well, I did use the syringe. Understand that when Jack drinks too much he can get awfully violent. It was just something to get him to sleep. I wanted to get him home quietly, without any issues. Dale said he had the perfect thing and that he’d help get him into a taxi one he was sleeping. I don’t know, perhaps if I hadn’t given it to him he wouldn’t have been there to get shot? Could that have changed how things turned out? Oh God, would he still be alive if he had been awake?
+
 <<set $DetectiveHasSpokenToPeggySyringe to true>>
+
+<<jump PeggyQuestions>>
+===
+title: WhyDidYouHideIt
+position: 368,82
+---
+Detective: Why did you try to hide the syringe?
+Peggy: I was just so scared. With the lights going out and then the gunshot…I don’t know Detective, I just panicked! How would it look, a respectable wife using drugs on her own husband? 
 
 <<jump PeggyQuestions>>
 ===
