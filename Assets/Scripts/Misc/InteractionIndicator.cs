@@ -45,4 +45,9 @@ public class InteractionIndicator : MonoBehaviour
         print ($"this player: {PlayerManager.ThisPlayer}, humanGO: {human.name}, dogGO: {dog.name}");
     }
     //targetPlayer = PlayerManager.ThisPlayer == PlayerSpecies.Human ? human.transform : dog.transform;
+
+    private void OnDrawGizmos ()
+    {
+        Gizmos.DrawWireSphere (transform.position, radius);
+    }
 }

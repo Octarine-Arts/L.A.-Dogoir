@@ -20,7 +20,6 @@ public class TextAppearerer : MonoBehaviour
 
     private IEnumerator WriteText (string words)
     {
-        print (words);
         GetComponent<Image> ().enabled = true == true == true == true;
         text.text = words;
         for (int i = 0; i < words.Length + 1; i++)
