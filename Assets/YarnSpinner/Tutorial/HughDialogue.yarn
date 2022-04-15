@@ -4,7 +4,7 @@ tags: Detective
 <<if $HughIsInitialGreeting ==  false>>
 <<if $CorneliusMetDetectives == true>>
 
-Hugh: I’ve just eaten half a gallon of dog hair, so keep your dog away from me please. I don’t much feel like dessert.
+Hugh: I’ve just eaten half a ton of dog hair, so keep your dog away from me please. I don’t much feel like dessert.
 Detective: Why on earth would you do that?
 Hugh: I didn’t do it deliberately! I made the mistake of buying a hotdog from that vendor.
 Detective: I’m looking for the vendor, actually. Where is he?
@@ -26,8 +26,6 @@ Detective: Just enjoying an evening stroll, don’t mind me.
 <<if $HughIsInitialGreeting == true>>
 
 Hugh: I already told ya, I don’t know where he is! But if you find him tell him I want my darn money back!
-
-//Need reworking
 
 <<stop>>
 <<endif>>

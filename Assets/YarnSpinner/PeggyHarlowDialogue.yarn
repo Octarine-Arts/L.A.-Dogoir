@@ -123,7 +123,7 @@ title: PeggyComeHereOften
 position: 252,-520
 ---
 Detective: Do you come to the bar with your husband often?
-Peggy: Goodness me, no. Not if I can avoid it. An establishment like this is no place for a lady. Jack just…loses track of time, sometimes. I come to…collect him, occasionally. When he forgets.
+Peggy: Goodness me, no. Not if I can avoid it. An establishment like this is no place for a lady. Jack just…loses track of time, sometimes. I come to… collect him, occasionally. When he forgets.
 
 <<set $Peggy to true>>
 <<jump PeggyQuestions>>

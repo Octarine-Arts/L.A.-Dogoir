@@ -17,7 +17,7 @@ Detective: Why, anything we need to be peeping on?
 <<Animate "Wave">>
 Johnny: What now, buttons?
 <<elseif $JohnnyRandomGreeting == 1>>
-Johnny: Forget something, Dick?
+Johnny: Forget something?
 <<elseif $JohnnyRandomGreeting == 2>>
 Johnny: Mr. Gumshoe returns.
 <<endif>>
@@ -43,9 +43,6 @@ position: 69,-84
 
 -> Detective: Mr.Harlow?
 <<jump JohnnyDoYouKnowJack>>
-
--> Detective: How did you know him?
-<<jump JohnnyHowDidYouKnowHim>>
 
 <<if $Dale == true>> 
 -> Detective:  Dale?
@@ -124,7 +121,7 @@ Detective: You don’t seem too beat up about Mr. Harlow’s murder.
 Johnny: Jack Harlow got what was coming to him. Guy couldn’t buy dog soup, but he’s in here begging Dale for booze and chatting up broads most nights. Thinks he’s a hotshot, but he ain’t squat.
 
 <<set $Johnny to true>>
-<<jump JohnnyQuestions>>
+<<jump JohnnyHowDidYouKnowHim>>
 ===
 
 title: JohnnyHowDidYouKnowHim
@@ -178,7 +175,7 @@ Johnny: Mad enough to shoot him, right? That’s what you’re getting at, ain�
 title: AboutTheBloodInTheLadies
 position: 495,-14
 ---
-Detective: I have a witness who can place you in the ladies bathroom at the time of the murder.
+Detective: I have a witness who can place you in the *ladies* bathroom at the time of the murder.
 Johnny: Our little canary squawked, did she? Well, so what? If I was in the bathroom, I weren’t out shooting that pill Harlow, was I?
 Detective: You said you were in the men’s bathroom. You lied.
 Johnny: Well I didn’t want to come right out and say I was busy roughing up a broad, did I? But I suppose she told you about all that then. Her fella owed me money, he weren’t paying. So I intimidated her a bit, is all. It’s just business.

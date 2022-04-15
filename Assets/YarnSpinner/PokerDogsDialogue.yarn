@@ -17,7 +17,7 @@ Lean: He’s talking about the gun. We were just minding our business, playing o
 Bean: Something threw it.
 Mean: Something? Probably a human there, bud. 
 Lean: And how do you know? None of us saw what it was.
-Mean: Because of the opposable thumbs, you idiot. Who else could have thrown it but a human?
+Mean: Because of the opposable thumbs, you idiot. Who else could have *thrown* it but a human?
 Lean: Well I don’t know! There’s some really big rats around, ok?!
 Bean: You think a rat lugged a gun through the bathroom window?
 Lean: Well remember that really huge rat at last week’s poker session? She came in through the bathroom window.
@@ -77,9 +77,28 @@ Mean: Here you go!
 <<endif>>
 <<endif>>
 
-
+<<if $DetectiveTriedToOpenDoor == true>>
 -> Archie: I need a distraction for my partner...
 <<jump HumansTalkingSmack>>
+<<endif>>
+
+<<if $ArchieInBathroom == true>>
+<<if  $PokerDogsIsInitialGreeting == false>>
+Bean: Well what do we do now?
+Mean: You mean what do you do now, it landed on my side of the table, I own it!
+Lean: No way! I’m the one who decided to set up here, so it should be mine!
+Bean: Well I’ll play ya for it!
+<<endif>>
+<<endif>>
+
+<<if $ArchieInBathroom == true>>
+<<if  $PokerDogsIsInitialGreeting == true>>
+Mean: Reckon the fuzzball will be back?
+Bean: Nah, he’s run away with his tail between his legs
+Lean: That’s a damn shame, I wish he had found that bone we lost…
+<<endif>>
+<<endif>>
+
 ===
 title: HumansTalkingSmack
 position: 283,-340
@@ -94,6 +113,6 @@ Bean, Mean, & Lean: *gasp*
 Archie: - unloyal - 
 Bean, Mean, & Lean: *gasp*
 Archie: - 
-
+<<set $ArchieCreatedDistraction to true>>
 <<stop>>
 ===

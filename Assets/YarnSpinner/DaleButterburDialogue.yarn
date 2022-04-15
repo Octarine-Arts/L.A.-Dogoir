@@ -60,7 +60,7 @@ position: -307,-131
 
 <<if $DetectiveTriedToOpenDoor == true>>
 -> Detective: The door?
-<<jump Storeroom>>
+<<jump office>>
 <<endif>>
 
 <<if $DetectiveHasFoundShotgun == true>>
@@ -136,7 +136,7 @@ title: Peggy
 position: 209,53
 ---
 Detective: How well do you know Peggy Harlow?
-Dale: I hardly know her at all. She came in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
+Dale: I hardly know her at all. She comes in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
 
 <<jump Questions>>
 ===
@@ -157,10 +157,10 @@ Detective: What’s the deal with Johnny Malone?
 Dale: I know he looks rough, but he’s a swell guy. He’s got a little share in the bar with me, so we’re sort of like business partners. He’s my security on busier nights. He’s got such a sour puss people tend to behave when he’s around. Until now, I guess…
 
 ===
-title: Storeroom
+title: office
 position: 141,457
 ---
-Detective: Can you let me into the storeroom? I’d like to look around.
+Detective: Can you let me into the office? I’d like to look around.
 Dale: I’d love to help, Detective, but I’m a little busy right now. I’ll open it up when I’ve cleaned up the mess here.
 
 <<jump Questions>>

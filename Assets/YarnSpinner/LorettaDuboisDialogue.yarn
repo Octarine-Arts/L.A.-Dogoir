@@ -4,9 +4,9 @@ position: -338,-113
 ---
 <<if $LorettaIsInitialGreeting == false>>
 
-Loretta: This is dreadful! Just dreadful! How could this happen?
-Detective: I know this must be difficult for you, ma’am, but I’d like to ask you a few questions.
-Loretta: I’ll try, detective, but I’m afraid I’m terribly out of sorts at the moment!
+Loretta: I’m much too upset about current events to talk, Detective. This is just too much for my nerves!
+Detective: I understand that it must be difficult, ma’am, but I really must insist you answer a few questions. I have to find out everything I can if we’re to catch the murderer.
+Loretta: Very well. I’m an actress you know, I can master my emotions under any circumstances. Even ones as trying as these.
 <<set $LorettaIsInitialGreeting to true>>
 
 <<elseif $LorettaIsInitialGreeting == true>>
@@ -49,7 +49,7 @@ position: 69,-84
 
 <<if $DaleKnowsAboutLoretta == true>> 
 -> Detective:  Closest to the Victim?
-<<jump LorettaKnowsDale>>
+<<jump DaleKnowsAboutLoretta>>
 <<endif>>
 
 <<if $Peggy == true>> 
@@ -121,9 +121,7 @@ title: LorettaDoYouKnowJack
 position: 372,-273
 ---
 Detective: Did you know Jack Harlow well?
-Loretta: Not particularly, he was a regular here, that much I knew. He would watch me perform, he seemed to have an appreciation for my music. 
-Detective: You seem very upset for a mere acquaintance.
-Loretta: A man has died, Detective! How cold-hearted do you think I am?
+Loretta: Not particularly well… he was a regular here, that much I knew. He would watch me perform, he seemed to have an appreciation for my music. Most people do, of course.
 
 <<set $Loretta to true>>
 <<jump LorettaQuestions>>
@@ -211,16 +209,16 @@ position: -191,263
 <<set $lorettaRandomGoodbye to random_range(0,2)>>
 <<if $lorettaRandomGoodbye == 0 >>
 <<Animate Dale "GoodbyeWave">>
-Detective: Thank you for your time, Mrs. Harlow.
-Peggy: May I grieve in peace, now?
+Detective: Thank you for your time.
+Loretta: Do your job detective
 <<elseif $lorettaRandomGoodbye == 1>>
 <<Animate Dale "GoodbyeWave">>
-Detective: That’ll be all, ma’am.
-Peggy: Find Jack’s murderer, Detective. 
+Detective: That’s all for now, ma’am.
+Loretta: Just find whoever did this detective
 <<elseif $lorettaRandomGoodbye == 2>>
 <<Animate Dale "GoodbyeWave">>
-Detective: Thanks.
-Peggy: Farewell.
+Detective: Thank you for your cooperation
+Loretta: Anything to find the murderer.
 <<endif>>
 
 <<stop>>
