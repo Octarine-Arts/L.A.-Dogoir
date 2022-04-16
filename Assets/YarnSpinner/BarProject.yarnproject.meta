@@ -9,14 +9,10 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
-  - {fileID: 6391573757903218779, guid: 7f5c954f9aa1a4b4e9ad36e1746dccaa, type: 3}
   - {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
-  - {fileID: 6391573757903218779, guid: 3737b653d20540441a1098d090745bc8, type: 3}
+  - {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
   - {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
   - {fileID: 6391573757903218779, guid: 28fefdafd6a04bb49b00063973434267, type: 3}
-  - {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
-  - {fileID: 6391573757903218779, guid: 29be29313c4157a46aa56773ae53f672, type: 3}
-  - {fileID: 6391573757903218779, guid: e343559e5356b724e9343ad170cfc296, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $DaleIsInitialGreeting

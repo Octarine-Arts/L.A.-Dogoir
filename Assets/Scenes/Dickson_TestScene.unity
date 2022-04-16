@@ -246,7 +246,7 @@ MonoBehaviour:
   m_text: Object
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
-  m_sharedMaterial: {fileID: -7468560525922501679, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
+  m_sharedMaterial: {fileID: -5751901506552925358, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_text: People
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
-  m_sharedMaterial: {fileID: -7468560525922501679, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
+  m_sharedMaterial: {fileID: -5751901506552925358, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fill Phrase
+  m_text: fill phrase
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1c246542e71242478649a58516136b2, type: 2}
   m_sharedMaterial: {fileID: -648274637869195883, guid: f1c246542e71242478649a58516136b2, type: 2}
@@ -2176,6 +2176,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FillPhrase_Text
       objectReference: {fileID: 0}
+    - target: {fileID: 2364951026457739555, guid: 981136d06b7d5b34c82de4b667acb21d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
+    - target: {fileID: 2364951026457739555, guid: 981136d06b7d5b34c82de4b667acb21d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1261048817966629800, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 981136d06b7d5b34c82de4b667acb21d, type: 3}
 --- !u!224 &1335917370 stripped
@@ -2575,6 +2583,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3761242443208214742, guid: ae5c12fc6280cca478f7cb26da51bf12, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
+    - target: {fileID: 3761242443208214742, guid: ae5c12fc6280cca478f7cb26da51bf12, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1261048817966629800, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae5c12fc6280cca478f7cb26da51bf12, type: 3}
 --- !u!224 &1614243091 stripped
@@ -2946,7 +2962,7 @@ MonoBehaviour:
   m_text: Adjective
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
-  m_sharedMaterial: {fileID: -7468560525922501679, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
+  m_sharedMaterial: {fileID: -5751901506552925358, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3193,7 +3209,7 @@ MonoBehaviour:
   m_text: Other
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
-  m_sharedMaterial: {fileID: -7468560525922501679, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
+  m_sharedMaterial: {fileID: -5751901506552925358, guid: 82970ce3fe601d744a9a9e72ec1e8f96, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
