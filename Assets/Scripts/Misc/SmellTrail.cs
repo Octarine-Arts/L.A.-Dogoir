@@ -59,7 +59,6 @@ public class SmellTrail : MonoBehaviour
 
     private void Update ()
     {
-        print ($"active? {active}, radius: {radius}");
         if (!active && radius <= 0)
         {
             if (Input.GetKeyDown (KeyCode.E) && F.FastDistance (transform.position, target.position) < distanceToActivate * distanceToActivate)
