@@ -1,32 +1,34 @@
 ﻿title: HughDialogue
 tags: Detective
 ---
-<<if $HughIsInitialGreeting ==  false>>
 <<if $CorneliusMetDetectives == true>>
+<<jump CorneliusMetDetectives>>
+<<endif>>
 
+<<if $CorneliusMetDetectives == false>>
+Hugh: Can I help you?
+Detective: Just enjoying an evening stroll, don’t mind me.
+<<endif>>
+
+===
+title: CorneliusMetDetectives
+position: 187,-234
+---
+<<if $HughIsInitialGreeting == false>>
 Hugh: I’ve just eaten half a ton of dog hair, so keep your dog away from me please. I don’t much feel like dessert.
 Detective: Why on earth would you do that?
 Hugh: I didn’t do it deliberately! I made the mistake of buying a hotdog from that vendor.
 Detective: I’m looking for the vendor, actually. Where is he?
 Hugh: I think he wheeled his little stand out of the park a while ago. Probably for the best. I wouldn’t bother searching. I had to throw my hotdog in the bin.
 
-<<set $HughIsInitialGreeting = true>>
-<<set $HughMetDetectives to true>>
-
-<<if $CorneliusMetDetectives == false>>
-Hugh: Can I help you?
-Detective: Just enjoying an evening stroll, don’t mind me.
-
-<<endif>>
-
+<<set $HughIsInitialGreeting to true>>
 <<stop>>
-<<endif>>
-<<endif>>
 
-<<if $HughIsInitialGreeting == true>>
+<<elseif $HughIsInitialGreeting == true>>
 
 Hugh: I already told ya, I don’t know where he is! But if you find him tell him I want my darn money back!
 
 <<stop>>
 <<endif>>
+
 ===
