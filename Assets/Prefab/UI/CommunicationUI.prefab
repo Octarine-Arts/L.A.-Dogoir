@@ -567,9 +567,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phrases: {fileID: 11400000, guid: 12d2e2d6a35bbbe499073047d55bfa6e, type: 2}
   categories:
+  - {fileID: 11400000, guid: 62c8bdd38961a124fbae91476f7179bb, type: 2}
+  - {fileID: 11400000, guid: 076a93aae7cd2f34283c21075d9bdace, type: 2}
   - {fileID: 11400000, guid: 5da7487f9dbced4469695b0745f60332, type: 2}
   - {fileID: 11400000, guid: 6bcaff72cdf45344a98e6852446e6560, type: 2}
   - {fileID: 11400000, guid: b180b982fb7f9b042bf9a4cd88de80c9, type: 2}
+  - {fileID: 11400000, guid: 37b545277b57b9f44a061d98379a2281, type: 2}
   button: {fileID: 1519917594987340635, guid: f34ee1bdce863e24eaf0bbf4daa165f5, type: 3}
   phraseText: {fileID: 1684018891992331752, guid: dd1d37184a67e534fb71ae52ce0c23de, type: 3}
   blankSpace: {fileID: 3185624825457323669, guid: 38a900f31dd599943adc8a9f70b9079e, type: 3}
