@@ -8,8 +8,8 @@ Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so 
 Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
 
 <<elseif $CorneliusMetDetectives == false>>
-Dan: Something to eat officer? And something for the pooch?
-Detective: No thanks, we don’t eat garbage
+Dan: Wanna dog, officer?
+Detective: No thanks, I’ve already got one right here. Isn’t that right, Archie?
 
 <<endif>>
 

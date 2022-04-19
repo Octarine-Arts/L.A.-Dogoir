@@ -2,14 +2,14 @@
 tags:NPC, Detective
 position: -522,-132
 ---
-<<if $DaleIsInitialGreeting == true>>
+<<if $DaleIsInitialGreeting == false>>
 
 Dale: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
 Detective: I’d like to ask you some questions, actually.
 Dale: Of course.
-<<set $DaleIsInitialGreeting to false>>
+<<set $DaleIsInitialGreeting to true>>
 
-<<elseif $DaleIsInitialGreeting == false>>
+<<elseif $DaleIsInitialGreeting == true>>
 
 <<set $DaleRandomGreeting to random_range(0,3)>>
 <<if $DaleRandomGreeting == 0 >>
@@ -60,7 +60,7 @@ position: -307,-131
 
 <<if $DetectiveTriedToOpenDoor == true>>
 -> Detective: The door?
-<<jump Storeroom>>
+<<jump office>>
 <<endif>>
 
 <<if $DetectiveHasFoundShotgun == true>>
@@ -136,7 +136,7 @@ title: Peggy
 position: 209,53
 ---
 Detective: How well do you know Peggy Harlow?
-Dale: I hardly know her at all. She came in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
+Dale: I hardly know her at all. She comes in sometimes to pick up her drunk excuse for a husband. I felt sorry for her, honestly.
 
 <<jump Questions>>
 ===
@@ -157,10 +157,10 @@ Detective: What’s the deal with Johnny Malone?
 Dale: I know he looks rough, but he’s a swell guy. He’s got a little share in the bar with me, so we’re sort of like business partners. He’s my security on busier nights. He’s got such a sour puss people tend to behave when he’s around. Until now, I guess…
 
 ===
-title: Storeroom
+title: office
 position: 141,457
 ---
-Detective: Can you let me into the storeroom? I’d like to look around.
+Detective: Can you let me into the office? I’d like to look around.
 Dale: I’d love to help, Detective, but I’m a little busy right now. I’ll open it up when I’ve cleaned up the mess here.
 
 <<jump Questions>>
@@ -168,10 +168,13 @@ Dale: I’d love to help, Detective, but I’m a little busy right now. I’ll o
 title: Shotgun
 position: 141,457
 ---
-Detective: You gotta license for that buttercup?
-Dale: Yeah 
-Detective: Do you have any other weapons I should know about 
-Dale: oh yeah, i gave one to ms.dubois to look after herself, lotsa unsavourvy characters hanging about.
+Detective: That’s a helluva big gun you’ve got behind the bar there, Mr. Butterbur.
+Dale: She’s a beauty, isn’t she? I know she might seem like overkill to some, but we get some unsavory characters in here and you can never be too careful. No need to use her, of course, just laying eyes on her dissuades anyone with….disagreeable ideas.
+Detective: You own any other guns I should know about?
+Dale: No, that’s all I have. Except the pistol I gave to Loretta, of course.
+Detective: You gave Miss Dubois a pistol?
+Dale: She was feeling a little uneasy coming into work every week. As I said, we get some unsavory characters. She told me she’d feel better knowing she could defend herself. So I did what any gentleman would do in that situation, I gave her my pistol.
+
 <<set $DaleHasSpokenAboutShotgun to true>>
 
 <<jump Questions>>
@@ -179,8 +182,12 @@ Dale: oh yeah, i gave one to ms.dubois to look after herself, lotsa unsavourvy c
 title: Drugs
 position: 141,457
 ---
-Detective: You realise that’s illegal right fella?
-Dale: we’ll ive got some friends in the force that’ll vouch for me
+Detective: Mr. Butterbur, I have found a helluva lot of illicit substances in your office. Anything you want to say about that?
+Dale: You opened my safe? Surely that’s an illegal search, Detective?
+Detective: You want to talk about illegal? Then let’s talk about drug possession.
+Dale: Hey, look - I know it doesn’t look great. But it doesn’t have anything to do with Jack’s death, right? You’ve got to admit I’ve been nothing but helpful with this whole investigation. And I’ll continue to be helpful. Surely you can look away just this once?
+Detective: It doesn’t work like that, Butterbur. As soon as this murder is solved, we’ll have to talk further on this.
+
 <<set $DaleHasSpokenAboutDrugs to true>>
 
 <<jump Questions>>
@@ -188,8 +195,11 @@ Dale: we’ll ive got some friends in the force that’ll vouch for me
 title: PeggyVisitsOften
 position: 141,457
 ---
-Detective: You enjoy Peggy coming around to pick up Jack?
-Dale: Hey I dont mind seeing that piece of ass swinging around
+Detective: I’ve been hearing some interesting things about you and Mrs. Harlow.
+Dale: What? What things?
+Detective: That maybe you were keeping her husband around just to see a little more of her.
+Dale: Gee, people around here like to gossip, huh? Sure, Mrs. Harlow seems a wonderful woman and honestly when you serve men all day every day it’s nice to have a woman around. But there’s nothing more to it than that, Detective, I promise you.
+
 <<set $DaleHasSpokenAboutPeggy to true>>
 
 <<jump Questions>>

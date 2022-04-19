@@ -2,14 +2,14 @@
 tags:NPC, Detective
 position: -338,-113
 ---
-<<if $LorettaIsInitialGreeting == true>>
+<<if $LorettaIsInitialGreeting == false>>
 
-Loretta: This is dreadful! Just dreadful! How could this happen?
-Detective: I know this must be difficult for you, ma’am, but I’d like to ask you a few questions.
-Loretta: I’ll try, detective, but I’m afraid I’m terribly out of sorts at the moment!
-<<set $LorettaIsInitialGreeting to false>>
+Loretta: I’m much too upset about current events to talk, Detective. This is just too much for my nerves!
+Detective: I understand that it must be difficult, ma’am, but I really must insist you answer a few questions. I have to find out everything I can if we’re to catch the murderer.
+Loretta: Very well. I’m an actress you know, I can master my emotions under any circumstances. Even ones as trying as these.
+<<set $LorettaIsInitialGreeting to true>>
 
-<<elseif $LorettaIsInitialGreeting == false>>
+<<elseif $LorettaIsInitialGreeting == true>>
 
 <<set $LorettaRandomGreeting to random_range(0,3)>>
 <<if $LorettaRandomGreeting == 0 >>
@@ -49,7 +49,7 @@ position: 69,-84
 
 <<if $DaleKnowsAboutLoretta == true>> 
 -> Detective:  Closest to the Victim?
-<<jump LorettaKnowsDale>>
+<<jump DaleKnowsAboutLoretta>>
 <<endif>>
 
 <<if $Peggy == true>> 
@@ -76,8 +76,10 @@ position: 69,-84
 <<endif>>
 
 <<if $DetectiveHasFoundBlood == true>>
+<<if $LorettaSpokenAboutLocation == true>>
 -> Detective:  Seen the bathroom lately? It's a real bloodbath in there
 <<jump AboutBathroomBlood>>
+<<endif>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -89,7 +91,8 @@ title: LorettaWhoAreYou
 position: 283,-340
 ---
 Detective: Can you please tell me your name, ma’am?
-Loretta: Loretta Dubois. As in the French
+Loretta: Loretta Dubois. That’s D-U-B-O-I-S, make sure you spell it right in your little journal. 
+
 <<jump LorettaQuestions>>
 ===
 
@@ -97,16 +100,18 @@ title: LorettaGunshot
 position: -111,-477
 ---
 Detective: Where were you when the murder took place?
-Loretta: I was in the bathroom.
+Loretta: I was in the ladies room, touching up my makeup.
+
 
 <<set $Loretta to true>>
+<<set $LorettaSpokenAboutLocation to true>>
 <<jump LorettaQuestions>>
 ===
 title: LorettaComeHereOften
 position: 252,-520
 ---
 Detective: You don’t often see women in establishments like this, do you come here often?
-Loretta: I’m a performer, I sing here most weeks. It’s something to fill my time while I wait for Hollywood to come knocking.
+Loretta: I’m a performer, I sing here most weeks. It’s something to fill my time while I wait for Hollywood to come knocking. Which shouldn’t be too much longer, mind you.
 
 <<set $Loretta to true>>
 <<jump LorettaQuestions>>
@@ -116,9 +121,7 @@ title: LorettaDoYouKnowJack
 position: 372,-273
 ---
 Detective: Did you know Jack Harlow well?
-Loretta: Not particularly, he was a regular here, that much I knew. He would watch me perform, he seemed to have an appreciation for my music. 
-Detective: You seem very upset for a mere acquaintance.
-Loretta: A man has died, Detective! How cold-hearted do you think I am?
+Loretta: Not particularly well… he was a regular here, that much I knew. He would watch me perform, he seemed to have an appreciation for my music. Most people do, of course.
 
 <<set $Loretta to true>>
 <<jump LorettaQuestions>>
@@ -180,8 +183,8 @@ Loretta: Well enough to know he is a grifter and a gangster and an all-round hor
 title: AboutThePistol
 position: 368,82
 ---
-Detective: Dale said he gave you a gun
-Loretta: Yeah I lost it weeks ago
+Detective: Mr. Butterbur said he gave you a gun, is that true?
+Loretta: Yes, he did. Alas! I lost it about a month ago.
 
 <<jump LorettaQuestions>>
 ===
@@ -189,8 +192,11 @@ Loretta: Yeah I lost it weeks ago
 title: AboutBathroomBlood
 position: 368,82
 ---
-Detective: Lots of blood in the bathroom, know anything about that
-Loretta: yeah, that thug Johnny came in after me, said something about money that Jack owed, but i sure don't know nothing about that
+Detective: You told me you were in the bathroom when the murder occured, but you failed to mention the blood on the floor in there? I can’t imagine you missed it.
+Loretta: Oh, that. Uh, yes, well I did see it. Of course I did. I just was so flustered about the murder when you asked. It must have…slipped my mind.
+Detective: Miss Dubois…
+Loretta: Yes, yes, alright. That blood…is mine. That thug “Two Sleeves” or whatever ridiculous thing he calls himself… He came in while I was in there. He said something about money Jack owed, said that I should pay up since Jack couldn’t. I mean, what nonsense! I don’t owe anything. So I told him that very thing. Well, being the brute he is he hit me. But I’m fine, Detective, don’t worry about me. Unlike poor Jack I lived to tell the tale.
+
 <<set $DetectiveHasSpokenToLorettaBlood to true>>
 
 <<jump LorettaQuestions>>
@@ -203,16 +209,16 @@ position: -191,263
 <<set $lorettaRandomGoodbye to random_range(0,2)>>
 <<if $lorettaRandomGoodbye == 0 >>
 <<Animate Dale "GoodbyeWave">>
-Detective: Thank you for your time, Mrs. Harlow.
-Peggy: May I grieve in peace, now?
+Detective: Thank you for your time.
+Loretta: Do your job detective
 <<elseif $lorettaRandomGoodbye == 1>>
 <<Animate Dale "GoodbyeWave">>
-Detective: That’ll be all, ma’am.
-Peggy: Find Jack’s murderer, Detective. 
+Detective: That’s all for now, ma’am.
+Loretta: Just find whoever did this detective
 <<elseif $lorettaRandomGoodbye == 2>>
 <<Animate Dale "GoodbyeWave">>
-Detective: Thanks.
-Peggy: Farewell.
+Detective: Thank you for your cooperation
+Loretta: Anything to find the murderer.
 <<endif>>
 
 <<stop>>

@@ -2,22 +2,22 @@
 tags:NPC, Detective
 position: -338,-113
 ---
-<<if $JohnnyIsInitialGreeting == true>>
+<<if $JohnnyIsInitialGreeting == false>>
 
 Johnny: You buttons ain’t behind the eight-ball, are you?
 Detective: Excuse me?
 Johnny: Here before the body’s even cold. Got peepers on the bar or something?
 Detective: Why, anything we need to be peeping on? 
-<<set $JohnnyIsInitialGreeting to false>>
+<<set $JohnnyIsInitialGreeting to true>>
 
-<<elseif $JohnnyIsInitialGreeting == false>>
+<<elseif $JohnnyIsInitialGreeting == true>>
 
 <<set $JohnnyRandomGreeting to random_range(0,2)>>
 <<if $JohnnyRandomGreeting == 0 >>
 <<Animate "Wave">>
 Johnny: What now, buttons?
 <<elseif $JohnnyRandomGreeting == 1>>
-Johnny: Forget something, Dick?
+Johnny: Forget something?
 <<elseif $JohnnyRandomGreeting == 2>>
 Johnny: Mr. Gumshoe returns.
 <<endif>>
@@ -43,9 +43,6 @@ position: 69,-84
 
 -> Detective: Mr.Harlow?
 <<jump JohnnyDoYouKnowJack>>
-
--> Detective: How did you know him?
-<<jump JohnnyHowDidYouKnowHim>>
 
 <<if $Dale == true>> 
 -> Detective:  Dale?
@@ -113,6 +110,7 @@ Detective: You notice anything suspicious when you came out?
 Johnny: Yeah, his wife. She came running in from out the back. She was still in the bar when I left. Don’t know why a dame like her’d wanna go out into the back alley.
 
 <<set $Johnny to true>>
+<<set $JohnnySawPeggyFromAlley to true>>
 <<jump JohnnyQuestions>>
 ===
 
@@ -123,7 +121,7 @@ Detective: You don’t seem too beat up about Mr. Harlow’s murder.
 Johnny: Jack Harlow got what was coming to him. Guy couldn’t buy dog soup, but he’s in here begging Dale for booze and chatting up broads most nights. Thinks he’s a hotshot, but he ain’t squat.
 
 <<set $Johnny to true>>
-<<jump JohnnyQuestions>>
+<<jump JohnnyHowDidYouKnowHim>>
 ===
 
 title: JohnnyHowDidYouKnowHim
@@ -166,8 +164,10 @@ Johnny: Not a thing. She seems like one of those prim and proper broads, not the
 title: AboutHorseTickets
 position: 495,-14
 ---
-Detective: I found a horse ticket debt in Jacks pocket, you wouldnt know anything about that
-Johnny: Alright, alright I hold a little games night for the regulars, Jack likes to come play but lately he hasnt been paying up his dues. Dale knows about it, we run it in the bar. HE’s totally cool about it. Hes a  good guy like that.
+Detective: I found a debt stub for a horse bet Mr. Harlow had lost, looks like he owed someone a fair bit of money. You wouldn’t happen to know anything about that, would you?
+Johnny: Maybe. We hold what we call a “games” night here for the regulars every now and then. Racers, poker, that sorta thing. Jack likes to bet on the ponies, but he ain’t got squat to bet with.
+Detective: Then it sounds like you’re the one he owes money to. And he can’t pay, that must make you mad.
+Johnny: Mad enough to shoot him, right? That’s what you’re getting at, ain’t you, Detective? Well, nice try, but I ain’t done nothing. But honestly, between you and me, I’m upset it weren’t me what got to fill the bastard with lead. Jack Harlow got what he deserved.
 <<set $DetectiveHasSpokenToJohnnyHorseTicket to true>>
 
 <<jump JohnnyQuestions>>
@@ -175,12 +175,13 @@ Johnny: Alright, alright I hold a little games night for the regulars, Jack like
 title: AboutTheBloodInTheLadies
 position: 495,-14
 ---
-Detective:So I can place you in the bathroom. I have an eye witness
-Johnny: You ain’t got shit m8
-Detective: Loretta says you been roughing her up
-Johnny: Look, her fella owes us some money.
-Detective: Fella being?
-Johnny: JACK OF COURSE
+Detective: I have a witness who can place you in the *ladies* bathroom at the time of the murder.
+Johnny: Our little canary squawked, did she? Well, so what? If I was in the bathroom, I weren’t out shooting that pill Harlow, was I?
+Detective: You said you were in the men’s bathroom. You lied.
+Johnny: Well I didn’t want to come right out and say I was busy roughing up a broad, did I? But I suppose she told you about all that then. Her fella owed me money, he weren’t paying. So I intimidated her a bit, is all. It’s just business.
+Detective: Her “fella”?
+Johnny: Harlow, of course. He was dizzy with that dame. I heard he pawned his wedding ring just to buy her new jewelry. Rather spend money on his new flame than on his debts, the swine.
+
 <<set $DetectiveHasSpokenToJohnnyBlood to true>>
 
 <<jump JohnnyQuestions>>
@@ -188,10 +189,11 @@ Johnny: JACK OF COURSE
 title: AboutTheFlaskAndDale
 position: 495,-14
 ---
-Detective: You and Dale are in business together right?
-Johnny: What about it?
-Detective: Well did you know that hes allowed Jack to bring in his own booze and squeeze it
-Johnny: Hrrmmpppphhh. Well it would seem that everytime Jack is here drinking, that missus is here to pick his sorry ass up. Dale doesn’t seem to mind. 
+Detective: It’s interesting to me that even though you clearly disliked Jack Harlow, your business partner Butterbur allowed Jack to bring his own booze into the bar. Jack owes you money and he doesn’t even buy his own hooch at the bar.
+Johnny: It’s interesting all right. I guess that everytime Jack’s here drinking, that broad of his is here too to pick his sorry ass up. 
+Detective: And?
+Johnny: Alls I’m saying is she’s around here a lot, and Dale doesn’t seem to mind.
+
 <<set $DetectiveHasSpokenToJohnnyDebt to true>>
 
 <<jump JohnnyQuestions>>

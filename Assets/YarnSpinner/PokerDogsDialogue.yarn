@@ -2,33 +2,33 @@
 tags:NPC, Detective, Dog
 position: -193,-44
 ---
-<<if $PokerDogsIsInitialGreeting == true>>
+<<if $PokerDogsIsInitialGreeting == false>>
 
 Bean: Do you mind?
-Mean: Not again!
+Mean: What’s with all the interruptions!?
 Lean: What now!?
-Archie: Uhh…what’s going on out here?
+Archie: Hello gentleman…what’s going on out here?
 Mean: Poker! What does it look like? 
 Lean: You want in?
-Archie: No thank you, I’m rather busy at the moment… 
+Archie: No, thank you, I’m rather busy at the moment… 
 Bean: Probably for the best, we can’t even get through one game without something busting through that window.
 Archie: What do you mean?
 Lean: He’s talking about the gun. We were just minding our business, playing our game, when it came flying through that window. Just a little while ago.
 Bean: Something threw it.
 Mean: Something? Probably a human there, bud. 
 Lean: And how do you know? None of us saw what it was.
-Mean: Because of the opposable thumbs, you idiot. Who else could have thrown it but a human?
+Mean: Because of the opposable thumbs, you idiot. Who else could have *thrown* it but a human?
 Lean: Well I don’t know! There’s some really big rats around, ok?!
 Bean: You think a rat lugged a gun through the bathroom window?
 Lean: Well remember that really huge rat at last week’s poker session? She came in through the bathroom window.
-Mean: Protected by a silver spoon?
-Bean & Lean: What?
-Mean: Nevermind…
+Mean: Ain’t that a Beatles song?
+Bean: They don’t exist yet, stupid.
+Mean: Oops, forget I said that.
 Archie: Fellas, fellas, could we get back to the matter at hand?
-Bean & Mean & Lean: What?
+Bean, Mean, & Lean: What?
 Archie: That someone disposed of a gun here!
-Bean: Such good timing too, because I was out of chips. Gave me something else to bet with.
-Archie: I don’t think you fellas understand the severity of the situation here. Someone here was shot with a gun.
+Bean: Such good timing too, because I was out of chips. It gave me something else to bet with.
+Archie: I don’t think you fellas understand the severity of the situation here. Someone inside was shot with a gun.
 Mean: Yeah that was loud, huh?
 Lean: What are the odds that that happened and then a gun showed up here, huh? Weird.
 Archie: Indeed…I’m going to have to ask you to hand over that firearm, gentleman. That could be vital evidence.
@@ -36,8 +36,11 @@ Bean: No way! I’m betting with that.
 Lean: Don’t go ruining our game!
 Archie: I need that gun.
 Mean: Then go get us something else to bet with!
+Bean: Yeah, we can’t play without betting material.
+Archie: Ok, ok… I’ll be back with something else…
 
-<<set $PokerDogsIsInitialGreeting = false>>
+
+<<set $PokerDogsIsInitialGreeting = true>>
 <<stop>>
 <<endif>>
 
@@ -50,7 +53,7 @@ Archie: I’ll be back with something tasty.
 
 <<elseif $PokerDogsRandomGreeting == 1>>
 Mean: You better scram before we make a meal outta you bud!
-Archie: I better high tail it!
+Archie: Hey, settle down, fellas! I’m leaving, ok?
 
 <<elseif $PokerDogsRandomGreeting == 2>>
 Lean: What do you want? Looking to smell some butts?
@@ -59,16 +62,57 @@ Archie: Sorry, I'm on duty
 <<endif>>
 
 <<if $FoundTheBone == true>>
-Archie: How would you fellas like to split a bone / I’ve got a bone to pick with you fellas
+Archie: I’ve got a bone to pick with you fellas.
 Bean: Did he just say bone!?
-Lean: He couldn’t have, we lost our bone
-Mean: Well he’s back now, must have something important to say otherwise he’s dead meat
-Archie: Don’t get your hair in a mess, I’ve brought my own bargaining chip.
+Lean: He couldn’t have, we lost our bone.
+Mean: Well he’s back now, must have something important to say, otherwise he’s dead meat.
+Archie: Don’t get your hair in a mess, I’ve brought my own bargaining chip. This bone is a whole lot better to bet with than a gun. What do you say?
+
 //Gives bone over
 Bean: It’s a deal!
+Mean: Here you go!
+
 <<set $DetectiveHasFoundPistol to true>>
 
 <<endif>>
 <<endif>>
 
+<<if $DetectiveTriedToOpenDoor == true>>
+-> Archie: I need a distraction for my partner...
+<<jump HumansTalkingSmack>>
+<<endif>>
+
+<<if $ArchieInBathroom == true>>
+<<if  $PokerDogsIsInitialGreeting == false>>
+Bean: Well what do we do now?
+Mean: You mean what do you do now, it landed on my side of the table, I own it!
+Lean: No way! I’m the one who decided to set up here, so it should be mine!
+Bean: Well I’ll play ya for it!
+<<endif>>
+<<endif>>
+
+<<if $ArchieInBathroom == true>>
+<<if  $PokerDogsIsInitialGreeting == true>>
+Mean: Reckon the fuzzball will be back?
+Bean: Nah, he’s run away with his tail between his legs
+Lean: That’s a damn shame, I wish he had found that bone we lost…
+<<endif>>
+<<endif>>
+
+===
+title: HumansTalkingSmack
+position: 283,-340
+---
+Bean: Well look who’s back.
+Lean: Now what does he want?
+Archie: I just wanted to let you fellas know those humans in there have been bad mouthing you.
+Mean: What?! What did we ever do to them?
+Bean: What did they say?
+Archie: They say that you’re all a bunch of cat loving -
+Bean, Mean, & Lean: *gasp*
+Archie: - unloyal - 
+Bean, Mean, & Lean: *gasp*
+Archie: - 
+<<set $ArchieCreatedDistraction to true>>
+<<stop>>
 ===
