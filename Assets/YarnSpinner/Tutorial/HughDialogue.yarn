@@ -1,11 +1,11 @@
 ﻿title: HughDialogue
 tags: Detective
 ---
-<<if $CorneliusMetDetectives == true>>
+<<if $DetectiveFoundWallet == true>>
 <<jump CorneliusMetDetectives>>
 <<endif>>
 
-<<if $CorneliusMetDetectives == false>>
+<<if $DetectiveFoundWallet == false>>
 Hugh: Can I help you?
 Detective: Just enjoying an evening stroll, don’t mind me.
 <<endif>>

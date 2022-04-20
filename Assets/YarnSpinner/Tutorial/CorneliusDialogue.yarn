@@ -1,4 +1,4 @@
-﻿title: CorneliusDialogue
+title: CorneliusDialogue
 tags: Dog
 position: 23,-127
 ---
@@ -12,7 +12,7 @@ Archie: Of course I’ll help you. What have you got there?
 Cornelius: My master’s wallet, I found it where I left him. I guess he abandoned the wallet too!
 Archie: My master should be able to use that wallet to help you.
 <<set $CorneliusIsInitialGreeting to true>>
-<<set $CorneliusMetDetectives to true>>
+//<<set $CorneliusMetDetectives to true>>
 <<stop>>
 <<endif>>
  
