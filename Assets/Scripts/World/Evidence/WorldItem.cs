@@ -24,13 +24,14 @@ public class WorldItem : MonoBehaviour, IInteractable
     [PunRPC]
     public void Interact()
     {
-        if (string.IsNullOrEmpty(evidence_SO.yarnString)) return;
+        evidence_SO.isFound = true;
         
+        if (string.IsNullOrEmpty(evidence_SO.yarnString)) return;
+
         memoryVariableStorage.TryGetValue(evidence_SO.yarnString, out bool isVariableTrue);
         if (isVariableTrue) return;
-        
+
         memoryVariableStorage.SetValue(evidence_SO.yarnString, true);
-        evidence_SO.isFound = true;
         _photonView.RPC(nameof(Interact), RpcTarget.Others);
     }
 }

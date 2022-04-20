@@ -16,6 +16,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Accusation/FinalAccusation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Views/LineView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/DialogueRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/InMemoryVariableStorage.cs" root0="SKIP_HIGHLIGHTING" />
@@ -80,6 +81,7 @@
       <workItem from="1648713418443" duration="9535000" />
       <workItem from="1649925676770" duration="17000" />
       <workItem from="1649925733652" duration="2929000" />
+      <workItem from="1650435239994" duration="1151000" />
     </task>
     <servers />
   </component>
