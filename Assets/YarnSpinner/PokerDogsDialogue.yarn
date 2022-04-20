@@ -72,7 +72,8 @@ Archie: Don’t get your hair in a mess, I’ve brought my own bargaining chip. 
 Bean: It’s a deal!
 Mean: Here you go!
 
-<<set $DetectiveHasFoundPistol to true>>
+<<SetBool Yarn $DetectiveHasFoundPistol true>>
+
 
 <<endif>>
 <<endif>>
