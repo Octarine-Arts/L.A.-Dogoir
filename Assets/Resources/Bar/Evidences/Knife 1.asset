@@ -16,4 +16,5 @@ MonoBehaviour:
   displayName: Knife
   locationFound: {fileID: 11400000, guid: d73b780cc15b1c94a829175fe4efa446, type: 2}
   description: Bloody Knife
-  isFound: 0
+  yarnString: 
+  isFound: 1
