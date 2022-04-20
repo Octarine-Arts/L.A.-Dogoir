@@ -1,56 +1,55 @@
-﻿title: CorneliusDialogue
+title: CorneliusDialogue
 tags: Dog
 position: 23,-127
 ---
-
 <<if $CorneliusIsInitialGreeting == false>>
-Cornelius: Hey! Wait up! Are you a police dog? 
+Cornelius: Hey! Wait up! Are you a police dog?
 Archie: Well, I’m off duty now and today was actually my first day but yes, I am.
 Cornelius: You’ve got to help me! I was chasing a squirrel - and I almost got him, too - but when I came back my master was gone! I can’t find him anywhere and I don’t know what to do! I think he’s left me for good!
-Archie: Calm down, I’m sure he hasn’t abandoned you. Take some deep breaths. 
+Archie: Calm down, I’m sure he hasn’t abandoned you. Take some deep breaths.
 Cornelius: Can you help me? Please!
 Archie: Of course I’ll help you. What have you got there?
 Cornelius: My master’s wallet, I found it where I left him. I guess he abandoned the wallet too!
 Archie: My master should be able to use that wallet to help you.
-<<Set $CorneliusIsInitialGreeting to true>>
-<<Set $CorneliusMetDetectives to true>>
+<<set $CorneliusIsInitialGreeting to true>>
+//<<set $CorneliusMetDetectives to true>>
 <<stop>>
 <<endif>>
-
+ 
 <<if $CorneliusIsBroughtToDan == true>>
 <<jump EndScene>>
 <<endif>>
 
+<<if $CorneliusMetDetectives == true>>
+Cornelius:You've met me before
+<<endif>>
+
 <<if $CorneliusIsInitialGreeting == true>>
 <<if $CorneliusIsSecondGreeting == false>>
+
 Cornelius: Oh what shall I do? Woe is me. I’ll be lost forever. Is there nothing you’ve found in his wallet that can help?
 Archie: I can’t read, I’m afraid.
 Cornelius: What about your partner? He can read, right? Can’t you ask him to read it?
-
 <<set $CorneliusIsSecondGreeting to true>>
 <<stop>>
 <<endif>>
 <<endif>>
-
-
-
+ 
 <<if $CorneliusIsSecondGreeting == true>>
 Cornelius: Any luck, officer?
 Archie: Sorry, this was our first day as partners and he’s a bit slow to train… I’ll ask him.
 Cornelius: Please do, I don’t know how long we have til it gets dark.
-
-<<endif>>
 <<stop>>
-
-
+<<endif>> 
+ 
 ===
-
+ 
 title: EndScene
 position: 1,148
 ---
-
+ 
 Cornelius: Master! Master! It’s me, it’s your little Cornelius! I thought I’d never see you again!! Thank you so much, Detective, you found my Master for me!
 Archie: Happy to help, Cornelius. Humans like to wander, so you have to make sure you keep a good eye on them, unless they’re well trained.
-
+ 
 <<stop>>
 ===
