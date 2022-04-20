@@ -17,5 +17,5 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: ebd3cf7f90cf56748a24474069ac4044, type: 2}
   description: A plain leather wallet. The I.D. inside identifies the owner as a
     Mr. Dan Gleebitz. It also contains a receipt for 50x hotdog buns
-  yarnString: 
+  yarnString: $Wallet
   isFound: 0
