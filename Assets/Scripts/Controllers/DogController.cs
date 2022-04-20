@@ -44,12 +44,14 @@ public class DogController : MonoBehaviour
         
         Vector3 input = Quaternion.Euler (0, camPivot.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
+
         float angleDif = (1 - (Vector3.Angle (input, dog.transform.forward) / 180f));
 
-        if (dog.desiredVelocity.magnitude > 0.1f)
+        if (input.magnitude > 0.1f)
         {
+            print("velocity thresh reached");
             Quaternion targetRot = Quaternion.Euler (dog.transform.rotation.eulerAngles.x,
-                input.Angle(),//dog.desiredVelocity.Angle (),
+                input.Angle(),
                 dog.transform.rotation.eulerAngles.z);
 
             dog.transform.rotation = Quaternion.Lerp (dog.transform.rotation, targetRot, Time.deltaTime * rotateSpeed * (angleDif + 0.2f) / 1.2f);
@@ -57,11 +59,8 @@ public class DogController : MonoBehaviour
 
         dog.speed = Mathf.Lerp (0.1f, speed, angleDif);
 
-        //dog.SetDestination (dog.transform.position + input.normalized);
         dog.SetDestination (dog.transform.position + dog.transform.forward * input.magnitude);
         anim.SetFloat ("MoveSpeed", dog.velocity.magnitude);
-        //print (anim.GetFloat ("MoveSpeed"));
-        Debug.DrawRay (dog.transform.position + input, Vector3.up, Color.blue);
     }
 
     private void EnableMovement()
