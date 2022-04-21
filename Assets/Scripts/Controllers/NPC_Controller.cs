@@ -1,4 +1,5 @@
 using System;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
 using Yarn.Unity;
@@ -8,6 +9,7 @@ public class NPC_Controller : MonoBehaviour
     //Transform that NPC has to follow
     public Transform transformToFollow;
     //NavMesh Agent variable
+    private PhotonView _photonView;
     private NavMeshAgent _agent;
     private Animator _animator;
     private bool _isFollowing;
@@ -22,6 +24,7 @@ public class NPC_Controller : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _photonView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -41,10 +44,24 @@ public class NPC_Controller : MonoBehaviour
     public void TriggerFollowing()
     {
         _isFollowing = true;
+        _photonView.RPC(nameof(TriggerFollowRPC), RpcTarget.Others);
     }
 
     [YarnCommand("Unfollow")]
     public void TriggerUnfollow()
+    {
+        _isFollowing = false;
+        _photonView.RPC(nameof(TriggerUnfollowRPC), RpcTarget.Others);
+    } 
+
+    [PunRPC]
+    private void TriggerFollowRPC()
+    {
+        _isFollowing = true;
+    }
+
+    [PunRPC]
+    private void TriggerUnfollowRPC()
     {
         _isFollowing = false;
     }
