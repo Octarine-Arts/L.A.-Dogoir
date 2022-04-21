@@ -9,6 +9,7 @@ TagManager:
   - DogPlayer
   - HumanAgent
   - DogAgent
+  - GunshotTrail
   layers:
   - Default
   - TransparentFX

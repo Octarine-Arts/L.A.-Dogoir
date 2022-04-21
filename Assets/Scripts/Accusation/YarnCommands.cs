@@ -8,6 +8,7 @@ using Yarn.Unity;
 [RequireComponent(typeof(PhotonView))]
 public class YarnCommands : MonoBehaviour
 {
+    public AudioClip gunshotSound;
     
     private PhotonView _photonView;
     private InMemoryVariableStorage _variableStorage;
@@ -24,9 +25,24 @@ public class YarnCommands : MonoBehaviour
         _photonView.RPC(nameof(SyncVal), RpcTarget.Others, yarnString, val);
     }
 
+    [YarnCommand("TriggerGunshot")]
+    public void TriggerGunshot()
+    {
+        AudioManager.current.PlaySFX(gunshotSound);
+        if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) GameObject.FindGameObjectWithTag("GunshotTrail").GetComponent<SmellTrail>().Activate();
+        _photonView.RPC(nameof(Gunshot), RpcTarget.Others);
+    }
+
     [PunRPC]
     public void SyncVal(string yarnString, bool val)
     {
         _variableStorage.SetValue(yarnString, val);
+    }
+
+    [PunRPC]
+    public void Gunshot()
+    {
+        AudioManager.current.PlaySFX(gunshotSound);
+        if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) GameObject.FindGameObjectWithTag("GunshotTrail").GetComponent<SmellTrail>().Activate();
     }
 }

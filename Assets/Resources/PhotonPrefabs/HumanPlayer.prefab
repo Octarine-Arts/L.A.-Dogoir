@@ -630,7 +630,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 8
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -918,7 +918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 849.9, y: -454.4}
+  m_AnchoredPosition: {x: 849.9, y: -455.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &454873482797966407
@@ -949,7 +949,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Journal Updated (J)
+  m_text: 'Journal Updated (J)
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
   m_sharedMaterial: {fileID: -1261048817966629800, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
