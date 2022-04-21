@@ -781,6 +781,7 @@ MonoBehaviour:
   - {x: -0.74, y: 0, z: 2.24}
   renderRadius: 3
   distanceToActivate: 1
+  canDeactivate: 0
 --- !u!1 &289346253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2007,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3000106062278721460, guid: 369310c0f06f13f4da2416814aa1a158, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3000106062278721465, guid: 369310c0f06f13f4da2416814aa1a158, type: 3}
       propertyPath: m_Name
       value: HumanPlayer
