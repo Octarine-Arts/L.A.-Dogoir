@@ -2,7 +2,7 @@
 tags: Detective
 ---
 <<if $CorneliusMetDetectives == true>>
-<<jump CorneliusMetDetectives>> 
+<<jump DanCorneliusMetDetectives>> 
 
 <<elseif $CorneliusMetDetectives == false>>
 Dan: Wanna dog, officer?
@@ -11,8 +11,7 @@ Detective: No thanks, I’ve already got one right here. Isn’t that right, Arc
 <<endif>>
 
 ===
- 
-title: CorneliusMetDetectives
+title: DanCorneliusMetDetectives
 position: 1,148
 ---
  

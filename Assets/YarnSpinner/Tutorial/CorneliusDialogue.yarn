@@ -27,9 +27,7 @@ Cornelius: My master’s wallet, I found it where I left him. I guess he abandon
 Archie: My master should be able to use that wallet to help you. I better tell him to have a look at it. Follow me, Cornelious. We'll find your master!
 <<set $CorneliusIsInitialGreeting to true>>
 <<SetBool Yarn $CorneliusMetDetectives true>>
-
 <<Follow Cornelius>>
-
 <<stop>>
 <<endif>>
 
