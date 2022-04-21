@@ -10,7 +10,7 @@ Archie: Calm down, I’m sure he hasn’t abandoned you. Take some deep breaths.
 Cornelius: Can you help me? Please!
 Archie: Of course I’ll help you. What have you got there?
 Cornelius: My master’s wallet, I found it where I left him. I guess he abandoned the wallet too!
-Archie: My master should be able to use that wallet to help you.
+Archie: My master should be able to use that wallet to help you. I better tell him to have a look at it.
 <<set $CorneliusIsInitialGreeting to true>>
 <<SetBool Yarn $CorneliusMetDetectives true>>
 <<stop>>

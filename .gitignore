@@ -65,3 +65,5 @@ crashlytics-build.properties
 UserSettings/EditorUserSettings.asset
 
 UserSettings/Layouts/
+
+Assets/StreamingAssets/build_info
