@@ -34,7 +34,7 @@ public class NewComUI : MonoBehaviour
         activePanel = phraseSelectPanel;
 
         foreach (string phrase in phrases)
-            PlaceButton(phrase, phraseContainer, () => OnPhraseSelected(phrase));
+            PlaceButton(phrase, phraseSelectContainer, () => OnPhraseSelected(phrase));
         for (int c = 0; c < categories.Length; c++)
         {
             foreach (string word in categories[c])
@@ -140,6 +140,8 @@ public class NewComUI : MonoBehaviour
 
     private void Open()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true; 
         Player_StaticActions.DisableDogMovement();
         Player_StaticActions.DisableHumanMovement();
         activePanel = phraseSelectPanel;

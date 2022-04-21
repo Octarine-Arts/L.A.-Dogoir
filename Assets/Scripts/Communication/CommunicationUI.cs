@@ -19,7 +19,6 @@ public class CommunicationUI : MonoBehaviour
     private int activePanel = -1;
     //private string[] history = new string[3];
     private Queue<string> history = new Queue<string> ();
-    private Button[] historyButtons;
     private PhotonView photonView;
     private BubbleManager dogBubbles, humanBubbles;
 
@@ -164,6 +163,7 @@ public class CommunicationUI : MonoBehaviour
     }
     private void Close()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         SetPanel(-1);
     }
     private void SetPanel (int panelIndex)
