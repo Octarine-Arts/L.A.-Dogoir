@@ -24,6 +24,7 @@ public class SmellTrail : MonoBehaviour
 
     private void Awake ()
     {
+        print(pathPoints.Count + " Awake1");
         points = new TrailPoint[pathPoints.Count];
         for (int i = 0; i < pathPoints.Count; i++)
         {
@@ -38,11 +39,13 @@ public class SmellTrail : MonoBehaviour
         if (EventManager.I != null)
             EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
         else target = FindObjectOfType<DogController> ().dog.transform;
+        print(pathPoints.Count + " Awake2");
     }
 
     public void Activate ()
     {
-        print ($"Activating (current active is {ActiveTrail})");
+        print(pathPoints.Count + " Activate");
+        print($"Activating (current active is {ActiveTrail})");
         if (ActiveTrail != null)
             ActiveTrail.Deactivate ();
         ActiveTrail = this;
@@ -51,7 +54,8 @@ public class SmellTrail : MonoBehaviour
 
     public void Deactivate ()
     {
-        print ($"Deactivating (current active is {ActiveTrail})");
+        print(pathPoints.Count + " Deactivate");
+        print($"Deactivating (current active is {ActiveTrail})");
         if (ActiveTrail == this)
             ActiveTrail = null;
         active = false;
@@ -59,6 +63,7 @@ public class SmellTrail : MonoBehaviour
 
     private void Update ()
     {
+        print(pathPoints.Count + " Update1");
         if (!active && radius <= 0)
         {
             if (Input.GetKeyDown (KeyCode.E) && F.FastDistance (transform.position, target.position) < distanceToActivate * distanceToActivate)
@@ -79,6 +84,7 @@ public class SmellTrail : MonoBehaviour
         else outOfRangeTime = 0;
 
         RenderTrail (trailSegments);
+        print(pathPoints.Count + " Update2");
     }
 
     private List<List<Vector3>> GetTrailSegments (float radius)
