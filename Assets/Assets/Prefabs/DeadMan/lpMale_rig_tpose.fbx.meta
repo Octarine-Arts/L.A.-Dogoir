@@ -6,6 +6,27 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
+  - first:
+      74: 3358782047314899851
+    second: bip|bip Footsteps|Take 001|BaseLayer
+  - first:
+      74: 3162895670396235115
+    second: bip|bip|Take 001|BaseLayer
+  - first:
+      74: 4557544815553996550
+    second: bip|rig_CharRoot|Take 001|BaseLayer
+  - first:
+      74: -1682359610217447353
+    second: bip Footsteps|bip Footsteps|Take 001|BaseLayer
+  - first:
+      74: -3782776610981075893
+    second: bip Footsteps|rig_CharRoot|Take 001|BaseLayer
+  - first:
+      74: -4750210026562359719
+    second: rig_CharRoot|bip Footsteps|Take 001|BaseLayer
+  - first:
+      74: -4404246191288060566
+    second: rig_CharRoot|rig_CharRoot|Take 001|BaseLayer
   externalObjects: {}
   materials:
     materialImportMode: 2
