@@ -21,6 +21,7 @@ public class NPC_Controller : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
