@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Yarn.Unity;
 
-public class NPCController : MonoBehaviour
+public class NPC_Controller : MonoBehaviour
 {
     //Transform that NPC has to follow
     public Transform transformToFollow;
@@ -10,6 +11,11 @@ public class NPCController : MonoBehaviour
     private NavMeshAgent _agent;
     private Animator _animator;
     private bool _isFollowing;
+
+    private void Awake()
+    {
+        EventManager.I.OnPlayersSpawned += SetFollow;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,11 @@ public class NPCController : MonoBehaviour
         _agent.destination = transformToFollow.position;
     }
 
+    private void SetFollow(GameObject humanPlayer, GameObject dogPlayer)
+    {
+        transformToFollow = dogPlayer.transform;
+    }
+    
     [YarnCommand("Follow")]
     public void TriggerFollowing()
     {
