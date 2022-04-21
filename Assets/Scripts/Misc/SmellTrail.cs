@@ -12,6 +12,7 @@ public class SmellTrail : MonoBehaviour
     public List<Vector3> pathPoints;
     public float renderRadius;
     public float distanceToActivate;
+    public bool canDeactivate = true;
 
     private bool active;
     private float radius;
@@ -42,7 +43,6 @@ public class SmellTrail : MonoBehaviour
 
     public void Activate ()
     {
-        print ($"Activating (current active is {ActiveTrail})");
         if (ActiveTrail != null)
             ActiveTrail.Deactivate ();
         ActiveTrail = this;
@@ -51,7 +51,8 @@ public class SmellTrail : MonoBehaviour
 
     public void Deactivate ()
     {
-        print ($"Deactivating (current active is {ActiveTrail})");
+        if (!canDeactivate) return;
+
         if (ActiveTrail == this)
             ActiveTrail = null;
         active = false;
