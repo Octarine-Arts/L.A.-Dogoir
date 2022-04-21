@@ -21,6 +21,7 @@ Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so 
 Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
 
 <<Yarn TriggerGunshot>>
+<<Unfollow Cornelius>>
 <<stop>>
 
 <<elseif $CorneliusIsBroughtToDan == false>>
