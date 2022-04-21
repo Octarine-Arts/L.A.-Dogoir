@@ -8,6 +8,7 @@ using Yarn.Unity;
 [RequireComponent(typeof(PhotonView))]
 public class YarnCommands : MonoBehaviour
 {
+    public static YarnCommands current;
     public AudioClip gunshotSound;
     
     private PhotonView _photonView;
@@ -15,6 +16,7 @@ public class YarnCommands : MonoBehaviour
 
     private void Awake()
     {
+        current = this;
         _variableStorage = GameObject.FindGameObjectWithTag("YarnMemory").GetComponent<InMemoryVariableStorage>();
         _photonView = GetComponent<PhotonView>();
     }
