@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1912823882649439585}
   - component: {fileID: 1912823882649439586}
   m_Layer: 0
-  m_Name: SmellLine
+  m_Name: TrailSegmentRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

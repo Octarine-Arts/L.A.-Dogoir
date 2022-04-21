@@ -139,7 +139,7 @@ Rattus: Left this ‘ere stick thing.
 Archie: May I have it?
 Rattus: Well Rattus sure don’t want it.
 
-<<set $DetectiveHasFoundSyringe to true>>
+<<SetBool $DetectiveHasFoundSyringe true>>
 <<jump RatQuestions>>
 ===
 
