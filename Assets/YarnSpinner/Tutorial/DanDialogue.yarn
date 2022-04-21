@@ -1,15 +1,8 @@
 ﻿title: DanDialogue
 tags: Detective
 ---
-
-
 <<if $CorneliusMetDetectives == true>>
-Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so worried, thank you so much Detective, I’ve been searching the streets for him everywhere.
-Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
-
-<<Yarn TriggerGunshot>>
-<<stop>>
-
+<<jump CorneliusMetDetectives>> 
 
 <<elseif $CorneliusMetDetectives == false>>
 Dan: Wanna dog, officer?
@@ -17,5 +10,25 @@ Detective: No thanks, I’ve already got one right here. Isn’t that right, Arc
 
 <<endif>>
 
+===
+ 
+title: CorneliusMetDetectives
+position: 1,148
+---
+ 
+<<if $CorneliusIsBroughtToDan == true>>
+Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so worried, thank you so much Detective, I’ve been searching the streets for him everywhere.
+Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
+
+<<Yarn TriggerGunshot>>
 <<stop>>
+
+<<elseif $CorneliusIsBroughtToDan == false>>
+Detective: Excuse me, are you Dan Gleebitz?
+Dan: That's me. Who's asking?
+Detective: Detective Dick Steele. I found your dog.
+Dan: Cornelius! Where is he?!
+Detective: My partner Archie is bringing him here right as we speak.
+
+<<endif>>
 ===
