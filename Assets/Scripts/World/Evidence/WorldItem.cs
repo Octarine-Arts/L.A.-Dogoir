@@ -14,6 +14,7 @@ public class WorldItem : MonoBehaviour, IInteractable
 
     private InMemoryVariableStorage memoryVariableStorage;
     private PhotonView _photonView;
+    private bool _hasFlashed;
     
     private void Awake()
     {
@@ -25,7 +26,11 @@ public class WorldItem : MonoBehaviour, IInteractable
     public void Interact()
     {
         evidence_SO.isFound = true;
-        if (HumanCanvas.current != null) HumanCanvas.current.FlashJournal();
+        if (HumanCanvas.current != null && !_hasFlashed)
+        {
+            _hasFlashed = true;
+            HumanCanvas.current.FlashJournal();
+        }
 
         if (string.IsNullOrEmpty(evidence_SO.yarnString)) return;
         _photonView.RPC(nameof(Interact), RpcTarget.Others);
