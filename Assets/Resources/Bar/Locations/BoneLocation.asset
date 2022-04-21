@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BoneLocation
   m_EditorClassIdentifier: 
   location: 0
-  displayName: Bone Location
+  displayName: Pool Table
