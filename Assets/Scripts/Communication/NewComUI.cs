@@ -231,7 +231,7 @@ public class NewComUI : MonoBehaviour
     private bool openHeld = true;
     private void Update ()
     {
-        print($"open: {!open}, openHeld: {!openHeld}, jump: {Input.GetAxis("Jump") > 0}");
+        //print($"open: {!open}, openHeld: {!openHeld}, jump: {Input.GetAxis("Jump") > 0}");
         if (!open && !openHeld && Input.GetAxis ("Jump") > 0)
         {
             print("open");

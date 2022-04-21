@@ -11,7 +11,7 @@ public class HumanController : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject avatar;
     public Transform headLookTarget;
-    public float rotateSpeed;
+    public float rotateSpeed, moveAcceleration;
 
     public GameObject displayText;
     public GameObject humanCanvas;
@@ -20,7 +20,7 @@ public class HumanController : MonoBehaviour
 
     private bool canMove = true;
     private PhotonView pview;
-    private float pitch;
+    private float pitch, currentSpeed;
 
     private void Awake ()
     {
@@ -78,8 +78,12 @@ public class HumanController : MonoBehaviour
         Vector3 input = Quaternion.Euler (0, cam.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
 
-        //if (input.sqrMagnitude > 0.1f)
-            agent.SetDestination (agent.transform.position + input.normalized * 0.25f);
+        //print(input.sqrMagnitude);
+        //currentSpeed = Mathf.Clamp01(currentSpeed + (input.sqrMagnitude > 0.1f ? moveAcceleration : -moveAcceleration) * Time.deltaTime);
+
+        Vector3 smoothed = Vector3.Lerp(agent.destination - agent.transform.position, input.normalized, moveAcceleration * Time.deltaTime);
+
+        agent.SetDestination(agent.transform.position + smoothed);//input.normalized * currentSpeed);
 
         anim.SetFloat ("MoveSpeed", Mathf.Clamp01 (agent.velocity.magnitude / (agent.speed / 3)));
     }

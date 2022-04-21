@@ -25,13 +25,10 @@ public class WorldItem : MonoBehaviour, IInteractable
     public void Interact()
     {
         evidence_SO.isFound = true;
-        
+        if (HumanCanvas.current != null) HumanCanvas.current.FlashJournal();
+
         if (string.IsNullOrEmpty(evidence_SO.yarnString)) return;
-
-        memoryVariableStorage.TryGetValue(evidence_SO.yarnString, out bool isVariableTrue);
-        if (isVariableTrue) return;
-
-        memoryVariableStorage.SetValue(evidence_SO.yarnString, true);
         _photonView.RPC(nameof(Interact), RpcTarget.Others);
+        memoryVariableStorage.SetValue(evidence_SO.yarnString, true);
     }
 }
