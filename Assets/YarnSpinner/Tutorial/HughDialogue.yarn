@@ -18,7 +18,7 @@ position: 187,-234
 Hugh: I’ve just eaten half a ton of dog hair, so keep your dog away from me please. I don’t much feel like dessert.
 Detective: Why on earth would you do that?
 Hugh: I didn’t do it deliberately! I made the mistake of buying a hotdog from that vendor.
-Detective: I’m looking for the vendor, actually. Where is he?
+Detective: I’m looking for the vendor, actually. I found his wallet. Where is he?
 Hugh: I think he wheeled his little stand out of the park a while ago. Probably for the best. I wouldn’t bother searching. I had to throw my hotdog in the bin.
 
 <<set $HughIsInitialGreeting to true>>
