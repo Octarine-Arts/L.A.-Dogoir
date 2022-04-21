@@ -544,7 +544,7 @@ MonoBehaviour:
   avatar: {fileID: 2398197115659791453}
   headLookTarget: {fileID: 2449099947836081011}
   rotateSpeed: 2
-  moveAcceleration: 2
+  moveAcceleration: 8
   displayText: {fileID: 5001581462446109699}
   humanCanvas: {fileID: 1236247366084506117}
   verticalLookRange: {x: -70, y: 90}
@@ -601,7 +601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000106062308621298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:

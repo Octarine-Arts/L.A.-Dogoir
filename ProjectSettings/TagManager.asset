@@ -10,6 +10,7 @@ TagManager:
   - HumanAgent
   - DogAgent
   - GunshotTrail
+  - Cornelius
   layers:
   - Default
   - TransparentFX
