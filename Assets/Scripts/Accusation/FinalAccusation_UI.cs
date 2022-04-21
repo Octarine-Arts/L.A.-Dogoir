@@ -32,19 +32,20 @@ public class FinalAccusation_UI : MonoBehaviour
         UpdateDropdownOptions();
     }
 
-    private void GetEvidenceOptions()
-    {
-        //if (PlayerManager.ThisPlayer == PlayerSpecies.Human) 
-        _currentEvidenceList = _finalAccusation.GetHumanEvidenceList();
-        //else if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) _currentEvidenceList = _finalAccusation.GetDogEvidenceList();
-    }
-
     private void UpdateDropdownOptions()
     {
-        GetEvidenceOptions();
+        List<Evidence> humanEvidenceList = _finalAccusation.GetHumanEvidenceList();
+        List<Evidence> dogEvidenceList = _finalAccusation.GetDogEvidenceList();
         foreach (var t in _dropdownList)
         {
-            t.SetOptions(_currentEvidenceList);
+            if (t._isDogDropdown)
+            {
+                t.SetOptions(dogEvidenceList);
+            }
+            else
+            {
+                t.SetOptions(humanEvidenceList);
+            }
         }
     }
 

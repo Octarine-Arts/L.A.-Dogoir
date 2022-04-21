@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class EvidenceDropdown : MonoBehaviour
 {
+    public bool _isDogDropdown;
+
     private TMP_Dropdown _dropdown;
     private Evidence _currentEvidence;
     private List<Evidence> _listOfEvidence;
@@ -23,16 +25,17 @@ public class EvidenceDropdown : MonoBehaviour
     public void Initialise(FinalAccusation_UI ui)
     {
         _finalAccusationUI = ui;
+        _currentEvidence = null;
     }
     
     public void SetOptions(List<Evidence> evidenceList)
     {
         string currentValue = _dropdown.options[_dropdown.value].text;
-        _currentEvidence = evidenceList[0];
         _dropdown.options.Clear();
         _listOfEvidence.Clear();
 
         int value = 0;
+        _dropdown.options.Add(new TMP_Dropdown.OptionData {text = ""});
         foreach (Evidence evidence in evidenceList)
         {
             _listOfEvidence.Add(evidence);
@@ -54,9 +57,11 @@ public class EvidenceDropdown : MonoBehaviour
             if (evidence.displayName == newAnswer)
             {
                 _currentEvidence = evidence;
-                break;
+                return;
             }
         }
+
+        _currentEvidence = null;
     }
 
     public Evidence GetCurrentEvidence() => _currentEvidence;
