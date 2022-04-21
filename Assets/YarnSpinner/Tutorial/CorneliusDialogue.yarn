@@ -2,6 +2,20 @@ title: CorneliusDialogue
 tags: Dog
 position: 23,-127
 ---
+
+<<if $CorneliusIsBroughtToDan == true>>
+Cornelius: Master! Master! It’s me, it’s your little Cornelius! I thought I’d never see you again!! Thank you so much, Detective, you found my Master for me!
+Archie: Happy to help, Cornelius. Humans like to wander, so you have to make sure you keep a good eye on them, unless they’re well trained.
+
+<<elseif $CorneliusIsBroughtToDan == false>>
+<<jump CorneliusHelloScene>>
+
+<<endif>> 
+===
+
+title: CorneliusHelloScene
+position: 1,148
+--- 
 <<if $CorneliusIsInitialGreeting == false>>
 Cornelius: Hey! Wait up! Are you a police dog?
 Archie: Well, I’m off duty now and today was actually my first day but yes, I am.
@@ -13,15 +27,10 @@ Cornelius: My master’s wallet, I found it where I left him. I guess he abandon
 Archie: My master should be able to use that wallet to help you. I better tell him to have a look at it. Follow me, Cornelious. We'll find your master!
 <<set $CorneliusIsInitialGreeting to true>>
 <<SetBool Yarn $CorneliusMetDetectives true>>
-<<stop>>
-<<endif>>
- 
-<<if $CorneliusIsBroughtToDan == true>>
-<<jump EndScene>>
-<<endif>>
 
-<<if $CorneliusMetDetectives == true>>
-Cornelius:You've met me before
+<<Follow Cornelius>>
+
+<<stop>>
 <<endif>>
 
 <<if $CorneliusIsInitialGreeting == true>>
@@ -41,15 +50,6 @@ Archie: Sorry, this was our first day as partners and he’s a bit slow to train
 Cornelius: Please do, I don’t know how long we have til it gets dark.
 <<stop>>
 <<endif>> 
- 
-===
- 
-title: EndScene
-position: 1,148
----
- 
-Cornelius: Master! Master! It’s me, it’s your little Cornelius! I thought I’d never see you again!! Thank you so much, Detective, you found my Master for me!
-Archie: Happy to help, Cornelius. Humans like to wander, so you have to make sure you keep a good eye on them, unless they’re well trained.
- 
+
 <<stop>>
 ===

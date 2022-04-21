@@ -20,7 +20,8 @@ position: 1,148
 Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so worried, thank you so much Detective, I’ve been searching the streets for him everywhere.
 Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
 
-<<TriggerGunshot Yarn>>
+<<Yarn TriggerGunshot>>
+<<Unfollow Cornelius>>
 <<stop>>
 
 <<elseif $CorneliusIsBroughtToDan == false>>
