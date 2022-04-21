@@ -24,6 +24,7 @@ public class YarnCommands : MonoBehaviour
     [YarnCommand("SetBool")]
     public void SetBool(string yarnString, bool val)
     {
+        _variableStorage.SetValue(yarnString, val);
         _photonView.RPC(nameof(SyncVal), RpcTarget.Others, yarnString, val);
     }
 
@@ -39,6 +40,8 @@ public class YarnCommands : MonoBehaviour
     public void SyncVal(string yarnString, bool val)
     {
         _variableStorage.SetValue(yarnString, val);
+        Debug.Log(yarnString);
+        Debug.Log(val);
     }
 
     [PunRPC]
