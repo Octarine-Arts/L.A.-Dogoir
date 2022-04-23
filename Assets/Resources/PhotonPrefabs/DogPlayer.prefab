@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8667507323170146253}
-  hRotSpeed: 0.35
-  vRotSpeed: 0.1
+  hRotSpeed: 1
+  vRotSpeed: 0.5
   followSpeed: 6
 --- !u!1 &8667507322363196041
 GameObject:

@@ -10,12 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8d51f65aa9d5114cbf1906d0f21e3b1, type: 3}
-  m_Name: Descriptors
+  m_Name: People
   m_EditorClassIdentifier: 
   entries:
-  - Box
-  - Ball
-  - Device
-  - Object
-  - Thing
-  - Rectangle
+  - I
+  - You
+  - Me
+  - He
+  - She
+  - Man
+  - Woman
+  - Person
+  - Rat
+  - Dog
+  - Cat
+  - Friend
+  - Enemy
