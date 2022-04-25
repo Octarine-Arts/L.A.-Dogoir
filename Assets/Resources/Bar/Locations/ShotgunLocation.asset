@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ShotgunLocation
   m_EditorClassIdentifier: 
   location: 0
-  displayName: ShotgunLocation
+  displayName: Below bar

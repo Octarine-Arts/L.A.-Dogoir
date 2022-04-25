@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DrugsLocation
   m_EditorClassIdentifier: 
   location: 0
-  displayName: DrugsLocation
+  displayName: Office Safe

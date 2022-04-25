@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 4607292910976588725, guid: e02f596140eb70143b81f54ccf17d177, type: 3}
   suspectEnum: 1
-  fullName: Loretta Dubois
+  fullName: Frou Frou
   description: asdwqw
   occupation: 
   personality: 
@@ -25,3 +25,4 @@ MonoBehaviour:
   inputMotive: {fileID: 0}
   inputLocation: {fileID: 0}
   inputColor: 5
+  hasTalked: 0
