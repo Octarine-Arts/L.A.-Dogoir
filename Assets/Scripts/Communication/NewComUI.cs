@@ -12,7 +12,7 @@ public class NewComUI : MonoBehaviour
     public LexiconEntry phrases;
     public LexiconEntry[] categories;
 
-    public GameObject button, phraseText, phraseBlank, historyButton;
+    public GameObject button, phraseText, phraseBlank, addBlankButton, historyButton;
     public Transform UIContainer, historyPanel, phraseSelectPanel, phraseSelectContainer, phraseFillPanel, phraseContainer;
     public Image categoryBackground;
     public Transform[] categoryContainers;
@@ -34,14 +34,12 @@ public class NewComUI : MonoBehaviour
         activePanel = phraseSelectPanel;
 
         foreach (string phrase in phrases)
-            PlaceButton(phrase, phraseContainer, () => OnPhraseSelected(phrase));
+            PlaceButton(phrase, phraseSelectContainer, () => OnPhraseSelected(phrase));
         for (int c = 0; c < categories.Length; c++)
         {
             foreach (string word in categories[c])
                 PlaceButton (word, categoryContainers[c], () => OnWordSelected (word));
         }
-
-        SelectFirstButton (phraseSelectPanel);
 
         if (EventManager.I != null)
             EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
@@ -53,12 +51,163 @@ public class NewComUI : MonoBehaviour
         dogBubbles = dog.transform.parent.GetComponentInChildren<BubbleManager> ();
     }
 
-    public void Submit ()
+    public void OnTabSelected(int tab)
+    {
+        categoryContainers[activeTab].gameObject.SetActive(false);
+        activeTab = tab;
+        categoryContainers[activeTab].gameObject.SetActive(true);
+        categoryBackground.sprite = categoryTabSprites[tab];
+    }
+
+    public void OnHistorySelected (int button)
+    {
+        historyPanel.OffTheWeans ();
+        foreach (string h in history)
+            PlaceButton (h, historyPanel, () => SubmitMessage (h));
+
+        SetPanel (historyPanel);
+    }
+
+    private void OnPhraseSelected (string phrase)
+    {
+        PlacePhrase (phrase);
+        SetPanel(phraseFillPanel);
+        LayoutRebuilder.ForceRebuildLayoutImmediate (phraseContainer.GetComponent<RectTransform> ());
+    }
+
+    private void OnWordSelected (string word)
+    {
+        PhraseBlank.ActiveBlank.SetWord(word);
+    }
+
+    private void OnAddButtonClicked(Transform addButton)
+    {
+        PlacePhraseBlank(addButton.GetSiblingIndex (), true);
+        PlaceAddButtons();
+    }
+
+    private void Open()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true; 
+        Player_StaticActions.DisableDogMovement();
+        Player_StaticActions.DisableHumanMovement();
+        SetPanel(phraseSelectPanel);
+        UIContainer.gameObject.SetActive(true);
+        open = true;
+    }
+
+    private void Close()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; 
+        Player_StaticActions.EnableDogMovement();
+        Player_StaticActions.EnableHumanMovement();
+        UIContainer.gameObject.SetActive(false);
+        open = false;
+    }
+
+    private void SetPanel (Transform panel)
+    {
+        activePanel.gameObject.SetActive(false);
+        activePanel = panel;
+        activePanel.gameObject.SetActive(true);
+    }
+
+    private void PlacePhrase (string phrase)
+    {
+        if (phraseContainer.childCount > 0)
+            phraseContainer.OffTheWeans ();
+
+        bool firstBlank = true;
+        int last = 0;
+        for (int i = 0; i < 20; i++)
+        {
+            if (last == phrase.Length - 1) break;
+
+            int next = phrase.IndexOf ('_', last);
+
+            if (next == -1)
+            {
+                PlacePhraseText (phrase.Substring (last).Trim ());
+                break;
+            }
+
+            if (next - last > 0)
+                PlacePhraseText (phrase.Substring (last, next - last).Trim ());
+
+            PlacePhraseBlank (phraseContainer.childCount, firstBlank);
+            firstBlank = false;
+            
+            last = Mathf.Min (next + 1, phrase.Length - 1);
+        }
+
+        PlaceAddButtons();
+    }
+
+    private void PlaceButton (string text, Transform parent, UnityAction onClick)
+    {
+        GameObject buttonObj = Instantiate (button, parent);
+        buttonObj.GetComponentInChildren<TextMeshProUGUI> ().text = text;
+        buttonObj.GetComponent<Button> ().onClick.AddListener (onClick);
+    }
+
+    private void PlacePhraseText (string text)
+    {
+        Instantiate (phraseText, phraseContainer).GetComponent<TextMeshProUGUI> ().text = text;
+    }
+
+    private void PlacePhraseBlank (int placeIndex, bool select = false)
+    {
+        GameObject blank = Instantiate (phraseBlank, phraseContainer);
+        blank.transform.SetSiblingIndex(placeIndex);
+        Button button = blank.GetComponent<PhraseBlank> ().wordButton;
+        //button.onClick.AddListener (() => OnBlankSelected (placeIndex));
+        if (select)
+            blank.GetComponent<PhraseBlank> ().Activate ();
+    }
+    
+    private void PlaceAddButtons()
+    {
+        //foreach (Transform child in phraseContainer.GetComponentsInChildren<Transform>())
+        //    if (child.name.Contains("AddBlankButton")) Destroy(child.gameObject);
+
+        for (int c = 0; c < phraseContainer.childCount; c++)
+        {
+            //bool spawnLast = c == phraseContainer.childCount - 1 && phraseContainer.GetChild(c).name.Contains("Blank");
+            //print(spawnLast);
+            Transform child = phraseContainer.GetChild(c);
+
+            if (child.name.Contains("PhraseBlank"))
+            {
+                Transform last = c - 1 < 0 ? null : phraseContainer.GetChild(c - 1);
+                Transform next = c + 1 >= phraseContainer.childCount ? null : phraseContainer.GetChild(c + 1);
+                print($"child: {c} ({child.name})");
+                print($"last: {(last == null ? "null" : last.name)} ({last == null || !last.name.Contains("AddBlankButton")})");
+                print($"next: {(next == null ? "null" : next.name)} ({next == null || !next.name.Contains("AddBlankButton")})");
+                if (last == null || !last.name.Contains("AddBlankButton"))
+                {
+                    Button addButton = Instantiate(addBlankButton, phraseContainer).GetComponentInChildren<Button>();
+                    addButton.onClick.AddListener(() => OnAddButtonClicked(addButton.transform.parent));
+                    addButton.transform.parent.SetSiblingIndex(c);
+                    c++;
+                }
+                if (next == null || !next.name.Contains("AddBlankButton"))
+                {
+                    Button addButton = Instantiate(addBlankButton, phraseContainer).GetComponentInChildren<Button>();
+                    addButton.onClick.AddListener(() => OnAddButtonClicked(addButton.transform.parent));
+                    addButton.transform.parent.SetSiblingIndex(c + 1);
+                }
+            }
+        }
+    }
+
+    public void SubmitPhrase ()
     {
         StringBuilder sb = new StringBuilder (50);
         foreach (TextMeshProUGUI text in phraseContainer.GetComponentsInChildren<TextMeshProUGUI> ())
         {
-            if (text.text == "__") continue;
+            if (text.text == "____") continue;
 
             sb.Append (text.text + " ");
         }
@@ -93,139 +242,6 @@ public class NewComUI : MonoBehaviour
                 break;
         }
     }
-
-    public void OnTabSelected(int tab)
-    {
-        categoryContainers[activeTab].gameObject.SetActive(false);
-        activeTab = tab;
-        categoryContainers[activeTab].gameObject.SetActive(true);
-        categoryBackground.sprite = categoryTabSprites[tab];
-    }
-
-    public void OnHistorySelected (int button)
-    {
-        historyPanel.OffTheWeans ();
-        foreach (string h in history)
-            PlaceButton (h, historyPanel, () => SubmitMessage (h));
-
-        SetPanel (historyPanel);
-    }
-
-    private void OnPhraseSelected (string phrase)
-    {
-        PlacePhrase (phrase);
-        SetPanel(phraseFillPanel);
-        LayoutRebuilder.ForceRebuildLayoutImmediate (phraseContainer.GetComponent<RectTransform> ());
-    }
-
-    private void OnBlankSelected (int siblingIndex)
-    {
-        activeWordIndex = siblingIndex;
-    }
-
-    private void OnWordSelected (string word)
-    {
-        if (phraseContainer.GetChild (activeWordIndex).GetComponentInChildren<TextMeshProUGUI> ().text == "__")
-            InsertPhraseWord (word, activeWordIndex);
-        else
-        {
-            TextMeshProUGUI text = phraseContainer.GetChild (activeWordIndex).GetComponentInChildren<TextMeshProUGUI> ();
-            text.text = word;
-            RectTransform rect = phraseContainer.GetChild (activeWordIndex).GetComponent<RectTransform> ();
-            rect.sizeDelta = new Vector2 (text.preferredWidth, rect.sizeDelta.y);
-        }
-
-        phraseContainer.GetChild (activeWordIndex + 1).GetComponent<Button> ().Select();
-    }
-
-    private void Open()
-    {
-        Player_StaticActions.DisableDogMovement();
-        Player_StaticActions.DisableHumanMovement();
-        activePanel = phraseSelectPanel;
-        activePanel.gameObject.SetActive(true);
-        UIContainer.gameObject.SetActive(true);
-        open = true;
-    }
-
-    private void Close()
-    {
-        Player_StaticActions.EnableDogMovement();
-        Player_StaticActions.EnableHumanMovement(); 
-        UIContainer.gameObject.SetActive(false);
-        open = false;
-    }
-
-    private void SetPanel (Transform panel)
-    {
-        activePanel.gameObject.SetActive(false);
-        activePanel = panel;
-        activePanel.gameObject.SetActive(true);
-    }
-
-    private void PlacePhrase (string phrase)
-    {
-        if (phraseContainer.childCount > 0)
-            phraseContainer.OffTheWeans ();
-
-        bool firstBlank = true;
-        int last = 0;
-        for (int i = 0; i < 20; i++)
-        {
-            if (last == phrase.Length - 1) break;
-
-            int next = phrase.IndexOf ('_', last);
-
-            if (next == -1)
-            {
-                PlacePhraseText (phrase.Substring (last).Trim ());
-                break;
-            }
-
-            if (next - last > 0)
-                PlacePhraseText (phrase.Substring (last, next - last).Trim ());
-
-            PlacePhraseBlank (firstBlank);
-            firstBlank = false;
-            
-            last = Mathf.Min (next + 1, phrase.Length - 1);
-        }
-    }
-
-    private void PlaceButton (string text, Transform parent, UnityAction onClick)
-    {
-        GameObject buttonObj = Instantiate (button, parent);
-        buttonObj.GetComponentInChildren<TextMeshProUGUI> ().text = text;
-        buttonObj.GetComponent<Button> ().onClick.AddListener (onClick);
-    }
-
-    private void PlacePhraseText (string text)
-    {
-        Instantiate (phraseText, phraseContainer).GetComponent<TextMeshProUGUI> ().text = text;
-    }
-
-    private void PlacePhraseBlank (bool select = false)
-    {
-        GameObject blank = Instantiate (phraseBlank, phraseContainer);
-        Button button = blank.GetComponent<Button> ();
-        button.onClick.AddListener (() => OnBlankSelected (blank.transform.GetSiblingIndex ()));
-        if (select)
-            activeWordIndex = blank.transform.GetSiblingIndex ();
-    }
-
-    private void InsertPhraseWord (string word, int index)
-    {
-        GameObject pWord = Instantiate (phraseBlank, phraseContainer);
-        pWord.GetComponent<Button> ().onClick.AddListener (() => OnBlankSelected (index));
-        pWord.transform.SetSiblingIndex (index);
-
-        TextMeshProUGUI text = pWord.GetComponentInChildren<TextMeshProUGUI> ();
-        text.text = word;
-        RectTransform rect = pWord.GetComponent<RectTransform> ();
-        rect.sizeDelta = new Vector2 (text.preferredWidth, rect.sizeDelta.y);
-    }
-
-    private void SelectFirstButton (Transform parent) => parent.GetComponentInChildren<Button> ()?.Select ();
 
     private bool cancelHeld = true;
     private bool openHeld = true;

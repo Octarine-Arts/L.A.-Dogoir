@@ -2,7 +2,7 @@
 tags: Detective
 ---
 <<if $DetectiveFoundWallet == true>>
-<<jump CorneliusMetDetectives>>
+<<jump HughCorneliusMetDetectives>>
 <<endif>>
 
 <<if $DetectiveFoundWallet == false>>
@@ -11,7 +11,7 @@ Detective: Just enjoying an evening stroll, don’t mind me.
 <<endif>>
 
 ===
-title: CorneliusMetDetectives
+title: HughCorneliusMetDetectives
 position: 187,-234
 ---
 <<if $HughIsInitialGreeting == false>>

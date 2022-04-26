@@ -2,7 +2,7 @@
 tags: Detective
 ---
 <<if $CorneliusMetDetectives == true>>
-<<jump CorneliusMetDetectives>> 
+<<jump DanCorneliusMetDetectives>> 
 
 <<elseif $CorneliusMetDetectives == false>>
 Dan: Oh no! I've lost Cornelius!
@@ -13,8 +13,7 @@ Detective: I'm sure he can't have gone far. If I see him, I'll be sure to let yo
 <<endif>>
 
 ===
- 
-title: CorneliusMetDetectives
+title: DanCorneliusMetDetectives
 position: 1,148
 ---
  
@@ -22,7 +21,7 @@ position: 1,148
 Dan: My sweet little Cornelius, where have you been?! I’ve been so worried. Thank you so much Detective, I’ve been searching the streets for him everywhere.
 Detective: And that’s why you always keep your dog on a leash in a busy city, sir. You two take care.
 
-<<Yarn TriggerGunshot>>
+<<TriggerGunshot Yarn>>
 <<Unfollow Cornelius>>
 <<stop>>
 

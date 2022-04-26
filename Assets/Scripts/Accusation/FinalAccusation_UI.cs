@@ -56,7 +56,5 @@ public class FinalAccusation_UI : MonoBehaviour
         {
             evidenceList.Add(dropdown.GetCurrentEvidence());
         }
-            
-        Debug.Log(_finalAccusation.CheckEvidence(evidenceList));
     }
 }
