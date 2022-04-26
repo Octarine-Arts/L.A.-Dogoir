@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Bullet hole and bullet casing
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: df743832698122e4ca14556765049911, type: 3}
+  displayImage: {fileID: 21300000, guid: 11ef5a0fddfb6774a8b5a955e9ed45bf, type: 3}
   displayName: Bullet hole and bullet casing
   locationFound: {fileID: 11400000, guid: b2152251429b82b44b9e42b2fa9fdb9b, type: 2}
   description: "Bullet hole AND bullet casing $DetectiveHasFoundBulletHoleAndCasing

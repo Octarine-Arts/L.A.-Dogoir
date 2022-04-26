@@ -5,8 +5,10 @@ tags: Detective
 <<jump CorneliusMetDetectives>> 
 
 <<elseif $CorneliusMetDetectives == false>>
-Dan: Wanna dog, officer?
-Detective: No thanks, I’ve already got one right here. Isn’t that right, Archie?
+Dan: Oh no! I've lost Cornelius!
+Detective: ...Who?
+Dan: Cornelius! My dog! Where on earth could he be?
+Detective: I'm sure he can't have gone far. If I see him, I'll be sure to let you know.
 
 <<endif>>
 
@@ -17,8 +19,8 @@ position: 1,148
 ---
  
 <<if $CorneliusIsBroughtToDan == true>>
-Dan: Oh my God, my sweet little Cornelius, where have you been?! I’ve been so worried, thank you so much Detective, I’ve been searching the streets for him everywhere.
-Detective: And that’s why you always keep your dog on a leash, unless they have good recall.
+Dan: My sweet little Cornelius, where have you been?! I’ve been so worried. Thank you so much Detective, I’ve been searching the streets for him everywhere.
+Detective: And that’s why you always keep your dog on a leash in a busy city, sir. You two take care.
 
 <<Yarn TriggerGunshot>>
 <<Unfollow Cornelius>>

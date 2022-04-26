@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Blood in bathroom
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: df743832698122e4ca14556765049911, type: 3}
+  displayImage: {fileID: 21300000, guid: d7456f33431de9f4199cd6e3f1fa28f1, type: 3}
   displayName: Blood in Bathroom
   locationFound: {fileID: 11400000, guid: afb58a39a76c352469d6f8292f888942, type: 2}
   description: A substantial amount of blood on the floor of the ladies bathroom.
