@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Bone
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: df743832698122e4ca14556765049911, type: 3}
+  displayImage: {fileID: 21300000, guid: 1685b827ed54b5941a985c6c69c65c6e, type: 3}
   displayName: Bone
   locationFound: {fileID: 11400000, guid: 26c9fef5f05edef448543aab461ba9c0, type: 2}
   description: A tasty treat for my four legged friends

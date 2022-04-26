@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: df743832698122e4ca14556765049911, type: 3}
+  displayImage: {fileID: 21300000, guid: 39ae7043ae9f45243aa1a7eaa654e613, type: 3}
   displayName: Shotgun
   locationFound: {fileID: 11400000, guid: 4aae2f4bddc8c1843b04d656d317b70c, type: 2}
   description: A double barrel shotgun. Too big to be the murder weapon.
