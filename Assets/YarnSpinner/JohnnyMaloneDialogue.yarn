@@ -80,6 +80,15 @@ position: 69,-84
 <<endif>>
 <<endif>>
 
+<<if  $DetectiveHasSpokenToJohnnyBlood == true>>
+<<if  $DetectiveHasSpokenToJohnnyHorseTicket == true>>
+<<if  $DetectiveHasSpokenToJohnnyDebt == true>>
+-> Detective: All the evidence is pointing at you
+<<jump JohnnyInterrogate>>
+<<endif>>
+<<endif>>
+<<endif>>
+
 -> Detective: Goodbye
 <<jump JohnnyGoodbye>>
 
@@ -195,6 +204,19 @@ Detective: And?
 Johnny: Alls I’m saying is she’s around here a lot, and Dale doesn’t seem to mind.
 
 <<set $DetectiveHasSpokenToJohnnyDebt to true>>
+
+<<jump JohnnyQuestions>>
+===
+
+title: JohnnyInterrogate
+position: 495,-14
+---
+Detective: So you admit to beating on the woman Jack was seeing, running “games” nights that sound an awful lot like an unlicensed gambling ring, and admit that Jack owed you a lot of money. I gotta say, Johnny, the circumstantial evidence is pointing in your direction…
+Johnny: Is that so?
+Detective: If Jack wasn’t paying up, and neither was his lady, maybe there was only one way to get him out of your hair for good.
+Johnny: You don’t quit, do ya? Listen, Gumshoe, either provide the hard proof and arrest me or let me go home, alright?
+
+<<set $DetectiveHasInterrogatedJohnny to true>>
 
 <<jump JohnnyQuestions>>
 ===

@@ -80,6 +80,13 @@ position: -307,-131
 <<endif>>
 <<endif>>
 
+
+<<if $DetectiveHasFoundPicture == true>>
+<<if $DaleHasSpokenAboutPeggy == true>>
+<<jump PhotoOfPeggy>>
+<<endif>>
+<<endif>>
+
 -> Detective: Goodbye
 <<jump Goodbye>>
 
@@ -97,7 +104,7 @@ Dale: Dale Butterbur, I own this bar. It was used by bootleggers during the proh
 title: Gunshot
 position: -77,-430
 ---
-Detective: Tell me exactly where you were when the gunshot occurred?
+Detective: Tell me, exactly where you were when the gunshot occurred?
 Dale: The lights had just gone out, so I was in the storeroom turning the breaker back on. Faulty wiring, it trips every now and then.
 
 <<jump Lights>>
@@ -145,7 +152,7 @@ title: Loretta
 position: 171,192
 ---
 Detective: What do you know about Loretta Dubois?
-Dale: She performs here once a week - she’s a great singer. Obviously she’s a bit of a dish too, which brings in the customers. I think Harlow got it for her bad. Never missed a performance. He was more likely to pay her just for existing than me was to pay me for booze.
+Dale: She performs here once a week - she’s a great singer. Obviously she’s a bit of a dish too, which brings in the customers. I think Harlow got it for her bad. Never missed a performance. He was more likely to pay her just for existing than he was to pay me for booze.
 
 <<jump Questions>>
 ===
@@ -201,6 +208,24 @@ Detective: That maybe you were keeping her husband around just to see a little m
 Dale: Gee, people around here like to gossip, huh? Sure, Mrs. Harlow seems a wonderful woman and honestly when you serve men all day every day it’s nice to have a woman around. But there’s nothing more to it than that, Detective, I promise you.
 
 <<set $DaleHasSpokenAboutPeggy to true>>
+
+<<jump Questions>>
+===
+title: PhotoOfPeggy
+position: 141,457
+---
+Detective: I couldn’t help but notice, Dale, that you have a photo of the victim’s wife in your office. And here I was under the impression you hardly knew her.
+Dale: … 
+Detective: Cat got your tongue, Mr. Butterbur? 
+Dale: I can explain, Detective. It’s not what it looks like.
+Detective: Really? Because it looks like you have quite an intense interest in Mrs. Harlow and you’ve been lying to me about it. Did Mr. Harlow know about your feelings towards his wife? I can’t imagine he would have been too pleased about that.
+Dale: It wasn’t like that!
+Detective: It must have hurt you to see her husband in here most nights, canoodling with Miss Dubois, while his wife waited faithfully for him to come home. You must have hated the way he treated her, you knew you could treat her better. But a loyal wife like Mrs. Harlow wouldn’t just leave her husband, not unless he was removed entirely…
+Dale: Stop! Stop it! 
+Detective: Then tell me the truth!
+Dale: Alright, Detective, you win. I’ll admit….I love Peggy. And yes, it did kill me to see how that bastard treated her like she was nothing. Peggy’s no idiot, she knew what was happening with Loretta. And she still came to pick him up most nights. It broke my damn heart. She deserves the world, and instead she got stuck with Jack Harlow. So I’m glad he’s dead, alright? I’m damn glad. But I didn’t shoot him.
+
+<<set $DaleHasSpokenAboutPhotoOfPeggy to true>>
 
 <<jump Questions>>
 ===

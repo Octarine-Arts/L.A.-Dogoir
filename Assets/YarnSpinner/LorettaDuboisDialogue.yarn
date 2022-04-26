@@ -66,7 +66,7 @@ position: 69,-84
 <<if $HasArchieShownFeather == true>> 
 -> Detective:  Friendly with Jack?
 <<jump FriendlyWithJack>>
-<<endif>>.
+<<endif>>
 
 <<if $DetectiveHasFoundGun == false>>
 <<if $DaleHasSpokenAboutShotgun == true>>
@@ -80,6 +80,11 @@ position: 69,-84
 -> Detective:  Seen the bathroom lately? It's a real bloodbath in there
 <<jump AboutBathroomBlood>>
 <<endif>>
+<<endif>>
+
+<<if $DetectiveHasSpokenToPeggyTickets == true>>
+-> Detective:  How were the movies?
+<<jump KingKongTickets>>
 <<endif>>
 
 -> Detective: Goodbye
@@ -198,6 +203,26 @@ Detective: Miss Dubois…
 Loretta: Yes, yes, alright. That blood…is mine. That thug “Two Sleeves” or whatever ridiculous thing he calls himself… He came in while I was in there. He said something about money Jack owed, said that I should pay up since Jack couldn’t. I mean, what nonsense! I don’t owe anything. So I told him that very thing. Well, being the brute he is he hit me. But I’m fine, Detective, don’t worry about me. Unlike poor Jack I lived to tell the tale.
 
 <<set $DetectiveHasSpokenToLorettaBlood to true>>
+
+<<jump LorettaQuestions>>
+===
+
+title: KingKongTickets
+position: 368,82
+---
+Detective: What did you think of King Kong when you saw it last night?
+Loretta: Oh, I loved it! It was a little silly but I just adore Fay Wray. She is très magnifique! Wait...how do you know I was…
+Detective: Did Jack take you to the movies often, Miss Dubois?
+Loretta: I, uh…I don’t know what you’re talking about.
+Detective: Miss Dubois…there’s no point acting dumb with me now. I know the two of you went to the movies last night. He had two tickets in his pocket and his wife didn’t go with him.
+Loretta: It was rather rude of you to trick me into admitting it like that, Detective. I suppose you think you’re awfully clever.
+Detective: Just a little. But perhaps it’s time to come clean about your relationship with Jack Harlow.
+Loretta: Very well, Detective. Jack and I were…friendly with one another. But is that such a crime?
+Detective: Mr. Harlow had a wife, so it just might be a crime, depending on how friendly you were.
+Loretta: Alright, alright. Yes, Jack and I were seeing each other. But obviously this proves my innocence. I wouldn’t kill the man I love, would I?
+Detective: So you loved him?
+Loretta: Yes. I did. Jack could be severe. But he was straight-forward and honest. And he was certainly better than a lot of the men out there. Especially the ones in show business. So yes, Detective, I was seeing him. But I didn’t want him dead. Perhaps instead of scrounging around in my personal affairs, you go and find out who really killed him.
+
 
 <<jump LorettaQuestions>>
 ===
