@@ -10,7 +10,10 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Caviar Dreams
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5f43e6b2d65a72d4591e55ab9380b260, type: 3}
+  - {fileID: 12800000, guid: 2695e00205bd6534fa21ba7e4d6d8050, type: 3}
+  - {fileID: 12800000, guid: 980b8631ea7703e4592f7548d6e7a100, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
