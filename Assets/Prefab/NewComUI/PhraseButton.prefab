@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ____ smells like ____
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
+  m_sharedMaterial: {fileID: 4307983317544587134, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
