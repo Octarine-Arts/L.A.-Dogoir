@@ -24,17 +24,28 @@ public class Journal_Manager : MonoBehaviour
     }
 
 	private void Update()
-	{
+    {
+        if (UI_Manager._isUIOpen && UI_Manager._currentMenu != "Journal") return;
+        
         if (Input.GetKeyDown(KeyCode.J))
         {
-            _menuManager.OpenMenu("Contents Page");
-            Cursor.lockState = CursorLockMode.None;
-            Player_StaticActions.DisableHumanMovement();
+            if (UI_Manager._isUIOpen)
+            {
+                UI_Manager.SetIsOpen(false, "Journal");
+                Player_StaticActions.EnableHumanMovement();
+                _menuManager.CloseAllMenus();
+            }
+            else
+            {
+                UI_Manager.SetIsOpen(true, "Journal");
+                _menuManager.OpenMenu("Contents Page");
+                Player_StaticActions.DisableHumanMovement();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            UI_Manager.SetIsOpen(false, "Journal");
             Player_StaticActions.EnableHumanMovement();
             _menuManager.CloseAllMenus();
         }

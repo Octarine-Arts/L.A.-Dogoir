@@ -47,7 +47,8 @@ public class TriggerDialogue : MonoBehaviour
     {
         if (!isInitialised) return;
         if (isTalking) return;
-
+        if (UI_Manager._isUIOpen) return;
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
@@ -110,7 +111,7 @@ public class TriggerDialogue : MonoBehaviour
     private void ChangeToNPCCamera()
     {
         isTalking = true;
-        Cursor.lockState = CursorLockMode.None;
+        UI_Manager.SetIsOpen(true, "NPC");
         _playerCamera.enabled = false;
         _npcCamera.enabled = true;
     }
@@ -118,7 +119,7 @@ public class TriggerDialogue : MonoBehaviour
     private void ChangeToPlayerCamera()
     {
         isTalking = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        UI_Manager.SetIsOpen(false, "NPC");
         _playerCamera.enabled = true;
         _npcCamera.enabled = false;
     }

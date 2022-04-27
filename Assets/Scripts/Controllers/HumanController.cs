@@ -47,6 +47,7 @@ public class HumanController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableHumanMovement += DisableMovement;
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;
+        Player_StaticActions.DisableHumanMovement();
     }
 
     private void Update ()
