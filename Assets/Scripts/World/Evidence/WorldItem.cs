@@ -30,6 +30,8 @@ public class WorldItem : MonoBehaviour, IInteractable
         {
             _hasFlashed = true;
             HumanCanvas.current.FlashJournal();
+            if(!string.IsNullOrEmpty(evidence_SO.promptMessageHuman)) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, evidence_SO.promptMessageHuman);
+            if(!string.IsNullOrEmpty(evidence_SO.promptMessageDog)) TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, evidence_SO.promptMessageDog);
         }
 
         if (string.IsNullOrEmpty(evidence_SO.yarnString)) return;

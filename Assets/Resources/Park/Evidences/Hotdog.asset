@@ -18,4 +18,7 @@ MonoBehaviour:
   description: "\u201CIt looks delicious, but on closer inspection it appears to
     be covered in dog hair. Maybe Archie could smell something on it?\u201D"
   yarnString: $DetectiveFoundHotdog
+  promptMessageDog: Hmm... this smell definitely leads somewhere...
+  promptMessageHuman: There's a discarded hotdog here. I wonder if Archie could track
+    the hotdog vendor's scent?
   isFound: 0
