@@ -47,14 +47,14 @@ public class PlayerManager : MonoBehaviour
         if(PhotonNetwork.IsMasterClient)
         {
             thisPlayer = hostSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
-            Vector3 spawnPosition = ThisPlayer == PlayerSpecies.Human ? GameObject.Find("HumanSpawnPoint").transform.position : GameObject.Find("DogSpawnPoint").transform.position;
-            spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", hostSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition, Quaternion.identity);
+            GameObject spawnPosition = ThisPlayer == PlayerSpecies.Human ? GameObject.Find("HumanSpawnPoint") : GameObject.Find("DogSpawnPoint");
+            spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", hostSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition.transform.position, spawnPosition.transform.rotation);
         }
         else
         {
             thisPlayer = guestSlot == 1 ? PlayerSpecies.Human : PlayerSpecies.Dog;
-            Vector3 spawnPosition = ThisPlayer == PlayerSpecies.Human ? GameObject.Find("HumanSpawnPoint").transform.position : GameObject.Find("DogSpawnPoint").transform.position;
-            spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition, Quaternion.identity);
+            GameObject spawnPosition = ThisPlayer == PlayerSpecies.Human ? GameObject.Find("HumanSpawnPoint") : GameObject.Find("DogSpawnPoint");
+            spawnedPrefab = PhotonNetwork.Instantiate (Path.Combine ("PhotonPrefabs", guestSlot == 1 ? "HumanPlayer" : "DogPlayer"), spawnPosition.transform.position, spawnPosition.transform.rotation);
         }
 
         //print ("Instantiated biiitch " + PhotonNetwork.LocalPlayer.ActorNumber);
