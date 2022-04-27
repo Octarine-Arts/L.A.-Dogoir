@@ -88,8 +88,7 @@ public class NewComUI : MonoBehaviour
 
     private void Open()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true; 
+        UI_Manager.SetIsOpen(true, "Comm");
         Player_StaticActions.DisableDogMovement();
         Player_StaticActions.DisableHumanMovement();
         SetPanel(phraseSelectPanel);
@@ -99,8 +98,7 @@ public class NewComUI : MonoBehaviour
 
     private void Close()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false; 
+        UI_Manager.SetIsOpen(false, "Comm");
         Player_StaticActions.EnableDogMovement();
         Player_StaticActions.EnableHumanMovement();
         UIContainer.gameObject.SetActive(false);
@@ -247,22 +245,33 @@ public class NewComUI : MonoBehaviour
     private bool openHeld = true;
     private void Update ()
     {
+        if (UI_Manager._isUIOpen && UI_Manager._currentMenu != "Comm") return;
+        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Open();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Close();
+        }
+    
         //print($"open: {!open}, openHeld: {!openHeld}, jump: {Input.GetAxis("Jump") > 0}");
-        if (!open && !openHeld && Input.GetAxis ("Jump") > 0)
-        {
-            print("open");
-            openHeld = true;
-            Open ();
-        }
-        else if (Input.GetAxis ("Jump") <= 0)
-            openHeld = false;
-
-        if (open && !cancelHeld && Input.GetAxis ("Cancel") > 0)
-        {
-            cancelHeld = true;
-            //PreviousPanel ();
-        }
-        else if (Input.GetAxis ("Cancel") <= 0)
-            cancelHeld = false;
+        // if (!open && !openHeld && Input.GetAxis ("Jump") > 0)
+        // {
+        //     print("open");
+        //     openHeld = true;
+        //     Open ();
+        // }
+        // else if (Input.GetAxis ("Jump") <= 0)
+        //     openHeld = false;
+        //
+        // if (open && !cancelHeld && Input.GetAxis ("Cancel") > 0)
+        // {
+        //     cancelHeld = true;
+        //     //PreviousPanel ();
+        // }
+        // else if (Input.GetAxis ("Cancel") <= 0)
+        //     cancelHeld = false;
     }
 }
