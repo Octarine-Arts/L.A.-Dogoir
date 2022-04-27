@@ -36,7 +36,7 @@ namespace Journal
         JHarlow,
         LDubois,
         JMalone,
-        DButterburr,
+        DButterbur,
         PHarlow
     }
 
@@ -58,20 +58,21 @@ namespace Journal
     public enum Locations
     {
         None,
-        Loc1,
-        Loc2,
-        Loc3,
-        Loc4
+        LadiesBathroom,
+        MensBathroom,
+        Alleyway,
+        MainBar,
+        Office
     }
 
     public enum Motives
     {
         None,
-        Mot1,
-        Mot2,
-        Mot3,
-        Mot4,
-        Mot5,
-        Mot6
+        Debt,
+        Love,
+        Hate,
+        Envy,
+        Loyalty,
+        Drugs
     }
 }
