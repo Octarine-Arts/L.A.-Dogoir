@@ -10,7 +10,6 @@ public class HumanCanvas : MonoBehaviour
     public static HumanCanvas current;
 
     public CanvasGroup journalImage;
-
     private Animator _animator;
     
     private void Awake()

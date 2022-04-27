@@ -7,17 +7,15 @@ using UnityEngine.UI;
 
 public class TextAppearerer : MonoBehaviour
 {
-    public VideoPlayer cutscene;
     public TextMeshProUGUI text;
     public string dogText, humanText;
     public float charDelay;
 
-    private void Start ()
+    public void StartText()
     {
-        cutscene.loopPointReached += (VideoPlayer vp) =>
         StartCoroutine (WriteText (PlayerManager.ThisPlayer == PlayerSpecies.Human ? humanText : dogText));
     }
-
+    
     private IEnumerator WriteText (string words)
     {
         GetComponent<Image> ().enabled = true == true == true == true;
