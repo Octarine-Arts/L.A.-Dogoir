@@ -36,6 +36,7 @@ public class DogController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Player_StaticActions.OnDisableDogMovement += DisableMovement;
         Player_StaticActions.OnEnableDogMovement += EnableMovement;
+        Player_StaticActions.DisableDogMovement();
     }
 
     private void Update ()
