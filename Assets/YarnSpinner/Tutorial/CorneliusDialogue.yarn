@@ -46,8 +46,8 @@ Cornelius: Hmm... maybe there's someone around the park that can give your maste
  
 <<if $CorneliusIsSecondGreeting == true>>
 Cornelius: Any luck yet, officer?
-Archie: Not yet, I'm afraid. But we're working on it.
-Cornelius: Have you tried sniffing out my master? I'm sure your police dog noise will find a scent somewhere...
+Archie: Not yet, but we're working on it.
+Cornelius: Have you tried sniffing out my master? I'm sure your police dog nose will find a scent somewhere...
 <<stop>>
 <<endif>> 
 
