@@ -21,6 +21,9 @@ public class SceneTransition : MonoBehaviour
     {
         _photonView = GetComponent<PhotonView>();
         Invoke(nameof(DisableObjects), 2f);
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+        hashtable["DogReady"] = false;
+        hashtable["HumanReady"] = false;
     }
 
     private void DisableObjects()
