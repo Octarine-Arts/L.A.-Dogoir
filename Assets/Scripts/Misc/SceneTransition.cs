@@ -54,7 +54,6 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    
     public void SetEnabled()
     {
         _photonView.RPC(nameof(SetEnabled_RPC), RpcTarget.AllBuffered);
@@ -63,7 +62,6 @@ public class SceneTransition : MonoBehaviour
     [PunRPC]
     private void SetEnabled_RPC()
     {
-        Debug.Log("Enabled" + PlayerManager.ThisPlayer);
         foreach(GameObject go in goToEnable) go.SetActive(true);
         isEnabled = true;
     }
@@ -73,6 +71,7 @@ public class SceneTransition : MonoBehaviour
         Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
         if((bool) hashtable["HumanReady"] && (bool) hashtable["DogReady"])
         {
+            Debug.Log("ASDASD");
             SceneManager.LoadScene("Bar_Scene");
         }
     }

@@ -45,7 +45,7 @@ public class YarnCommands : MonoBehaviour
     // 1 == dog
     public void PromptPlayer(string message, int humanOrDog)
     {
-        _photonView.RPC(nameof(PromptPlayer_RPC), RpcTarget.AllBuffered);
+        _photonView.RPC(nameof(PromptPlayer_RPC), RpcTarget.AllBuffered,message, humanOrDog);
     }
 
     [PunRPC]
