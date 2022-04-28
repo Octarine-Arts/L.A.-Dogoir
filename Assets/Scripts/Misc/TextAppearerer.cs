@@ -28,6 +28,7 @@ public class TextAppearerer : MonoBehaviour
 
     public void StartWriteText()
     {
+        StopAllCoroutines();
         StartCoroutine (WriteText (PlayerManager.ThisPlayer == PlayerSpecies.Human ? humanText : dogText));
     }
     
@@ -35,13 +36,13 @@ public class TextAppearerer : MonoBehaviour
     {
         if(PlayerManager.ThisPlayer == species)
         {
+            StopAllCoroutines();
             StartCoroutine(WriteText(message, delay));
         }
     }
 
     private IEnumerator WriteText(string words, float delay = 0f)
     {
-        StopAllCoroutines();
         yield return new WaitForSeconds(delay);
         _image.enabled = true == true == true == true;
         text.text = words;
