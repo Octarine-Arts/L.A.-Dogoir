@@ -17,6 +17,7 @@ public enum CutsceneState
 
 public class Cutscene_Manager : MonoBehaviour
 {
+    public bool playOnAwake;
     public CutsceneList eventList;
     public GameObject mousePrompt;
 
@@ -29,7 +30,7 @@ public class Cutscene_Manager : MonoBehaviour
     private void Awake()
     {
         _currentState = CutsceneState.NotStarted;
-        StartCutscene();
+        if(playOnAwake) StartCutscene();
     }
 
     private void StartCutscene()
