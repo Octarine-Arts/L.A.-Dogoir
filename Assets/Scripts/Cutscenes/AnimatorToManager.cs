@@ -10,4 +10,9 @@ public class AnimatorToManager : MonoBehaviour
     {
         cutsceneManager.CutsceneEventFinished();
     }
+
+    public void PlayAudio(AudioClip audioClip)
+    {
+        AudioManager.current.PlaySFX(audioClip);
+    }
 }
