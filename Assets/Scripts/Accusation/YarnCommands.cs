@@ -34,6 +34,7 @@ public class YarnCommands : MonoBehaviour
         AudioManager.current.PlaySFX(gunshotSound);
         if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) GameObject.FindGameObjectWithTag("GunshotTrail").GetComponent<SmellTrail>().Activate();
         _photonView.RPC(nameof(Gunshot), RpcTarget.Others);
+        GameObject.Find("BarTransition").GetComponent<SceneTransition>().SetEnabled();
     }
 
     [YarnCommand("PromptPlayer")]
