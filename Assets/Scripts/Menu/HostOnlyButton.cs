@@ -9,7 +9,6 @@ public class HostOnlyButton : MonoBehaviourPunCallbacks
 {
     private void OnEnable()
     {
-        Debug.Log("ASd");
         gameObject.SetActive(PhotonNetwork.IsMasterClient);
     }
 

@@ -24,10 +24,13 @@ public class TextAppearerer : MonoBehaviour
     private void Start ()
     {
         _image = GetComponent<Image>();
-        cutscene.loopPointReached += (VideoPlayer vp) =>
-        StartCoroutine (WriteText (PlayerManager.ThisPlayer == PlayerSpecies.Human ? humanText : dogText));
     }
 
+    public void StartWriteText()
+    {
+        StartCoroutine (WriteText (PlayerManager.ThisPlayer == PlayerSpecies.Human ? humanText : dogText));
+    }
+    
     public void PromptPlayer(PlayerSpecies species, string message, float delay = 0f)
     {
         if(PlayerManager.ThisPlayer == species)
