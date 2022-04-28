@@ -116,7 +116,11 @@ Archie: They say that you’re all a bunch of cat loving -
 Archie: - unloyal - 
 [character name="Bean, Mean, & Lean"]Character B: *gasp*
 //Bean, Mean, & Lean: *gasp*
-Archie: - 
+Archie: - sons of bitches!
+Bean: HOW DARE YOU?!
+Mean: WHAT’D YOU SAY ABOUT MY MUM?!
+Lean: WHY I OUGHTA!!
 <<set $ArchieCreatedDistraction to true>>
+<<PromptPlayer Yarn "What a ruckus! This will definitely disturb everyone in the bar. Might be a good distraction…" 1>>
 <<stop>>
 ===
