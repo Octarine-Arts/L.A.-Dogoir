@@ -245,6 +245,8 @@ public class NewComUI : MonoBehaviour
     private bool openHeld = true;
     private void Update ()
     {
+        if (!Player_StaticActions.humanMovementAllowed && PlayerManager.ThisPlayer == PlayerSpecies.Human) return; 
+        if (!Player_StaticActions.dogMovementAllowed && PlayerManager.ThisPlayer == PlayerSpecies.Dog) return; 
         if (UI_Manager._isUIOpen && UI_Manager._currentMenu != "Comm") return;
         
         if(Input.GetKeyDown(KeyCode.Space))
