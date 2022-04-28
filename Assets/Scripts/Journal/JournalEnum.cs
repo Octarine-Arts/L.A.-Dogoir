@@ -62,7 +62,8 @@ namespace Journal
         MensBathroom,
         Alleyway,
         MainBar,
-        Office
+        Office,
+        OnJack
     }
 
     public enum Motives

@@ -18,4 +18,8 @@ MonoBehaviour:
   description: A plain leather wallet. The I.D. inside identifies the owner as a
     Mr. Dan Gleebitz. It also contains a receipt for 50x hotdog buns
   yarnString: $DetectiveFoundWallet
+  promptMessageDog: 
+  promptMessageHuman: There's a receipt in this wallet for 50 hotdog buns...the owner
+    must be a hotdog vendor. I should try and find him. I wonder if anyone in the
+    park knows something?
   isFound: 0

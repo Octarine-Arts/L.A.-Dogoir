@@ -20,7 +20,7 @@ Detective: Why on earth would you do that?
 Hugh: I didn’t do it deliberately! I made the mistake of buying a hotdog from that vendor.
 Detective: Really? I’m looking for the vendor, actually. I found his wallet. Where is he?
 Hugh: I think he wheeled his little stand out of the park a while ago. Probably for the best. I wouldn’t bother searching. I had to throw my hotdog in the bin.
-
+<<PromptPlayer Yarn "Hmm, maybe his half-eaten hotdog could provide a clue?" 0>>
 <<set $HughIsInitialGreeting to true>>
 <<stop>>
 

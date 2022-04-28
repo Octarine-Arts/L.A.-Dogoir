@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Flask
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: df743832698122e4ca14556765049911, type: 3}
+  displayImage: {fileID: 21300000, guid: 30a1766d1cf6f1248b4f2340327b14ec, type: 3}
   displayName: Flask
   locationFound: {fileID: 11400000, guid: a17ba529769486f4e81e891f6e955ae8, type: 2}
   description: A small metal flask. The contents smell like straight liquor.
   yarnString: $DetectiveHasFoundFlask
+  promptMessageDog: 
+  promptMessageHuman: 
   isFound: 0

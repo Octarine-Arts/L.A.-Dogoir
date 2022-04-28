@@ -36,6 +36,15 @@ public class YarnCommands : MonoBehaviour
         _photonView.RPC(nameof(Gunshot), RpcTarget.Others);
     }
 
+    [YarnCommand("PromptPlayer")]
+    // 0 == human
+    // 1 == dog
+    public void PromptPlayer(string message, int humanOrDog)
+    {
+        if (humanOrDog == 0) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, message, 1.5f);
+        else if (humanOrDog == 1) TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, message, 1.5f);
+    }
+
     [PunRPC]
     public void SyncVal(string yarnString, bool val)
     {

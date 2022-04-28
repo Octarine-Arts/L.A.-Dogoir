@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75178602585745ab85d4bb3bfec595d2, type: 3}
   m_Name: DrugsLocation
   m_EditorClassIdentifier: 
-  location: 0
+  location: 5
   displayName: Office Safe

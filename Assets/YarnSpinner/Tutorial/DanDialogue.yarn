@@ -23,6 +23,8 @@ Detective: And that’s why you always keep your dog on a leash in a busy city, 
 
 <<TriggerGunshot Yarn>>
 <<Unfollow Cornelius>>
+<<PromptPlayer Yarn "Was that a gunshot?! I better check it out! Archie should be able to lead the way." 0>>
+<<PromptPlayer Yarn "What was that?! I better check it out!" 1>>
 <<stop>>
 
 <<elseif $CorneliusIsBroughtToDan == false>>

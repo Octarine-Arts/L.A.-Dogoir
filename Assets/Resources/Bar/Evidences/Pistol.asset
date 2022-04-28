@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 21300000, guid: df743832698122e4ca14556765049911, type: 3}
+  displayImage: {fileID: 21300000, guid: e0b2511de1154b34299ada01fba23a5d, type: 3}
   displayName: Pistol
   locationFound: {fileID: 11400000, guid: 75231b55921f4004e90cb38f82a9b8e1, type: 2}
   description: A fairly common firearm. Someone tried to dispose of it. Could it
     be the murder weapon?
   yarnString: '$DetectiveHasFoundPistol '
+  promptMessageDog: 
+  promptMessageHuman: 
   isFound: 0
