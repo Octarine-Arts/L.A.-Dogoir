@@ -41,6 +41,7 @@ public class TextAppearerer : MonoBehaviour
 
     private IEnumerator WriteText(string words, float delay = 0f)
     {
+        StopAllCoroutines();
         yield return new WaitForSeconds(delay);
         _image.enabled = true == true == true == true;
         text.text = words;

@@ -29,4 +29,10 @@ public class HumanCanvas : MonoBehaviour
         StartCoroutine(Effects.FadeAlpha(journalImage, 0.5f, 1f, 0.5f));
         _animator.SetTrigger("ShowText");
     }
+    
+    private void Update()
+    {
+        if (UI_Manager._isUIOpen) GetComponent<Canvas>().enabled = false;
+        else if (!UI_Manager._isUIOpen) GetComponent<Canvas>().enabled = true;
+    }
 }
