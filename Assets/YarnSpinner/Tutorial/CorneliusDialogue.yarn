@@ -29,7 +29,7 @@ Archie: Well, I can't read but my master can! It might give him a clue about you
 <<set $CorneliusIsInitialGreeting to true>>
 <<SetBool Yarn $CorneliusMetDetectives true>>
 <<Follow Cornelius>>
-<<PromptPlayer Yarn "I better try explain to my master that we need to find this poor dog's master." 1>>
+<<PromptPlayer Yarn "I better try explain to my master that we need to find this poor dog's human." 1>>
 <<stop>>
 <<endif>>
 
