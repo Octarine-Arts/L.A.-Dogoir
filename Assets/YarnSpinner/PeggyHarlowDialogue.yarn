@@ -178,10 +178,10 @@ Detective: You were seen running in from the back alley when the lights turned b
 Peggy: I’m not sure why that matters, Detective. I could have hardly murdered my husband from outside. Surely that proves my innocence.
 Detective: Just answer the question, Mrs. Harlow.
 Peggy: Can’t a woman go out for a breath of fresh air?
-
-//
 <<set $PeggySpokenAboutAlley to true>>
-<<jump PeggyQuestions>>
+<<PromptPlayer Yarn "I wonder what Mrs.Harlow was doing out in the alley, maybe I had better go investigate." 1>>
+<<stop>>
+//<<jump PeggyQuestions>>
 
 ===
 title: TicketsToKingKong
