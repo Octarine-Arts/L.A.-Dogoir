@@ -21,13 +21,14 @@ public class SceneTransition : MonoBehaviour
     {
         _photonView = GetComponent<PhotonView>();
         Invoke(nameof(DisableObjects), 2f);
-        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
-        hashtable["DogReady"] = false;
-        hashtable["HumanReady"] = false;
     }
 
     private void DisableObjects()
     {
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+        hashtable["DogReady"] = false;
+        hashtable["HumanReady"] = false;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
         foreach(GameObject go in goToEnable) go.SetActive(false);
     }
     
@@ -56,7 +57,7 @@ public class SceneTransition : MonoBehaviour
     
     public void SetEnabled()
     {
-        _photonView.RPC(nameof(SetEnabled_RPC), RpcTarget.All);
+        _photonView.RPC(nameof(SetEnabled_RPC), RpcTarget.AllBuffered);
     }
 
     [PunRPC]
