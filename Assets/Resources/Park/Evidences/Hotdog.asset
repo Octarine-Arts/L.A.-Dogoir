@@ -15,10 +15,11 @@ MonoBehaviour:
   displayImage: {fileID: 21300000, guid: 6a7e9958a7038e64bab8af67a5c90c9d, type: 3}
   displayName: Hotdog
   locationFound: {fileID: 11400000, guid: d775160116ba2cd43a42114b6ee94c73, type: 2}
-  description: "\u201CIt looks delicious, but on closer inspection it appears to
-    be covered in dog hair. Maybe Archie could smell something on it?\u201D"
+  description: It looks delicious, but on closer inspection it appears to be covered
+    in dog hair. Maybe Archie could smell something on it?
   yarnString: $DetectiveFoundHotdog
   promptMessageDog: Hmm... this smell definitely leads somewhere...
   promptMessageHuman: There's a discarded hotdog here. I wonder if Archie could track
-    the hotdog vendor's scent?
+    the hotdog vendor's scent? [Press SPACE to communicate with your partner. Communication
+    is KEY]
   isFound: 0
