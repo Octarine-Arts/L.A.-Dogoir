@@ -179,7 +179,7 @@ Peggy: I’m not sure why that matters, Detective. I could have hardly murdered 
 Detective: Just answer the question, Mrs. Harlow.
 Peggy: Can’t a woman go out for a breath of fresh air?
 <<set $PeggySpokenAboutAlley to true>>
-<<PromptPlayer Yarn "I wonder what Mrs.Harlow was doing out in the alley, maybe I had better go investigate." 1>>
+<<PromptPlayer Yarn "I wonder what Mrs.Harlow was doing out in the alley, maybe I had better go investigate." 0>>
 <<stop>>
 //<<jump PeggyQuestions>>
 

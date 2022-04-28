@@ -4,7 +4,7 @@ position: 23,-127
 ---
 
 <<if $CorneliusIsBroughtToDan == true>>
-[character name="Cornelius"]Character C: Master! Master! It’s me, it’s your little Cornelius! I thought I’d never see you again!! Thank you so much, Detective, you found my Master for me!
+Cornelius: Master! Master! It’s me, it’s your little Cornelius! I thought I’d never see you again!! Thank you so much, Detective, you found my Master for me!
 Archie: Happy to help, Cornelius. Humans like to wander, so you have to make sure you keep a good eye on them, unless they’re well trained.
 <<Unfollow Cornelius>>
 
