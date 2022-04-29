@@ -29,11 +29,18 @@ public class HumanController : MonoBehaviour
 
     private void Start ()
     {
-        if (EventManager.I != null)
-            EventManager.I.PlayerSpawned (PlayerSpecies.Human, avatar);
+        print("HUMAN STARTED");
 
+        if (EventManager.I != null)
+        {
+            print($"is avatar null? {avatar == null}, is eventmanagernull? {EventManager.I == null}");
+            EventManager.I.PlayerSpawned (PlayerSpecies.Human, avatar);
+        }
+
+        print("Checking Human is Me? " + pview.IsMine);
         if (!pview.IsMine)
         {
+            print("Destroying Human Stuff");
             Destroy (GetComponentInChildren<Camera> ().gameObject);
             Destroy (this);
             return;
@@ -76,6 +83,8 @@ public class HumanController : MonoBehaviour
 
     private void Move ()
     {
+        if (UI_Manager._isUIOpen) return;
+        
         Vector3 input = Quaternion.Euler (0, cam.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
 
@@ -94,11 +103,10 @@ public class HumanController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5f))
         {
-            if (hit.collider.TryGetComponent<IInteractable> (out IInteractable interactable))
+            if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
                 displayText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
-                    interactable.Interact();
+                if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
             }
             else displayText.SetActive(false);
         }
@@ -112,5 +120,11 @@ public class HumanController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+    }
+
+    private void OnDisable()
+    {
+        Player_StaticActions.OnDisableHumanMovement -= DisableMovement;
+        Player_StaticActions.OnEnableHumanMovement -= EnableMovement;
     }
 }

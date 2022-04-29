@@ -23,12 +23,15 @@ public class DogController : MonoBehaviour
 
     private void Start ()
     {
+        print("DOG STARTED");
         if (EventManager.I != null)
             EventManager.I.PlayerSpawned (PlayerSpecies.Dog, dog.gameObject);
 
+        print("Checking Dog is Me? " + pview.IsMine);
         if (!pview.IsMine)
         {
-            Destroy (GetComponentInChildren<Camera> ().gameObject);
+            print("Destroying Dog Stuff");
+            Destroy(GetComponentInChildren<Camera> ().gameObject);
             Destroy (this);
             return;
         }
@@ -42,6 +45,7 @@ public class DogController : MonoBehaviour
     private void Update ()
     {
         if (!canMove) return;
+        if (UI_Manager._isUIOpen) return;
         
         Vector3 input = Quaternion.Euler (0, camPivot.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
@@ -72,5 +76,11 @@ public class DogController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+    }
+
+    private void OnDisable()
+    {
+        Player_StaticActions.OnDisableDogMovement -= DisableMovement;
+        Player_StaticActions.OnEnableDogMovement -= EnableMovement;
     }
 }

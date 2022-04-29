@@ -276,4 +276,9 @@ public class NewComUI : MonoBehaviour
         // else if (Input.GetAxis ("Cancel") <= 0)
         //     cancelHeld = false;
     }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
+    }
 }

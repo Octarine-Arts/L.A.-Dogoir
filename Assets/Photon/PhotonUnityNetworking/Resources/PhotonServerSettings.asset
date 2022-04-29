@@ -45,6 +45,8 @@ MonoBehaviour:
   - TriggerFollowRPC
   - TriggerUnfollowRPC
   - SetEnabled_RPC
+  - PromptPlayer_RPC
+  - LoadLevel_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

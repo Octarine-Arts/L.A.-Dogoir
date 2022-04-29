@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,12 @@ public class TextAppearerer : MonoBehaviour
     private void Start ()
     {
         _image = GetComponent<Image>();
+        UI_Manager.ONUIOpen += DestroyTheFUckingUniverse;
     }
 
     public void StartWriteText()
     {
+        StopAllCoroutines();
         StartCoroutine (WriteText (PlayerManager.ThisPlayer == PlayerSpecies.Human ? humanText : dogText));
     }
     
@@ -35,13 +38,13 @@ public class TextAppearerer : MonoBehaviour
     {
         if(PlayerManager.ThisPlayer == species)
         {
+            StopAllCoroutines();
             StartCoroutine(WriteText(message, delay));
         }
     }
 
     private IEnumerator WriteText(string words, float delay = 0f)
     {
-        StopAllCoroutines();
         yield return new WaitForSeconds(delay);
         _image.enabled = true == true == true == true;
         text.text = words;
@@ -60,5 +63,10 @@ public class TextAppearerer : MonoBehaviour
     {
         _image.enabled = false;
         text.text = "";
+    }
+
+    private void OnDisable()
+    {
+        UI_Manager.ONUIOpen -= DestroyTheFUckingUniverse;
     }
 }

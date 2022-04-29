@@ -54,4 +54,10 @@ public class DogCameraMovement : MonoBehaviour
 	{
 		canMove = false;
 	}
+
+    private void OnDisable()
+    {
+		Player_StaticActions.OnDisableDogMovement -= DisableMovement;
+		Player_StaticActions.OnEnableDogMovement -= EnableMovement;
+	}
 }

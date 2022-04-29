@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    public bool shouldBeOpen;
     private string _menuName;
 
     private void Awake()

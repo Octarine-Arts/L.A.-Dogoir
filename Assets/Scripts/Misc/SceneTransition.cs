@@ -17,30 +17,57 @@ public class SceneTransition : MonoBehaviour
     private bool dogPresent;
     private bool humanPresent;
 
+    private GameObject _humanGO;
+    private GameObject _dogGO;
+    
     private void Awake()
     {
         _photonView = GetComponent<PhotonView>();
-        Invoke(nameof(DisableObjects), 2f);
     }
 
-    private void DisableObjects()
+    private void OnEnable()
     {
+        EventManager.I.OnPlayersSpawned += Setup;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= Setup;
+    }
+
+    private void Setup(GameObject humanGO, GameObject dogGO)
+    {
+        _humanGO = GameObject.FindGameObjectWithTag("HumanAgent");
+        _dogGO = GameObject.FindGameObjectWithTag("DogAgent");
+        
+        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
+        hashtable["DogReady"] = false;
+        hashtable["HumanReady"] = false;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
+        
         foreach(GameObject go in goToEnable) go.SetActive(false);
     }
     
     private void Update()
     {
         if (!isEnabled) return;
+
+        humanPresent = Vector3.Distance(_humanGO.transform.position, transform.position) < 2f;
+        dogPresent = Vector3.Distance(_dogGO.transform.position, transform.position) < 2f;
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("Pressed");
             if (dogPresent && PlayerManager.ThisPlayer == PlayerSpecies.Dog)
             {
+                Debug.Log("Pressed Dog");
                 Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
                 hashtable["DogReady"] = true;
                 PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
             }
             else if (humanPresent && PlayerManager.ThisPlayer == PlayerSpecies.Human)
             {
+                Debug.Log("Pressed Human");
                 Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
                 hashtable["HumanReady"] = true;
                 PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
@@ -50,16 +77,14 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    
     public void SetEnabled()
     {
-        _photonView.RPC(nameof(SetEnabled_RPC), RpcTarget.All);
+        _photonView.RPC(nameof(SetEnabled_RPC), RpcTarget.AllBuffered);
     }
 
     [PunRPC]
     private void SetEnabled_RPC()
     {
-        Debug.Log("Enabled" + PlayerManager.ThisPlayer);
         foreach(GameObject go in goToEnable) go.SetActive(true);
         isEnabled = true;
     }
@@ -69,19 +94,14 @@ public class SceneTransition : MonoBehaviour
         Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
         if((bool) hashtable["HumanReady"] && (bool) hashtable["DogReady"])
         {
-            SceneManager.LoadScene("Bar_Scene");
+            if (PhotonNetwork.IsMasterClient) PhotonNetwork.LoadLevel(3);
+            else _photonView.RPC(nameof(LoadLevel_RPC), RpcTarget.MasterClient);
         }
     }
-    
-    private void OnTriggerEnter(Collider other)
+
+    [PunRPC]
+    private void LoadLevel_RPC()
     {
-        if (other.CompareTag("HumanAgent"))
-        {
-            humanPresent = true;
-        }
-        else if (other.CompareTag("DogAgent"))
-        {
-            dogPresent = true;
-        }
+        PhotonNetwork.LoadLevel(3);
     }
 }

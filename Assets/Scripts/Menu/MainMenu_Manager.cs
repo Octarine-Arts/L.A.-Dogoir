@@ -19,7 +19,16 @@ public class MainMenu_Manager : MonoBehaviour
         listOfMenus = new List<GameObject>();
         foreach (Transform child in menuParent)
         {
-            listOfMenus.Add(child.gameObject);
+            if (child.TryGetComponent(out Menu menu))
+            {
+                if (menu.shouldBeOpen) listOfMenus.Add(child.gameObject);
+            }
+            else
+            {
+                listOfMenus.Add(child.gameObject);
+            }
+            
+            
         }
     }
 
@@ -49,6 +58,8 @@ public class MainMenu_Manager : MonoBehaviour
 
     public void OpenNextPage()
     {
+        if (_currentMenuIndex + 1 >= listOfMenus.Count) return;
+        
         listOfMenus[_currentMenuIndex].SetActive(false);
         _currentMenuIndex++;
         listOfMenus[_currentMenuIndex].SetActive(true);
@@ -56,8 +67,13 @@ public class MainMenu_Manager : MonoBehaviour
 
     public void OpenPreviousPage()
     {
+        if (_currentMenuIndex - 1 < 0) return;
+        
         listOfMenus[_currentMenuIndex].SetActive(false);
         _currentMenuIndex--;
-        listOfMenus[_currentMenuIndex].SetActive(true);
+        listOfMenus[_currentMenuIndex].SetActive(true); ;
     }
+
+    public bool IsFirstPage() => _currentMenuIndex == 0;
+    public bool IsLastPage() => _currentMenuIndex == listOfMenus.Count - 1;
 }

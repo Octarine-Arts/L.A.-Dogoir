@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ryan_Testscene.unity
     guid: 1408eae1c6c25ae408b9a5e1c6275b1e
+  - enabled: 1
+    path: Assets/Scenes/Bar_Scene.unity
+    guid: 1324007a36d9ed543a7add6b571469ca
   m_configObjects: {}

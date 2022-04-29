@@ -10,7 +10,7 @@ public class YarnCommands : MonoBehaviour
 {
     public static YarnCommands current;
     public AudioClip gunshotSound;
-    
+
     private PhotonView _photonView;
     private InMemoryVariableStorage _variableStorage;
 
@@ -32,7 +32,10 @@ public class YarnCommands : MonoBehaviour
     public void TriggerGunshot()
     {
         AudioManager.current.PlaySFX(gunshotSound);
-        if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) GameObject.FindGameObjectWithTag("GunshotTrail").GetComponent<SmellTrail>().Activate();
+        if (PlayerManager.ThisPlayer == PlayerSpecies.Dog)
+        {
+            GameObject.FindGameObjectWithTag("GunshotTrail").GetComponent<SmellTrail>().Activate();
+        }
         _photonView.RPC(nameof(Gunshot), RpcTarget.Others);
         GameObject.Find("BarTransition").GetComponent<SceneTransition>().SetEnabled();
     }
@@ -41,6 +44,12 @@ public class YarnCommands : MonoBehaviour
     // 0 == human
     // 1 == dog
     public void PromptPlayer(string message, int humanOrDog)
+    {
+        _photonView.RPC(nameof(PromptPlayer_RPC), RpcTarget.AllBuffered,message, humanOrDog);
+    }
+
+    [PunRPC]
+    public void PromptPlayer_RPC(string message, int humanOrDog)
     {
         if (humanOrDog == 0) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, message, 1.5f);
         else if (humanOrDog == 1) TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, message, 1.5f);
