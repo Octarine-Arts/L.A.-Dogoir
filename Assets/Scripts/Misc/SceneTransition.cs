@@ -23,7 +23,16 @@ public class SceneTransition : MonoBehaviour
     private void Awake()
     {
         _photonView = GetComponent<PhotonView>();
+    }
+
+    private void OnEnable()
+    {
         EventManager.I.OnPlayersSpawned += Setup;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= Setup;
     }
 
     private void Setup(GameObject humanGO, GameObject dogGO)

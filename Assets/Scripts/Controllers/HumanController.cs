@@ -103,11 +103,10 @@ public class HumanController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.position, cam.forward, out hit, 5f))
         {
-            if (hit.collider.TryGetComponent<IInteractable> (out IInteractable interactable))
+            if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
                 displayText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
-                    interactable.Interact();
+                if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
             }
             else displayText.SetActive(false);
         }

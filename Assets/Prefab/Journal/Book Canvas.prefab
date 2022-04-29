@@ -14715,6 +14715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1ce56d8a24e8c46b089eb3c1f33d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextPageSound: {fileID: 8300000, guid: d62367a8e8448fd4b9f3695236b921b3, type: 3}
   suspectsPath: Park/Suspects
   evidencePath: Park/Evidences
   locationPath: Park/Locations
