@@ -64,4 +64,9 @@ public class TextAppearerer : MonoBehaviour
         _image.enabled = false;
         text.text = "";
     }
+
+    private void OnDisable()
+    {
+        UI_Manager.ONUIOpen -= DestroyTheFUckingUniverse;
+    }
 }

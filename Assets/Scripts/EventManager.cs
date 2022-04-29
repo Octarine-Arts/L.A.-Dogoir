@@ -15,11 +15,13 @@ public class EventManager : MonoBehaviour
         if (player == PlayerSpecies.Human) humanPlayer = gameObject;
         else dogPlayer = gameObject;
 
+        print($"{player}, dognull: {dogPlayer == null}, humanNull: {humanPlayer == null}");
         if (dogPlayer != null && humanPlayer != null) OnPlayersSpawned?.Invoke (humanPlayer, dogPlayer);
     }
 
     private void Awake ()
     {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, loadMode) => { OnSceneLoaded(); };
         if (I != null)
         {
             Destroy (gameObject);
@@ -30,5 +32,11 @@ public class EventManager : MonoBehaviour
             I = this;
             DontDestroyOnLoad (gameObject);
         }
+    }
+
+    private void OnSceneLoaded()
+    {
+        humanPlayer = null;
+        dogPlayer = null;
     }
 }

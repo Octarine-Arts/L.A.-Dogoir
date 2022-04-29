@@ -23,12 +23,15 @@ public class DogController : MonoBehaviour
 
     private void Start ()
     {
+        print("DOG STARTED");
         if (EventManager.I != null)
             EventManager.I.PlayerSpawned (PlayerSpecies.Dog, dog.gameObject);
 
+        print("Checking Dog is Me? " + pview.IsMine);
         if (!pview.IsMine)
         {
-            Destroy (GetComponentInChildren<Camera> ().gameObject);
+            print("Destroying Dog Stuff");
+            Destroy(GetComponentInChildren<Camera> ().gameObject);
             Destroy (this);
             return;
         }
@@ -73,5 +76,11 @@ public class DogController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+    }
+
+    private void OnDisable()
+    {
+        Player_StaticActions.OnDisableDogMovement -= DisableMovement;
+        Player_StaticActions.OnEnableDogMovement -= EnableMovement;
     }
 }

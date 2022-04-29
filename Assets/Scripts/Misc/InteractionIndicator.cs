@@ -42,12 +42,17 @@ public class InteractionIndicator : MonoBehaviour
         else if (PlayerManager.ThisPlayer == PlayerSpecies.Dog && !showForDog) Destroy (gameObject);
 
         targetPlayer = PlayerManager.ThisPlayer == PlayerSpecies.Human ? human.transform : dog.transform;
-        print ($"this player: {PlayerManager.ThisPlayer}, humanGO: {human.name}, dogGO: {dog.name}");
+        //print ($"this player: {PlayerManager.ThisPlayer}, humanGO: {human.name}, dogGO: {dog.name}");
     }
     //targetPlayer = PlayerManager.ThisPlayer == PlayerSpecies.Human ? human.transform : dog.transform;
 
     private void OnDrawGizmos ()
     {
         Gizmos.DrawWireSphere (transform.position, radius);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
     }
 }
