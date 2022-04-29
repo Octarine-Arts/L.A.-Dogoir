@@ -76,6 +76,8 @@ public class HumanController : MonoBehaviour
 
     private void Move ()
     {
+        if (UI_Manager._isUIOpen) return;
+        
         Vector3 input = Quaternion.Euler (0, cam.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
 

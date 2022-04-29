@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class TextAppearerer : MonoBehaviour
     private void Start ()
     {
         _image = GetComponent<Image>();
+        UI_Manager.ONUIOpen += DestroyTheFUckingUniverse;
     }
 
     public void StartWriteText()

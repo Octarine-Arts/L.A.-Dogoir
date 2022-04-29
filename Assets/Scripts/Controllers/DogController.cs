@@ -42,6 +42,7 @@ public class DogController : MonoBehaviour
     private void Update ()
     {
         if (!canMove) return;
+        if (UI_Manager._isUIOpen) return;
         
         Vector3 input = Quaternion.Euler (0, camPivot.rotation.eulerAngles.y, 0) * 
             new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
