@@ -26,4 +26,9 @@ public class SpriteBillboard : MonoBehaviour
         if (cam == null) return;
         transform.forward = backwards ? cam.forward : -cam.forward;
     }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
+    }
 }

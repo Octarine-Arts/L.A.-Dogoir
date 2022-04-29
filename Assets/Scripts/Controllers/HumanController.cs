@@ -29,11 +29,18 @@ public class HumanController : MonoBehaviour
 
     private void Start ()
     {
-        if (EventManager.I != null)
-            EventManager.I.PlayerSpawned (PlayerSpecies.Human, avatar);
+        print("HUMAN STARTED");
 
+        if (EventManager.I != null)
+        {
+            print($"is avatar null? {avatar == null}, is eventmanagernull? {EventManager.I == null}");
+            EventManager.I.PlayerSpawned (PlayerSpecies.Human, avatar);
+        }
+
+        print("Checking Human is Me? " + pview.IsMine);
         if (!pview.IsMine)
         {
+            print("Destroying Human Stuff");
             Destroy (GetComponentInChildren<Camera> ().gameObject);
             Destroy (this);
             return;
@@ -114,5 +121,11 @@ public class HumanController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+    }
+
+    private void OnDisable()
+    {
+        Player_StaticActions.OnDisableHumanMovement -= DisableMovement;
+        Player_StaticActions.OnEnableHumanMovement -= EnableMovement;
     }
 }

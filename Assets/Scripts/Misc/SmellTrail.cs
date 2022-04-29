@@ -162,6 +162,11 @@ public class SmellTrail : MonoBehaviour
         for (int i = 0; i < pathPoints.Count - 1; i++)
             Debug.DrawLine (pathPoints[i], pathPoints[i + 1], lineColour);
     }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
+    }
 }
 
 public class TrailPoint

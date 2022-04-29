@@ -30,7 +30,7 @@ public class NPC_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_isFollowing);
+        //Debug.Log(_isFollowing);
         _animator.SetBool("isWalking", _agent.velocity.magnitude > 0.1f);
         if (!_isFollowing) return;
         _agent.destination = transformToFollow.position;
@@ -65,5 +65,10 @@ public class NPC_Controller : MonoBehaviour
     private void TriggerUnfollowRPC()
     {
         _isFollowing = false;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= SetFollow;
     }
 }
