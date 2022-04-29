@@ -53,6 +53,21 @@ MonoBehaviour:
   canBeTriggeredByHuman: 1
   canBeTriggeredByDog: 0
   startNode: DaleButterburDialogue
+  onContinueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2821946275265576165}
+        m_TargetAssemblyTypeName: Yarn.Unity.LineView, YarnSpinner.Unity
+        m_MethodName: OnContinueClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &3967429266574020383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -194,6 +209,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3967429266574020380}
+    - target: {fileID: 954170553, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1643329822292879636, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
     - target: {fileID: 1182351636, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -318,3 +337,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1378669421697608382, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
   m_PrefabInstance: {fileID: 3967429266597011013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2821946275265576165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1163814136177500832, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+  m_PrefabInstance: {fileID: 3967429266597011013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddcdd604a328c4ab296f048eb7b3a925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

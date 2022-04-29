@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using Journal;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider))]
 public class TriggerDialogue : MonoBehaviour
@@ -14,7 +15,8 @@ public class TriggerDialogue : MonoBehaviour
     public bool canBeTriggeredByHuman;
     public bool canBeTriggeredByDog;
     public string startNode;
-
+    public UnityEvent onContinueEvent;
+    
     private Camera _playerCamera;
     private Camera _npcCamera;
     private DialogueRunner _currentDialogueRunner;
@@ -47,8 +49,18 @@ public class TriggerDialogue : MonoBehaviour
     {
         if (!isInitialised) return;
         if (isTalking) return;
-        if (UI_Manager._isUIOpen) return;
-        
+        if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "NPC")
+        {
+            CheckContinuePressed();
+        }
+        else if (!UI_Manager._isUIOpen)
+        {
+            CheckOpenDialogue();
+        }
+    }
+
+    private void CheckOpenDialogue()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
@@ -69,9 +81,16 @@ public class TriggerDialogue : MonoBehaviour
                 }
             }
         }
-        
     }
 
+    private void CheckContinuePressed()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            onContinueEvent.Invoke();
+        }
+    }
+    
     private void OnPlayersSpawned (GameObject humanPlayer, GameObject dogPlayer)
     {
         _playerCamera = Camera.main.GetComponent<Camera> ();

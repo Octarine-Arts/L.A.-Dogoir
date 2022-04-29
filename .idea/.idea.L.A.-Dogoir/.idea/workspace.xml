@@ -4,12 +4,16 @@
     <list default="true" id="d3a0597a-dd1c-4268-8bea-707c66c5978c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.L.A.-Dogoir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.L.A.-Dogoir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/caviar_dreams/CaviarDreams SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/caviar_dreams/CaviarDreams SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPrefabs/DogPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonPrefabs/DogPlayer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/HumanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/HumanController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/SceneTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/SceneTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Journal/Book Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Journal/Book Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/RoomList Button.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/RoomList Button.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Dialog/NPC Dialog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Dialog/NPC Dialog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dickson_TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dickson_TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/TriggerDialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/TriggerDialogue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Journal/Journal_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Journal/Journal_Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu_Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/RoomListItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/RoomListItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
@@ -33,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Accusation/FinalAccusation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Views/LineView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscenes/AnimatorToManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/ButtonSounds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/DogCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/SceneTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/DialogueRunner.cs" root0="SKIP_HIGHLIGHTING" />
@@ -47,6 +52,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34996957" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -114,6 +121,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
