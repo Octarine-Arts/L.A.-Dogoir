@@ -9,8 +9,7 @@ using UnityEngine.UI;
 public class TextAppearerer : MonoBehaviour
 {
     public static TextAppearerer current;
-
-    public VideoPlayer cutscene;
+    
     public TextMeshProUGUI text;
     public string dogText, humanText;
     public float charDelay;

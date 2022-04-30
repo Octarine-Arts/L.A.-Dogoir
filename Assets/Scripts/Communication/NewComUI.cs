@@ -245,19 +245,22 @@ public class NewComUI : MonoBehaviour
     private bool openHeld = true;
     private void Update ()
     {
-        if (!Player_StaticActions.humanMovementAllowed && PlayerManager.ThisPlayer == PlayerSpecies.Human) return; 
-        if (!Player_StaticActions.dogMovementAllowed && PlayerManager.ThisPlayer == PlayerSpecies.Dog) return; 
-        if (UI_Manager._isUIOpen && UI_Manager._currentMenu != "Comm") return;
+        if (!UI_Manager._isUIOpen)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                Open();
+            }
+        }
         
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "Comm")
         {
-            Open();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Close();
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Close();
-        }
-    
+
         //print($"open: {!open}, openHeld: {!openHeld}, jump: {Input.GetAxis("Jump") > 0}");
         // if (!open && !openHeld && Input.GetAxis ("Jump") > 0)
         // {

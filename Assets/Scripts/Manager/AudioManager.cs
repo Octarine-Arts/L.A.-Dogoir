@@ -138,6 +138,8 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayLongSFX(string name, AudioClip audioClip)
 	{
+		StopLongSFX(name);
+		
 		GameObject spawnedObject = new GameObject(name);
 		spawnedObject.AddComponent<AudioSource>();
 		spawnedObject.GetComponent<AudioSource>().clip = audioClip;
