@@ -12,6 +12,7 @@ public class SceneTransition : MonoBehaviour
     public List<GameObject> goToEnable;
     
     private PhotonView _photonView;
+    private bool _isTransitioning;
     
     private bool isEnabled;
     private bool dogPresent;
@@ -73,7 +74,7 @@ public class SceneTransition : MonoBehaviour
                 PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
             }
 
-            CheckTransition();
+            if(!_isTransitioning) CheckTransition();
         }
     }
 
@@ -94,6 +95,7 @@ public class SceneTransition : MonoBehaviour
         Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
         if((bool) hashtable["HumanReady"] && (bool) hashtable["DogReady"])
         {
+            _isTransitioning = true;
             if (PhotonNetwork.IsMasterClient) PhotonNetwork.LoadLevel(3);
             else _photonView.RPC(nameof(LoadLevel_RPC), RpcTarget.MasterClient);
         }
@@ -102,6 +104,7 @@ public class SceneTransition : MonoBehaviour
     [PunRPC]
     private void LoadLevel_RPC()
     {
+        _isTransitioning = true;
         PhotonNetwork.LoadLevel(3);
     }
 }

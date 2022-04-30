@@ -67,7 +67,6 @@ public class TriggerDialogue : MonoBehaviour
         {
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
             {
-                
                 if (Vector3.Distance(_humanGO.transform.position, transform.position) < 5f)
                 {
                     Player_StaticActions.DisableHumanMovement();
@@ -119,12 +118,14 @@ public class TriggerDialogue : MonoBehaviour
 
     private void StartDialogue()
     {
+        UI_Manager.SetIsOpen(true, "NPC");
         suspectSO.hasTalked = true;
         ChangeCamera(false);
     }
 
     public void EndDialogue()
     {
+        UI_Manager.SetIsOpen(false, "NPC");
         _currentDialogueRunner.Stop();
         HideCanvas();
     }
@@ -132,7 +133,6 @@ public class TriggerDialogue : MonoBehaviour
     private void ChangeToNPCCamera()
     {
         isTalking = true;
-        UI_Manager.SetIsOpen(true, "NPC");
         _playerCamera.enabled = false;
         _npcCamera.enabled = true;
     }
@@ -140,7 +140,6 @@ public class TriggerDialogue : MonoBehaviour
     private void ChangeToPlayerCamera()
     {
         isTalking = false;
-        UI_Manager.SetIsOpen(false, "NPC");
         _playerCamera.enabled = true;
         _npcCamera.enabled = false;
     }
