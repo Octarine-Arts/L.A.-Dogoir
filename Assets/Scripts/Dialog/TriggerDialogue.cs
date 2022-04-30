@@ -49,6 +49,8 @@ public class TriggerDialogue : MonoBehaviour
     {
         if (!isInitialised) return;
         if (isTalking) return;
+        if (!UI_Manager.enableUI) return;
+        
         if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "NPC")
         {
             CheckContinuePressed();

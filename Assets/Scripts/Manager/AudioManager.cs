@@ -163,4 +163,22 @@ public class AudioManager : MonoBehaviour
 	}
 
 	#endregion
+	
+	#region Volume Functions
+
+	public void SetMasterVolume(float soundLevel)
+	{
+		audioMixer.SetFloat("Master_Vol", soundLevel);
+	}
+	
+	public void SetBGMVolume(float soundLevel)
+	{
+		audioMixer.SetFloat("BGM_Vol", soundLevel);
+	}
+	
+	public void SetSFXVolume(float soundLevel)
+	{
+		audioMixer.SetFloat("SFX_Vol", soundLevel);
+	}
+	#endregion
 }

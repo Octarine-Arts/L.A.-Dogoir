@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 5140743165504616384}
   - component: {fileID: 8055729596029236543}
   - component: {fileID: 789677326755355825}
+  - component: {fileID: 4554727878376003566}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_text: ____
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
-  m_sharedMaterial: {fileID: 4307983317544587134, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
+  m_sharedMaterial: {fileID: -1643329822292879636, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -406,6 +407,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4554727878376003566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891017046923270226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb065b561d292724ba584df1d76586db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: c6ebc49b525cad84ea59718fccc9087d, type: 3}
+  clickSound: {fileID: 8300000, guid: 5903a5fde52783f41984ae2e7419039a, type: 3}
+  image: {fileID: 0}
 --- !u!1 &7920362809712463661
 GameObject:
   m_ObjectHideFlags: 0

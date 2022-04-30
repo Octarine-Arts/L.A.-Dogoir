@@ -245,6 +245,8 @@ public class NewComUI : MonoBehaviour
     private bool openHeld = true;
     private void Update ()
     {
+        if (!UI_Manager.enableUI) return;
+        
         if (!UI_Manager._isUIOpen)
         {
             if(Input.GetKeyDown(KeyCode.Space))
@@ -252,8 +254,7 @@ public class NewComUI : MonoBehaviour
                 Open();
             }
         }
-        
-        if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "Comm")
+        else if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "Comm")
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
