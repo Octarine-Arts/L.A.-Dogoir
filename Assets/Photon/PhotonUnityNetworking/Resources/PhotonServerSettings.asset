@@ -47,6 +47,9 @@ MonoBehaviour:
   - SetEnabled_RPC
   - PromptPlayer_RPC
   - LoadLevel_RPC
+  - Interact_RPC
+  - SetYarnString_RPC
+  - ShowPairItem
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

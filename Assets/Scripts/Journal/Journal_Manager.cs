@@ -76,7 +76,7 @@ public class Journal_Manager : MonoBehaviour
     
     private void RemoveObject()
     {
-        //if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) Destroy(gameObject);
+        if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) Destroy(gameObject);
     }
 
     private void OnApplicationQuit()
