@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class DogController : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class DogController : MonoBehaviour
         Player_StaticActions.OnDisableDogMovement += DisableMovement;
         Player_StaticActions.OnEnableDogMovement += EnableMovement;
         Player_StaticActions.DisableDogMovement();
+        
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) transform.localScale = new Vector3(1.5f,1.5f,1.5f);
     }
 
     private void Update ()

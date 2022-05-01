@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using Photon.Pun;
 
@@ -55,6 +56,8 @@ public class HumanController : MonoBehaviour
         Player_StaticActions.OnDisableHumanMovement += DisableMovement;
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;
         Player_StaticActions.DisableHumanMovement();
+        
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) transform.localScale = new Vector3(1.5f,1.5f,1.5f);
     }
 
     private void Update ()
