@@ -15,9 +15,9 @@ MonoBehaviour:
   displayImage: {fileID: 21300000, guid: 813ff65f439ed694aa601092df3b7108, type: 3}
   displayName: Missing wedding ring
   locationFound: {fileID: 11400000, guid: d763f8f34afb9884a9d660f98488230a, type: 2}
-  description: "A tan line of Jack\u2019s ring finger suggests a ring was removed
+  description: "A tan line on Jack\u2019s ring finger suggests a ring was removed
     recently\u2026"
   yarnString: '$DetectiveHasFoundMissingRing '
   promptMessageDog: 
-  promptMessageHuman: 
+  promptMessageHuman: Hmm...no wedding ring. That's interesting.
   isFound: 0

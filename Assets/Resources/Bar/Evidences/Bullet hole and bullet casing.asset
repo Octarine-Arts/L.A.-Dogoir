@@ -16,6 +16,9 @@ MonoBehaviour:
   displayName: Bullet hole and bullet casing
   locationFound: {fileID: 11400000, guid: b2152251429b82b44b9e42b2fa9fdb9b, type: 2}
   description: "Bullet hole AND bullet casing $DetectiveHasFoundBulletHoleAndCasing
-    A hole in the wall\u2026looks like a bullet was shot through it.  "
+    A hole in the wall\u2026looks like a bullet was shot through it. "
   yarnString: $DetectiveHasFoundBulletHoleAndCasing
+  promptMessageDog: 
+  promptMessageHuman: Was someone hiding a bullethole here? Well, things just got
+    interesting.
   isFound: 0

@@ -18,5 +18,5 @@ MonoBehaviour:
   description: A small metal flask. The contents smell like straight liquor.
   yarnString: $DetectiveHasFoundFlask
   promptMessageDog: 
-  promptMessageHuman: 
+  promptMessageHuman: The victim brought a flask with him to a bar? Interesting...
   isFound: 0

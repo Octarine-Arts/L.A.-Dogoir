@@ -18,4 +18,6 @@ MonoBehaviour:
   description: A substantial amount of blood on the floor of the ladies bathroom.
     Still looks fresh.
   yarnString: $DetectiveHasFoundBlood
+  promptMessageDog: That's a lot of blood. Let's try find the owner...
+  promptMessageHuman: Blood? What on earth happened here?
   isFound: 0

@@ -19,5 +19,5 @@ MonoBehaviour:
     someone money.
   yarnString: $DetectiveHasFoundHorseTicket
   promptMessageDog: 
-  promptMessageHuman: 
+  promptMessageHuman: Looks like Jack was a bit of a gambler. Interesting.
   isFound: 0
