@@ -29,28 +29,28 @@ title: OMalleyQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
-<<jump OMalleyWhoAreYou>>
+    <<jump OMalleyWhoAreYou>>
 
 
 <<if $OMalleyAskedForName == true>> 
 -> Detective: Gunshot?
-<<jump OMalleyGunshot>>
+    <<jump OMalleyGunshot>>
 <<endif>>
 
 <<if $OMalleyAskedAboutThrow == true>> 
 -> Detective: What did they throw at you??
-<<jump OMalleyWhatDidTheyThrow>>
+    <<jump OMalleyWhatDidTheyThrow>>
 <<endif>>
 
 <<if $OMalleyAskedGetIt == true>> 
 -> Detective: Can you get it?
-<<jump OMalleyCanYouGetIt>>
+    <<jump OMalleyCanYouGetIt>>
 <<endif>>
 
 
 
 -> Detective: Goodbye
-<<jump OMalleyGoodbye>>
+    <<jump OMalleyGoodbye>>
 
 ===
 

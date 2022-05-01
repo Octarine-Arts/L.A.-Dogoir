@@ -36,13 +36,13 @@ position: 69,-84
 -> Detective: Gunshot?
     <<jump JohnnyGunshot>>
 
+-> Detective: Mr.Harlow?
+    <<jump JohnnyDoYouKnowJack>>
+
 <<if $JohnnyKnowsSomething == true>>
 -> Detective: Seen anything suspiscious?
     <<jump JohnnyIsSuspiscious>>
 <<endif>>
-
--> Detective: Mr.Harlow?
-    <<jump JohnnyDoYouKnowJack>>
 
 <<if $Dale == true>> 
 -> Detective:  Dale?
