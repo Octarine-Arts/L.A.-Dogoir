@@ -15,7 +15,9 @@ MonoBehaviour:
   displayImage: {fileID: 21300000, guid: 060a2f148bc2434418ff01918fb4203d, type: 3}
   displayName: Broken window in ladies bathroom
   locationFound: {fileID: 11400000, guid: d678a9fa9bce4074380bdf20a7c11364, type: 2}
-  description: "A broken window. I wonder how it got broken, and what\u2019s on the
-    other side?  "
+  description: 'A broken window. Looks like something was thrown through it. '
   yarnString: $DetectiveHasFoundBrokenWindow
+  promptMessageDog: " I should check out what\u2019s on the other side of this window."
+  promptMessageHuman: How did this break? I wonder if there's anything on the other
+    side...
   isFound: 0

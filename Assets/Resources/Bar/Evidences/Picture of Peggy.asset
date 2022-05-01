@@ -15,6 +15,10 @@ MonoBehaviour:
   displayImage: {fileID: 21300000, guid: 22f4ff5f8226d344bacc730141c66cab, type: 3}
   displayName: Picture of Peggy
   locationFound: {fileID: 11400000, guid: 9e1f6476549645c4ebd44317d269a328, type: 2}
-  description: A picture of Peggy Harlow, why on earth does Dale have this?
+  description: A picture of Peggy Harlow. An odd thing for Dale Butterbur to be in
+    possession of.
   yarnString: $DetectiveHasFoundPicture
+  promptMessageDog: 
+  promptMessageHuman: Why the hell does Butterbur have a picture of Jack Harlow's
+    wife?
   isFound: 0

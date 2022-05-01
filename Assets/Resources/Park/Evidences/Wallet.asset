@@ -19,7 +19,7 @@ MonoBehaviour:
     Mr. Dan Gleebitz. It also contains a receipt for 50x hotdog buns
   yarnString: $DetectiveFoundWallet
   promptMessageDog: 
-  promptMessageHuman: Looks like someone lost their wallet, I should return it. Better
-    add this to my Journal. [Press J to open journal. Your journal provides crucial
-    information]
+  promptMessageHuman: Looks like someone lost their wallet, I should return it. Let's
+    see who is belongs to... [Press J to open journal. Your journal provides crucial
+    information.]
   isFound: 0
