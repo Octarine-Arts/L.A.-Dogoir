@@ -97,7 +97,7 @@ public class NewComUI : MonoBehaviour
         open = true;
     }
 
-    private void Close()
+    public void Close()
     {
         UI_Manager.SetIsOpen(false, "Comm");
         Player_StaticActions.EnableDogMovement();
