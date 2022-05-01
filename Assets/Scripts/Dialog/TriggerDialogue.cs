@@ -66,7 +66,7 @@ public class TriggerDialogue : MonoBehaviour
         {
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
             {
-                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 5f)
+                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 2f)
                 {
                     Player_StaticActions.DisableHumanMovement();
                     StartDialogue();
@@ -74,7 +74,7 @@ public class TriggerDialogue : MonoBehaviour
             }
             else if (PlayerManager.ThisPlayer == PlayerSpecies.Dog && canBeTriggeredByDog)
             {
-                if (Vector3.Distance(_dogGO.transform.position, transform.position) < 5f)
+                if (Vector3.Distance(_dogGO.transform.position, transform.position) < 2f)
                 {
                     Player_StaticActions.DisableDogMovement();
                     StartDialogue();

@@ -42,7 +42,7 @@ public class DogController : MonoBehaviour
         Player_StaticActions.OnEnableDogMovement += EnableMovement;
         Player_StaticActions.DisableDogMovement();
         
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) dog.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
     }
 
     private void Update ()

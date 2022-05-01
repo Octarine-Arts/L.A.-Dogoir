@@ -44,6 +44,11 @@ public class WorldItem : MonoBehaviour, IInteractable
         _photonView.RPC(nameof(ShowPairItem), RpcTarget.Others);
     }
 
+    public bool CanInteract()
+    {
+        return _hasFlashed;
+    }
+
     [PunRPC]
     private void ShowPairItem()
     {

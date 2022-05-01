@@ -57,7 +57,7 @@ public class HumanController : MonoBehaviour
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;
         Player_StaticActions.DisableHumanMovement();
         
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) avatar.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
     }
 
     private void Update ()
@@ -108,8 +108,11 @@ public class HumanController : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
-                displayText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
+                if (interactable.CanInteract())
+                {
+                    displayText.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
+                }
             }
             else displayText.SetActive(false);
         }
