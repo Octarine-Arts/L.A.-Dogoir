@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 using Journal;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ public class TriggerDialogue : MonoBehaviour
     public Suspect suspectSO;
     public GameObject dialogCanvas;
     public YarnProject script;
+    public Button endConversationButton;
     public bool canBeTriggeredByHuman;
     public bool canBeTriggeredByDog;
     public string startNode;
@@ -145,6 +147,7 @@ public class TriggerDialogue : MonoBehaviour
 
     public void ChangeCamera(bool changeToPlayer)
     {
+        endConversationButton.interactable = !changeToPlayer;
         StartCoroutine(ChangeCamera_Coroutine(changeToPlayer));
     }
     
