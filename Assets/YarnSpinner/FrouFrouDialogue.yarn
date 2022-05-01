@@ -35,18 +35,18 @@ position: 69,-84
     <<jump FrouFrouGunshot>>
 
 <<if $HidInOffice == true>>
--> Detective: What were you doing there?
-    <<jump FrouFrouWhatWereYouDoingInTheOffice>>
+    -> Detective: What were you doing there?
+        <<jump FrouFrouWhatWereYouDoingInTheOffice>>
 <<endif>>
 
 <<if $HeathenMan == true>>
--> Detective: Heathen man?
-    <<jump FrouFrouHeathenMan>>
+    -> Detective: Heathen man?
+        <<jump FrouFrouHeathenMan>>
 <<endif>>
 
 <<if $Office == true>>
--> Detective: Did you see or hear anything?
-    <<jump FrouFrouSeeOrHearAnything>>
+    -> Detective: Did you see or hear anything?
+        <<jump FrouFrouSeeOrHearAnything>>
 <<endif>>
 
 -> Detective: Do you know the murdered man?
