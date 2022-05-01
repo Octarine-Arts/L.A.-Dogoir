@@ -78,6 +78,8 @@ public class DogController : MonoBehaviour
         canMove = false;
     }
 
+    public void SetSniffing(bool sniffing) => anim.SetBool("Sniffing", sniffing);
+
     private void OnDisable()
     {
         Player_StaticActions.OnDisableDogMovement -= DisableMovement;

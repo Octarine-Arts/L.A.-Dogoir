@@ -17,4 +17,6 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: a164f6f54831a2d48b480178df7b2252, type: 2}
   description: "Open box of rat poison. There\u2019s a large portion missing."
   yarnString: $DetectiveHasFoundRatPoison
+  promptMessageDog: This rat poison smells exactly the same as the syringe!
+  promptMessageHuman: Rat poison? Interesting...
   isFound: 0

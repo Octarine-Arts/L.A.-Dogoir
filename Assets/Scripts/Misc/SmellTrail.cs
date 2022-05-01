@@ -16,6 +16,7 @@ public class SmellTrail : MonoBehaviour
 
     private bool active;
     private float radius;
+    private DogController dog;
     private Transform target;
     private TrailPoint[] points;
     private LineRenderer[] _renderers;
@@ -71,6 +72,8 @@ public class SmellTrail : MonoBehaviour
         radius = Mathf.Clamp (radius + radiusDelta * Time.deltaTime, 0, renderRadius);
 
         List<List<Vector3>> trailSegments = GetTrailSegments (radius * radius);
+        dog.SetSniffing(trailSegments.Count > 0);
+
         if (active && trailSegments.Count <= 0)
         {
             outOfRangeTime += Time.deltaTime;
@@ -79,7 +82,7 @@ public class SmellTrail : MonoBehaviour
         }
         else outOfRangeTime = 0;
 
-        RenderTrail (trailSegments);
+        RenderTrail(trailSegments);
     }
 
     private List<List<Vector3>> GetTrailSegments (float radius)
@@ -152,7 +155,17 @@ public class SmellTrail : MonoBehaviour
         }
     }
 
-    private void OnPlayersSpawned (GameObject human, GameObject dog) => target = dog.transform;
+    private void OnPlayersSpawned(GameObject human, GameObject dog)
+    {
+        if (PlayerManager.ThisPlayer != PlayerSpecies.Dog)
+        {
+            Destroy(this);
+            return;
+        }
+
+        this.dog = dog.GetComponentInParent<DogController>();
+        target = dog.transform;
+    }
 
     private void OnDrawGizmos ()
     {
