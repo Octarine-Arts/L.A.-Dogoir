@@ -31,19 +31,19 @@ title: PeggyQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
-<<jump PeggyWhoAreYou>>
+    <<jump PeggyWhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump PeggyGunshot>>
+    <<jump PeggyGunshot>>
 
 -> Detective: Come here often?
-<<jump PeggyComeHereOften>>
+    <<jump PeggyComeHereOften>>
 
 -> Detective: Jack Harlow?
-<<jump PeggyDoYouKnowJack>>
+    <<jump PeggyDoYouKnowJack>>
 
 -> Detective: Enemies?
-<<jump PeggyWhoWantsJackDead>>
+    <<jump PeggyWhoWantsJackDead>>
 
 <<if $Dale == true>> 
 <<if $DetectiveHasFoundSyringe == false>>
