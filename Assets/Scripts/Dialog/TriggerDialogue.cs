@@ -6,7 +6,6 @@ using Yarn.Unity;
 using Journal;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(BoxCollider))]
 public class TriggerDialogue : MonoBehaviour
 {
     public Suspect suspectSO;
