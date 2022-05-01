@@ -80,7 +80,7 @@ Mean: Here you go!
 
 <<if $DetectiveTriedToOpenDoor == true>>
 -> Archie: I need a distraction for my partner...
-<<jump HumansTalkingSmack>>
+    <<jump HumansTalkingSmack>>
 <<endif>>
 
 <<if $ArchieInBathroom == true>>
