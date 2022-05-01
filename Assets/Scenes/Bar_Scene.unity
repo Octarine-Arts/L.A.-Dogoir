@@ -2066,6 +2066,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4987716707023863591, guid: 0dd965fa16280fc4d89326732edcd26b, type: 3}
+      propertyPath: evidencePath
+      value: Bar/Evidences
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987716707023863591, guid: 0dd965fa16280fc4d89326732edcd26b, type: 3}
+      propertyPath: locationPath
+      value: Bar/Locations
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987716707023863591, guid: 0dd965fa16280fc4d89326732edcd26b, type: 3}
+      propertyPath: suspectsPath
+      value: Bar/Suspects
+      objectReference: {fileID: 0}
     - target: {fileID: 4987716707023863592, guid: 0dd965fa16280fc4d89326732edcd26b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
