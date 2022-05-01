@@ -46,7 +46,7 @@ public class WorldItem : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return _hasFlashed;
+        return !_hasFlashed;
     }
 
     [PunRPC]
