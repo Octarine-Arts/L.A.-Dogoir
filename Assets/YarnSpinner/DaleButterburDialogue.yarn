@@ -64,12 +64,12 @@ position: -307,-131
 <<endif>>
 
 <<if $DetectiveHasFoundShotgun == true>>
--> Detective: About that there shotgun
+-> Detective: About the shotgun
     <<jump Shotgun>>
 <<endif>>
 
 <<if $DetectiveHasFoundDrugs == true>>
--> Detective: We found the drugs Dale
+-> Detective: I found the drugs Dale
     <<jump Drugs>>
 <<endif>>
 
