@@ -35,6 +35,7 @@ public class Cutscene_Manager : MonoBehaviour
 
     private void StartCutscene()
     {
+        UI_Manager.enableUI = false;
         _currentState = CutsceneState.Started;
         
         _currentIndex = 0;
@@ -67,6 +68,7 @@ public class Cutscene_Manager : MonoBehaviour
         eventList.onEndEvent?.Invoke();
         Player_StaticActions.EnableHumanMovement();
         Player_StaticActions.EnableDogMovement();
+        UI_Manager.enableUI = true;
         Destroy(gameObject);
     }
     

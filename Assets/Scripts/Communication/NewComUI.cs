@@ -23,7 +23,7 @@ public class NewComUI : MonoBehaviour
     private int activeTab = 0;
     private Queue<string> history = new Queue<string> ();
     private PhotonView photonView;
-    private BubbleManager dogBubbles, humanBubbles;
+    private SpeechIcon speechIcon;
     private bool open = false;
 
     private void Awake ()
@@ -41,15 +41,16 @@ public class NewComUI : MonoBehaviour
                 PlaceButton (word, categoryContainers[c], () => OnWordSelected (word));
         }
 
-        if (EventManager.I != null)
-            EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
+        //if (EventManager.I != null)
+        //    EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
+        speechIcon = FindObjectOfType<SpeechIcon>();
     }
 
-    private void OnPlayersSpawned (GameObject human, GameObject dog)
-    {
-        humanBubbles = human.transform.parent.GetComponentInChildren<BubbleManager> ();
-        dogBubbles = dog.transform.parent.GetComponentInChildren<BubbleManager> ();
-    }
+    //private void OnPlayersSpawned (GameObject human, GameObject dog)
+    //{
+    //    humanBubbles = human.transform.parent.GetComponentInChildren<BubbleManager> ();
+    //    dogBubbles = dog.transform.parent.GetComponentInChildren<BubbleManager> ();
+    //}
 
     public void OnTabSelected(int tab)
     {
@@ -232,19 +233,15 @@ public class NewComUI : MonoBehaviour
     [PunRPC]
     public void PublishMessage (PlayerSpecies player, string message)
     {
-        switch (player)
-        {
-            case PlayerSpecies.Dog: dogBubbles.SpawnBubble (message);
-                break;
-            case PlayerSpecies.Human: humanBubbles.SpawnBubble (message);
-                break;
-        }
+        speechIcon.PlayerWoofed(player, message);
     }
 
     private bool cancelHeld = true;
     private bool openHeld = true;
     private void Update ()
     {
+        if (!UI_Manager.enableUI) return;
+        
         if (!UI_Manager._isUIOpen)
         {
             if(Input.GetKeyDown(KeyCode.Space))
@@ -252,8 +249,7 @@ public class NewComUI : MonoBehaviour
                 Open();
             }
         }
-        
-        if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "Comm")
+        else if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "Comm")
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -280,8 +276,8 @@ public class NewComUI : MonoBehaviour
         //     cancelHeld = false;
     }
 
-    private void OnDisable()
-    {
-        EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
-    }
+    //private void OnDisable()
+    //{
+    //    EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
+    //}
 }

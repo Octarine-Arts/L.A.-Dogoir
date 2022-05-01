@@ -26,6 +26,8 @@ public class Journal_Manager : MonoBehaviour
 
 	private void Update()
     {
+        if (!UI_Manager.enableUI) return;
+        
         if (UI_Manager._isUIOpen && UI_Manager._currentMenu == "Journal")
         {
             CheckCloseMenu();
