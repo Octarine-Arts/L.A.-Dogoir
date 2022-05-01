@@ -124,19 +124,19 @@ position: 203,212
 
 <<set $FrouFrouRandomGoodbye to random_range(0,2)>>
 <<if $FrouFrouRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
+<<Animate FrouFrou "GoodbyeWave">>
 Archie: Thank you for your time, ma’am.
 FrouFrou: No thank *you*, darling.
 
 
 <<elseif $FrouFrouRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
+<<Animate FrouFrou "GoodbyeWave">>
 Archie: That’ll be all.
 FrouFrou: Toodles!
 
 
 <<elseif $FrouFrouRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
+<<Animate FrouFrou "GoodbyeWave">>
 Archie: Thanks for your help.
 FrouFrou: Ta-ta, darling!
 
