@@ -13,6 +13,7 @@ public class TriggerDialogue : MonoBehaviour
     public GameObject dialogCanvas;
     public YarnProject script;
     public Button endConversationButton;
+    public float distanceToTrigger = 2f;
     public bool canBeTriggeredByHuman;
     public bool canBeTriggeredByDog;
     public string startNode;
@@ -70,7 +71,7 @@ public class TriggerDialogue : MonoBehaviour
         {
             case PlayerSpecies.Human when canBeTriggeredByHuman:
             {
-                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 2f)
+                if (Vector3.Distance(_humanGO.transform.position, transform.position) < distanceToTrigger)
                 {
                     Player_StaticActions.DisableHumanMovement();
                     StartDialogue();
@@ -80,7 +81,7 @@ public class TriggerDialogue : MonoBehaviour
             }
             case PlayerSpecies.Dog when canBeTriggeredByDog:
             {
-                if (Vector3.Distance(_dogGO.transform.position, transform.position) < 2f)
+                if (Vector3.Distance(_dogGO.transform.position, transform.position) < distanceToTrigger)
                 {
                     Player_StaticActions.DisableDogMovement();
                     StartDialogue();

@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 6648578315895816922}
   - component: {fileID: 8354217132430073232}
   - component: {fileID: 3762341065820926499}
+  - component: {fileID: 1412662901851419219}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -198,3 +199,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1412662901851419219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204554715461547716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb065b561d292724ba584df1d76586db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: bb4db7740344f24499be1912edaf586f, type: 3}
+  clickSound: {fileID: 8300000, guid: 66e7585132186844b9f25058c661bf28, type: 3}
+  image: {fileID: 0}

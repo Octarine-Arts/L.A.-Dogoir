@@ -48,6 +48,12 @@ public class YarnCommands : MonoBehaviour
         _photonView.RPC(nameof(PromptPlayer_RPC), RpcTarget.AllBuffered,message, humanOrDog);
     }
 
+    [YarnCommand("TriggerEnding")]
+    public void TriggerEnding()
+    {
+        EndingUI.current.Open();
+    }
+    
     [PunRPC]
     public void PromptPlayer_RPC(string message, int humanOrDog)
     {
