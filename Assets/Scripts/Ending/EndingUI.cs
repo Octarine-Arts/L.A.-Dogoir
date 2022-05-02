@@ -50,7 +50,7 @@ public class EndingUI : MonoBehaviour
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
     }
-    
+
     public void ChooseSuspect(string endString)
     {
         Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
