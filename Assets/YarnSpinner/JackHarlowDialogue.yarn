@@ -2,114 +2,16 @@
 tags:NPC, Detective
 position: -522,-132
 ---
-<<jump Accusations>>
-
-<<if $DetectiveHasFoundPistol == true>>
-   
-<<endif>>
-
-<<if $JackIsInitialGreeting == false>>
-Detective: A single bullet wound. Hit him in the back and burst out his chest. Poor bastard never saw it coming.
-<<wait 2>>
-Detective: Oh what's this? He has a tan line where a ring would be, seems that he's fallen out of love recently.
-<<set $DetectiveHasFoundMissingRing to true>>
-<<set $JackIsInitialGreeting to true>>
+<<TriggerEnding Yarn>>
 
 
-<<elseif $JackIsInitialGreeting == true>>
-
-<<set $DaleRandomGreeting to random_range(0,3)>>
-<<if $DaleRandomGreeting == 0 >>
-Detective: Hmm, not much else to look at.
-<<elseif $DaleRandomGreeting == 1>>
-Detective: I don't think I can find much else.
-<<elseif $DaleRandomGreeting == 2>>
-Detective: Well I better find something else around him.
-<<elseif $DaleRandomGreeting == 3>>
-Detective: What if he dropped something...?
-<<endif>>
-<<endif>>
 
 ===
 title: ArchieJackHarlowDialogue
 position: -307,-131
 ---
-<<jump Accusations>>
-
-<<if $DetectiveHasFoundPistol == true>>
-   
-<<endif>>
-
-<<if $JackIsInitialGreeting == false>>
-Archie: A single bullet wound. Hit him in the back and burst out his chest. Poor bastard never saw it coming.
-<<wait 2>>
-Archie: Oh what's this? He has a tan line where a ring would be, seems that he's fallen out of love recently.
-<<set $DetectiveHasFoundMissingRing to true>>
-<<set $JackIsInitialGreeting to true>>
+<<TriggerEnding Yarn>>
 
 
-<<elseif $JackIsInitialGreeting == true>>
-
-<<set $DaleRandomGreeting to random_range(0,3)>>
-<<if $DaleRandomGreeting == 0 >>
-Archie: I better go find some suspects
-<<elseif $DaleRandomGreeting == 1>>
-Archie: What else can I do here
-<<elseif $DaleRandomGreeting == 2>>
-Archie: My partner probably needs my help
-<<elseif $DaleRandomGreeting == 3>>
-Archie: Frou-Frou was something else
-<<endif>>
-<<endif>>
-
-===
-
-
-
-title: Accusations
-position: -307,-131
----
-Detective: Did I want to accuse someone now?
-
-
--> Detective: Accuse someone of something
-    <<TriggerEnding Yarn>>
-
-===
-
-title: LorettaDidIt
-position: 204,-140
----
-Detective: Loretta, I know you did it.
-Loretta: You can't prove nuthin!
-
-    <<jump LorettaEndScene>>
-===
-
-title: JohnnyDidIt
-position: 204,-140
----
-Detective: Johnny, I know you did it.
-Johnny: You can't prove nuthin!
-
-    <<jump JohnnyEndScene>>
-===
-
-title: PeggyDidIt
-position: 204,-140
----
-Detective: Peggy, I know you did it.
-Peggy: You can't prove nuthin!
-
-    <<jump PeggyEndScene>>
-===
-
-title: DaleDidIt
-position: 204,-140
----
-Detective: Dale, I know you did it.
-Dale: You can't prove nuthin!
-
-    <<jump DaleEndScene>>
 ===
 
