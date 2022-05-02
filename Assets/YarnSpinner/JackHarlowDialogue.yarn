@@ -2,8 +2,10 @@
 tags:NPC, Detective
 position: -522,-132
 ---
+ <<jump Accusations>>
+
 <<if $DetectiveHasFoundPistol == true>>
-    <<jump Accusations>>
+   
 <<endif>>
 
 <<if $JackIsInitialGreeting == false>>
