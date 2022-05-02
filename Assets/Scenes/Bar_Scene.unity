@@ -12798,6 +12798,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodyFloor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 099d976364475fc4a826b59c965c4bbf, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 099d976364475fc4a826b59c965c4bbf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099d976364475fc4a826b59c965c4bbf, type: 3}
 --- !u!4 &519102096 stripped
@@ -13311,7 +13319,7 @@ ReflectionProbe:
   m_Mode: 1
   m_RefreshMode: 1
   m_TimeSlicingMode: 2
-  m_Resolution: 256
+  m_Resolution: 2048
   m_UpdateFrequency: 0
   m_BoxSize: {x: 10, y: 10, z: 10}
   m_BoxOffset: {x: 0, y: 0, z: 0}
