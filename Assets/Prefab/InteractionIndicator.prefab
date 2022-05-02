@@ -69,6 +69,7 @@ MonoBehaviour:
   radius: 1
   showForHuman: 1
   showForDog: 1
+  dogSizeMultiplier: 1
 --- !u!1 &1208452276409022306
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +80,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1208452276409022309}
   - component: {fileID: 1208452276409022308}
-  - component: {fileID: 1208452276409022311}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -155,19 +155,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1208452276409022311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208452276409022306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 642031c5840c47344a5e97922aae637f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backwards: 0
 --- !u!1 &3687329809382310086
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +166,7 @@ GameObject:
   - component: {fileID: 4857531275358417336}
   - component: {fileID: 4206011377879351725}
   - component: {fileID: 6626756454033462869}
+  - component: {fileID: 3599463222980283626}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -340,3 +328,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4206011377879351725}
   m_maskType: 0
+--- !u!114 &3599463222980283626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687329809382310086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642031c5840c47344a5e97922aae637f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backwards: 0

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c829b2e734a43408a49323a6c1a521, type: 3}
   m_Name: JHarlow
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 1430072925888929082, guid: e02f596140eb70143b81f54ccf17d177, type: 3}
+  displayImage: {fileID: 21300000, guid: 0671a9de774a2da4a8c1b8b5994a31ab, type: 3}
   suspectEnum: 1
   fullName: Jack Harlow
-  description: asdwqw
-  occupation: 
-  personality: 
+  description: Deceased
+  occupation: Unemployed
+  personality: Unpleasent, Short-Tempered, Greedy
   correctMotive: {fileID: 0}
   correctLocation: {fileID: 0}
   correctColor: 0

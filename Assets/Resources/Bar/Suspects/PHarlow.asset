@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c829b2e734a43408a49323a6c1a521, type: 3}
   m_Name: PHarlow
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 4607292910976588725, guid: e02f596140eb70143b81f54ccf17d177, type: 3}
+  displayImage: {fileID: -1208576998, guid: 793ff83524670b64285dca6a2e10a098, type: 3}
   suspectEnum: 5
   fullName: Peggy Harlow
-  description: asdwqw
-  occupation: 
-  personality: 
+  description: Plain, Modest
+  occupation: Housewife
+  personality: Meek, Prim, Proper
   correctMotive: {fileID: 0}
   correctLocation: {fileID: 0}
   correctColor: 0
@@ -30,5 +30,5 @@ MonoBehaviour:
     testimonyHeard: 1
   inputMotive: {fileID: 0}
   inputLocation: {fileID: 0}
-  inputColor: 5
+  inputColor: 0
   hasTalked: 0

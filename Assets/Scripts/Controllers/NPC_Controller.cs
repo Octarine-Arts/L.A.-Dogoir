@@ -8,11 +8,15 @@ public class NPC_Controller : MonoBehaviour
 {
     //Transform that NPC has to follow
     public Transform transformToFollow;
+    public InteractionIndicator interactionIndicator;
+    public TriggerDialogue triggerDialogue;
+    public float followingTriggerRadius;
     //NavMesh Agent variable
     private PhotonView _photonView;
     private NavMeshAgent _agent;
     private Animator _animator;
     private bool _isFollowing;
+    private float unfollowedTriggerRadius;
 
     private void Awake()
     {
@@ -25,6 +29,7 @@ public class NPC_Controller : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         _photonView = GetComponent<PhotonView>();
+        unfollowedTriggerRadius = triggerDialogue.distanceToTrigger;
     }
 
     // Update is called once per frame
@@ -46,6 +51,8 @@ public class NPC_Controller : MonoBehaviour
     {
         _isFollowing = true;
         _photonView.RPC(nameof(TriggerFollowRPC), RpcTarget.Others);
+        interactionIndicator.radius = followingTriggerRadius;
+        triggerDialogue.distanceToTrigger = followingTriggerRadius;
     }
 
     [YarnCommand("Unfollow")]
@@ -53,6 +60,8 @@ public class NPC_Controller : MonoBehaviour
     {
         _isFollowing = false;
         _photonView.RPC(nameof(TriggerUnfollowRPC), RpcTarget.Others);
+        interactionIndicator.radius = unfollowedTriggerRadius;
+        triggerDialogue.distanceToTrigger = unfollowedTriggerRadius;
     } 
 
     [PunRPC]
