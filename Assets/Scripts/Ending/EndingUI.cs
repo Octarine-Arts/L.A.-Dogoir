@@ -82,6 +82,7 @@ public class EndingUI : MonoBehaviour
             if((string) hashtable["HumanString"] == (string) hashtable["DogString"]) endString = (string) hashtable["HumanString"];
 
             _photonView.RPC(nameof(SetEnding_RPC), RpcTarget.AllBuffered, endString);
+            Close();
         }
     }
 
