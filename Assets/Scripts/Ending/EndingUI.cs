@@ -33,8 +33,6 @@ public class EndingUI : MonoBehaviour
 
     public void Open()
     {
-        if (UI_Manager._isUIOpen) return;
-        
         UI_Manager.SetIsOpen(true, "End");
         _canvasGroup.alpha = 1;
         _canvasGroup.interactable = true;
