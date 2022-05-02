@@ -48,8 +48,8 @@ public class HumanController : MonoBehaviour
         }
         else
         {
-            foreach (SkinnedMeshRenderer renderer in avatar.GetComponentsInChildren<SkinnedMeshRenderer> ())
-                renderer.enabled = false;
+            // foreach (SkinnedMeshRenderer renderer in avatar.GetComponentsInChildren<SkinnedMeshRenderer> ())
+            //     renderer.enabled = false;
         }
 
         Cursor.lockState = CursorLockMode.Locked;
