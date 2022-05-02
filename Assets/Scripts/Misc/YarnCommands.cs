@@ -51,6 +51,7 @@ public class YarnCommands : MonoBehaviour
     [YarnCommand("TriggerEnding")]
     public void TriggerEnding()
     {
+        Debug.Log("ASD");
         EndingUI.current.Open();
     }
     
