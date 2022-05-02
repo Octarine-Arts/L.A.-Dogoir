@@ -3176,12 +3176,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6772231507040120114, guid: a2920bf05cf089744a23a88fa4dff894, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 1015
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772231507040120114, guid: a2920bf05cf089744a23a88fa4dff894, type: 3}
       propertyPath: near clip plane
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772231507040120114, guid: a2920bf05cf089744a23a88fa4dff894, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1015
       objectReference: {fileID: 0}
     - target: {fileID: 6772231507040120115, guid: a2920bf05cf089744a23a88fa4dff894, type: 3}
       propertyPath: m_RootOrder
