@@ -60,23 +60,23 @@ position: -307,-131
 
 <<if $DetectiveTriedToOpenDoor == true>>
 -> Detective: The door?
-<<jump office>>
+    <<jump office>>
 <<endif>>
 
 <<if $DetectiveHasFoundShotgun == true>>
--> Detective: About that there shotgun
-<<jump Shotgun>>
+-> Detective: About the shotgun
+    <<jump Shotgun>>
 <<endif>>
 
 <<if $DetectiveHasFoundDrugs == true>>
--> Detective: We found the drugs Dale
-<<jump Drugs>>
+-> Detective: I found the drugs Dale
+    <<jump Drugs>>
 <<endif>>
 
 <<if $DetectiveHasFoundFlask == true>>
 <<if $JohnnyHasSpokenAboutFlask == true>>
 -> Detective: Peggy visits often?
-<<jump PeggyVisitsOften>>
+    <<jump PeggyVisitsOften>>
 <<endif>>
 <<endif>>
 
@@ -88,7 +88,7 @@ position: -307,-131
 <<endif>>
 
 -> Detective: Goodbye
-<<jump Goodbye>>
+    <<jump Goodbye>>
 
 ===
 

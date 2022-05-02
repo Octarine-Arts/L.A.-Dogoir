@@ -31,44 +31,44 @@ title: JohnnyQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
-<<jump JohnnyWhoAreYou>>
+    <<jump JohnnyWhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump JohnnyGunshot>>
+    <<jump JohnnyGunshot>>
+
+-> Detective: Mr.Harlow?
+    <<jump JohnnyDoYouKnowJack>>
 
 <<if $JohnnyKnowsSomething == true>>
 -> Detective: Seen anything suspiscious?
-<<jump JohnnyIsSuspiscious>>
+    <<jump JohnnyIsSuspiscious>>
 <<endif>>
-
--> Detective: Mr.Harlow?
-<<jump JohnnyDoYouKnowJack>>
 
 <<if $Dale == true>> 
 -> Detective:  Dale?
-<<jump JohnnyKnowsDale>>
+    <<jump JohnnyKnowsDale>>
 <<endif>>
 
 <<if $Loretta == true>> 
 -> Detective:  Loretta?
-<<jump JohnnyKnowsLoretta>>
+    <<jump JohnnyKnowsLoretta>>
 <<endif>>
 
 <<if $Peggy == true>> 
 -> Detective:  Peggy?
-<<jump JohnnyKnowsPeggy>>
+    <<jump JohnnyKnowsPeggy>>
 <<endif>>
 
 <<if $DetectiveHasFoundHorseTicket == true>> 
 -> Detective:  I found these horse tickets
-<<jump AboutHorseTickets>>
+    <<jump AboutHorseTickets>>
 <<endif>>
 
 <<if $DetectiveHasSpokenToJohnnyHorseTicket == true>>
 <<if $DetectiveHasFoundBlood == true>>
 <<if $DetectiveHasSpokenToLorettaBlood == true>>
 -> Detective:  What where you doing in the ladies?
-<<jump AboutTheBloodInTheLadies>>
+    <<jump AboutTheBloodInTheLadies>>
 <<endif>>
 <<endif>>
 <<endif>>
@@ -76,7 +76,7 @@ position: 69,-84
 <<if $DetectiveHasFoundFlask == true>>
 <<if $DetectiveHasSpokenToPeggyFlask == true>>
 -> Detective: You know Jack brings his own flask to a bar?
-<<jump AboutTheFlaskAndDale>>
+    <<jump AboutTheFlaskAndDale>>
 <<endif>>
 <<endif>>
 
@@ -84,19 +84,19 @@ position: 69,-84
 <<if  $DetectiveHasSpokenToJohnnyHorseTicket == true>>
 <<if  $DetectiveHasSpokenToJohnnyDebt == true>>
 -> Detective: All the evidence is pointing at you
-<<jump JohnnyInterrogate>>
+    <<jump JohnnyInterrogate>>
 <<endif>>
 <<endif>>
 <<endif>>
 
 -> Detective: Goodbye
-<<jump JohnnyGoodbye>>
+    <<jump JohnnyGoodbye>>
 
 ===
 title: JohnnyWhoAreYou
 position: 138,-404
 ---
-DDetective: Who are you, exactly?
+Detective: Who are you, exactly?
 Johnny: Johnny Malone. People call me Johnny “Two Sleeves”.
 
 <<jump JohnnyQuestions>>

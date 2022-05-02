@@ -4,9 +4,9 @@ position: -338,-113
 ---
 <<if $RatIsInitialGreeting == false>>
 
-Rat: What the hell d’you want?
+Rattus: What the hell d’you want?
 Archie: Pleased to meet you, too. I’d like to ask you some questions about the murder that’s just taken place.
-Rat: Hmmph.
+Rattus: Hmmph.
 
 <<set $RatIsInitialGreeting to true>>
 
@@ -15,11 +15,11 @@ Rat: Hmmph.
 <<set $RatRandomGreeting to random_range(0,2)>>
 <<if $RatRandomGreeting == 0 >>
 <<Animate "Wave">>
-Rat: What now?
+Rattus: What now?
 <<elseif $RatRandomGreeting == 1>>
-Rat: What?
+Rattus: What?
 <<elseif $RatRandomGreeting == 2>>
-Rat: You just don’t get the message, do you?
+Rattus: You just don’t get the message, do you?
 <<endif>>
 
 <<endif>>
@@ -30,34 +30,34 @@ title: RatQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
-<<jump RatWhoAreYou>>
+    <<jump RatWhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump RatGunshot>>
+    <<jump RatGunshot>>
 
 -> Detective: Did you see anything?
-<<jump RatDidYouSeeAnything>>
+    <<jump RatDidYouSeeAnything>>
 
 
 <<if $ArchieFoundTheCheese == true>> 
 -> Detective:  I've got some cheese for you
-<<jump RatFoundTheCheese>>
+    <<jump RatFoundTheCheese>>
 <<endif>>
 
 <<if $ArchieGaveCheese == true>> 
 <<if $OMalleyWillNotGetSyringe == true>> 
 -> Detective:  I saw some cheese outside...
-<<jump RatSawCheeseOutside>>
+    <<jump RatSawCheeseOutside>>
 <<endif>>
 <<endif>>
 
 <<if $RattusMovedOutside == true>> 
 -> Detective:  What are you doing out here?
-<<jump RatMovedToBin>>
+    <<jump RatMovedToBin>>
 <<endif>>
 
 -> Detective: Goodbye
-<<jump RatGoodbye>>
+    <<jump RatGoodbye>>
 
 ===
 
@@ -65,7 +65,7 @@ title: RatWhoAreYou
 position: 283,-340
 ---
 Archie: Who are you, exactly?
-Rat: I’m Rattus and Rattus is me.
+Rattus: I’m Rattus and Rattus is me.
 
 <<jump RatQuestions>>
 ===
@@ -75,7 +75,7 @@ position: -111,-477
 ---
 
 Archie: Where were you when the shot rang out, Rattus?
-Rat: Rattus was right ‘ere.
+Rattus: Rattus was right ‘ere.
 
 <<jump RatQuestions>>
 
@@ -86,9 +86,9 @@ position: -111,-477
 ---
 
 Archie: If you were here, you must have seen something?
-Rat: You sure ask a lotta questions. Maybe Rattus saw somethin’, maybe he didn’t. What’s in it for him if he tells you what he saw? Tell ya what, I’m awfully hungry. Find Rattus some food and then maybe he’ll talk.
+Rattus: You sure ask a lotta questions. Maybe Rattus saw somethin’, maybe he didn’t. What’s in it for him if he tells you what he saw? Tell ya what, I’m awfully hungry. Find Rattus some food and then maybe he’ll talk.
 Archie: Some food?
-Rat: Yeah, yeah… some cheese would be nice. Run along now, little pet.
+Rattus: Yeah, yeah… some cheese would be nice. Run along now, little pet.
 
 <<jump RatQuestions>>
 ===
@@ -98,15 +98,15 @@ position: -111,-477
 ---
 
 Archie: I got you some cheese like you asked.
-Rat: Give it ‘ere!
+Rattus: Give it ‘ere!
 Archie: Not so fast. Tell me what you know, and then I’ll give you the cheese.
-Rat: Hmph. Fine. Rattus saw two of them humans, saying somethin’ about a safe.
+Rattus: Hmph. Fine. Rattus saw two of them humans, saying somethin’ about a safe.
 Archie: A safe? What exactly did they say?
-Rat: They was talkin’ about the code on account of one of them forgettin’. 
+Rattus: They was talkin’ about the code on account of one of them forgettin’. 
 Archie: And? Did they say what the code was?
-Rat: Yeah, it was BLPO.
+Rattus: Yeah, it was BLPO.
 Archie: Thanks for your help, Rattus, here’s the cheese.
-Rat: ‘Bout time. Give it ‘ere!
+Rattus: ‘Bout time. Give it ‘ere!
 
 <<set $ArchieGaveCheese to true>>
 <<jump RatQuestions>>
@@ -151,17 +151,17 @@ position: -191,263
 <<if $RatRandomGoodbye == 0 >>
 <<Animate Dale "GoodbyeWave">>
 Archie: Thanks.
-Rat: Whatever.
+Rattus: Whatever.
 
 <<elseif $RatRandomGoodbye == 1>>
 <<Animate Dale "GoodbyeWave">>
 Archie: That’s all for now.
-Rat: Only for now? Drat.
+Rattus: Only for now? Drat.
 
 <<elseif $RatRandomGoodbye == 2>>
 <<Animate Dale "GoodbyeWave">>
 Archie: I appreciate it.
-Rat: Well I don’t.
+Rattus: Well I don’t.
 
 <<endif>>
 

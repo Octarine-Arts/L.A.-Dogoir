@@ -29,31 +29,31 @@ title: FrouFrouQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
-<<jump FrouFrouWhoAreYou>>
+    <<jump FrouFrouWhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump FrouFrouGunshot>>
+    <<jump FrouFrouGunshot>>
 
 <<if $HidInOffice == true>>
--> Detective: What were you doing there?
-<<jump FrouFrouWhatWereYouDoingInTheOffice>>
+    -> Detective: What were you doing there?
+        <<jump FrouFrouWhatWereYouDoingInTheOffice>>
 <<endif>>
 
 <<if $HeathenMan == true>>
--> Detective: Heathen man?
-<<jump FrouFrouHeathenMan>>
+    -> Detective: Heathen man?
+        <<jump FrouFrouHeathenMan>>
 <<endif>>
 
 <<if $Office == true>>
--> Detective: Did you see or hear anything?
-<<jump FrouFrouSeeOrHearAnything>>
+    -> Detective: Did you see or hear anything?
+        <<jump FrouFrouSeeOrHearAnything>>
 <<endif>>
 
 -> Detective: Do you know the murdered man?
-<<jump FrouFrouDoYouKnowHim>>
+    <<jump FrouFrouDoYouKnowHim>>
 
 -> Detective: Goodbye
-<<jump FrouFrouGoodbye>>
+    <<jump FrouFrouGoodbye>>
 
 ===
 
@@ -124,19 +124,19 @@ position: 203,212
 
 <<set $FrouFrouRandomGoodbye to random_range(0,2)>>
 <<if $FrouFrouRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
+<<Animate FrouFrou "GoodbyeWave">>
 Archie: Thank you for your time, ma’am.
 FrouFrou: No thank *you*, darling.
 
 
 <<elseif $FrouFrouRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
+<<Animate FrouFrou "GoodbyeWave">>
 Archie: That’ll be all.
 FrouFrou: Toodles!
 
 
 <<elseif $FrouFrouRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
+<<Animate FrouFrou "GoodbyeWave">>
 Archie: Thanks for your help.
 FrouFrou: Ta-ta, darling!
 

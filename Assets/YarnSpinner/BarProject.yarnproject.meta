@@ -13,6 +13,10 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
   - {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
   - {fileID: 6391573757903218779, guid: 28fefdafd6a04bb49b00063973434267, type: 3}
+  - {fileID: 6391573757903218779, guid: 3737b653d20540441a1098d090745bc8, type: 3}
+  - {fileID: 6391573757903218779, guid: 29be29313c4157a46aa56773ae53f672, type: 3}
+  - {fileID: 6391573757903218779, guid: e343559e5356b724e9343ad170cfc296, type: 3}
+  - {fileID: 6391573757903218779, guid: 7f5c954f9aa1a4b4e9ad36e1746dccaa, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $DaleIsInitialGreeting
@@ -23,7 +27,7 @@ ScriptedImporter:
     description: DaleButterburDialogue.yarn, node DaleButterburDialogue, line 0
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
-  - name: $daleRandomGreeting
+  - name: $DaleRandomGreeting
     typeName: Number
     defaultValueBool: 0
     defaultValueNumber: 0
@@ -55,7 +59,7 @@ ScriptedImporter:
     description: DaleButterburDialogue.yarn, node Questions, line 22
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
-  - name: $triedToOpenDoor
+  - name: $DetectiveTriedToOpenDoor
     typeName: Bool
     defaultValueBool: 0
     defaultValueNumber: 0
@@ -63,7 +67,55 @@ ScriptedImporter:
     description: DaleButterburDialogue.yarn, node Questions, line 27
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
-  - name: $Butterbur
+  - name: $DetectiveHasFoundShotgun
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 32
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DetectiveHasFoundDrugs
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 37
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DetectiveHasFoundFlask
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 42
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $JohnnyHasSpokenAboutFlask
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 43
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DetectiveHasFoundPicture
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 50
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DaleHasSpokenAboutPeggy
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Questions, line 51
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $Dale
     typeName: Bool
     defaultValueBool: 0
     defaultValueNumber: 0
@@ -71,7 +123,7 @@ ScriptedImporter:
     description: DaleButterburDialogue.yarn, node Lights, line 3
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
-  - name: $ButterburKnowsAboutLoretta
+  - name: $DaleKnowsAboutLoretta
     typeName: Bool
     defaultValueBool: 0
     defaultValueNumber: 0
@@ -79,7 +131,31 @@ ScriptedImporter:
     description: DaleButterburDialogue.yarn, node Lights, line 4
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
-  - name: $daleRandomGoodbye
+  - name: $DaleHasSpokenAboutShotgun
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Shotgun, line 7
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DaleHasSpokenAboutDrugs
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node Drugs, line 6
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DaleHasSpokenAboutPhotoOfPeggy
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: DaleButterburDialogue.yarn, node PhotoOfPeggy, line 11
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
+  - name: $DaleRandomGoodbye
     typeName: Number
     defaultValueBool: 0
     defaultValueNumber: 0
@@ -101,6 +177,86 @@ ScriptedImporter:
     defaultValueNumber: 0
     defaultValueString: 
     description: PeggyHarlowDialogue.yarn, node PeggyHarlowDialogue, line 12
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasFoundSyringe
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 16
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $PeggySpokenAboutGunshot
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 17
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $JohnnySawPeggyFromAlley
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 34
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasFoundTickets
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 39
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasFoundMissingRing
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 44
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $PeggySpokenAboutAlley
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 55
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasSpokenToPeggySyringe
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node PeggyQuestions, line 61
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasSpokenToPeggyTickets
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node TicketsToKingKong, line 5
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasSpokenToPeggyMissingRing
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node WhereIsTheRing, line 5
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
+  - name: $DetectiveHasSpokenToPeggyFlask
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: PeggyHarlowDialogue.yarn, node AboutTheFlask, line 3
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: ba731bf190f78474d98e2d438e6fccb3, type: 3}
   - name: $peggyRandomGoodbye
@@ -135,12 +291,68 @@ ScriptedImporter:
     description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 6
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasFoundHorseTicket
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 29
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasSpokenToJohnnyHorseTicket
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 34
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasFoundBlood
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 35
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasSpokenToLorettaBlood
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 36
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasSpokenToJohnnyBlood
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 50
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasSpokenToJohnnyDebt
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyQuestions, line 52
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
   - name: $Johnny
     typeName: Bool
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
     description: JohnnyMaloneDialogue.yarn, node JohnnyIsSuspiscious, line 3
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
+  - name: $DetectiveHasInterrogatedJohnny
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: JohnnyMaloneDialogue.yarn, node JohnnyInterrogate, line 5
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: 4fc0f8b84fa4ad44c9ee03d872b5088c, type: 3}
   - name: $johnnyRandomGoodbye
@@ -173,6 +385,22 @@ ScriptedImporter:
     defaultValueNumber: 0
     defaultValueString: 
     description: LorettaDuboisDialogue.yarn, node LorettaQuestions, line 33
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 28fefdafd6a04bb49b00063973434267, type: 3}
+  - name: $DetectiveHasFoundGun
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: LorettaDuboisDialogue.yarn, node LorettaQuestions, line 38
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 28fefdafd6a04bb49b00063973434267, type: 3}
+  - name: $LorettaSpokenAboutLocation
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: LorettaDuboisDialogue.yarn, node LorettaQuestions, line 46
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: 28fefdafd6a04bb49b00063973434267, type: 3}
   - name: $lorettaRandomGoodbye

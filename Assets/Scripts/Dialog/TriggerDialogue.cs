@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 using Journal;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ public class TriggerDialogue : MonoBehaviour
     public Suspect suspectSO;
     public GameObject dialogCanvas;
     public YarnProject script;
+    public Button endConversationButton;
     public bool canBeTriggeredByHuman;
     public bool canBeTriggeredByDog;
     public string startNode;
@@ -66,7 +68,7 @@ public class TriggerDialogue : MonoBehaviour
         {
             if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
             {
-                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 5f)
+                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 2f)
                 {
                     Player_StaticActions.DisableHumanMovement();
                     StartDialogue();
@@ -74,7 +76,7 @@ public class TriggerDialogue : MonoBehaviour
             }
             else if (PlayerManager.ThisPlayer == PlayerSpecies.Dog && canBeTriggeredByDog)
             {
-                if (Vector3.Distance(_dogGO.transform.position, transform.position) < 5f)
+                if (Vector3.Distance(_dogGO.transform.position, transform.position) < 2f)
                 {
                     Player_StaticActions.DisableDogMovement();
                     StartDialogue();
@@ -145,6 +147,7 @@ public class TriggerDialogue : MonoBehaviour
 
     public void ChangeCamera(bool changeToPlayer)
     {
+        endConversationButton.interactable = !changeToPlayer;
         StartCoroutine(ChangeCamera_Coroutine(changeToPlayer));
     }
     
