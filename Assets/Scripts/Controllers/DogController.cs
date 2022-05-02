@@ -76,6 +76,8 @@ public class DogController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+        dog.SetDestination(dog.transform.position);
+        anim.SetFloat("MoveSpeed", 0);
     }
 
     public void SetSniffing(bool sniffing) => anim.SetBool("Sniffing", sniffing);

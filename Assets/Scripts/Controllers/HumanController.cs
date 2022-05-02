@@ -120,6 +120,8 @@ public class HumanController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+        agent.SetDestination(agent.transform.position);
+        anim.SetFloat("MoveSpeed", 0);
     }
 
     private void OnDisable()
