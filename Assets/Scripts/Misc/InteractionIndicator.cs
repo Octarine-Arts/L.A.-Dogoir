@@ -22,7 +22,8 @@ public class InteractionIndicator : MonoBehaviour
         anim = GetComponent<Animator> ();
     }
 
-    public void Deactivate() { deactivated = true;  }
+    public void Deactivate() { deactivated = true; }
+    public void Activate() { deactivated = false; }
 
     private void Update ()
     {

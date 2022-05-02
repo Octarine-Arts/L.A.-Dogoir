@@ -9,12 +9,13 @@ public class DogController : MonoBehaviour
 {
     public Animator anim;
     public NavMeshAgent dog;
-    public Transform camPivot;
+    public Transform camPivot, grabItemParent;
     public float rotateSpeed;
 
     private bool canMove = true; 
     private PhotonView pview;
     private float speed;
+    private GrabbableItem grabbedItem;
 
     private void Awake ()
     {
@@ -43,6 +44,15 @@ public class DogController : MonoBehaviour
         Player_StaticActions.DisableDogMovement();
         
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) dog.transform.localScale = new Vector3(0.75f,0.75f,0.75f);
+    }
+
+    public void GrabItem(GrabbableItem item)
+    {
+        if (grabbedItem) grabbedItem.Drop();
+
+        item.transform.parent = grabItemParent;
+        item.transform.localPosition = item.offsetPosition;
+        item.transform.localRotation = Quaternion.Euler (item.offsetRotation);
     }
 
     private void Update ()
