@@ -32,6 +32,7 @@ title: Questions
 position: -307,-131
 ---
 -> Detective: Who are you?
+    <<RemoveDoorCollider OfficeDoor>>
     <<jump WhoAreYou>>
 
 -> Detective: Gunshot?
