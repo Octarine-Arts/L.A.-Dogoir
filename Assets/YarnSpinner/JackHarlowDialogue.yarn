@@ -2,15 +2,20 @@
 tags:NPC, Detective
 position: -522,-132
 ---
-<<TriggerEnding Yarn>>
 
+
+-> Detective: Choose one
+    <<TriggerEnding Yarn>>
+    Detective: 
 
 
 ===
 title: ArchieJackHarlowDialogue
 position: -307,-131
 ---
-<<TriggerEnding Yarn>>
+-> Archie: Choose one
+    <<TriggerEnding Yarn>>
+    Archie: 
 
 
 ===
