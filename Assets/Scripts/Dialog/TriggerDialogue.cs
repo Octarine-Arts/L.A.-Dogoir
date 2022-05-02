@@ -64,23 +64,29 @@ public class TriggerDialogue : MonoBehaviour
 
     private void CheckOpenDialogue()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (!Input.GetKeyDown(KeyCode.E)) return;
+
+        switch (PlayerManager.ThisPlayer)
         {
-            if (PlayerManager.ThisPlayer == PlayerSpecies.Human && canBeTriggeredByHuman)
+            case PlayerSpecies.Human when canBeTriggeredByHuman:
             {
                 if (Vector3.Distance(_humanGO.transform.position, transform.position) < 2f)
                 {
                     Player_StaticActions.DisableHumanMovement();
                     StartDialogue();
                 }
+
+                break;
             }
-            else if (PlayerManager.ThisPlayer == PlayerSpecies.Dog && canBeTriggeredByDog)
+            case PlayerSpecies.Dog when canBeTriggeredByDog:
             {
                 if (Vector3.Distance(_dogGO.transform.position, transform.position) < 2f)
                 {
                     Player_StaticActions.DisableDogMovement();
                     StartDialogue();
                 }
+
+                break;
             }
         }
     }
