@@ -17,6 +17,7 @@ public class TriggerDialogue : MonoBehaviour
     public bool canBeTriggeredByHuman;
     public bool canBeTriggeredByDog;
     public string startNode;
+    public string dogStartNode;
     public UnityEvent onContinueEvent;
     
     private Camera _playerCamera;
@@ -187,7 +188,7 @@ public class TriggerDialogue : MonoBehaviour
 
         if (!changeToPlayer)
         {
-            _currentDialogueRunner.StartDialogue(startNode);
+            _currentDialogueRunner.StartDialogue(string.IsNullOrEmpty(dogStartNode) ? startNode : dogStartNode);
         }
         else
         {
