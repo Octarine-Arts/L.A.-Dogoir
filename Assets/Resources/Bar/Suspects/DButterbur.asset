@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c829b2e734a43408a49323a6c1a521, type: 3}
   m_Name: DButterbur
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 4607292910976588725, guid: e02f596140eb70143b81f54ccf17d177, type: 3}
+  displayImage: {fileID: 0}
   suspectEnum: 4
   fullName: Dale Butterbur
   description: asdwqw
@@ -31,4 +31,4 @@ MonoBehaviour:
   inputMotive: {fileID: 0}
   inputLocation: {fileID: 0}
   inputColor: 5
-  hasTalked: 0
+  hasTalked: 1

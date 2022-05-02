@@ -39,9 +39,6 @@ position: 69,-84
 -> Detective: Come here often?
     <<jump PeggyComeHereOften>>
 
--> Detective: Jack Harlow?
-    <<jump PeggyDoYouKnowJack>>
-
 -> Detective: Enemies?
     <<jump PeggyWhoWantsJackDead>>
 
@@ -49,55 +46,55 @@ position: 69,-84
 <<if $DetectiveHasFoundSyringe == false>>
 <<if $PeggySpokenAboutGunshot == true>>
 -> Detective:  Dale?
-<<jump PeggyKnowsDale>>
+    <<jump PeggyKnowsDale>>
 <<endif>>
 <<endif>>
 <<endif>>
 
 <<if $Loretta == true>> 
 -> Detective:  Loretta?
-<<jump PeggyKnowsLoretta>>
+    <<jump PeggyKnowsLoretta>>
 <<endif>>
 
 <<if $Johhny == true>> 
 -> Detective:  Johnny?
-<<jump PeggyKnowsJohhny>>
+    <<jump PeggyKnowsJohhny>>
 <<endif>>
 
 <<if $JohnnySawPeggyFromAlley == true>>
 -> Detective: Johnny saw you outside
-<<jump PeggySeenOutside>>
+    <<jump PeggySeenOutside>>
 <<endif>>
 
 <<if $DetectiveHasFoundTickets == true>>
 -> Detective:  These tickets I've found
-<<jump TicketsToKingKong>>
+    <<jump TicketsToKingKong>>
 <<endif>>
 
 <<if $DetectiveHasFoundMissingRing == true>>
 -> Detective:  Jack doesn't wear his ring anymore?
-<<jump WhereIsTheRing>>
+    <<jump WhereIsTheRing>>
 <<endif>>
 
 <<if $DetectiveHasFoundFlask == true>>
 -> Detective:  Flask to a bar?
-<<jump AboutTheFlask>>
+    <<jump AboutTheFlask>>
 <<endif>>
 
 <<if $DetectiveHasFoundSyringe == true>>
 <<if $PeggySpokenAboutAlley == true>>
 -> Detective:  Drugs in the alley?
-<<jump AboutTheSyringe>>
+    <<jump AboutTheSyringe>>
 <<endif>>
 <<endif>>
 
 <<if $DetectiveHasSpokenToPeggySyringe == true>>
 -> Detective:  Why did you hide it?
-<<jump WhyDidYouHideIt>>
+    <<jump WhyDidYouHideIt>>
 <<endif>>
 
 -> Detective: Goodbye
-<<jump PeggyGoodbye>>
+    <<jump PeggyGoodbye>>
 
 ===
 

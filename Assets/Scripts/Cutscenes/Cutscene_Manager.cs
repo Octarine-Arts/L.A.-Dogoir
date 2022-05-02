@@ -26,7 +26,8 @@ public class Cutscene_Manager : MonoBehaviour
     private CutsceneState _currentState;
     private int _currentIndex;
     private CutsceneEvent _currentCutsceneEvent;
-
+    private bool isLastEventType;
+    
     private void Awake()
     {
         _currentState = CutsceneState.NotStarted;
@@ -48,18 +49,27 @@ public class Cutscene_Manager : MonoBehaviour
         StopAllCoroutines();
         mousePrompt.SetActive(false);
         _currentState = CutsceneState.Playing;
-        switch (_currentCutsceneEvent.cutsceneType)
+
+        if (isLastEventType)
         {
-            case CutsceneType.Text:
-                StartTypeText(_currentCutsceneEvent.tmp, _currentCutsceneEvent.message);
-                break;
-            case CutsceneType.Untype:
-                StartUntypeText(_currentCutsceneEvent.tmp);
-                break;
-            case CutsceneType.Video:
-                PlayAnimation(_currentCutsceneEvent.animator, _currentCutsceneEvent.triggerName);
-                break;
+            isLastEventType = false;
+            StartUntypeText(_currentCutsceneEvent.tmp);
         }
+        else
+        {
+            switch (_currentCutsceneEvent.cutsceneType)
+            {
+                case CutsceneType.Text:
+                    isLastEventType = true;
+                    StartTypeText(_currentCutsceneEvent.tmp, _currentCutsceneEvent.message);
+                    break;
+                case CutsceneType.Video:
+                    isLastEventType = false;
+                    PlayAnimation(_currentCutsceneEvent.animator, _currentCutsceneEvent.triggerName);
+                    break;
+            }
+        }
+        
     }
 
     private void FinishCutscene()
@@ -125,13 +135,36 @@ public class Cutscene_Manager : MonoBehaviour
         AudioManager.current.PlayLongSFX("Typewriter", typingSound);
         tmp.maxVisibleCharacters = 0;
         tmp.text = message;
-        
-        while(tmp.maxVisibleCharacters < tmp.text.Length)
+        List<int> pauseIndex = new List<int>();
+
+        for (int ii = 0; ii < tmp.text.Length; ii++)
         {
-            tmp.maxVisibleCharacters++;
-            yield return new WaitForSeconds(0.025f);
+            if (tmp.text[ii] == '*')
+            {
+                pauseIndex.Add(ii);
+                Debug.Log(ii);
+            }
         }
 
+        tmp.text = tmp.text.Replace("*", "");
+
+        while(tmp.maxVisibleCharacters < tmp.text.Length)
+        {
+            if (pauseIndex.Count > 0)
+            {
+                if (tmp.maxVisibleCharacters == pauseIndex[0])
+                {
+                    pauseIndex.RemoveAt(0);
+                    AudioManager.current.StopLongSFX("Typewriter");
+                    yield return new WaitForSeconds(0.5f);
+                    AudioManager.current.PlayLongSFX("Typewriter", typingSound);
+                }
+            }
+            tmp.maxVisibleCharacters++;
+            yield return new WaitForSeconds(0.02f);
+        }
+        
+        tmp.maxVisibleCharacters = tmp.text.Length;
         AudioManager.current.StopLongSFX("Typewriter");
         CutsceneEventFinished();
         StartCoroutine(TextLineFlash(tmp));
@@ -142,7 +175,7 @@ public class Cutscene_Manager : MonoBehaviour
         while (tmp.maxVisibleCharacters > 0)
         {
             tmp.maxVisibleCharacters--;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.005f);
         }
 
         yield return new WaitForSeconds(0.05f);

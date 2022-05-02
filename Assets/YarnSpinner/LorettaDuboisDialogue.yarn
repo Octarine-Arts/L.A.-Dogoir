@@ -31,64 +31,64 @@ title: LorettaQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
-<<jump LorettaWhoAreYou>>
+    <<jump LorettaWhoAreYou>>
 
 -> Detective: Gunshot?
-<<jump LorettaGunshot>>
+    <<jump LorettaGunshot>>
 
 -> Detective: Come here often?
-<<jump LorettaComeHereOften>>
+    <<jump LorettaComeHereOften>>
 
 -> Detective: Jack Harlow?
-<<jump LorettaDoYouKnowJack>>
+    <<jump LorettaDoYouKnowJack>>
 
 <<if $Dale == true>> 
 -> Detective:  Dale?
-<<jump LorettaKnowsDale>>
+    <<jump LorettaKnowsDale>>
 <<endif>>
 
 <<if $DaleKnowsAboutLoretta == true>> 
 -> Detective:  Closest to the Victim?
-<<jump DaleKnowsAboutLoretta>>
+    <<jump DaleKnowsAboutLoretta>>
 <<endif>>
 
 <<if $Peggy == true>> 
 -> Detective:  Peggy?
-<<jump LorettaKnowsPeggy>>
+    <<jump LorettaKnowsPeggy>>
 <<endif>>
 
 <<if $Johhny == true>> 
 -> Detective:  Johnny?
-<<jump LorettaKnowsJohhny>>
+    <<jump LorettaKnowsJohhny>>
 <<endif>>
 
 //need to set bool for when archie shows feather to human detective
 <<if $HasArchieShownFeather == true>> 
 -> Detective:  Friendly with Jack?
-<<jump FriendlyWithJack>>
+    <<jump FriendlyWithJack>>
 <<endif>>
 
 <<if $DetectiveHasFoundGun == false>>
 <<if $DaleHasSpokenAboutShotgun == true>>
 -> Detective:  Dale's gun?
-<<jump AboutThePistol>>
+    <<jump AboutThePistol>>
 <<endif>>
 <<endif>>
 
 <<if $DetectiveHasFoundBlood == true>>
 <<if $LorettaSpokenAboutLocation == true>>
 -> Detective:  Seen the bathroom lately? It's a real bloodbath in there
-<<jump AboutBathroomBlood>>
+    <<jump AboutBathroomBlood>>
 <<endif>>
 <<endif>>
 
 <<if $DetectiveHasSpokenToPeggyTickets == true>>
 -> Detective:  How were the movies?
-<<jump KingKongTickets>>
+    <<jump KingKongTickets>>
 <<endif>>
 
 -> Detective: Goodbye
-<<jump LorettaGoodbye>>
+    <<jump LorettaGoodbye>>
 
 ===
 

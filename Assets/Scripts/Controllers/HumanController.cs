@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using Photon.Pun;
 
@@ -55,6 +56,8 @@ public class HumanController : MonoBehaviour
         Player_StaticActions.OnDisableHumanMovement += DisableMovement;
         Player_StaticActions.OnEnableHumanMovement += EnableMovement;
         Player_StaticActions.DisableHumanMovement();
+        
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) agent.transform.localScale = new Vector3(0.75f,0.75f,0.75f);
     }
 
     private void Update ()
@@ -105,10 +108,16 @@ public class HumanController : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
-                displayText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
+                if (interactable.CanInteract())
+                {
+                    displayText.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
+                }
             }
-            else displayText.SetActive(false);
+        }
+        else
+        {
+            displayText.SetActive(false);
         }
     }
 
@@ -120,6 +129,8 @@ public class HumanController : MonoBehaviour
     private void DisableMovement()
     {
         canMove = false;
+        agent.SetDestination(agent.transform.position);
+        anim.SetFloat("MoveSpeed", 0);
     }
 
     private void OnDisable()
