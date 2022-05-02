@@ -34,7 +34,7 @@ public class Cutscene_Manager : MonoBehaviour
         if(playOnAwake) StartCutscene();
     }
 
-    private void StartCutscene()
+    public void StartCutscene()
     {
         UI_Manager.enableUI = false;
         _currentState = CutsceneState.Started;
