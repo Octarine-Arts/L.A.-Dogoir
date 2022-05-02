@@ -120,6 +120,7 @@ Bean: HOW DARE YOU?!
 Mean: WHAT’D YOU SAY ABOUT MY MUM?!
 Lean: WHY I OUGHTA!!
 <<set $ArchieCreatedDistraction to true>>
+<<StartAnim AnimatorDale>>
 <<PromptPlayer Yarn "What a ruckus! This will definitely disturb everyone in the bar. Might be a good distraction…" 1>>
 <<stop>>
 ===

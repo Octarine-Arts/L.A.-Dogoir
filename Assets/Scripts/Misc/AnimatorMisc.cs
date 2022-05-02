@@ -1,10 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class AnimatorMisc : MonoBehaviour
 {
-    public Animator _animator;
+    public Animator childAnimator;
+
+    private Animator thisAnimator;
+
+    private void Awake()
+    {
+        thisAnimator = GetComponent<Animator>();
+    }
+
+    [YarnCommand("StartAnim")]
+    public void StartAnim()
+    {
+        thisAnimator.SetTrigger("Start");
+    }
 
     public void SetObjectInactive(string gameObject)
     {
@@ -18,11 +32,11 @@ public class AnimatorMisc : MonoBehaviour
 
     public void SetBoolFalse(string boolName)
     {
-        _animator.SetBool(boolName, false);
+        childAnimator.SetBool(boolName, false);
     }
 
     public void SetBoolTrue(string boolName)
     {
-        _animator.SetBool(boolName, true);
+        childAnimator.SetBool(boolName, true);
     }
 }

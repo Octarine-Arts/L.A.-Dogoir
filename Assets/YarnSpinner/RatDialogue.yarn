@@ -120,6 +120,7 @@ Archie: Yeah, a whole wheel. You should have a look.
 Rattus: Outta the way!
 
 //make rattus move to outside
+<<StartAnim AnimatorRat>>
 <<set $RattusMovedOutside to true>>
 
 <<jump RatQuestions>>
