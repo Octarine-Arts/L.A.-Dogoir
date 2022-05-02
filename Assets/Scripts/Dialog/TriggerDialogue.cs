@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 using Journal;
+using Photon.Realtime;
 using UnityEngine.Events;
 
 public class TriggerDialogue : MonoBehaviour
@@ -188,7 +189,8 @@ public class TriggerDialogue : MonoBehaviour
 
         if (!changeToPlayer)
         {
-            _currentDialogueRunner.StartDialogue(string.IsNullOrEmpty(dogStartNode) ? startNode : dogStartNode);
+            if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) _currentDialogueRunner.StartDialogue(string.IsNullOrEmpty(dogStartNode) ? startNode : dogStartNode);
+            else _currentDialogueRunner.StartDialogue(startNode);
         }
         else
         {
