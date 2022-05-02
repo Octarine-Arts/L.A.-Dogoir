@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,32 @@ using Photon.Pun;
 
 public class TriggerPrompt : MonoBehaviour
 {
-    public string humanMessage;
-    public string dogMessage;
+    public string message1;
+    public string message2;
+    
 
     private bool _isOnCooldown;
     private PhotonView _photonView;
+    private GameObject _humanGO;
 
     private void Awake()
     {
         _photonView = GetComponent<PhotonView>();
+    }
+
+    private void Update()
+    {
+        if (_isOnCooldown) return;
+        if (PlayerManager.ThisPlayer == PlayerSpecies.Human)
+        {
+            if(_humanGO == null) _humanGO = PlayerManager.current.HumanPlayer;
+            if (Vector3.Distance(_humanGO.transform.position, transform.position) < 3f)
+            {
+                StartCoroutine(Cooldown());
+                StartCoroutine(PromptPlayer_CO(message1, 0f));
+                StartCoroutine(PromptPlayer_CO(message2, 5f));
+            }
+        }
     }
 
     [YarnCommand("RemoveDoorCollider")]
@@ -31,29 +49,19 @@ public class TriggerPrompt : MonoBehaviour
 
     private void PromptPlayer(string message)
     {
-        StartCoroutine(Cooldown());
         if(PlayerManager.ThisPlayer == PlayerSpecies.Human) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, message);
-        else TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, message);
     }
 
+    private IEnumerator PromptPlayer_CO(string message, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PromptPlayer(message);
+    }
+    
     private IEnumerator Cooldown()
     {
         _isOnCooldown = true;
         yield return new WaitForSeconds(10f);
         _isOnCooldown = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (_isOnCooldown) return;
-
-        if(other.CompareTag("HumanAgent"))
-        {
-            PromptPlayer(humanMessage);
-        }   
-        else if(other.CompareTag("DogAgent"))
-        {
-            PromptPlayer(dogMessage);
-        }
     }
 }
