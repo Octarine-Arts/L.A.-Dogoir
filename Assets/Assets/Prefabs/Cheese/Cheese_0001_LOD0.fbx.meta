@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cheese_0001
-    second: {fileID: 2100000, guid: 400d23a837ffc0a46b8723b7e5e70d87, type: 2}
+    second: {fileID: 2100000, guid: 891fb44d095fcd64f807b1c47330ccb6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
