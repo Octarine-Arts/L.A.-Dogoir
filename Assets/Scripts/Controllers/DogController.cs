@@ -53,6 +53,7 @@ public class DogController : MonoBehaviour
         item.transform.parent = grabItemParent;
         item.transform.localPosition = item.offsetPosition;
         item.transform.localRotation = Quaternion.Euler (item.offsetRotation);
+        item.transform.localScale *= item.scaleMultiplier;
     }
 
     private void Update ()
