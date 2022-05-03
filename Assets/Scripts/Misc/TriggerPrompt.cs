@@ -28,6 +28,7 @@ public class TriggerPrompt : MonoBehaviour
             if(_humanGO == null) _humanGO = PlayerManager.current.HumanPlayer;
             else
             {
+                if (F.FastDistance(_humanGO.transform.position, transform.position) > 1.5f * 1.5f) return;
                 StartCoroutine(Cooldown());
                 StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message1, 0f));
                 StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 5f));
