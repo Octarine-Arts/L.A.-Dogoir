@@ -2,21 +2,13 @@
 tags:NPC, Detective
 position: -522,-132
 ---
-
-
--> Detective: Choose one
-    <<TriggerEnding Yarn>>
-    Detective: 
-
+Detective: A single bullet wound. Hit him in the back and burst out his chest. Poor bastard never saw it coming.
 
 ===
 title: ArchieJackHarlowDialogue
 position: -307,-131
 ---
--> Archie: Choose one
-    <<TriggerEnding Yarn>>
-    Archie: 
-
+Archie: A single bullet wound. Hit him in the back and burst out his chest. Poor bastard never saw it coming.
 
 ===
 
