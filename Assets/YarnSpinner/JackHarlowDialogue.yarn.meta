@@ -11,28 +11,4 @@ ScriptedImporter:
   LastImportHadImplicitStringIDs: 1
   LastImportHadAnyStrings: 1
   isSuccessfullyParsed: 1
-  parseErrorMessages:
-  - '21:0: Error: $DaleRandomGreeting (Number) cannot be assigned a undefined
-
-    <<set
-    $DaleRandomGreeting to random_range(0,3)>>
-
-'
-  - '53:0: Error: $DaleRandomGreeting (Number) cannot be assigned a undefined
-
-    <<set
-    $DaleRandomGreeting to random_range(0,3)>>
-
-'
-  - '21:0: Error: $DaleRandomGreeting (Number) cannot be assigned a undefined
-
-    <<set
-    $DaleRandomGreeting to random_range(0,3)>>
-
-'
-  - '53:0: Error: $DaleRandomGreeting (Number) cannot be assigned a undefined
-
-    <<set
-    $DaleRandomGreeting to random_range(0,3)>>
-
-'
+  parseErrorMessages: []

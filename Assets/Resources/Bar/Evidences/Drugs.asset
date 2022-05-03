@@ -17,7 +17,8 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: 964c46a90d8d9504d9d588c3eac36587, type: 2}
   description: A very large amount of illicit drugs.
   yarnString: '$DetectiveHasFoundDrugs '
-  promptMessageDog: "That\u2019s a helluva lot of drugs."
+  promptMessageDog: "That\u2019s a helluva lot of drugs. Let's see where the smell
+    leads..."
   promptMessageHuman: Damn, that's a lot of drugs. Looks like Mr. Butterbur has some
     explaining to do.
   isFound: 0

@@ -34,6 +34,7 @@ public class DogController : MonoBehaviour
         {
             print("Destroying Dog Stuff");
             Destroy(GetComponentInChildren<Camera> ().gameObject);
+            Destroy(dog);
             Destroy (this);
             return;
         }
@@ -53,6 +54,7 @@ public class DogController : MonoBehaviour
         item.transform.parent = grabItemParent;
         item.transform.localPosition = item.offsetPosition;
         item.transform.localRotation = Quaternion.Euler (item.offsetRotation);
+        item.transform.localScale *= item.scaleMultiplier;
     }
 
     private void Update ()

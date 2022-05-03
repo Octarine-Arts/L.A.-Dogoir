@@ -18,6 +18,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: e343559e5356b724e9343ad170cfc296, type: 3}
   - {fileID: 6391573757903218779, guid: 7f5c954f9aa1a4b4e9ad36e1746dccaa, type: 3}
   - {fileID: 6391573757903218779, guid: ee282476af733664b990b065419e183c, type: 3}
+  - {fileID: 6391573757903218779, guid: 9a7f7fdc6167d624d88bceb2078fc2ab, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $DaleIsInitialGreeting
@@ -41,7 +42,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 12
+    description: DaleButterburDialogue.yarn, node Questions, line 13
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $Loretta
@@ -49,7 +50,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 17
+    description: DaleButterburDialogue.yarn, node Questions, line 18
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $Johhny
@@ -57,7 +58,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 22
+    description: DaleButterburDialogue.yarn, node Questions, line 23
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $DetectiveTriedToOpenDoor
@@ -65,7 +66,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 27
+    description: DaleButterburDialogue.yarn, node Questions, line 28
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $DetectiveHasFoundShotgun
@@ -73,7 +74,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 32
+    description: DaleButterburDialogue.yarn, node Questions, line 33
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $DetectiveHasFoundDrugs
@@ -81,7 +82,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 37
+    description: DaleButterburDialogue.yarn, node Questions, line 38
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $DetectiveHasFoundFlask
@@ -89,7 +90,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 42
+    description: DaleButterburDialogue.yarn, node Questions, line 43
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $JohnnyHasSpokenAboutFlask
@@ -97,7 +98,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 43
+    description: DaleButterburDialogue.yarn, node Questions, line 44
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $DetectiveHasFoundPicture
@@ -105,7 +106,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 50
+    description: DaleButterburDialogue.yarn, node Questions, line 51
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $DaleHasSpokenAboutPeggy
@@ -113,7 +114,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: DaleButterburDialogue.yarn, node Questions, line 51
+    description: DaleButterburDialogue.yarn, node Questions, line 52
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: d9541c69cd9fc2f4f997ed35998557e8, type: 3}
   - name: $Dale

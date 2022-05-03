@@ -7,10 +7,11 @@ public class GrabbableItem : MonoBehaviour
     public InteractionIndicator indicator;
     public float radius;
     public Vector3 offsetPosition, offsetRotation;
+    public float scaleMultiplier = 1f;
 
     private Transform target;
     private DogController dog;
-    private Vector3 origin, originRot;
+    private Vector3 origin, originRot, originScale;
     private bool grabbed = false;
 
     private void Awake()
@@ -25,6 +26,7 @@ public class GrabbableItem : MonoBehaviour
         transform.parent = null;
         transform.position = origin;
         transform.rotation = Quaternion.Euler (originRot);
+        transform.localScale = originScale;
         indicator.Activate();
     }
 
