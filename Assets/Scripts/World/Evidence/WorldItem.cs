@@ -36,9 +36,16 @@ public class WorldItem : MonoBehaviour, IInteractable
         if(isPair) gameObject.SetActive(false);
     }
 
-    [PunRPC]
     public void Interact()
     {
+        if (HumanCanvas.current != null && !_hasFlashed)
+        {
+            _hasFlashed = true;
+            HumanCanvas.current.FlashJournal();
+        }
+        if (!string.IsNullOrEmpty(evidence_SO.promptMessageHuman) && PlayerManager.ThisPlayer == PlayerSpecies.Human) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, evidence_SO.promptMessageHuman);
+        if (!string.IsNullOrEmpty(evidence_SO.promptMessageDog) && PlayerManager.ThisPlayer == PlayerSpecies.Dog) TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, evidence_SO.promptMessageDog);
+
         _photonView.RPC(nameof(Interact_RPC), RpcTarget.AllBuffered);
         _photonView.RPC(nameof(SetYarnString_RPC), RpcTarget.AllBuffered);
         _photonView.RPC(nameof(ShowPairItem), RpcTarget.Others);
@@ -63,13 +70,6 @@ public class WorldItem : MonoBehaviour, IInteractable
     private void Interact_RPC()
     {
         evidence_SO.isFound = true;
-        if (HumanCanvas.current != null && !_hasFlashed)
-        {
-            _hasFlashed = true;
-            HumanCanvas.current.FlashJournal();
-        }
-        if (!string.IsNullOrEmpty(evidence_SO.promptMessageHuman) && PlayerManager.ThisPlayer == PlayerSpecies.Human) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, evidence_SO.promptMessageHuman);
-        if (!string.IsNullOrEmpty(evidence_SO.promptMessageDog) && PlayerManager.ThisPlayer == PlayerSpecies.Dog) TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, evidence_SO.promptMessageDog);
     }
 
     [PunRPC]
