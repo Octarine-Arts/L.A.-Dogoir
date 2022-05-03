@@ -48,7 +48,7 @@ public class WorldItem : MonoBehaviour, IInteractable
 
         _photonView.RPC(nameof(Interact_RPC), RpcTarget.AllBuffered);
         _photonView.RPC(nameof(SetYarnString_RPC), RpcTarget.AllBuffered);
-        _photonView.RPC(nameof(ShowPairItem), RpcTarget.Others);
+        _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered);
     }
 
     public bool CanInteract()
