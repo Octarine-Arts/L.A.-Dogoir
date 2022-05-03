@@ -14,12 +14,7 @@ public class VaultParts : MonoBehaviour
     public Vault vault;
     public VaultPart thisPart;
 
-    private Camera _camera;
-    
-    private void Awake()
-    {
-        _camera = Camera.main;
-    }
+    public Camera _camera;
 
     private void Update()
     {

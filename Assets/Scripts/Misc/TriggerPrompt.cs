@@ -26,12 +26,16 @@ public class TriggerPrompt : MonoBehaviour
         if (PlayerManager.ThisPlayer == PlayerSpecies.Human)
         {
             if(_humanGO == null) _humanGO = PlayerManager.current.HumanPlayer;
-            if (Vector3.Distance(_humanGO.transform.position, transform.position) < 3f)
+            else
             {
-                StartCoroutine(Cooldown());
-                StartCoroutine(PromptPlayer_CO(message1, 0f));
-                StartCoroutine(PromptPlayer_CO(message2, 5f));
+                if (Vector3.Distance(_humanGO.transform.position, transform.position) < 3f)
+                {
+                    StartCoroutine(Cooldown());
+                    StartCoroutine(PromptPlayer_CO(message1, 0f));
+                    StartCoroutine(PromptPlayer_CO(message2, 5f));
+                }
             }
+            
         }
     }
 
