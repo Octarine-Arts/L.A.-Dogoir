@@ -43,6 +43,7 @@ public class HumanController : MonoBehaviour
         {
             print("Destroying Human Stuff");
             Destroy (GetComponentInChildren<Camera> ().gameObject);
+            Destroy (agent);
             Destroy (this);
             return;
         }

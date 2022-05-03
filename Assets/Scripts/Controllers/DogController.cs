@@ -34,6 +34,7 @@ public class DogController : MonoBehaviour
         {
             print("Destroying Dog Stuff");
             Destroy(GetComponentInChildren<Camera> ().gameObject);
+            Destroy(dog);
             Destroy (this);
             return;
         }
