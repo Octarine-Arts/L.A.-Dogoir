@@ -156,7 +156,8 @@ position: 368,82
 Detective: You told me you were in the bathroom when the murder occured, but you failed to mention the blood on the floor in there? I can’t imagine you missed it.
 Loretta: Oh, that. Uh, yes, well I did see it. Of course I did. I just was so flustered about the murder when you asked. It must have…slipped my mind.
 Detective: Miss Dubois…
-Loretta: Yes, yes, alright. That blood…is mine. That thug “Two Sleeves” or whatever ridiculous thing he calls himself… He came in while I was in there. He said something about money Jack owed, said that I should pay up since Jack couldn’t. I mean, what nonsense! I don’t owe anything. So I told him that very thing. Well, being the brute he is he hit me. But I’m fine, Detective, don’t worry about me. Unlike poor Jack I lived to tell the tale.
+Loretta: Yes, yes, alright. That blood…is mine. That thug “Two Sleeves” or whatever ridiculous thing he calls himself… He came in while I was in there. He said something about money Jack owed, said that I should pay up since Jack couldn’t. 
+Loretta: I mean, what nonsense! I don’t owe anything. So I told him that very thing. Well, being the brute he is he hit me. But I’m fine, Detective, don’t worry about me. Unlike poor Jack I lived to tell the tale.
 
 <<set $DetectiveHasSpokenToLorettaBlood to true>>
 

@@ -191,8 +191,8 @@ title: AboutTheSyringe
 position: 368,82
 ---
 Detective: The reason I ask about you being in the alleyway, Mrs. Harlow, is that there was a syringe out there that appears to have been recently used. I don’t suppose you know anything about that?
-Peggy: You don’t give up, do you Detective? Very well, I did use the syringe. Understand that when Jack drinks too much he can get awfully violent. It was just something to get him to sleep. I wanted to get him home quietly, without any issues. Dale said he had the perfect thing and that he’d help get him into a taxi one he was sleeping. I don’t know, perhaps if I hadn’t given it to him he wouldn’t have been there to get shot? Could that have changed how things turned out? Oh God, would he still be alive if he had been awake?
-
+Peggy: You don’t give up, do you Detective? Very well, I did use the syringe. Understand that when Jack drinks too much he can get awfully violent. It was just something to get him to sleep. I wanted to get him home quietly, without any issues. Dale said he had the perfect thing and that he’d help get him into a taxi one he was sleeping. 
+Peggy: I don’t know, perhaps if I hadn’t given it to him he wouldn’t have been there to get shot? Could that have changed how things turned out? Oh God, would he still be alive if he had been awake?
 <<set $DetectiveHasSpokenToPeggySyringe to true>>
 
 <<jump PeggyQuestions>>

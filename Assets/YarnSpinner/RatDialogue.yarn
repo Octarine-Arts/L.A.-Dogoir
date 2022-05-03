@@ -33,7 +33,7 @@ position: 69,-84
 -> Detective: Did you see anything?
     <<jump RatDidYouSeeAnything>>
 
--> Detective:  I've got some cheese for you <<if $ArchieFoundTheCheese == true>> 
+-> Detective:  I've got some cheese for you <<if $ArchieFoundTheCheese == true && $RattusWantsCheese>>
     <<jump RatFoundTheCheese>>
 
 -> Detective:  I saw some cheese outside... <<if $ArchieGaveCheese == true && $OMalleyWillNotGetSyringe == true>> 
@@ -75,6 +75,7 @@ Archie: If you were here, you must have seen something?
 Rattus: You sure ask a lotta questions. Maybe Rattus saw somethin’, maybe he didn’t. What’s in it for him if he tells you what he saw? Tell ya what, I’m awfully hungry. Find Rattus some food and then maybe he’ll talk.
 Archie: Some food?
 Rattus: Yeah, yeah… some cheese would be nice. Run along now, little pet.
+<<set $RattusWantsCheese to true>>
 
 <<jump RatQuestions>>
 ===
@@ -115,7 +116,8 @@ title:  RatMovedToBin
 position: -111,-477
 ---
 Archie: Uh…
-Rattus: Surprised to see me, aren’t ya, pup? Betcha thought your little lie about the cheese would lead ol’ Rattus to his death, didn’t ya? There ain’t no cat Rattus can’t lick, no sirree! I should thank ya, really, first a bit of cheese and now a good fight! Rattus hasn’t felt so alive in weeks!
+Rattus: Surprised to see me, aren’t ya, pup? Betcha thought your little lie about the cheese would lead ol’ Rattus to his death, didn’t ya? There ain’t no cat Rattus can’t lick, no sirree! 
+Rattus: I should thank ya, really, first a bit of cheese and now a good fight! Rattus hasn’t felt so alive in weeks!
 Archie: Uh…glad to help. Is the cat ok?
 Rattus: Rattus sent that ol’ puss howlin’ all the way home! Hehehe.
 
@@ -125,8 +127,7 @@ Archie: Did the cat leave anything behind?
 Rattus: Left this ‘ere stick thing.
 Archie: May I have it?
 Rattus: Well Rattus sure don’t want it.
-
-<<SetBool $DetectiveHasFoundSyringe to true>>
+<<PromptPlayer Yarn "I better let my partner know about this bit of evidence..." 1>>
 <<jump RatQuestions>>
 ===
 

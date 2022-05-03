@@ -199,8 +199,8 @@ Dale: It wasn’t like that!
 Detective: It must have hurt you to see her husband in here most nights, canoodling with Miss Dubois, while his wife waited faithfully for him to come home. You must have hated the way he treated her, you knew you could treat her better. But a loyal wife like Mrs. Harlow wouldn’t just leave her husband, not unless he was removed entirely…
 Dale: Stop! Stop it! 
 Detective: Then tell me the truth!
-Dale: Alright, Detective, you win. I’ll admit….I love Peggy. And yes, it did kill me to see how that bastard treated her like she was nothing. Peggy’s no idiot, she knew what was happening with Loretta. And she still came to pick him up most nights. It broke my damn heart. She deserves the world, and instead she got stuck with Jack Harlow. So I’m glad he’s dead, alright? I’m damn glad. But I didn’t shoot him.
-
+Dale: Alright, Detective, you win. I’ll admit….I love Peggy. And yes, it did kill me to see how that bastard treated her like she was nothing. Peggy’s no idiot, she knew what was happening with Loretta. And she still came to pick him up most nights. It broke my damn heart. 
+Dale: She deserves the world, and instead she got stuck with Jack Harlow. So I’m glad he’s dead, alright? I’m damn glad. But I didn’t shoot him.
 <<set $DaleHasSpokenAboutPhotoOfPeggy to true>>
 
 <<jump Questions>>
