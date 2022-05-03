@@ -32,7 +32,7 @@ public class TriggerPrompt : MonoBehaviour
                 StartCoroutine(Cooldown());
                 StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message1, 0f));
                 StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 5f));
-                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Dog, message3, 10f));
+                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Dog, message3, 0f));
             }
             
         }
