@@ -3,26 +3,21 @@ tags:NPC, Detective
 position: -522,-132
 ---
 <<if $DaleIsInitialGreeting == false>>
-
-Dale: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
-Detective: I’d like to ask you some questions, actually.
-Dale: Of course.
-<<set $DaleIsInitialGreeting to true>>
-
+    Dale: I can’t believe this is happening in my bar. Whatever you need, Detective, you just let me know.
+    Detective: I’d like to ask you some questions, actually.
+    Dale: Of course.
+    <<set $DaleIsInitialGreeting to true>>
 <<elseif $DaleIsInitialGreeting == true>>
-
-<<set $DaleRandomGreeting to random_range(0,3)>>
-<<if $DaleRandomGreeting == 0 >>
-<<Animate "Wave">>
-Dale: How can I help, Detective?
-<<elseif $DaleRandomGreeting == 1>>
-Dale: Any leads, Detective?
-<<elseif $DaleRandomGreeting == 2>>
-Dale: What do you need?
-<<elseif $DaleRandomGreeting == 3>>
-Dale: How’s the investigation going?
-<<endif>>
-
+    <<set $DaleRandomGreeting to random_range(0,3)>>
+    <<if $DaleRandomGreeting == 0>>
+        Dale: How can I help, Detective?
+    <<elseif $DaleRandomGreeting == 1>>
+        Dale: Any leads, Detective?
+    <<elseif $DaleRandomGreeting == 2>>
+        Dale: What do you need?
+    <<else>>
+        Dale: How’s the investigation going?
+    <<endif>>
 <<endif>>
 
 <<jump Questions>>
@@ -43,50 +38,30 @@ position: -307,-131
 
 -> Detective: Enemies?
     <<jump WhoWantsJackDead>>
-
-<<if $Peggy == true>> 
--> Detective:  Peggy?
+ 
+-> Detective:  Peggy? <<if $Peggy == true>>
     <<jump Peggy>>
-<<endif>>
 
-<<if $Loretta == true>> 
--> Detective:  Loretta?
+-> Detective:  Loretta? <<if $Loretta == true>> 
     <<jump Loretta>>
-<<endif>>
 
-<<if $Johhny == true>> 
--> Detective:  Johnny?
+-> Detective:  Johnny? <<if $Johnny == true>> 
     <<jump Johhny>>
-<<endif>>
 
-<<if $DetectiveTriedToOpenDoor == true>>
--> Detective: The door?
+-> Detective: The door? <<if $DetectiveTriedToOpenDoor == true>>
     <<jump office>>
-<<endif>>
 
-<<if $DetectiveHasFoundShotgun == true>>
--> Detective: About the shotgun
+-> Detective: About the shotgun <<if $DetectiveHasFoundShotgun == true>>
     <<jump Shotgun>>
-<<endif>>
 
-<<if $DetectiveHasFoundDrugs == true>>
--> Detective: I found the drugs Dale
+-> Detective: I found the drugs Dale <<if $DetectiveHasFoundDrugs == true>>
     <<jump Drugs>>
-<<endif>>
 
-<<if $DetectiveHasFoundFlask == true>>
-<<if $JohnnyHasSpokenAboutFlask == true>>
--> Detective: Peggy visits often?
+-> Detective: Peggy visits often? <<if $DetectiveHasFoundFlask == true && $JohnnyHasSpokenAboutFlask == true>>
     <<jump PeggyVisitsOften>>
-<<endif>>
-<<endif>>
 
-
-<<if $DetectiveHasFoundPicture == true>>
-<<if $DaleHasSpokenAboutPeggy == true>>
-<<jump PhotoOfPeggy>>
-<<endif>>
-<<endif>>
+-> Detective: Why do you have a picture of Peggy? <<if $DaleHasSpokenAboutPeggy == true && $DetectiveHasFoundPicture == true>>
+    <<jump PhotoOfPeggy>>
 
 -> Detective: Goodbye
     <<jump Goodbye>>
@@ -237,15 +212,12 @@ position: -211,486
 
 <<set $DaleRandomGoodbye to random_range(0,2)>>
 <<if $DaleRandomGoodbye == 0>>
-<<Animate Dale "GoodbyeWave">>
 Detective: Thanks for your help
 Dale: Anytime!
 <<elseif $DaleRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
 Detective: I appreciate your help.
 Dale: No problems at all, Detective.
 <<elseif $DaleRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
 Detective: That’s all for now.
 Dale: Bye.
 <<endif>>

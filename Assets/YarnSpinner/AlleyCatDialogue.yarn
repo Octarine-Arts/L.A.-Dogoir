@@ -3,50 +3,42 @@ tags:NPC, Detective, Dog
 position: -338,-113
 ---
 <<if $OMalleyIsInitialGreeting == false>>
-
-OMalley: I don’t do the whole dog-cat thing so don’t even try, pal. I could eat a mutt like you for breakfast.
-Archie: I’m just here to ask you some questions, sir, about the gunshot that sounded earlier.
-OMalley: Oh. I don’t know much about that.
-<<set $OMalleyIsInitialGreeting to true>>
-
+    OMalley: I don’t do the whole dog-cat thing so don’t even try, pal. I could eat a mutt like you for breakfast.
+    Archie: I’m just here to ask you some questions, sir, about the gunshot that sounded earlier.
+    OMalley: Oh. I don’t know much about that.
+    <<set $OMalleyIsInitialGreeting to true>>
 <<elseif $OMalleyIsInitialGreeting == true>>
-
-<<set $OMalleyRandomGreeting to random_range(0,2)>>
-<<if $OMalleyRandomGreeting == 0 >>
-<<Animate "Wave">>
-OMalley: What do you want now?
-<<elseif $OMalleyRandomGreeting == 1>>
-OMalley: You don’t quit, do you?
-<<elseif $OMalleyRandomGreeting == 2>>
-OMalley: Can’t you see I’m busy?
-<<endif>>
-
+    <<set $OMalleyRandomGreeting to random_range(0,2)>>
+    <<if $OMalleyRandomGreeting == 0>>
+        OMalley: What do you want now? 
+    <<elseif $OMalleyRandomGreeting == 1>>
+        OMalley: You don’t quit, do you? 
+    <<else>>
+        OMalley: Can’t you see I’m busy? 
+    <<endif>>
 <<endif>>
 
 <<jump OMalleyQuestions>>
+
 ===
 title: OMalleyQuestions
 position: 69,-84
 ---
 -> Detective: Who are you?
+    <<set $ArchieFoundTheCheese to true>>
     <<jump OMalleyWhoAreYou>>
 
 
-<<if $OMalleyAskedForName == true>> 
--> Detective: Gunshot?
+-> Detective: Gunshot? <<if $OMalleyAskedForName == true>> 
     <<jump OMalleyGunshot>>
-<<endif>>
 
-<<if $OMalleyAskedAboutThrow == true>> 
--> Detective: What did they throw at you??
+
+-> Detective: What did they throw at you?? <<if $OMalleyAskedAboutThrow == true>> 
     <<jump OMalleyWhatDidTheyThrow>>
-<<endif>>
 
-<<if $OMalleyAskedGetIt == true>> 
--> Detective: Can you get it?
+
+-> Detective: Can you get it? <<if $OMalleyAskedGetIt == true>> 
     <<jump OMalleyCanYouGetIt>>
-<<endif>>
-
 
 
 -> Detective: Goodbye
@@ -58,9 +50,8 @@ title: OMalleyWhoAreYou
 position: 283,-340
 ---
 Archie: You got a name?
-OMalley: Yeah, O’Malley.
 
-<<set $OMalleyAskedForName = true>>
+<<set $OMalleyAskedForName to true>>
 
 <<jump OMalleyQuestions>>
 ===
@@ -70,11 +61,13 @@ position: -111,-477
 ---
 
 Archie: Were you out here when the gunshot rang out, Mr. O’Malley?
-OMalley: Well they don’t let me inside, do they? Only you dogs get that pleasure. Yeah, I was here. I was trying to dig through these bins, find a little dinner. Next thing you know, ka-boom! Scared the hairballs out of me… finally got back to the task at hand and some damn human comes out here and throws something at me. What a night, huh!
+OMalley: Well they don’t let me inside, do they? Only you dogs get that pleasure. Yeah, I was here. I was trying to dig through these bins, find a little dinner. Next thing you know -
+OMalley: Ka-boom! 
+OMalley: Scared the hairballs out of me… finally got back to the task at hand and some damn human comes out here and throws something at me. What a night, huh!
 Archie: Some human?
 OMalley: I don’t know, I was a bit dazed on account of their aim. Only saw the back of them as they went back inside. But I smelt them - they smelt like a garden. Hard to miss a smell like that out here.
 
-<<set $OMalleyAskedAboutThrow = true>>
+<<set $OMalleyAskedAboutThrow to true>>
 <<jump OMalleyQuestions>>
 
 ===
@@ -85,7 +78,7 @@ position: -111,-477
 
 Archie: What did they throw at you?
 OMalley: A little tube or something, I don’t know. It’s in this here bin somewhere.
-<<set $OMalleyAskedGetIt = true>>
+<<set $OMalleyAskedGetIt to true>>
 <<jump OMalleyQuestions>>
 ===
 
@@ -110,20 +103,14 @@ position: -191,263
 
 <<set $OMalleyRandomGoodbye to random_range(0,2)>>
 <<if $OMalleyRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
 Archie: Thank you.
 OMalley: Sure.
-
 <<elseif $OMalleyRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
 Archie: See you around.
 OMalley: Preferably not.
-
-<<elseif $OMalleyRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
+<<else>>
 Archie: I’ll be back if I have more questions
 OMalley: Can’t wait…
-
 <<endif>>
 
 <<stop>>

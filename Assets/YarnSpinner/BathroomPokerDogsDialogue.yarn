@@ -8,6 +8,7 @@ Bean: Well what do we do now?
 Mean: You mean what do you do now, it landed on my side of the table, I own it!
 Lean: No way! I’m the one who decided to set up here, so it should be mine!
 Bean: Well I’ll play ya for it!
+<<set $FoundTheBone to true>>
 <<endif>>
 
 
@@ -15,6 +16,7 @@ Bean: Well I’ll play ya for it!
 Mean: Reckon the fuzzball will be back?
 Bean: Nah, he’s run away with his tail between his legs
 Lean: That’s a damn shame, I wish he had found that bone we lost…
+<<set $FoundTheBone to true>>
 <<endif>>
 
 ===

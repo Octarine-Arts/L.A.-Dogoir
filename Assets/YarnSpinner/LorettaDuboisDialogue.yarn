@@ -3,29 +3,25 @@ tags:NPC, Detective
 position: -338,-113
 ---
 <<if $LorettaIsInitialGreeting == false>>
-
-Loretta: I’m much too upset about current events to talk, Detective. This is just too much for my nerves!
-Detective: I understand that it must be difficult, ma’am, but I really must insist you answer a few questions. I have to find out everything I can if we’re to catch the murderer.
-Loretta: Very well. I’m an actress you know, I can master my emotions under any circumstances. Even ones as trying as these.
-<<set $LorettaIsInitialGreeting to true>>
-
+    Loretta: I’m much too upset about current events to talk, Detective. This is just too much for my nerves!
+    Detective: I understand that it must be difficult, ma’am, but I really must insist you answer a few questions. I have to find out everything I can if we’re to catch the murderer.
+    Loretta: Very well. I’m an actress you know, I can master my emotions under any circumstances. Even ones as trying as these.
+    <<set $LorettaIsInitialGreeting to true>>
 <<elseif $LorettaIsInitialGreeting == true>>
-
-<<set $LorettaRandomGreeting to random_range(0,3)>>
-<<if $LorettaRandomGreeting == 0 >>
-<<Animate "Wave">>
-Loretta: Goodness gracious, what else do you want from me?
-<<elseif $LorettaRandomGreeting == 1>>
-Loretta: Come back to interrogate me more, have you?
-<<elseif $LorettaRandomGreeting == 2>>
-Loretta: What now, Detective?
-<<elseif $LorettaRandomGreeting == 3>>
-Loretta: Can’t a woman grieve in peace?
-<<endif>>
-
+    <<set $LorettaRandomGreeting to random_range(0,3)>>
+    <<if $LorettaRandomGreeting == 0 >>
+        Loretta: Goodness gracious, what else do you want from me?
+    <<elseif $LorettaRandomGreeting == 1>>
+        Loretta: Come back to interrogate me more, have you?
+    <<elseif $LorettaRandomGreeting == 2>>
+        Loretta: What now, Detective?
+    <<else>>
+        Loretta: Can’t a woman grieve in peace?
+    <<endif>>
 <<endif>>
 
 <<jump LorettaQuestions>>
+
 ===
 title: LorettaQuestions
 position: 69,-84
@@ -42,50 +38,26 @@ position: 69,-84
 -> Detective: Jack Harlow?
     <<jump LorettaDoYouKnowJack>>
 
-<<if $Dale == true>> 
--> Detective:  Dale?
+-> Detective: Dale? <<if $Dale == true>> 
     <<jump LorettaKnowsDale>>
-<<endif>>
 
-<<if $DaleKnowsAboutLoretta == true>> 
--> Detective:  Closest to the Victim?
+-> Detective: Closest to the Victim? <<if $DaleKnowsAboutLoretta == true>> 
     <<jump DaleKnowsAboutLoretta>>
-<<endif>>
-
-<<if $Peggy == true>> 
--> Detective:  Peggy?
+ 
+-> Detective: Peggy? <<if $Peggy == true>>
     <<jump LorettaKnowsPeggy>>
-<<endif>>
 
-<<if $Johhny == true>> 
--> Detective:  Johnny?
+-> Detective: Johnny? <<if $Johnny == true>> 
     <<jump LorettaKnowsJohhny>>
-<<endif>>
 
-//need to set bool for when archie shows feather to human detective
-<<if $HasArchieShownFeather == true>> 
--> Detective:  Friendly with Jack?
-    <<jump FriendlyWithJack>>
-<<endif>>
-
-<<if $DetectiveHasFoundGun == false>>
-<<if $DaleHasSpokenAboutShotgun == true>>
--> Detective:  Dale's gun?
+-> Detective:  Dale's gun? <<if $DaleHasSpokenAboutShotgun == true && $DetectiveHasFoundGun == false>>
     <<jump AboutThePistol>>
-<<endif>>
-<<endif>>
 
-<<if $DetectiveHasFoundBlood == true>>
-<<if $LorettaSpokenAboutLocation == true>>
--> Detective:  Seen the bathroom lately? It's a real bloodbath in there
+-> Detective:  Seen the bathroom lately? It's a real bloodbath in there <<if $LorettaSpokenAboutLocation == true && $DetectiveHasFoundBlood == true>>
     <<jump AboutBathroomBlood>>
-<<endif>>
-<<endif>>
 
-<<if $DetectiveHasSpokenToPeggyTickets == true>>
--> Detective:  How were the movies?
+-> Detective:  How were the movies? <<if $DetectiveHasSpokenToPeggyTickets == true>>
     <<jump KingKongTickets>>
-<<endif>>
 
 -> Detective: Goodbye
     <<jump LorettaGoodbye>>
@@ -106,7 +78,6 @@ position: -111,-477
 ---
 Detective: Where were you when the murder took place?
 Loretta: I was in the ladies room, touching up my makeup.
-
 
 <<set $Loretta to true>>
 <<set $LorettaSpokenAboutLocation to true>>
@@ -140,21 +111,6 @@ Loretta: He’s a fine man, a good employer.
 
 <<jump LorettaQuestions>>
 
-===
-
-title: FriendlyWithJack
-position: 360,-36
----
-
-// need bool to be set when Archie shows Dick the feather
-Detective: I’ve been hearing some interesting things about your relationship with Mr. Harlow, but I thought you said you didn’t know him very well?
-Loretta: What things have you heard? 
-Detective: I was hoping you could tell me.
-Loretta: Very well, Detective. Yes, Jack and I were…friendly with one another. Is that such a crime?
-Detective: Mr. Harlow had a wife, so it just might be a crime, depending on how friendly you were. And I have it on good authority that there were many nightly visits to your house, so I’m inclined to believe it was very friendly.
-Loretta: Indeed! And who told you that? Alright, I’ll admit it Detective, Jack and I were seeing each other. But I didn’t want him dead, as far from it as possible in fact! So instead of scrounging around in my personal affairs, perhaps find his murderer.
-
-<<jump LorettaQuestions>>
 ===
 title: DaleKnowsAboutLoretta
 position: 360,-36
@@ -233,15 +189,12 @@ position: -191,263
 
 <<set $lorettaRandomGoodbye to random_range(0,2)>>
 <<if $lorettaRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
 Detective: Thank you for your time.
 Loretta: Do your job detective
 <<elseif $lorettaRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
 Detective: That’s all for now, ma’am.
 Loretta: Just find whoever did this detective
-<<elseif $lorettaRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
+<<else>>
 Detective: Thank you for your cooperation
 Loretta: Anything to find the murderer.
 <<endif>>

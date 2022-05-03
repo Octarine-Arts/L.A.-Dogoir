@@ -3,25 +3,20 @@ tags:NPC, Detective
 position: -338,-113
 ---
 <<if $JohnnyIsInitialGreeting == false>>
-
-Johnny: You buttons ain’t behind the eight-ball, are you?
-Detective: Excuse me?
-Johnny: Here before the body’s even cold. Got peepers on the bar or something?
-Detective: Why, anything we need to be peeping on? 
-<<set $JohnnyIsInitialGreeting to true>>
-
+    Johnny: You buttons ain’t behind the eight-ball, are you?
+    Detective: Excuse me?
+    Johnny: Here before the body’s even cold. Got peepers on the bar or something?
+    Detective: Why, anything we need to be peeping on? 
+    <<set $JohnnyIsInitialGreeting to true>>
 <<elseif $JohnnyIsInitialGreeting == true>>
-
-<<set $JohnnyRandomGreeting to random_range(0,2)>>
-<<if $JohnnyRandomGreeting == 0 >>
-<<Animate "Wave">>
-Johnny: What now, buttons?
-<<elseif $JohnnyRandomGreeting == 1>>
-Johnny: Forget something?
-<<elseif $JohnnyRandomGreeting == 2>>
-Johnny: Mr. Gumshoe returns.
-<<endif>>
-
+    <<set $JohnnyRandomGreeting to random_range(0,2)>>
+    <<if $JohnnyRandomGreeting == 0>>
+        Johnny: Mr. Gumshoe returns.
+    <<elseif $JohnnyRandomGreeting == 1>>
+        Johnny: Forget something?
+    <<else>>
+        Johnny: What now, buttons?
+    <<endif>>
 <<endif>>
 
 <<jump JohnnyQuestions>>
@@ -39,55 +34,29 @@ position: 69,-84
 -> Detective: Mr.Harlow?
     <<jump JohnnyDoYouKnowJack>>
 
-<<if $JohnnyKnowsSomething == true>>
--> Detective: Seen anything suspiscious?
+-> Detective: Seen anything suspiscious? <<if $JohnnyKnowsSomething == true>>
     <<jump JohnnyIsSuspiscious>>
-<<endif>>
 
-<<if $Dale == true>> 
--> Detective:  Dale?
+-> Detective:  Dale? <<if $Dale == true>> 
     <<jump JohnnyKnowsDale>>
-<<endif>>
 
-<<if $Loretta == true>> 
--> Detective:  Loretta?
+-> Detective:  Loretta? <<if $Loretta == true>> 
     <<jump JohnnyKnowsLoretta>>
-<<endif>>
 
-<<if $Peggy == true>> 
--> Detective:  Peggy?
+-> Detective:  Peggy? <<if $Peggy == true>> 
     <<jump JohnnyKnowsPeggy>>
-<<endif>>
 
-<<if $DetectiveHasFoundHorseTicket == true>> 
--> Detective:  I found these horse tickets
+-> Detective:  I found these horse tickets <<if $DetectiveHasFoundHorseTicket == true>> 
     <<jump AboutHorseTickets>>
-<<endif>>
 
-<<if $DetectiveHasSpokenToJohnnyHorseTicket == true>>
-<<if $DetectiveHasFoundBlood == true>>
-<<if $DetectiveHasSpokenToLorettaBlood == true>>
--> Detective:  What where you doing in the ladies?
+-> Detective:  What where you doing in the ladies? <<if $DetectiveHasSpokenToLorettaBlood == true && $DetectiveHasFoundBlood == true && $DetectiveHasSpokenToJohnnyHorseTicket == true>>
     <<jump AboutTheBloodInTheLadies>>
-<<endif>>
-<<endif>>
-<<endif>>
 
-<<if $DetectiveHasFoundFlask == true>>
-<<if $DetectiveHasSpokenToPeggyFlask == true>>
--> Detective: You know Jack brings his own flask to a bar?
+-> Detective: You know Jack brings his own flask to a bar? <<if $DetectiveHasSpokenToPeggyFlask == true && $DetectiveHasFoundFlask == true>>
     <<jump AboutTheFlaskAndDale>>
-<<endif>>
-<<endif>>
 
-<<if  $DetectiveHasSpokenToJohnnyBlood == true>>
-<<if  $DetectiveHasSpokenToJohnnyHorseTicket == true>>
-<<if  $DetectiveHasSpokenToJohnnyDebt == true>>
--> Detective: All the evidence is pointing at you
+-> Detective: All the evidence is pointing at you <<if  $DetectiveHasSpokenToJohnnyDebt == true && $DetectiveHasSpokenToJohnnyHorseTicket == true && $DetectiveHasSpokenToJohnnyBlood == true>>
     <<jump JohnnyInterrogate>>
-<<endif>>
-<<endif>>
-<<endif>>
 
 -> Detective: Goodbye
     <<jump JohnnyGoodbye>>
@@ -227,20 +196,14 @@ position: -191,263
 
 <<set $johnnyRandomGoodbye to random_range(0,2)>>
 <<if $johnnyRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
 Detective: That’s all I need for now.
 Johnny: Good.
-
 <<elseif $johnnyRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
 Detective: I appreciate the help.
 Johnny: Yeah, yeah.
-
-<<elseif $johnnyRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
+<<else>>
 Detective: Thank you, Mr. Malone.
 Johnny: Just let me know when I can go home.
-
 <<endif>>
 
 <<stop>>

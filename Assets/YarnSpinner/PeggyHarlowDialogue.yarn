@@ -3,29 +3,25 @@ tags:NPC, Detective
 position: -338,-113
 ---
 <<if $PeggyIsInitialGreeting == false>>
-
-Peggy: I suppose you think it was me, don’t you, Detective?
-Detective: And why would you say that?
-Peggy: It’s always the wife or husband, isn’t that true?
-Detective: Perhaps you can tell me that.
-Peggy: I’ve just lost my husband, Detective. Jack wasn’t John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack. I don’t know what I’ll do without him.
-<<set $PeggyIsInitialGreeting to true>>
-
+    Peggy: I suppose you think it was me, don’t you, Detective?
+    Detective: And why would you say that?
+    Peggy: It’s always the wife or husband, isn’t that true?
+    Detective: Perhaps you can tell me that.
+    Peggy: I’ve just lost my husband, Detective. Jack wasn’t John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack. I don’t know what I’ll do without him.
+    <<set $PeggyIsInitialGreeting to true>>
 <<elseif $PeggyIsInitialGreeting == true>>
-
-<<set $PeggyRandomGreeting to random_range(0,2)>>
-<<if $PeggyRandomGreeting == 0 >>
-<<Animate "Wave">>
-Peggy: More interrogation, Detective?
-<<elseif $PeggyRandomGreeting == 1>>
-Peggy: Yes?
-<<elseif $PeggyRandomGreeting == 2>>
-Peggy: Hello again, Detective.
-<<endif>>
-
+    <<set $PeggyRandomGreeting to random_range(0,2)>>
+    <<if $PeggyRandomGreeting == 0 >>
+    Peggy: More interrogation, Detective?
+    <<elseif $PeggyRandomGreeting == 1>>
+    Peggy: Yes?
+    <<else>>
+    Peggy: Hello again, Detective.
+    <<endif>>
 <<endif>>
 
 <<jump PeggyQuestions>>
+
 ===
 title: PeggyQuestions
 position: 69,-84
@@ -42,56 +38,32 @@ position: 69,-84
 -> Detective: Enemies?
     <<jump PeggyWhoWantsJackDead>>
 
-<<if $Dale == true>> 
-<<if $DetectiveHasFoundSyringe == false>>
-<<if $PeggySpokenAboutGunshot == true>>
--> Detective:  Dale?
+-> Detective:  Dale? <<if $PeggySpokenAboutGunshot == true && $DetectiveHasFoundSyringe == false && $Dale == true>>
     <<jump PeggyKnowsDale>>
-<<endif>>
-<<endif>>
-<<endif>>
 
-<<if $Loretta == true>> 
--> Detective:  Loretta?
+-> Detective:  Loretta? <<if $Loretta == true>> 
     <<jump PeggyKnowsLoretta>>
-<<endif>>
 
-<<if $Johhny == true>> 
--> Detective:  Johnny?
+-> Detective:  Johnny? <<if $Johnny == true>>
     <<jump PeggyKnowsJohhny>>
-<<endif>>
 
-<<if $JohnnySawPeggyFromAlley == true>>
--> Detective: Johnny saw you outside
+-> Detective: Johnny saw you outside <<if $JohnnySawPeggyFromAlley == true>>
     <<jump PeggySeenOutside>>
-<<endif>>
 
-<<if $DetectiveHasFoundTickets == true>>
--> Detective:  These tickets I've found
+-> Detective:  These tickets I've found <<if $DetectiveHasFoundTickets == true>>
     <<jump TicketsToKingKong>>
-<<endif>>
 
-<<if $DetectiveHasFoundMissingRing == true>>
--> Detective:  Jack doesn't wear his ring anymore?
+-> Detective:  Jack doesn't wear his ring anymore? <<if $DetectiveHasFoundMissingRing == true>>
     <<jump WhereIsTheRing>>
-<<endif>>
 
-<<if $DetectiveHasFoundFlask == true>>
--> Detective:  Flask to a bar?
+-> Detective:  Flask to a bar? <<if $DetectiveHasFoundFlask == true>>
     <<jump AboutTheFlask>>
-<<endif>>
 
-<<if $DetectiveHasFoundSyringe == true>>
-<<if $PeggySpokenAboutAlley == true>>
--> Detective:  Drugs in the alley?
+-> Detective:  Drugs in the alley? <<if $PeggySpokenAboutAlley == true && $DetectiveHasFoundSyringe == true>>
     <<jump AboutTheSyringe>>
-<<endif>>
-<<endif>>
 
-<<if $DetectiveHasSpokenToPeggySyringe == true>>
--> Detective:  Why did you hide it?
+-> Detective:  Why did you hide it? <<if $DetectiveHasSpokenToPeggySyringe == true>>
     <<jump WhyDidYouHideIt>>
-<<endif>>
 
 -> Detective: Goodbye
     <<jump PeggyGoodbye>>
@@ -240,15 +212,12 @@ position: -191,263
 
 <<set $peggyRandomGoodbye to random_range(0,2)>>
 <<if $peggyRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
 Detective: Thank you for your time, Mrs. Harlow.
 Peggy: May I grieve in peace, now?
 <<elseif $peggyRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
 Detective: That’ll be all, ma’am.
 Peggy: Find Jack’s murderer, Detective. 
 <<elseif $peggyRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
 Detective: Thanks.
 Peggy: Farewell.
 <<endif>>

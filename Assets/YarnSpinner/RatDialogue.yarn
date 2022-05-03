@@ -3,28 +3,23 @@ tags:NPC, Detective, Dog
 position: -338,-113
 ---
 <<if $RatIsInitialGreeting == false>>
-
-Rattus: What the hell d’you want?
-Archie: Pleased to meet you, too. I’d like to ask you some questions about the murder that’s just taken place.
-Rattus: Hmmph.
-
-<<set $RatIsInitialGreeting to true>>
-
+    Rattus: What the hell d’you want?
+    Archie: Pleased to meet you, too. I’d like to ask you some questions about the murder that’s just taken place.
+    Rattus: Hmmph.
+    <<set $RatIsInitialGreeting to true>>
 <<elseif $RatIsInitialGreeting == true>>
-
-<<set $RatRandomGreeting to random_range(0,2)>>
-<<if $RatRandomGreeting == 0 >>
-<<Animate "Wave">>
-Rattus: What now?
-<<elseif $RatRandomGreeting == 1>>
-Rattus: What?
-<<elseif $RatRandomGreeting == 2>>
-Rattus: You just don’t get the message, do you?
-<<endif>>
-
+    <<set $RatRandomGreeting to random_range(0,2)>>
+    <<if $RatRandomGreeting == 0>>
+        Rattus: What now?
+    <<elseif $RatRandomGreeting == 1>>
+        Rattus: What?
+    <<else>>
+        Rattus: You just don’t get the message, do you?
+    <<endif>>
 <<endif>>
 
 <<jump RatQuestions>>
+
 ===
 title: RatQuestions
 position: 69,-84
@@ -38,23 +33,14 @@ position: 69,-84
 -> Detective: Did you see anything?
     <<jump RatDidYouSeeAnything>>
 
-
-<<if $ArchieFoundTheCheese == true>> 
--> Detective:  I've got some cheese for you
+-> Detective:  I've got some cheese for you <<if $ArchieFoundTheCheese == true>> 
     <<jump RatFoundTheCheese>>
-<<endif>>
 
-<<if $ArchieGaveCheese == true>> 
-<<if $OMalleyWillNotGetSyringe == true>> 
--> Detective:  I saw some cheese outside...
+-> Detective:  I saw some cheese outside... <<if $ArchieGaveCheese == true && $OMalleyWillNotGetSyringe == true>> 
     <<jump RatSawCheeseOutside>>
-<<endif>>
-<<endif>>
 
-<<if $RattusMovedOutside == true>> 
--> Detective:  What are you doing out here?
+-> Detective:  What are you doing out here? <<if $RattusMovedOutside == true>> 
     <<jump RatMovedToBin>>
-<<endif>>
 
 -> Detective: Goodbye
     <<jump RatGoodbye>>
@@ -122,8 +108,8 @@ Rattus: Outta the way!
 //make rattus move to outside
 <<StartAnim AnimatorRat>>
 <<set $RattusMovedOutside to true>>
+<<stop>>
 
-<<jump RatQuestions>>
 ===
 title:  RatMovedToBin
 position: -111,-477
@@ -140,7 +126,7 @@ Rattus: Left this ‘ere stick thing.
 Archie: May I have it?
 Rattus: Well Rattus sure don’t want it.
 
-<<SetBool $DetectiveHasFoundSyringe true>>
+<<SetBool $DetectiveHasFoundSyringe to true>>
 <<jump RatQuestions>>
 ===
 
@@ -149,21 +135,15 @@ position: -191,263
 ---
 
 <<set $RatRandomGoodbye to random_range(0,2)>>
-<<if $RatRandomGoodbye == 0 >>
-<<Animate Dale "GoodbyeWave">>
+<<if $RatRandomGoodbye == 0>>
 Archie: Thanks.
 Rattus: Whatever.
-
 <<elseif $RatRandomGoodbye == 1>>
-<<Animate Dale "GoodbyeWave">>
 Archie: That’s all for now.
 Rattus: Only for now? Drat.
-
-<<elseif $RatRandomGoodbye == 2>>
-<<Animate Dale "GoodbyeWave">>
+<<else>>
 Archie: I appreciate it.
 Rattus: Well I don’t.
-
 <<endif>>
 
 <<stop>>
