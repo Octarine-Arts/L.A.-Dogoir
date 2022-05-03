@@ -435,6 +435,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 721234756}
     m_Modifications:
     - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 81144787}
+    - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: lineColour.b
       value: 0.06349206
       objectReference: {fileID: 0}
@@ -2448,7 +2452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9954,8 +9958,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a826fdbdbe2eb34a985aab5ce24f5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message1: 
-  message2: 
+  message1: I'd really prefer if you didn't go into my office, Detective. There's
+    nothing in there, I assure you.
+  message2: I need to distract Dale so I can get into this room. Maybe Archie can
+    help?
+  message3: Looks like my partner's trying to get into that room! Maybe I can help
+    by making a distraction...
 --- !u!114 &298238431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22703,6 +22711,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 721234756}
     m_Modifications:
     - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1888838039}
+    - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: lineColour.b
       value: 0
       objectReference: {fileID: 0}
@@ -25340,7 +25352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45662,6 +45674,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 721234756}
     m_Modifications:
     - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 994030923904422704}
+    - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: lineColour.b
       value: 0.06349206
       objectReference: {fileID: 0}
@@ -47495,7 +47511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48360,6 +48376,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 721234756}
     m_Modifications:
+    - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 1116186318}
     - target: {fileID: 278522436565749788, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: lineColour.b
       value: 0
@@ -49642,7 +49662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
       propertyPath: m_LocalPosition.x

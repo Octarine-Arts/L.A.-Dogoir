@@ -13,6 +13,7 @@ public class SmellTrail : MonoBehaviour
     public float renderRadius;
     public float distanceToActivate;
     public bool canDeactivate = true;
+    public WorldItem item;
 
     private bool active;
     private float radius;
@@ -48,6 +49,7 @@ public class SmellTrail : MonoBehaviour
             ActiveTrail.Deactivate ();
         ActiveTrail = this;
         active = true;
+        if (item) item.Interact();
     }
 
     public void Deactivate ()

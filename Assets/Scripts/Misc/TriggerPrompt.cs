@@ -9,8 +9,8 @@ public class TriggerPrompt : MonoBehaviour
 {
     public string message1;
     public string message2;
+    public string message3;
     
-
     private bool _isOnCooldown;
     private PhotonView _photonView;
     private GameObject _humanGO;
@@ -29,8 +29,9 @@ public class TriggerPrompt : MonoBehaviour
             if (Vector3.Distance(_humanGO.transform.position, transform.position) < 3f)
             {
                 StartCoroutine(Cooldown());
-                StartCoroutine(PromptPlayer_CO(message1, 0f));
-                StartCoroutine(PromptPlayer_CO(message2, 5f));
+                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message1, 0f));
+                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 5f));
+                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Dog, message3, 10f));
             }
         }
     }
@@ -47,15 +48,15 @@ public class TriggerPrompt : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void PromptPlayer(string message)
+    private void PromptPlayer(PlayerSpecies species, string message)
     {
-        if(PlayerManager.ThisPlayer == PlayerSpecies.Human) TextAppearerer.current.PromptPlayer(PlayerSpecies.Human, message);
+        if(PlayerManager.ThisPlayer == species) TextAppearerer.current.PromptPlayer(species, message);
     }
 
-    private IEnumerator PromptPlayer_CO(string message, float delay)
+    private IEnumerator PromptPlayer_CO(PlayerSpecies species, string message, float delay)
     {
         yield return new WaitForSeconds(delay);
-        PromptPlayer(message);
+        PromptPlayer(species, message);
     }
     
     private IEnumerator Cooldown()
