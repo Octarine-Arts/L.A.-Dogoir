@@ -143,7 +143,7 @@ title: AboutHorseTickets
 position: 495,-14
 ---
 Detective: I found a debt stub for a horse bet Mr. Harlow had lost, looks like he owed someone a fair bit of money. You wouldn’t happen to know anything about that, would you?
-Johnny: Maybe. We hold what we call a “games” night here for the regulars every now and then. Racers, poker, that sorta thing. Jack likes to bet on the ponies, but he ain’t got squat to bet with.
+Johnny: Maybe. We hold what we call a “games” night here for the regulars every now and then. Races, poker, that sorta thing. Jack likes to bet on the ponies, but he ain’t got squat to bet with.
 Detective: Then it sounds like you’re the one he owes money to. And he can’t pay, that must make you mad.
 Johnny: Mad enough to shoot him, right? That’s what you’re getting at, ain’t you, Detective? Well, nice try, but I ain’t done nothing. But honestly, between you and me, I’m upset it weren’t me what got to fill the bastard with lead. Jack Harlow got what he deserved.
 <<set $DetectiveHasSpokenToJohnnyHorseTicket to true>>

@@ -13,7 +13,7 @@ position: -338,-113
     <<if $FrouFrouRandomGreeting == 0>>
     FrouFrou: Bonjour, mon cher!
     <<elseif $FrouFrouRandomGreeting == 1>>
-    FrouFrou: May I be of service, detective?
+    FrouFrou: May I be of service, Detective?
     <<else>>
     FrouFrou: So lovely to see you again, darling.
     <<endif>>
@@ -105,7 +105,7 @@ title: FrouFrouDoYouKnowHim
 position: -39,-503
 ---
 
-Archie: Does your mistress have anything connection to the murdered man?
+Archie: Does your mistress have any connection to the murdered man?
 FrouFrou: Yes, though we should hardly associate with one so beneath our pedigree. Often he came to our residence. I hated it. 
 FrouFrou:I sleep on a silk pillow beside my Mistress every night without fail, except when *he* shows up. Then I am locked out of the bedroom! Did you ever hear of such injustice?
 

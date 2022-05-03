@@ -7,7 +7,7 @@ position: -338,-113
     Detective: And why would you say that?
     Peggy: It’s always the wife or husband, isn’t that true?
     Detective: Perhaps you can tell me that.
-    Peggy: I’ve just lost my husband, Detective. Jack wasn’t John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack. I don’t know what I’ll do without him.
+    Peggy: Please, Detective. I've just lost my husband. Jack wasn't John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack.
     <<set $PeggyIsInitialGreeting to true>>
 <<elseif $PeggyIsInitialGreeting == true>>
     <<set $PeggyRandomGreeting to random_range(0,2)>>
@@ -114,7 +114,7 @@ position: 360,-36
 Detective: How well do you know the bartender, Mr. Butterbur?
 Peggy: Oh, not very well at all.
 Detective: And yet you referred to him by his first name - Dale.
-Peggy: Well - yes, coming to collect Jack as I do, we have spoken a few times. He seems like a very decent man, as far as bar owner’s go.
+Peggy: Well - yes, coming to collect Jack as I do, we have spoken a few times. He seems like a very decent man, as far as bar owners go.
 
 <<jump PeggyQuestions>>
 ===

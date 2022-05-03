@@ -61,11 +61,11 @@ position: -111,-477
 ---
 
 Archie: Were you out here when the gunshot rang out, Mr. O’Malley?
-OMalley: Well they don’t let me inside, do they? Only you dogs get that pleasure. Yeah, I was here. I was trying to dig through these bins, find a little dinner. Next thing you know -
-OMalley: Ka-boom! 
-OMalley: Scared the hairballs out of me… finally got back to the task at hand and some damn human comes out here and throws something at me. What a night, huh!
+OMalley: Well they don’t let me inside, do they? Only you dogs get that pleasure. Yeah, I was here. I was trying to dig through these bins, find a little dinner. Next thing you know...
+OMalley: KA-BOOM! 
+OMalley: Scared the hairballs out of me… finally got back to the task at hand and some damn human comes out here and throws something at me. What a night.
 Archie: Some human?
-OMalley: I don’t know, I was a bit dazed on account of their aim. Only saw the back of them as they went back inside. But I smelt them - they smelt like a garden. Hard to miss a smell like that out here.
+OMalley: I don’t know, I was a bit dazed on account of their aim. Only just saw the back of them as they went back inside.
 
 <<set $OMalleyAskedAboutThrow to true>>
 <<jump OMalleyQuestions>>
@@ -89,7 +89,7 @@ position: -111,-477
 Archie: Can you get it for me?
 OMalley: Now why would I do extra work for something that got nothing to do with me?
 Archie: I’ll get it myself then.
-OMalley: I don’t think so. This is my turf, pal. I’ve answered your dumb questions real nice, so how about you leave me alone? I still got food to find.
+OMalley: I don’t think so. This is my turf, pal. I’ve answered your dumb questions real nice, so how about you leave me alone?
 
 <<set $OMalleyWillNotGetSyringe to true>>
 //player needs to lead cat away with rat
@@ -109,7 +109,7 @@ OMalley: Sure.
 Archie: See you around.
 OMalley: Preferably not.
 <<else>>
-Archie: I’ll be back if I have more questions
+Archie: I’ll be back if I have more questions.
 OMalley: Can’t wait…
 <<endif>>
 
