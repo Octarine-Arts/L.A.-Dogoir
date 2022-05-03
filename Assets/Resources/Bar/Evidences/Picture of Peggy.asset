@@ -20,5 +20,5 @@ MonoBehaviour:
   yarnString: $DetectiveHasFoundPicture
   promptMessageDog: 
   promptMessageHuman: Why the hell does Butterbur have a picture of Jack Harlow's
-    wife?
+    wife in his office?
   isFound: 0

@@ -18,6 +18,5 @@ MonoBehaviour:
   description: 'A broken window. Looks like something was thrown through it. '
   yarnString: $DetectiveHasFoundBrokenWindow
   promptMessageDog: " I should check out what\u2019s on the other side of this window."
-  promptMessageHuman: How did this break? I wonder if there's anything on the other
-    side...
+  promptMessageHuman: I wonder how this window broke?
   isFound: 0
