@@ -19,5 +19,5 @@ MonoBehaviour:
     Still looks fresh.
   yarnString: $DetectiveHasFoundBlood
   promptMessageDog: That's a lot of blood. Let's try find the owner...
-  promptMessageHuman: Blood? What on earth happened here?
-  isFound: 0
+  promptMessageHuman: Blood? What the hell happened here?
+  isFound: 1
