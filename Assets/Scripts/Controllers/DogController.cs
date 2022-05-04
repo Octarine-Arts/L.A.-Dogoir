@@ -52,12 +52,13 @@ public class DogController : MonoBehaviour
     }
 
 
-    public void GrabItem(Transform item) => pview.RPC("GrabItem_RPC", RpcTarget.All, item.GetComponent<GrabbableItem> ());
+    public void GrabItem(Transform item) => pview.RPC("GrabItem_RPC", RpcTarget.All, item);
     [PunRPC]
-    private void GrabItem_RPC(GrabbableItem item)
+    private void GrabItem_RPC(Transform itemTransform)
     {
         if (grabbedItem) grabbedItem.Drop();
 
+        GrabbableItem item = itemTransform.GetComponent<GrabbableItem>();
         grabbedItem = item;
         item.transform.parent = grabItemParent;
         item.transform.localPosition = item.offsetPosition;
