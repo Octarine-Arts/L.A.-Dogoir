@@ -71,6 +71,17 @@ public class AudioManager : MonoBehaviour
 		if(!soundFound) StopBackgroundAudio();
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Tab))
+		{
+			if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
+			if (Cursor.lockState == CursorLockMode.None) Cursor.lockState = CursorLockMode.Locked;
+		}
+
+		
+	}
+
 	#region Background Audio Functions
 	public void PlayBackgroundAudio()
 	{
