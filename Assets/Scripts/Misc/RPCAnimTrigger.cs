@@ -15,7 +15,7 @@ public class RPCAnimTrigger : MonoBehaviour
         pview = GetComponent<PhotonView>();
     }
 
-    public void Trigger() => pview.RPC("TriggerRPC", RpcTarget.AllBuffered, trigger);
+    public void Trigger() => pview.RPC("Trigger_RPC", RpcTarget.AllBuffered, trigger);
     public void Trigger(string trigger) => pview.RPC("Trigger_RPC", RpcTarget.AllBuffered, trigger);
     private void Trigger_RPC(string trigger) => anim.SetTrigger(trigger);
 }
