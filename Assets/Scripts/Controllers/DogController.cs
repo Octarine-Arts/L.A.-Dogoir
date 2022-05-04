@@ -62,6 +62,14 @@ public class DogController : MonoBehaviour
         item.transform.localScale *= item.scaleMultiplier;
     }
 
+    public void DropItem(bool disable = false)
+    {
+        if (disable) grabbedItem.gameObject.SetActive(false);
+        else grabbedItem.Drop();
+
+        grabbedItem = null;
+    }
+
     private void Update ()
     {
         if (!canMove) return;

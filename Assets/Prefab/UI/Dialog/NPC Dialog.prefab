@@ -149,7 +149,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 375
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: dialogGroup
       value: 
       objectReference: {fileID: 871282321334831075}
+    - target: {fileID: 1378669420441240980, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1378669420441240981, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

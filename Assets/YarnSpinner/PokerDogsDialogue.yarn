@@ -68,7 +68,7 @@ position: 283,-340
         Archie: Don’t get your hair in a mess, I’ve brought my own bargaining chip. This bone is a whole lot better to bet with than a gun. What do you say?
         Bean: It’s a deal!
         Mean: Here you go!
-        <<SetBool Yarn $DetectiveHasFoundPistol true>>
+        <<TradeItem Yarn "Gun">>
         <<set $PokerDogsGaveGun to true>>      
     <<endif>>
     <<stop>>

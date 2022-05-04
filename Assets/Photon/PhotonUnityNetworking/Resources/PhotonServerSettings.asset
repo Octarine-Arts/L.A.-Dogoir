@@ -52,6 +52,10 @@ MonoBehaviour:
   - ShowPairItem
   - SetEnding_RPC
   - RemoveDoorCollider_RPC
+  - ShowPokerDogGun_RPC
+  - ShowGameObject_RPC
+  - DogDropHeld
+  - TradeItem_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

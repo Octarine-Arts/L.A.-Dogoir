@@ -19,6 +19,9 @@ public class EventManager : MonoBehaviour
         if (dogPlayer != null && humanPlayer != null) OnPlayersSpawned?.Invoke (humanPlayer, dogPlayer);
     }
 
+    public event Action<string> OnTradeItem;
+    public void TradeItem(string itemName) => OnTradeItem?.Invoke(itemName);
+
     private void Awake ()
     {
         UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, loadMode) => { OnSceneLoaded(); };
