@@ -52,7 +52,7 @@ public class DogController : MonoBehaviour
     }
 
 
-    public void GrabItem(GrabbableItem item) => pview.RPC("GrabItem_RPC", RpcTarget.All, item);
+    public void GrabItem(Transform item) => pview.RPC("GrabItem_RPC", RpcTarget.All, item.GetComponent<GrabbableItem> ());
     [PunRPC]
     private void GrabItem_RPC(GrabbableItem item)
     {
