@@ -44,7 +44,11 @@ public class DogController : MonoBehaviour
         Player_StaticActions.OnEnableDogMovement += EnableMovement;
         Player_StaticActions.DisableDogMovement();
         
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3)) dog.transform.localScale = new Vector3(0.75f,0.75f,0.75f);
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3))
+        {
+            dog.transform.localScale *= 1.5f;
+
+        }
     }
 
     public void GrabItem(GrabbableItem item)
