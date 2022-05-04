@@ -47,10 +47,10 @@ public class WorldItem : MonoBehaviour, IInteractable
         if (!string.IsNullOrEmpty(evidence_SO.promptMessageDog) && PlayerManager.ThisPlayer == PlayerSpecies.Dog) TextAppearerer.current.PromptPlayer(PlayerSpecies.Dog, evidence_SO.promptMessageDog);
 
         _photonView.RPC(nameof(Interact_RPC), RpcTarget.AllBuffered);
-        _photonView.RPC(nameof(SetYarnString_RPC), RpcTarget.AllBuffered);
+        _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered);
 
-        if(PlayerManager.ThisPlayer == PlayerSpecies.Human) _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered, evidence_SO.yarnString);
-        if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered, evidence_SO.dogYarnString);
+        if(PlayerManager.ThisPlayer == PlayerSpecies.Human) _photonView.RPC(nameof(SetYarnString_RPC), RpcTarget.AllBuffered, evidence_SO.yarnString);
+        if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) _photonView.RPC(nameof(SetYarnString_RPC), RpcTarget.AllBuffered, evidence_SO.dogYarnString);
     }
 
     public bool CanInteract()

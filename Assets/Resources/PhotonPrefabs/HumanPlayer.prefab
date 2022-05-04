@@ -759,6 +759,9 @@ MonoBehaviour:
   moveAcceleration: 8
   displayText: {fileID: 5001581462446109699}
   humanCanvas: {fileID: 1236247366084506117}
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 256
   verticalLookRange: {x: -70, y: 90}
   lookSensitivity: {x: 2, y: 1}
 --- !u!114 &3000106062278721460
