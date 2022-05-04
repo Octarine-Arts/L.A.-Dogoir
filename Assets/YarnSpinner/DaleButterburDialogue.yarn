@@ -8,16 +8,7 @@ position: -522,-132
     Dale: Of course.
     <<set $DaleIsInitialGreeting to true>>
 <<elseif $DaleIsInitialGreeting == true>>
-    <<set $DaleRandomGreeting to random_range(0,3)>>
-    <<if $DaleRandomGreeting == 0>>
-        Dale: How can I help, Detective?
-    <<elseif $DaleRandomGreeting == 1>>
-        Dale: Any leads, Detective?
-    <<elseif $DaleRandomGreeting == 2>>
-        Dale: What do you need?
-    <<else>>
-        Dale: How’s the investigation going?
-    <<endif>>
+    Dale: How’s the investigation going?
 <<endif>>
 
 <<jump Questions>>
