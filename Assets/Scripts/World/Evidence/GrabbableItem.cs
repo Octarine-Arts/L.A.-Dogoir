@@ -24,6 +24,8 @@ public class GrabbableItem : MonoBehaviour
         origin = transform.position;
         originRot = transform.rotation.eulerAngles;
         originScale = transform.localScale;
+
+        pview = GetComponent<PhotonView>();
     }
 
     public void Drop()
