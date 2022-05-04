@@ -63,16 +63,17 @@ public class GrabbableItem : MonoBehaviour
     {
         target = dog.transform;
         this.dog = dog.GetComponentInParent<DogController>();
+        
+        if (!target)
+        {
+            target = PlayerManager.current.DogPlayer.transform;
+            this.dog = target.GetComponentInParent<DogController>();
+        }
     }
 
     private void OnEnable()
     {
         EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
-        if (!target)
-        {
-            target = PlayerManager.current.DogPlayer.transform;
-            dog = target.GetComponentInParent<DogController>();
-        }
     }
 
     private void OnDisable()
