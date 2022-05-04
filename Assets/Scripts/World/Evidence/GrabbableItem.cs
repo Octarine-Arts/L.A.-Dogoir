@@ -40,7 +40,7 @@ public class GrabbableItem : MonoBehaviour
     {
         if (indicator) indicator.Deactivate();
         grabbed = true;
-        dog.GrabItem(this);
+        dog.GrabItem(transform);
         if (!string.IsNullOrEmpty (yarnBool))
             YarnCommands.current.SetBool(yarnBool, true);
     }
