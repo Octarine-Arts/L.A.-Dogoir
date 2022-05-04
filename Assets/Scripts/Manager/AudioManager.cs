@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Tab))
 		{
 			if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
-			if (Cursor.lockState == CursorLockMode.None) Cursor.lockState = CursorLockMode.Locked;
+			else if (Cursor.lockState == CursorLockMode.None) Cursor.lockState = CursorLockMode.Locked;
 		}
 
 		

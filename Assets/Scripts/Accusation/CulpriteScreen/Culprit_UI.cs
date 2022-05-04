@@ -54,7 +54,7 @@ public class Culprit_UI : MonoBehaviour
     {
         if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) humanButton.interactable = false;
         if (PlayerManager.ThisPlayer == PlayerSpecies.Human) dogButton.interactable = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     
     private void Update()
@@ -150,8 +150,6 @@ public class Culprit_UI : MonoBehaviour
     
     private void SetEnding()
     {
-        Hashtable hashtable = PhotonNetwork.CurrentRoom.CustomProperties;
-
         Suspect culprit = suspectList[_currentSuspectIndex];
 
         string endString = "";
@@ -174,7 +172,8 @@ public class Culprit_UI : MonoBehaviour
                 break;
         }
 
-        _photonView.RPC(nameof(SetEnding_RPC), RpcTarget.AllBuffered, endString);
+        SetEnding_RPC(endString);
+        //_photonView.RPC(nameof(SetEnding_RPC), RpcTarget.AllBuffered, endString);
     }
 
     [PunRPC]
@@ -184,5 +183,6 @@ public class Culprit_UI : MonoBehaviour
         cutscene.SetActive(true);
         cutsceneManager.eventList.eventsList[^1].triggerName = endString;
         cutsceneManager.StartCutscene();
+        gameObject.SetActive(false);
     }
 }
