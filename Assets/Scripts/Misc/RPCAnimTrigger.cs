@@ -17,5 +17,6 @@ public class RPCAnimTrigger : MonoBehaviour
 
     public void Trigger() => pview.RPC("Trigger_RPC", RpcTarget.AllBuffered, trigger);
     public void Trigger(string trigger) => pview.RPC("Trigger_RPC", RpcTarget.AllBuffered, trigger);
+    [PunRPC]
     private void Trigger_RPC(string trigger) => anim.SetTrigger(trigger);
 }
