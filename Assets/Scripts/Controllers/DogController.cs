@@ -47,7 +47,7 @@ public class DogController : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3))
         {
             dog.transform.localScale *= 1.5f;
-
+            transform.GetChild(0).GetChild(0).localPosition += Vector3.back;
         }
     }
 
