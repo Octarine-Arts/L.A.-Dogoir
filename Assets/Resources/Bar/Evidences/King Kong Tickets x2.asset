@@ -18,7 +18,8 @@ MonoBehaviour:
   description: "Two tickets to see the film King Kong. Last night\u2019s date and
     time."
   yarnString: $DetectiveHasFoundTickets
+  dogYarnString: 
   promptMessageDog: 
-  promptMessageHuman: Movie tickets for last night. Wonder who Mr. Harlow took with
-    him?
-  isFound: 0
+  promptMessageHuman: Movie tickets to see King Kong. Wonder who Mr. Harlow took
+    with him?
+  isFound: 1
