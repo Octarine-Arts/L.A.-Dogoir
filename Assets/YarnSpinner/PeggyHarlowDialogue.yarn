@@ -7,7 +7,7 @@ position: -338,-113
     Detective: And why would you say that?
     Peggy: It’s always the wife or husband, isn’t that true?
     Detective: Perhaps you can tell me that.
-    Peggy: Please, Detective. I've just lost my husband. Jack wasn't John Wayne by any means, but I loved him. I’ve read enough dime store detective novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack.
+    Peggy: Please, Detective. I've just lost my husband. Jack wasn't John Wayne by any means, but I loved him. I’ve read enough dime store crime novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack.
     <<set $PeggyIsInitialGreeting to true>>
 <<elseif $PeggyIsInitialGreeting == true>>
     <<set $PeggyRandomGreeting to random_range(0,2)>>
@@ -148,7 +148,7 @@ Peggy: I’m not sure why that matters, Detective. I could have hardly murdered 
 Detective: Just answer the question, Mrs. Harlow.
 Peggy: Can’t a woman go out for a breath of fresh air?
 <<set $PeggySpokenAboutAlley to true>>
-<<PromptPlayer Yarn "I wonder what Mrs.Harlow was doing out in the alley, maybe I had better go investigate." 0>>
+<<PromptPlayer Yarn "Going out into the back alley for a 'breath of fresh air'? Something's fishy." 0>>
 <<stop>>
 //<<jump PeggyQuestions>>
 
@@ -158,7 +158,7 @@ position: 368,82
 ---
 Detective: I know this might seem irrelevant, ma’am, but did you and your husband go to see King Kong last night?
 Peggy: No… we didn’t. I was at home last night. Jack…well, I assumed Jack was here in the bar.
-Detective: Could he have been at the cinema with someone else? I found two King Kong tickets in your husband's pocket, you see.
+Detective: Could he have been at the cinema with someone else? I found two King Kong tickets next to your husband's body, you see.
 Peggy: I know nothing about that, Detective. I suppose you should go and ask that…that woman who calls herself an actress.
  
 <<set $DetectiveHasSpokenToPeggyTickets to true>>
