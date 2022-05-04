@@ -48,7 +48,9 @@ public class WorldItem : MonoBehaviour, IInteractable
 
         _photonView.RPC(nameof(Interact_RPC), RpcTarget.AllBuffered);
         _photonView.RPC(nameof(SetYarnString_RPC), RpcTarget.AllBuffered);
-        _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered);
+
+        if(PlayerManager.ThisPlayer == PlayerSpecies.Human) _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered, evidence_SO.yarnString);
+        if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) _photonView.RPC(nameof(ShowPairItem), RpcTarget.AllBuffered, evidence_SO.dogYarnString);
     }
 
     public bool CanInteract()
@@ -73,12 +75,11 @@ public class WorldItem : MonoBehaviour, IInteractable
     }
 
     [PunRPC]
-    private void SetYarnString_RPC()
+    private void SetYarnString_RPC(string yarnString)
     {
-        if (!string.IsNullOrEmpty(evidence_SO.yarnString))
+        if (!string.IsNullOrEmpty(yarnString))
         {
-            memoryVariableStorage.SetValue(evidence_SO.yarnString, true);
-            
+            memoryVariableStorage.SetValue(yarnString, true);
         }
     }
 }

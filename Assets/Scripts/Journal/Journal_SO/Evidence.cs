@@ -16,6 +16,7 @@ namespace Journal
         public Location locationFound;
         public string description;
         public string yarnString;
+        public string dogYarnString;
         public string promptMessageDog;
         public string promptMessageHuman;
 

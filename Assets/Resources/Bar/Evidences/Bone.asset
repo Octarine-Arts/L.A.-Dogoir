@@ -17,6 +17,7 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: 26c9fef5f05edef448543aab461ba9c0, type: 2}
   description: A tasty treat for my four legged friends
   yarnString: $DetectiveHasFoundBone
+  dogYarnString: $FoundTheBone
   promptMessageDog: A bone! Surely this will be a good betting chip for poker...
   promptMessageHuman: A bone? Maybe Archie will appreciate a treat?
   isFound: 0
