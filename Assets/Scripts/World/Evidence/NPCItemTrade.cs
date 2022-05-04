@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class NPCItemTrade : MonoBehaviour
 {
     [SerializeField] private string itemName;
-    private UnityEvent TradeEvents;
+    [SerializeField] private UnityEvent TradeEvents;
 
     private void Awake() => EventManager.I.OnTradeItem += OnTradeItem;
 
