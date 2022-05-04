@@ -32,7 +32,7 @@ public class TriggerPrompt : MonoBehaviour
                 YarnCommands.current.SetBool("$DetectiveTriedToOpenDoor", true);
                 StartCoroutine(Cooldown());
                 StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message1, 0f));
-                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 6f));
+                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 8f));
                 PromptPlayer(PlayerSpecies.Dog, message3);
             }
             
@@ -53,7 +53,8 @@ public class TriggerPrompt : MonoBehaviour
 
     private void PromptPlayer(PlayerSpecies species, string message)
     {
-        if(PlayerManager.ThisPlayer == species) TextAppearerer.current.PromptPlayer(species, message);
+        //if(PlayerManager.ThisPlayer == species) 
+            TextAppearerer.current.PromptPlayer(species, message);
     }
 
     private IEnumerator PromptPlayer_CO(PlayerSpecies species, string message, float delay)

@@ -6,16 +6,16 @@ using UnityEngine;
 public class RandomInteract : MonoBehaviour, IInteractable
 {
     private bool _hasInteracted;
-    private Animator _animator;
+    private RPCAnimTrigger _animator;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponent<RPCAnimTrigger>();
     }
 
     public void Interact()
     {
-        _animator.SetTrigger("Play");
+        _animator.Trigger("Play");
         _hasInteracted = true;
     }
 

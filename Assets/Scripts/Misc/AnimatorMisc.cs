@@ -7,17 +7,17 @@ public class AnimatorMisc : MonoBehaviour
 {
     public Animator childAnimator;
 
-    private Animator thisAnimator;
+    private RPCAnimTrigger thisAnimator;
 
     private void Awake()
     {
-        thisAnimator = GetComponent<Animator>();
+        thisAnimator = GetComponent<RPCAnimTrigger>();
     }
 
     [YarnCommand("StartAnim")]
     public void StartAnim()
     {
-        thisAnimator.SetTrigger("Start");
+        thisAnimator.Trigger("Start");
     }
 
     public void SetObjectInactive(string gameObject)

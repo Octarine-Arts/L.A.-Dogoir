@@ -95,6 +95,7 @@ Rattus: Yeah, it was BLPO.
 Archie: Thanks for your help, Rattus, here’s the cheese.
 Rattus: ‘Bout time. Give it ‘ere!
 
+<<TradeItem Yarn "Cheese">>
 <<set $ArchieGaveCheese to true>>
 <<jump RatQuestions>>
 ===
