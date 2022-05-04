@@ -17,7 +17,7 @@ public class GrabbableItem : MonoBehaviour
 
     private void Awake()
     {
-        if (yarnBool[0] != '$') yarnBool = "$" + yarnBool;
+        if (!string.IsNullOrEmpty(yarnBool) && yarnBool[0] != '$') yarnBool = "$" + yarnBool;
 
         origin = transform.position;
         originRot = transform.rotation.eulerAngles;
