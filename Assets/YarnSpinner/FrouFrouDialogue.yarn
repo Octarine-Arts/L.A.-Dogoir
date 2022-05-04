@@ -7,8 +7,7 @@ position: -338,-113
     Archie:  I’m a labrador, actually.
     FrouFrou: A labrador! How delightful! I’m not used to conversing with what you might call lesser breeds, you see. Not that you seem lesser, darling! You seem simply enchanting.
     <<set $FrouFrouIsInitialGreeting to true>>
-    <<set $DetectiveTriedToOpenDoor to true>>
-<<elseif $FrouFrouIsInitialGreeting == true>>
+  <<elseif $FrouFrouIsInitialGreeting == true>>
     <<set $FrouFrouRandomGreeting to random_range(0,2)>>
     <<if $FrouFrouRandomGreeting == 0>>
     FrouFrou: Bonjour, mon cher!
