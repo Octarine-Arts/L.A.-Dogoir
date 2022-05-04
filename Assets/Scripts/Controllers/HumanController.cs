@@ -114,7 +114,11 @@ public class HumanController : MonoBehaviour
                 if (interactable.CanInteract())
                 {
                     displayText.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.E)) interactable.Interact();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        AudioManager.current.PlayInteractSound();
+                        interactable.Interact();
+                    }
                 }
             }
         }

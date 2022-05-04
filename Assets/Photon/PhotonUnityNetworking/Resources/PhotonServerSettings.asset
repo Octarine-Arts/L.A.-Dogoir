@@ -61,6 +61,10 @@ MonoBehaviour:
   - GrabItem_RPC
   - Grab_RPC
   - Trigger_RPC
+  - ConfirmPressed_RPC
+  - NextSuspect_RPC
+  - PreviousSuspect_RPC
+  - ResetConfirms_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

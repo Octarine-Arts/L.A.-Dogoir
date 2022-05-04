@@ -7040,6 +7040,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24100000, guid: 8959c9f947fbfe041a5c87c0014c8327, type: 2}
     - target: {fileID: 4311881670350937173, guid: 4f762d644162c8a40a8dcd4d26bf866b, type: 3}
+      propertyPath: writeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 923f8784278351640bdfd5c37564c77f, type: 3}
+    - target: {fileID: 4311881670350937173, guid: 4f762d644162c8a40a8dcd4d26bf866b, type: 3}
+      propertyPath: interactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fd48c2e24b4b01438605efa402e97a1, type: 3}
+    - target: {fileID: 4311881670350937173, guid: 4f762d644162c8a40a8dcd4d26bf866b, type: 3}
       propertyPath: exposedParamString
       value: BGM_Vol
       objectReference: {fileID: 0}

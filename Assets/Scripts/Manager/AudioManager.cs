@@ -40,6 +40,9 @@ public class AudioManager : MonoBehaviour
 
 	public List<LevelToBGM> levelToBgmsList;
 
+	public AudioClip interactSound;
+	public AudioClip writeSound;
+	
 	private void Awake()
 	{
 		current = this;
@@ -66,6 +69,17 @@ public class AudioManager : MonoBehaviour
 			if (soundFound) break;
 		}
 		if(!soundFound) StopBackgroundAudio();
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Tab))
+		{
+			if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
+			else if (Cursor.lockState == CursorLockMode.None) Cursor.lockState = CursorLockMode.Locked;
+		}
+
+		
 	}
 
 	#region Background Audio Functions
@@ -179,6 +193,19 @@ public class AudioManager : MonoBehaviour
 	public void SetSFXVolume(float soundLevel)
 	{
 		audioMixer.SetFloat("SFX_Vol", soundLevel);
+	}
+	#endregion
+	
+	#region Random Sounds
+
+	public void PlayInteractSound()
+	{
+		PlaySFX(interactSound);
+	}
+
+	public void PlayWriteSound()
+	{
+		PlaySFX(writeSound);
 	}
 	#endregion
 }

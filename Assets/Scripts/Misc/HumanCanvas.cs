@@ -23,9 +23,10 @@ public class HumanCanvas : MonoBehaviour
     {
         if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) Destroy(gameObject);
     }
-
+    
     public void FlashJournal()
     {
+        AudioManager.current.PlayWriteSound();
         StartCoroutine(Effects.FadeAlpha(journalImage, 0.5f, 1f, 0.5f));
         _animator.SetTrigger("ShowText");
     }

@@ -113,10 +113,16 @@ public class Cutscene_Manager : MonoBehaviour
     {
         if (_currentCutsceneEvent.isFirstFrame)
         {
-            Color currentColor = _currentCutsceneEvent.image.color;
-            currentColor.a = 1;
-            _currentCutsceneEvent.image.color = currentColor;
+            CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+            canvasGroup.alpha = 1;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+            //     Color currentColor = _currentCutsceneEvent.image.color;
+            // currentColor.a = 1;
+            // _currentCutsceneEvent.image.color = currentColor;
         }
+        Debug.Log(_currentIndex);
+        Debug.Log(triggerName);
         animator.SetTrigger(triggerName);
     }
     
