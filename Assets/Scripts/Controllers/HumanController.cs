@@ -16,6 +16,7 @@ public class HumanController : MonoBehaviour
 
     public GameObject displayText;
     public GameObject humanCanvas;
+    public LayerMask raycastMask;
 
     [SerializeField] private Vector2 verticalLookRange, lookSensitivity;
 
@@ -105,8 +106,9 @@ public class HumanController : MonoBehaviour
     private void PlayerRaycast()
     {
         RaycastHit hit;
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 5f))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, 5f, raycastMask))
         {
+            print(hit.transform.name);
             if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
                 if (interactable.CanInteract())
