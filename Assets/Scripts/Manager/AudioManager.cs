@@ -40,6 +40,9 @@ public class AudioManager : MonoBehaviour
 
 	public List<LevelToBGM> levelToBgmsList;
 
+	public AudioClip interactSound;
+	public AudioClip writeSound;
+	
 	private void Awake()
 	{
 		current = this;
@@ -179,6 +182,19 @@ public class AudioManager : MonoBehaviour
 	public void SetSFXVolume(float soundLevel)
 	{
 		audioMixer.SetFloat("SFX_Vol", soundLevel);
+	}
+	#endregion
+	
+	#region Random Sounds
+
+	public void PlayInteractSound()
+	{
+		PlaySFX(interactSound);
+	}
+
+	public void PlayWriteSound()
+	{
+		PlaySFX(writeSound);
 	}
 	#endregion
 }

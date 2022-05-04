@@ -52,6 +52,7 @@ MonoBehaviour:
   - ShowPairItem
   - SetEnding_RPC
   - RemoveDoorCollider_RPC
+<<<<<<< Updated upstream
   - ShowPokerDogGun_RPC
   - ShowGameObject_RPC
   - DogDropHeld
@@ -60,6 +61,16 @@ MonoBehaviour:
   - DropItem_RPC
   - GrabItem_RPC
   - Grab_RPC
+=======
+  - UpdateUI_RPC
+  - ConfirmPressed
+  - NextSuspect
+  - PreviousSuspect
+  - ConfirmPressed_RPC
+  - NextSuspect_RPC
+  - PreviousSuspect_RPC
+  - ResetConfirms_RPC
+>>>>>>> Stashed changes
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
