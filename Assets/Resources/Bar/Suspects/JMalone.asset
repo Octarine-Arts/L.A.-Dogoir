@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c829b2e734a43408a49323a6c1a521, type: 3}
   m_Name: JMalone
   m_EditorClassIdentifier: 
-  displayImage: {fileID: -61996491, guid: 793ff83524670b64285dca6a2e10a098, type: 3}
+  displayImage: {fileID: 21300000, guid: 2d2b5e11c3f95784c80354ad6d66c0f1, type: 3}
   suspectEnum: 3
   fullName: Johnny Malone
   description: Large, Imposing, Well-Dressed

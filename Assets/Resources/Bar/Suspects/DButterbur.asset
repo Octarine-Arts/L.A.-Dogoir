@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c829b2e734a43408a49323a6c1a521, type: 3}
   m_Name: DButterbur
   m_EditorClassIdentifier: 
-  displayImage: {fileID: -1318755071, guid: 793ff83524670b64285dca6a2e10a098, type: 3}
+  displayImage: {fileID: 21300000, guid: b48917e8a5ed31d408685629f481ba3a, type: 3}
   suspectEnum: 4
   fullName: Dale Butterbur
   description: Unassuming, Good Thinking

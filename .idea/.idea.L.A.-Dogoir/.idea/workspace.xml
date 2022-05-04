@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d3a0597a-dd1c-4268-8bea-707c66c5978c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.L.A.-Dogoir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.L.A.-Dogoir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPrefabs/DogPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonPrefabs/DogPlayer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PhotonPrefabs/HumanPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PhotonPrefabs/HumanPlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Journal/Book Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Journal/Book Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Journal/SuspectButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Journal/SuspectButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/DButterbur.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/DButterbur.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/JMalone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/JMalone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/LDubois.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/LDubois.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/PHarlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/PHarlow.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene/NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Evidence/GrabbableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Evidence/GrabbableItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
@@ -38,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/SceneTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/DialogueRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/InMemoryVariableStorage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/MapExpander.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
