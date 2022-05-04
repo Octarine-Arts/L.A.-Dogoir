@@ -3791,7 +3791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1c21473d86381e419ba2d82404a76f3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6125302248440096195, guid: f1c21473d86381e419ba2d82404a76f3, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15286,6 +15286,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.014
       objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
       value: NPC Dialog
@@ -18889,6 +18901,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 167.409
       objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
       value: NPC Dialog
@@ -21811,6 +21835,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 83.252
       objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
       value: NPC Dialog
@@ -23043,6 +23075,18 @@ PrefabInstance:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -129.898
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878657869518933368, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: volumeTrigger
@@ -37135,7 +37179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 704a55e5fb42c5f4584945ec53488b94, type: 3}
       propertyPath: m_NavMeshLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 704a55e5fb42c5f4584945ec53488b94, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -41386,6 +41430,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -24.493
       objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
       value: NPC Dialog (1)
@@ -42680,6 +42736,14 @@ PrefabInstance:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
@@ -44253,6 +44317,14 @@ PrefabInstance:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.587
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
@@ -47004,6 +47076,18 @@ PrefabInstance:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -15.778
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
@@ -54531,6 +54615,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.102
       objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
       value: NPC Dialog
@@ -55609,6 +55701,14 @@ PrefabInstance:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.479
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347674733425724058, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020377, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_Name
