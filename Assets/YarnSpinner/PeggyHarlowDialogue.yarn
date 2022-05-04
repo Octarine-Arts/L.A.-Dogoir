@@ -133,7 +133,7 @@ Peggy: Forgive me for being harsh, Detective, but that woman is a golddigger and
 title: PeggyKnowsJohhny
 position: 264,227
 ---
-Detective: Are you familiar with Johnny “Two Sleeves” Malone:
+Detective: Are you familiar with Johnny “Two Sleeves” Malone?
 Peggy: Not at all, but even so he makes me quite uncomfortable. He seems like a real thug.
 
 <<jump PeggyQuestions>>
@@ -170,7 +170,7 @@ position: 368,82
 ---
 Detective: I’m sorry I have to ask this, ma’am, but I noticed your husband didn’t have a wedding ring on his finger…?
 Peggy: I see what you’re insinuating, Detective. I’m not ashamed to admit that we had problems. But what marriage doesn't have its problems, for goodness sake?
-Detective: But I see you’re still wearing your ring?
+Detective: But I see you’re still wearing *your* ring?
 Peggy: Of course. Jack just… well, men deal with their problems differently, I suppose.
 
 <<set $DetectiveHasSpokenToPeggyMissingRing to true>>
