@@ -50,6 +50,7 @@ title: OMalleyWhoAreYou
 position: 283,-340
 ---
 Archie: You got a name?
+OMalley: Yeah, O’Malley.
 
 <<set $OMalleyAskedForName to true>>
 

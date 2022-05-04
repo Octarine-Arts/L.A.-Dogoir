@@ -10,11 +10,11 @@ position: -338,-113
 <<elseif $RatIsInitialGreeting == true>>
     <<set $RatRandomGreeting to random_range(0,2)>>
     <<if $RatRandomGreeting == 0>>
-        Rattus: What now?
+        Rattus: You again?
     <<elseif $RatRandomGreeting == 1>>
         Rattus: What?
     <<else>>
-        Rattus: You just don’t get the message, do you?
+        Rattus: What now, Poochy?
     <<endif>>
 <<endif>>
 
