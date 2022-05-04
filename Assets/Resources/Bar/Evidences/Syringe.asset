@@ -17,6 +17,7 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: 709121389956f4e4695325d2a503dff4, type: 2}
   description: A used syringe. Appears to contain remnants of an illegal substance.
   yarnString: $DetectiveHasFoundSyringe
+  dogYarnString: 
   promptMessageDog: Smells like someone handled this recently...I wonder who it was...
-  promptMessageHuman: Hmm...Using this would leave a puncture wound.
+  promptMessageHuman: Hmm... Using this would leave a mark.
   isFound: 0

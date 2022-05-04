@@ -19,5 +19,6 @@ MonoBehaviour:
   yarnString: $DetectiveHasFoundBone
   dogYarnString: $FoundTheBone
   promptMessageDog: A bone! Surely this will be a good betting chip for poker...
-  promptMessageHuman: A bone? Maybe Archie will appreciate a treat?
+  promptMessageHuman: A bone? I'll leave it on the floor for Archie. He deserves
+    a treat.
   isFound: 0
