@@ -1810,6 +1810,7 @@ MonoBehaviour:
   offsetPosition: {x: 0, y: 0, z: 0}
   offsetRotation: {x: 0, y: 0, z: 0}
   scaleMultiplier: 1
+  yarnBool: 
 --- !u!114 &6829768289549888060
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class GrabbableItem : MonoBehaviour
     public float radius;
     public Vector3 offsetPosition, offsetRotation;
     public float scaleMultiplier = 1f;
+    public string yarnBool;
 
     private Transform target;
     private DogController dog;
@@ -16,6 +17,8 @@ public class GrabbableItem : MonoBehaviour
 
     private void Awake()
     {
+        if (yarnBool[0] != '$') yarnBool = "$" + yarnBool;
+
         origin = transform.position;
         originRot = transform.rotation.eulerAngles;
     }
@@ -28,6 +31,17 @@ public class GrabbableItem : MonoBehaviour
         transform.rotation = Quaternion.Euler (originRot);
         transform.localScale = originScale;
         indicator.Activate();
+        if (!string.IsNullOrEmpty(yarnBool))
+            YarnCommands.current.SetBool(yarnBool, false);
+    }
+
+    private void Grab()
+    {
+        if (indicator) indicator.Deactivate();
+        grabbed = true;
+        dog.GrabItem(this);
+        if (!string.IsNullOrEmpty (yarnBool))
+            YarnCommands.current.SetBool(yarnBool, true);
     }
 
     private void Update()
@@ -35,11 +49,7 @@ public class GrabbableItem : MonoBehaviour
         if (grabbed) return;
 
         if (Input.GetKeyDown (KeyCode.E) && F.FastDistance(transform.position, target.position) < radius * radius)
-        {
-            if (indicator) indicator.Deactivate();
-            grabbed = true;
-            dog.GrabItem(this);
-        }
+            Grab();
     }
 
     private void OnPlayersSpawned(GameObject human, GameObject dog)

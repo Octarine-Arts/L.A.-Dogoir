@@ -44580,6 +44580,7 @@ MonoBehaviour:
   offsetPosition: {x: 0, y: 0, z: 0}
   offsetRotation: {x: 0, y: 0, z: 0}
   scaleMultiplier: 1
+  yarnBool: FoundTheBone
 --- !u!1001 &1731853669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48487,6 +48488,7 @@ MonoBehaviour:
   offsetPosition: {x: 0.0337, y: -0.0024, z: -0.0359}
   offsetRotation: {x: 7.846027, y: 287.63647, z: 93.09816}
   scaleMultiplier: 0.6
+  yarnBool: ArchieFoundTheCheese
 --- !u!1001 &1929256801
 PrefabInstance:
   m_ObjectHideFlags: 0
