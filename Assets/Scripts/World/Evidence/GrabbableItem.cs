@@ -55,7 +55,6 @@ public class GrabbableItem : MonoBehaviour
     {
         if (grabbed) return;
 
-        if (!target) target = PlayerManager.current.DogPlayer.transform;
         if (Input.GetKeyDown (KeyCode.E) && F.FastDistance(transform.position, target.position) < radius * radius)
             Grab();
     }
@@ -69,6 +68,11 @@ public class GrabbableItem : MonoBehaviour
     private void OnEnable()
     {
         EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
+        if (!target)
+        {
+            target = PlayerManager.current.DogPlayer.transform;
+            dog = target.GetComponentInParent<DogController>();
+        }
     }
 
     private void OnDisable()
