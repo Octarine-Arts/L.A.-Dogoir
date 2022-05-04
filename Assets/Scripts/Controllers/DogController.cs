@@ -55,6 +55,7 @@ public class DogController : MonoBehaviour
     {
         if (grabbedItem) grabbedItem.Drop();
 
+        grabbedItem = item;
         item.transform.parent = grabItemParent;
         item.transform.localPosition = item.offsetPosition;
         item.transform.localRotation = Quaternion.Euler (item.offsetRotation);

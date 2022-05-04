@@ -21,6 +21,7 @@ public class GrabbableItem : MonoBehaviour
 
         origin = transform.position;
         originRot = transform.rotation.eulerAngles;
+        originScale = transform.localScale;
     }
 
     public void Drop()

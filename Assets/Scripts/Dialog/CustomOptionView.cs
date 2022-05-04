@@ -9,7 +9,7 @@ public class CustomOptionView : DialogueViewBase
     public CanvasGroup canvasGroup;
     public CanvasGroup dialogGroup;
     public OptionView optionViewPrefab;
-    public GameObject Scrollbar;
+    //public GameObject Scrollbar;
     public float fadeTime = 0.1f;
     
     private List<OptionView> _optionViews = new();
@@ -19,7 +19,7 @@ public class CustomOptionView : DialogueViewBase
     void Start()
     {
         canvasGroup.alpha = 0;
-        Scrollbar.SetActive(false);
+        //Scrollbar.SetActive(false);
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
     }
@@ -27,7 +27,7 @@ public class CustomOptionView : DialogueViewBase
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
     {
         StartCoroutine(Effects.FadeAlpha(dialogGroup, 1, 0, 0.2f));
-        Scrollbar.SetActive(false);
+        //Scrollbar.SetActive(false);
 
         // Hide all existing option views
         foreach (var optionView in _optionViews)
@@ -74,7 +74,7 @@ public class CustomOptionView : DialogueViewBase
 
         // Fade it all in
         StartCoroutine(Effects.FadeAlpha(canvasGroup, 0, 1, fadeTime));
-        Scrollbar.SetActive(true);
+        //Scrollbar.SetActive(true);
 
         OptionView CreateNewOptionView()
         {
@@ -90,13 +90,13 @@ public class CustomOptionView : DialogueViewBase
         void OptionViewWasSelected(DialogueOption option)
         {
             StartCoroutine(Effects.FadeAlpha(dialogGroup, 0, 1, fadeTime));
-            Scrollbar.SetActive(true);
+            //Scrollbar.SetActive(true);
             StartCoroutine(OptionViewWasSelectedInternal(option));
 
             IEnumerator OptionViewWasSelectedInternal(DialogueOption selectedOption)
             {
                 yield return StartCoroutine(Effects.FadeAlpha(canvasGroup, 1, 0, fadeTime));
-                Scrollbar.SetActive(false);
+                //Scrollbar.SetActive(false);
                 _OnOptionSelected(selectedOption.DialogueOptionID);
             }
         }

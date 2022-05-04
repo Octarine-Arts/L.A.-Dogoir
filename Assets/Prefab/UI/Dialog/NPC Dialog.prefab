@@ -451,14 +451,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3736883464226002143, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3736883464226002143, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3736883464226002143, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983819967445030941, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_VerticalScrollbar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876119206209773187, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
