@@ -51,9 +51,11 @@ MonoBehaviour:
   dialogCanvas: {fileID: 2606783108925256955}
   script: {fileID: 7545569452688597077, guid: 018d3d583f6a9e34791f309927ab4ff9, type: 3}
   endConversationButton: {fileID: 3967429267152042708}
+  distanceToTrigger: 2
   canBeTriggeredByHuman: 1
   canBeTriggeredByDog: 0
   startNode: DaleButterburDialogue
+  dogStartNode: 
   onContinueEvent:
     m_PersistentCalls:
       m_Calls:
@@ -319,6 +321,30 @@ PrefabInstance:
       propertyPath: dialogGroup
       value: 
       objectReference: {fileID: 871282321334831075}
+    - target: {fileID: 1378669420441240981, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378669420441240981, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -331.11404
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378669420996275570, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378669420996275570, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 575
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378669420996275570, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378669420996275570, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 163.40002
+      objectReference: {fileID: 0}
     - target: {fileID: 1378669421697608370, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -419,7 +445,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1378669420996275569, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
 --- !u!224 &2606783108925256951 stripped
 RectTransform:
@@ -448,6 +475,35 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &2606783110136591158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1378669420996275571, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
+  m_PrefabInstance: {fileID: 3967429266597011013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8187896767554398627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606783110136591158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 400, y: 100}
+  m_Spacing: {x: 20, y: 20}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!114 &2821946275265576165 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1163814136177500832, guid: f9d7920a3c63c524aaacc67aa1c8352b, type: 3}
