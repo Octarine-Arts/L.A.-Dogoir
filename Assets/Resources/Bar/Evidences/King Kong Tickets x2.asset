@@ -22,4 +22,4 @@ MonoBehaviour:
   promptMessageDog: 
   promptMessageHuman: Movie tickets to see King Kong. Wonder who Mr. Harlow took
     with him?
-  isFound: 1
+  isFound: 0

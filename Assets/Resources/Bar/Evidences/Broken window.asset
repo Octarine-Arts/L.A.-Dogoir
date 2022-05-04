@@ -17,6 +17,7 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: d678a9fa9bce4074380bdf20a7c11364, type: 2}
   description: 'A broken window. Looks like something was thrown through it. '
   yarnString: $DetectiveHasFoundBrokenWindow
+  dogYarnString: 
   promptMessageDog: " I should check out what\u2019s on the other side of this window."
   promptMessageHuman: I wonder how this window broke?
   isFound: 0

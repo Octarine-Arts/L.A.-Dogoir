@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e87512e92fbb7d45a21f38270a33bea, type: 3}
   m_Name: Jack Harlow
   m_EditorClassIdentifier: 
-  displayImage: {fileID: 0}
+  displayImage: {fileID: 21300000, guid: 0671a9de774a2da4a8c1b8b5994a31ab, type: 3}
   displayName: Jack Harlow
   locationFound: {fileID: 0}
   description: The victim.
   yarnString: 
+  dogYarnString: 
   promptMessageDog: A single bullet wound. Hit him in the back and burst out his
     chest. Poor bastard never saw it coming.
   promptMessageHuman: A single bullet wound. Hit him in the back and burst out his

@@ -17,6 +17,7 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: 4aae2f4bddc8c1843b04d656d317b70c, type: 2}
   description: A double barrel shotgun. Too big to be the murder weapon.
   yarnString: $DetectiveHasFoundShotgun
+  dogYarnString: 
   promptMessageDog: 
   promptMessageHuman: This is too big to be the murder weapon. I'm looking for a
     smaller caliber firearm.

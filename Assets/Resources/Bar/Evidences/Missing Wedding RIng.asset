@@ -18,6 +18,7 @@ MonoBehaviour:
   description: "A tan line on Jack\u2019s ring finger suggests a ring was removed
     recently\u2026"
   yarnString: '$DetectiveHasFoundMissingRing '
+  dogYarnString: 
   promptMessageDog: 
   promptMessageHuman: Hmm...no wedding ring. That's interesting.
   isFound: 0

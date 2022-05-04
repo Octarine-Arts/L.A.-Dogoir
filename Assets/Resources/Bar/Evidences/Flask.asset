@@ -17,6 +17,7 @@ MonoBehaviour:
   locationFound: {fileID: 11400000, guid: a17ba529769486f4e81e891f6e955ae8, type: 2}
   description: A small metal flask. The contents smell like straight liquor.
   yarnString: $DetectiveHasFoundFlask
+  dogYarnString: 
   promptMessageDog: 
   promptMessageHuman: The victim brought a flask with him to a bar? Interesting...
   isFound: 0

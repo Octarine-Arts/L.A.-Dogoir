@@ -21,4 +21,4 @@ MonoBehaviour:
   dogYarnString: 
   promptMessageDog: 
   promptMessageHuman: Hmm...no wedding ring.
-  isFound: 1
+  isFound: 0

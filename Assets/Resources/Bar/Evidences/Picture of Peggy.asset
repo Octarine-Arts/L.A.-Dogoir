@@ -18,6 +18,7 @@ MonoBehaviour:
   description: A picture of Peggy Harlow. An odd thing for Dale Butterbur to be in
     possession of.
   yarnString: $DetectiveHasFoundPicture
+  dogYarnString: 
   promptMessageDog: 
   promptMessageHuman: Why the hell does Butterbur have a picture of Jack Harlow's
     wife in his office?

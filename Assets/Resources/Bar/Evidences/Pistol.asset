@@ -18,6 +18,7 @@ MonoBehaviour:
   description: A fairly common firearm. Someone tried to dispose of it. Could it
     be the murder weapon?
   yarnString: '$DetectiveHasFoundPistol '
+  dogYarnString: 
   promptMessageDog: The caliber matches Jack Harlow's wound.
   promptMessageHuman: The caliber matches Jack Harlow's wound.
   isFound: 0
