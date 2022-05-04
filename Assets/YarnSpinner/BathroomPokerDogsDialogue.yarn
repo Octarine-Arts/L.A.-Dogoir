@@ -8,6 +8,7 @@ Bean: ...What do we do now?
 Mean: You mean what do *you* do now, the gun landed on my side of the table, I own it!
 Lean: No way! I’m the one who decided to set up here, so it should be mine!
 Bean: Well I’ll play ya for it!
+<<PromptPlayer Yarn "Those voices are coming from outside in the alley..." 1>>
 <<endif>>
 
 
