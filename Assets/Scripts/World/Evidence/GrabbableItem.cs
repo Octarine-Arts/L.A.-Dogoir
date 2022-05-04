@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class GrabbableItem : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GrabbableItem : MonoBehaviour
     private DogController dog;
     private Vector3 origin, originRot, originScale;
     private bool grabbed = false;
+    private PhotonView pview;
 
     private void Awake()
     {
@@ -36,7 +38,9 @@ public class GrabbableItem : MonoBehaviour
             YarnCommands.current.SetBool(yarnBool, false);
     }
 
-    private void Grab()
+    private void Grab() => pview.RPC("Grab_RPC", RpcTarget.AllBuffered);
+    [PunRPC]
+    private void Grab_RPC()
     {
         if (indicator) indicator.Deactivate();
         grabbed = true;

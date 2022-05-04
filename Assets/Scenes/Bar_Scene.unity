@@ -4080,6 +4080,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5080351210388291846, guid: e37f35ab58174d744b4c770396426b12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5082463988578320024, guid: e37f35ab58174d744b4c770396426b12, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -4123,6 +4127,10 @@ PrefabInstance:
     - target: {fileID: 5082463988578320024, guid: e37f35ab58174d744b4c770396426b12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103207978865910202, guid: e37f35ab58174d744b4c770396426b12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5103207978865910202, guid: e37f35ab58174d744b4c770396426b12, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10388,7 +10396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298238425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.46, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10409,7 +10417,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -2.5, y: 2.072, z: 0}
+  m_Center: {x: -0.04, y: 2.072, z: 0}
   m_TimeToStationary: 0.5
 --- !u!65 &298238428
 BoxCollider:
@@ -10423,7 +10431,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.000001, y: 4.6851273, z: 3}
-  m_Center: {x: -2.4999986, y: 2.0719004, z: 0}
+  m_Center: {x: -0.039999, y: 2.0719004, z: 0}
 --- !u!114 &298238429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10436,7 +10444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8157fbb2afbac24dac805bdf8f8e218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  humanPosition: {x: -2.5, y: 2.072, z: 0}
+  humanPosition: {x: -0.04, y: 2.072, z: 0}
   dogPosition: {x: 0, y: 0, z: 0}
   dogSize: {x: 0, y: 0, z: 0}
 --- !u!114 &298238430
@@ -14701,8 +14709,8 @@ GameObject:
   - component: {fileID: 414980535}
   - component: {fileID: 414980539}
   - component: {fileID: 414980538}
-  - component: {fileID: 414980537}
   - component: {fileID: 414980540}
+  - component: {fileID: 414980537}
   m_Layer: 0
   m_Name: AnimatorDale
   m_TagString: Untagged
@@ -14775,10 +14783,10 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Start
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 2
     LayerIndex: 0
 --- !u!114 &414980538
 MonoBehaviour:
@@ -44458,7 +44466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.146
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44503,6 +44511,10 @@ PrefabInstance:
     - target: {fileID: 1208452275725788934, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: showForDog
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857531275358417336, guid: f285552725a45f74280c342c93656bae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 6626756454033462869, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_text
@@ -44973,8 +44985,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1729398769}
+  ObservedComponents: []
   sceneViewId: 29
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -45011,22 +45022,6 @@ MonoBehaviour:
   offsetRotation: {x: 0, y: 0, z: 0}
   scaleMultiplier: 1
   yarnBool: FoundTheBone
---- !u!114 &1729398769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729398764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
-  m_UseLocal: 0
 --- !u!114 &1729398770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45045,8 +45040,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1729398769}
+  ObservedComponents: []
   sceneViewId: 33
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -49071,22 +49065,6 @@ MonoBehaviour:
   offsetRotation: {x: 7.846027, y: 287.63647, z: 93.09816}
   scaleMultiplier: 0.6
   yarnBool: ArchieFoundTheCheese
---- !u!114 &1928032461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928032459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
-  m_UseLocal: 0
 --- !u!114 &1928032462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49105,8 +49083,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1928032461}
+  ObservedComponents: []
   sceneViewId: 31
   InstantiationId: 0
   isRuntimeInstantiated: 0

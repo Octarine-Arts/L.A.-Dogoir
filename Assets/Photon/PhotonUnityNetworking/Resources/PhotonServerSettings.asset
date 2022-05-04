@@ -59,6 +59,7 @@ MonoBehaviour:
   - GrabItem
   - DropItem_RPC
   - GrabItem_RPC
+  - Grab_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

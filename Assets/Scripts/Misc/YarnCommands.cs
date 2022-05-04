@@ -53,12 +53,6 @@ public class YarnCommands : MonoBehaviour
     {
         EndingUI.current.Open();
     }
-    
-    [YarnCommand("ShowGameObject")]
-    public void TradeItem(string itemName)
-    {
-        _photonView.RPC(nameof(TradeItem_RPC), RpcTarget.AllBuffered, itemName);
-    }
 
     [PunRPC]
     public void PromptPlayer_RPC(string message, int humanOrDog)
@@ -82,6 +76,8 @@ public class YarnCommands : MonoBehaviour
         if(PlayerManager.ThisPlayer == PlayerSpecies.Dog) GameObject.FindGameObjectWithTag("GunshotTrail").GetComponent<SmellTrail>().Activate();
     }
 
+    [YarnCommand("TradeItem")]
+    public void TradeItem(string itemName) => _photonView.RPC("TradeItem_RPC", RpcTarget.AllBuffered, itemName);
     [PunRPC]
     public void TradeItem_RPC(string itemName)
     {
