@@ -38,7 +38,7 @@ position: 69,-84
 -> Detective: Enemies?
     <<jump PeggyWhoWantsJackDead>>
 
--> Detective:  Dale? <<if $PeggySpokenAboutGunshot == true && $DetectiveHasFoundSyringe == false && $Dale == true>>
+-> Detective:  Dale? <<if $PeggySpokenAboutGunshot == true && $Dale == true>>
     <<jump PeggyKnowsDale>>
 
 -> Detective:  Loretta? <<if $Loretta == true>> 

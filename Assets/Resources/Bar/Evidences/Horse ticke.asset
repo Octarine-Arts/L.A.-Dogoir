@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Horse ticke
   m_EditorClassIdentifier: 
   displayImage: {fileID: 21300000, guid: 6d47350c522bf4642b03da159e229e93, type: 3}
-  displayName: Debt stub for a Horse race
+  displayName: Race Tote
   locationFound: {fileID: 11400000, guid: 067c40a767e275e43b175b2522eb1ffc, type: 2}
   description: Some sort of debt stub for a horse race Jack lost. Looks like he owes
     someone money.
   yarnString: $DetectiveHasFoundHorseTicket
+  dogYarnString: 
   promptMessageDog: 
   promptMessageHuman: Looks like Jack was a bit of a gambler. Interesting.
   isFound: 0
