@@ -55,6 +55,7 @@ public class GrabbableItem : MonoBehaviour
     {
         if (grabbed) return;
 
+        if (!target) target = PlayerManager.current.DogPlayer.transform;
         if (Input.GetKeyDown (KeyCode.E) && F.FastDistance(transform.position, target.position) < radius * radius)
             Grab();
     }
