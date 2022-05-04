@@ -56,6 +56,9 @@ MonoBehaviour:
   - ShowGameObject_RPC
   - DogDropHeld
   - TradeItem_RPC
+  - GrabItem
+  - DropItem_RPC
+  - GrabItem_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

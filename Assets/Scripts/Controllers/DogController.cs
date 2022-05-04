@@ -51,7 +51,10 @@ public class DogController : MonoBehaviour
         }
     }
 
-    public void GrabItem(GrabbableItem item)
+
+    public void GrabItem(GrabbableItem item) => pview.RPC("GrabItem_RPC", RpcTarget.All, item);
+    [PunRPC]
+    private void GrabItem_RPC(GrabbableItem item)
     {
         if (grabbedItem) grabbedItem.Drop();
 
@@ -62,7 +65,9 @@ public class DogController : MonoBehaviour
         item.transform.localScale *= item.scaleMultiplier;
     }
 
-    public void DropItem(bool disable = false)
+    public void DropItem(bool disable = false) => pview.RPC("DropItem_RPC", RpcTarget.All, disable);
+    [PunRPC]
+    public void DropItem_RPC(bool disable = false)
     {
         if (disable) grabbedItem.gameObject.SetActive(false);
         else grabbedItem.Drop();
