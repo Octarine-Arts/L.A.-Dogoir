@@ -104,14 +104,14 @@ position: -191,263
 
 <<set $OMalleyRandomGoodbye to random_range(0,2)>>
 <<if $OMalleyRandomGoodbye == 0 >>
-Archie: Thank you.
-OMalley: Sure.
+    Archie: Thank you.
+    OMalley: Sure.
 <<elseif $OMalleyRandomGoodbye == 1>>
-Archie: See you around.
-OMalley: Preferably not.
+    Archie: See you around.
+    OMalley: Preferably not.
 <<else>>
-Archie: I’ll be back if I have more questions.
-OMalley: Can’t wait…
+    Archie: I’ll be back if I have more questions.
+    OMalley: Can’t wait…
 <<endif>>
 
 <<stop>>

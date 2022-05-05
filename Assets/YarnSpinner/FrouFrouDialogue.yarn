@@ -10,11 +10,11 @@ position: -338,-113
   <<elseif $FrouFrouIsInitialGreeting == true>>
     <<set $FrouFrouRandomGreeting to random_range(0,2)>>
     <<if $FrouFrouRandomGreeting == 0>>
-    FrouFrou: Bonjour, mon cher!
+        ouFrou: Bonjour, mon cher!
     <<elseif $FrouFrouRandomGreeting == 1>>
-    FrouFrou: May I be of service, Detective?
+        FrouFrou: May I be of service, Detective?
     <<else>>
-    FrouFrou: So lovely to see you again, darling.
+        FrouFrou: So lovely to see you again, darling.
     <<endif>>
 <<endif>>
 
@@ -117,14 +117,14 @@ position: 203,212
 
 <<set $FrouFrouRandomGoodbye to random_range(0,2)>>
 <<if $FrouFrouRandomGoodbye == 0 >>
-Archie: Thank you for your time, ma’am.
-FrouFrou: No thank *you*, darling.
+    Archie: Thank you for your time, ma’am.
+    FrouFrou: No thank *you*, darling.
 <<elseif $FrouFrouRandomGoodbye == 1>>
-Archie: That’ll be all.
-FrouFrou: Toodles!
+    Archie: That’ll be all.
+    FrouFrou: Toodles!
 <<else>>
-Archie: Thanks for your help.
-FrouFrou: Ta-ta, darling!
+    Archie: Thanks for your help.
+    FrouFrou: Ta-ta, darling!
 <<endif>>
 
 <<stop>>

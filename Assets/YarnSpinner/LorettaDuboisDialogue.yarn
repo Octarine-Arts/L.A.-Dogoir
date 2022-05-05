@@ -193,14 +193,14 @@ position: -191,263
 
 <<set $lorettaRandomGoodbye to random_range(0,2)>>
 <<if $lorettaRandomGoodbye == 0 >>
-Detective: Thank you for your time.
-Loretta: You're welcome, Detective.
+    Detective: Thank you for your time.
+    Loretta: You're welcome, Detective.
 <<elseif $lorettaRandomGoodbye == 1>>
-Detective: That’s all for now, ma’am.
-Loretta: I'll be here if you need anything else.
+    Detective: That’s all for now, ma’am.
+    Loretta: I'll be here if you need anything else.
 <<else>>
-Detective: Thank you for your cooperation, ma'am.
-Loretta: Of course.
+    Detective: Thank you for your cooperation, ma'am.
+    Loretta: Of course.
 <<endif>>
 
 <<stop>>

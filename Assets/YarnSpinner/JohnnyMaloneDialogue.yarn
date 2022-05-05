@@ -196,14 +196,14 @@ position: -191,263
 
 <<set $johnnyRandomGoodbye to random_range(0,2)>>
 <<if $johnnyRandomGoodbye == 0 >>
-Detective: That’s all I need for now.
-Johnny: Good.
+    Detective: That’s all I need for now.
+    Johnny: Good.
 <<elseif $johnnyRandomGoodbye == 1>>
-Detective: I appreciate the help.
-Johnny: Yeah, yeah.
+    Detective: I appreciate the help.
+    Johnny: Yeah, yeah.
 <<else>>
-Detective: Thank you, Mr. Malone.
-Johnny: Just let me know when I can go home.
+    Detective: Thank you, Mr. Malone.
+    Johnny: Just let me know when I can go home.
 <<endif>>
 
 <<stop>>

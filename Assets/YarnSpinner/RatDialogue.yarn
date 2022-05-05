@@ -138,14 +138,14 @@ position: -191,263
 
 <<set $RatRandomGoodbye to random_range(0,2)>>
 <<if $RatRandomGoodbye == 0>>
-Archie: Thanks.
-Rattus: Whatever.
+    Archie: Thanks.
+    Rattus: Whatever.
 <<elseif $RatRandomGoodbye == 1>>
-Archie: That’s all for now.
-Rattus: Only for now? Drat.
+    Archie: That’s all for now.
+    Rattus: Only for now? Drat.
 <<else>>
-Archie: I appreciate it.
-Rattus: Well I don’t.
+    Archie: I appreciate it.
+    Rattus: Well I don’t.
 <<endif>>
 
 <<stop>>

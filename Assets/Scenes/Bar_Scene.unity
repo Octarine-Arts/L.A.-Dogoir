@@ -7624,7 +7624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &223149987
 Transform:
   m_ObjectHideFlags: 0
@@ -38692,9 +38692,13 @@ PrefabInstance:
       propertyPath: clickAudio
       value: 
       objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510465884566533, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7574510465884566537, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7574510465885801486, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_AnchorMax.y
