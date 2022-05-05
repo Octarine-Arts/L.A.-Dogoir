@@ -114,6 +114,7 @@ public class SceneTransition : MonoBehaviour
     {
         ScreenFade.current.FadeToBlack();
         _isTransitioning = true;
-        PhotonNetwork.LoadLevel(3);
+        int index = SceneManager.GetSceneByName("Bar_Scene").buildIndex;
+        PhotonNetwork.LoadLevel(index);
     }
 }
