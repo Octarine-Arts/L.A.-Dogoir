@@ -11,11 +11,26 @@ position: -193,-44
 	<<PromptPlayer Yarn "Those voices are coming from outside in the alley..." 1>>
 <<endif>>
 
-
 <<if  $PokerDogsIsInitialGreeting == true>>
+	<<jump PokerDogsLikeArchie>>
+<<endif>>
+
+===
+
+title: PokerDogsLikeArchie
+position: 283,-340
+---
+
+<<if $PokerDogsGaveGun == false>>
 	Mean: Reckon the fuzzball will be back?
 	Bean: Nah, he’s run away with his tail between his legs.
 	Lean: That’s a damn shame, I was hoping he'd bring back a big juicy bone…
+<<endif>>
+
+<<if $PokerDogsGaveGun == true>>
+	Mean: Ya reckon that pooch will be back?
+	Bean: I sure hope so, how are we meant to split a bone this big?
+	Lean: What do you mean split? He gave it to me!
 <<endif>>
 
 ===
