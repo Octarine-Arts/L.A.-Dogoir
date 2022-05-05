@@ -4914,6 +4914,22 @@ PrefabInstance:
       propertyPath: cutsceneManager
       value: 
       objectReference: {fileID: 568201841}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a770e92efde6f974eae57736ba36955d, type: 2}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17b46541d0344184693425894211b9c5, type: 2}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c5ef81956748ca941ad4e427036c23ba, type: 2}
     - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -47940,15 +47956,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.93
+      value: -3.71
       objectReference: {fileID: 0}
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalRotation.w

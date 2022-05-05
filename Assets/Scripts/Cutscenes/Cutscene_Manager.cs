@@ -208,11 +208,7 @@ public class Cutscene_Manager : MonoBehaviour
 
     private IEnumerator UntypeText(TextMeshProUGUI tmp)
     {
-        while (tmp.maxVisibleCharacters > 0)
-        {
-            tmp.maxVisibleCharacters--;
-            yield return new WaitForSeconds(0f);
-        }
+        tmp.maxVisibleCharacters = 0;
 
         yield return new WaitForSeconds(0.05f);
         CutsceneEventFinished();
