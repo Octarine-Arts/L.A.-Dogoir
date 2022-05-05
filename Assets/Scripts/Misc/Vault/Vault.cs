@@ -20,6 +20,8 @@ public class Vault : MonoBehaviour, IInteractable
     public TMP_Text letter2;
     public TMP_Text letter3;
 
+    public AudioClip openSound;
+
     private bool _hasOpened;
     private bool _canTurn;
     private Vector3 _screenPos;
@@ -82,10 +84,19 @@ public class Vault : MonoBehaviour, IInteractable
 
         if (password == currentPassword)
         {
+            AudioManager.current.PlaySFX(openSound);
             _hasOpened = true;
             passwordParent.SetActive(false);
             GetComponent<Animator>().SetTrigger("Open");
             ChangeCamera(true);
+        }
+        else if (password != currentPassword && currentPassword.Length >= 4)
+        {
+            currentPassword = "";
+            letter0.text = currentPassword.Length >= 1 ? "" + currentPassword[0] : "";
+            letter1.text = currentPassword.Length >= 2 ? "" + currentPassword[1] : "";
+            letter2.text = currentPassword.Length >= 3 ? "" + currentPassword[2] : "";
+            letter3.text = currentPassword.Length >= 4 ? "" + currentPassword[3] : "";
         }
     }
 
