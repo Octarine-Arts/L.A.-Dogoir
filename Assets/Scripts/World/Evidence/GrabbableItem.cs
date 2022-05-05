@@ -53,7 +53,7 @@ public class GrabbableItem : MonoBehaviour
 
     private void Update()
     {
-        if (grabbed) return;
+        if (grabbed || PlayerManager.ThisPlayer == PlayerSpecies.Human) return;
 
         if (Input.GetKeyDown (KeyCode.E) && F.FastDistance(transform.position, target.position) < radius * radius)
             Grab();
