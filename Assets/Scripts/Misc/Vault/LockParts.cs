@@ -6,6 +6,9 @@ public class LockParts : MonoBehaviour
 {
     public Vault vault;
     public LayerMask layers;
+    public AudioClip clickAudio;
+
+    private bool _hasClicked;
 
     // Update is called once per frame
     void Update()
@@ -18,8 +21,20 @@ public class LockParts : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(transform.position, transform.up, out hitInfo, 5f, layers))
         {
-            Debug.Log(name);
+            PlayAudio();
             vault.SetCurrentLetter(name);
         }
+        else
+        {
+            _hasClicked = false;
+        }
+    }
+
+    private void PlayAudio()
+    {
+        if (!_hasClicked) return;
+        Debug.Log("Click");
+        AudioManager.current.PlaySFX(clickAudio);
+        _hasClicked = true;
     }
 }
