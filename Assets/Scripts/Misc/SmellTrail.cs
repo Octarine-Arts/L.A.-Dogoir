@@ -38,7 +38,9 @@ public class SmellTrail : MonoBehaviour
             }
         }
 
-        if (EventManager.I != null)
+        if (PlayerManager.current != null && PlayerManager.current.PlayersSpawned)
+            OnPlayersSpawned(PlayerManager.current.HumanPlayer, PlayerManager.current.DogPlayer); 
+        else if (EventManager.I != null)
             EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
         else target = FindObjectOfType<DogController> ().dog.transform;
     }

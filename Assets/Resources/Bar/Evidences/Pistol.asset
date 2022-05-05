@@ -20,5 +20,6 @@ MonoBehaviour:
   yarnString: '$DetectiveHasFoundPistol '
   dogYarnString: 
   promptMessageDog: The caliber matches Jack Harlow's wound.
-  promptMessageHuman: The caliber matches Jack Harlow's wound.
+  promptMessageHuman: A gun? Good find, Archie. The caliber matches Jack Harlow's
+    wound.
   isFound: 0

@@ -464,6 +464,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 5.8
+    functionName: SetObjectActive
+    data: Syringe-Peggy
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 6
     functionName: SetBoolFalse
     data: isRunning
