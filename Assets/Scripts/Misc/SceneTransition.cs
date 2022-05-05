@@ -96,14 +96,23 @@ public class SceneTransition : MonoBehaviour
         if((bool) hashtable["HumanReady"] && (bool) hashtable["DogReady"])
         {
             _isTransitioning = true;
-            if (PhotonNetwork.IsMasterClient) PhotonNetwork.LoadLevel(3);
-            else _photonView.RPC(nameof(LoadLevel_RPC), RpcTarget.MasterClient);
+            int index = SceneManager.GetSceneByName("Bar_Scene").buildIndex;
+            if (PhotonNetwork.IsMasterClient)
+            {
+                ScreenFade.current.FadeToBlack();
+                PhotonNetwork.LoadLevel(index);
+            }
+            else
+            {
+                _photonView.RPC(nameof(LoadLevel_RPC), RpcTarget.MasterClient);
+            }
         }
     }
 
     [PunRPC]
     private void LoadLevel_RPC()
     {
+        ScreenFade.current.FadeToBlack();
         _isTransitioning = true;
         PhotonNetwork.LoadLevel(3);
     }
