@@ -16,6 +16,7 @@ public class DogController : MonoBehaviour
     private PhotonView pview;
     private float speed;
     private GrabbableItem grabbedItem;
+    private bool isMe = true;
 
     private void Awake ()
     {
@@ -35,7 +36,8 @@ public class DogController : MonoBehaviour
             print("Destroying Dog Stuff");
             Destroy(GetComponentInChildren<Camera> ().gameObject);
             Destroy(dog);
-            Destroy (this);
+            //Destroy (this);
+            isMe = false;
             return;
         }
 
@@ -74,7 +76,7 @@ public class DogController : MonoBehaviour
 
     private void Update ()
     {
-        if (!canMove) return;
+        if (!isMe || !canMove) return;
         if (UI_Manager._isUIOpen) return;
         
         Vector3 input = Quaternion.Euler (0, camPivot.rotation.eulerAngles.y, 0) * 
