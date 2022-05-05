@@ -198,4 +198,9 @@ public class TriggerDialogue : MonoBehaviour
             Player_StaticActions.EnableDogMovement();
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, distanceToTrigger);
+    }
 }
