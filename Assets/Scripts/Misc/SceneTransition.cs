@@ -100,7 +100,7 @@ public class SceneTransition : MonoBehaviour
             if (PhotonNetwork.IsMasterClient)
             {
                 ScreenFade.current.FadeToBlack();
-                PhotonNetwork.LoadLevel(index);
+                PhotonNetwork.LoadLevel(3);
             }
             else
             {
@@ -115,6 +115,6 @@ public class SceneTransition : MonoBehaviour
         ScreenFade.current.FadeToBlack();
         _isTransitioning = true;
         int index = SceneManager.GetSceneByName("Bar_Scene").buildIndex;
-        PhotonNetwork.LoadLevel(index);
+        PhotonNetwork.LoadLevel(3);
     }
 }
