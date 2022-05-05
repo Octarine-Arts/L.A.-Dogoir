@@ -15,25 +15,28 @@ position: -338,-113
 title: FrouFrouQuestions
 position: 69,-84
 ---
--> Detective: Who are you?
+-> Archie: Who are you?
     <<jump FrouFrouWhoAreYou>>
 
--> Detective: Gunshot?
+-> Archie: Gunshot?
     <<jump FrouFrouGunshot>>
 
--> Detective: Do you know the murdered man?
+-> Archie: Do you know the murdered man?
     <<jump FrouFrouDoYouKnowHim>>
 
--> Detective: What were you doing there? <<if $HidInOffice == true>>
+-> Archie: Doing anything later?
+    <<jump FrouFrouAskingOut>>
+
+-> Archie: What were you doing there? <<if $HidInOffice == true>>
     <<jump FrouFrouWhatWereYouDoingInTheOffice>>
 
--> Detective: Heathen man? <<if $HeathenMan == true>>
+-> Archie: Heathen man? <<if $HeathenMan == true>>
     <<jump FrouFrouHeathenMan>>
 
--> Detective: Did you see or hear anything? <<if $Office == true>>
+-> Archie: Did you see or hear anything? <<if $Office == true>>
     <<jump FrouFrouSeeOrHearAnything>>
 
--> Detective: Goodbye
+-> Archie: Goodbye
     <<jump FrouFrouGoodbye>>
 
 ===
@@ -98,6 +101,19 @@ position: -39,-503
 Archie: Does your mistress have any connection to the murdered man?
 FrouFrou: Yes, though we should hardly associate with one so beneath our pedigree. Often he came to our residence. I hated it. 
 FrouFrou:I sleep on a silk pillow beside my Mistress every night without fail, except when *he* shows up. Then I am locked out of the bedroom! Did you ever hear of such injustice?
+
+<<jump FrouFrouQuestions>>
+===
+
+title: FrouFrouAskingOut
+position: -39,-503
+---
+
+Archie: So...after I solve this murder...do you fancy going out for a milkbone? We could probably find one around here somewhere. 
+FrouFrou: Oh, Detective! I would love to but I'm on a special diet. I don't eat bones - unlike those brutish gamblers out in the alleyway...
+Archie: ...What about a romantic spaghetti dinner?
+FrouFrou: I could be convinced. Come talk to me after you've solved the case. 
+
 
 <<jump FrouFrouQuestions>>
 ===
