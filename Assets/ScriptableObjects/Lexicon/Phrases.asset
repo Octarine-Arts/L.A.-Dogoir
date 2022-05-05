@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - Found _
-  - Found _ near _
   - _ is _
   - _ smells like _
   - Need _
   - Look for _
   - Go _
+  - Come again?

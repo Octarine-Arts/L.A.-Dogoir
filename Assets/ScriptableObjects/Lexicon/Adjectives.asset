@@ -16,9 +16,11 @@ MonoBehaviour:
   - Loud
   - Big
   - Small
-  - Lost
   - Sharp
   - Good
   - Bad
-  - Brown
   - Red
+  - Green
+  - Brown
+  - Angry
+  - Sad

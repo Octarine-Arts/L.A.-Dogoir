@@ -22,5 +22,6 @@ MonoBehaviour:
   - Box
   - Ball
   - Device
-  - Object
   - Tube
+  - Stuff
+  - Object
