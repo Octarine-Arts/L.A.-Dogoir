@@ -21,7 +21,7 @@ public class SpriteBillboard : MonoBehaviour
 
     private void OnEnable()
     {
-        if (cam) return;
+        if (cam != null) return;
 
         if (PlayerManager.current.PlayersSpawned)
             cam = (PlayerManager.ThisPlayer == PlayerSpecies.Human ? PlayerManager.current.HumanPlayer : PlayerManager.current.DogPlayer).transform.parent.GetComponentInChildren<Camera>().transform;

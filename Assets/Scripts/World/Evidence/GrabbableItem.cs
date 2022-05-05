@@ -68,7 +68,7 @@ public class GrabbableItem : MonoBehaviour
 
     private void OnEnable()
     {
-        if (target) return;
+        if (target != null) return;
 
         if (PlayerManager.current.PlayersSpawned)
         {
