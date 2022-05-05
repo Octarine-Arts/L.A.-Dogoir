@@ -7,15 +7,6 @@ position: -338,-113
     Archie: I’m just here to ask you some questions, sir, about the gunshot that sounded earlier.
     OMalley: Oh. I don’t know much about that.
     <<set $OMalleyIsInitialGreeting to true>>
-<<elseif $OMalleyIsInitialGreeting == true>>
-    <<set $OMalleyRandomGreeting to random_range(0,2)>>
-    <<if $OMalleyRandomGreeting == 0>>
-        OMalley: What do you want now? 
-    <<elseif $OMalleyRandomGreeting == 1>>
-        OMalley: You don’t quit, do you? 
-    <<else>>
-        OMalley: Can’t you see I’m busy? 
-    <<endif>>
 <<endif>>
 
 <<jump OMalleyQuestions>>

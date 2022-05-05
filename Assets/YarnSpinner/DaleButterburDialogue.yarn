@@ -7,8 +7,6 @@ position: -522,-132
     Detective: I’d like to ask you some questions, actually.
     Dale: Of course.
     <<set $DaleIsInitialGreeting to true>>
-<<elseif $DaleIsInitialGreeting == true>>
-    Dale: How’s the investigation going?
 <<endif>>
 
 <<jump Questions>>

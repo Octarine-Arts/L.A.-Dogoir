@@ -9,15 +9,6 @@ position: -338,-113
     Detective: Perhaps you can tell me that.
     Peggy: Please, Detective. I've just lost my husband. Jack wasn't John Wayne by any means, but I loved him. I’ve read enough dime store crime novels to know you detectives always look at the spouse, but I can assure you I would never do anything to harm my Jack.
     <<set $PeggyIsInitialGreeting to true>>
-<<elseif $PeggyIsInitialGreeting == true>>
-    <<set $PeggyRandomGreeting to random_range(0,2)>>
-    <<if $PeggyRandomGreeting == 0 >>
-        Peggy: More interrogation, Detective?
-    <<elseif $PeggyRandomGreeting == 1>>
-        Peggy: Yes?
-    <<else>>
-        Peggy: Hello again, Detective.
-    <<endif>>
 <<endif>>
 
 <<jump PeggyQuestions>>

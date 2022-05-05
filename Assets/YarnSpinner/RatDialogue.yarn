@@ -7,15 +7,6 @@ position: -338,-113
     Archie: Pleased to meet you, too. I’d like to ask you some questions about the murder that’s just taken place.
     Rattus: Hmmph.
     <<set $RatIsInitialGreeting to true>>
-<<elseif $RatIsInitialGreeting == true>>
-    <<set $RatRandomGreeting to random_range(0,2)>>
-    <<if $RatRandomGreeting == 0>>
-        Rattus: You again?
-    <<elseif $RatRandomGreeting == 1>>
-        Rattus: What?
-    <<else>>
-        Rattus: What now, Poochy?
-    <<endif>>
 <<endif>>
 
 <<jump RatQuestions>>

@@ -8,15 +8,6 @@ position: -338,-113
     Johnny: Here before the body’s even cold. Got peepers on the bar or something?
     Detective: Why, anything we need to be peeping on? 
     <<set $JohnnyIsInitialGreeting to true>>
-<<elseif $JohnnyIsInitialGreeting == true>>
-    <<set $JohnnyRandomGreeting to random_range(0,2)>>
-    <<if $JohnnyRandomGreeting == 0>>
-        Johnny: Mr. Gumshoe returns.
-    <<elseif $JohnnyRandomGreeting == 1>>
-        Johnny: Forget something?
-    <<else>>
-        Johnny: What now, buttons?
-    <<endif>>
 <<endif>>
 
 <<jump JohnnyQuestions>>
