@@ -220,7 +220,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void StartGameClicked()
     {
-        PhotonNetwork.LoadLevel(3);
+        PhotonNetwork.LoadLevel(1);
     }
     #endregion
 
