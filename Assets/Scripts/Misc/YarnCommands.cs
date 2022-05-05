@@ -51,7 +51,7 @@ public class YarnCommands : MonoBehaviour
     [YarnCommand("TriggerEnding")]
     public void TriggerEnding()
     {
-        EndingUI.current.Open();
+        Culprit_UI.current.Open();
     }
 
     [PunRPC]
