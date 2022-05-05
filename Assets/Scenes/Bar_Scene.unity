@@ -40626,8 +40626,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1.212103, z: 0.1061478}
-  m_Center: {x: -0.0000009581896, y: 0.6060515, z: 0.0000000065592314}
+  m_Size: {x: 0.5, y: 0.5, z: 0.1}
+  m_Center: {x: -0.0000009581896, y: 0.6060515, z: 0.1}
 --- !u!114 &1481474584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58423,6 +58423,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 219a88717e9ff49498bf14f3b1fabb1f, type: 2}
     m_RemovedComponents:
     - {fileID: 5072397199352983528, guid: e37f35ab58174d744b4c770396426b12, type: 3}
+    - {fileID: 5072264476038107954, guid: e37f35ab58174d744b4c770396426b12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e37f35ab58174d744b4c770396426b12, type: 3}
 --- !u!1 &5082096837000224096 stripped
 GameObject:
@@ -58484,6 +58485,19 @@ MonoBehaviour:
   offsetRotation: {x: 16.21464, y: 270.96432, z: 94.18713}
   scaleMultiplier: 1
   yarnBool: 
+--- !u!135 &5082096837000224100
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082096837000224096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.37
+  m_Center: {x: -0.0021632463, y: -0.0016601527, z: 0.16111511}
 --- !u!1001 &5095682868166179876
 PrefabInstance:
   m_ObjectHideFlags: 0
