@@ -11,6 +11,8 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class Culprit_UI : MonoBehaviour
 {
+    public static Culprit_UI current;
+    
     public GameObject cutscene;
     public Cutscene_Manager cutsceneManager;
     
@@ -30,6 +32,7 @@ public class Culprit_UI : MonoBehaviour
     public GameObject dogText;
     
     private PhotonView _photonView;
+    private CanvasGroup _canvasGroup;
     
     private int _currentSuspectIndex;
     private bool _isHumanConfirmed;
@@ -37,8 +40,10 @@ public class Culprit_UI : MonoBehaviour
         
     private void Awake()
     {
+        current = this;
         _currentSuspectIndex = 0;
         _photonView = GetComponent<PhotonView>();
+        _canvasGroup = GetComponent<CanvasGroup>();
 
         EventManager.I.OnPlayersSpawned += PlayersSpawned;
 
@@ -48,6 +53,7 @@ public class Culprit_UI : MonoBehaviour
         dogButton.onClick.AddListener(ConfirmButtonPressed);
         
         UpdateUI();
+        Close();
     }
 
     private void PlayersSpawned(GameObject human, GameObject dog)
@@ -56,10 +62,24 @@ public class Culprit_UI : MonoBehaviour
         if (PlayerManager.ThisPlayer == PlayerSpecies.Human) dogButton.interactable = false;
         //gameObject.SetActive(false);
     }
+
+    public void Open()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+    }
+
+    public void Close()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+    }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) gameObject.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Escape)) Close();
     }
 
     private void LeftButtonPressed()
