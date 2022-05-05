@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bar_Scene.unity
     guid: 1324007a36d9ed543a7add6b571469ca
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 9a975532c80d55740aa5b1d0db610072
   m_configObjects: {}

@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public enum CutsceneState
 {
@@ -90,6 +91,11 @@ public class Cutscene_Manager : MonoBehaviour
         {
            PlayNextEvent();
         }
+    }
+
+    public void LoadEndScene()
+    {
+        PhotonNetwork.LoadLevel(4);
     }
 
     private void PlayNextEvent()

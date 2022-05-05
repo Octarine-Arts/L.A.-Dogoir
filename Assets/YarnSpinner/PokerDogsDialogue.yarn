@@ -78,7 +78,7 @@ position: 283,-340
     Lean: Want us to deal you in?
     Archie: Maybe some other time fellas, I'm fresh outta clams...
 
-    -> Archie: Have you heard what the humans have been sayin'? <<if $DetectiveTriedToOpenDoor == true>>
+    -> Archie: (create a distraction) <<if $DetectiveTriedToOpenDoor == true>>
         <<jump HumansTalkingSmack>>
 <<endif>>
 
