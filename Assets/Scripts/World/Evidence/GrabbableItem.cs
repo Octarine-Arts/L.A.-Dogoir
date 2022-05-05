@@ -70,7 +70,7 @@ public class GrabbableItem : MonoBehaviour
     {
         if (target != null) return;
 
-        if (PlayerManager.current.PlayersSpawned)
+        if (PlayerManager.current != null && PlayerManager.current.PlayersSpawned)
         {
             target = PlayerManager.current.DogPlayer.transform;
             this.dog = target.GetComponentInParent<DogController>();
