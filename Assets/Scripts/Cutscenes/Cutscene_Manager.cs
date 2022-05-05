@@ -211,7 +211,7 @@ public class Cutscene_Manager : MonoBehaviour
         while (tmp.maxVisibleCharacters > 0)
         {
             tmp.maxVisibleCharacters--;
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0f);
         }
 
         yield return new WaitForSeconds(0.05f);
