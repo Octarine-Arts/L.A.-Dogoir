@@ -14,7 +14,8 @@ public class Culprit_UI : MonoBehaviour
     public static Culprit_UI current;
     
     public GameObject cutscene;
-    public Cutscene_Manager cutsceneManager;
+    public CutsceneContentSetter cutsceneContentSetter;
+    //public Cutscene_Manager cutsceneManager;
     
     public Image suspectImage;
     public List<Suspect> suspectList;
@@ -201,8 +202,9 @@ public class Culprit_UI : MonoBehaviour
     {
         ScreenFade.current.FadeToTransparent();
         cutscene.SetActive(true);
-        cutsceneManager.eventList.eventsList[^1].triggerName = endString;
-        cutsceneManager.StartCutscene();
+        //cutsceneManager.eventList.eventsList[^1].triggerName = endString;
+        cutsceneContentSetter.SetContent(endString);
+        cutsceneContentSetter.cutscene.StartCutscene();
         gameObject.SetActive(false);
     }
 }

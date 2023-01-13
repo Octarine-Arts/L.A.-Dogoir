@@ -4915,6 +4915,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 568201841}
     - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: cutsceneContentSetter
+      value: 
+      objectReference: {fileID: 568201843}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
       propertyPath: suspectList.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -18621,6 +18625,888 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3203834271630929765, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
   m_PrefabInstance: {fileID: 568201837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &568201843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568201842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76135c7c3fd53984ba6e5fc8577c990d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene: {fileID: 568201841}
+  serailisedEventLists:
+  - key: Dale
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Dale
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: The attention of some dame. The oldest motive in the book. Even
+          Adam gave his rib for a pretty broad. Dale Butterbur? Well, he was just
+          the latest dope to become lovesick to obsession over a pretty face. And
+          a pretty face will make a man do some crazy things.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: The attention of some dame. The oldest motive in the book. Even
+          Adam gave his rib for a pretty broad. Dale Butterbur? Well, he was just
+          the latest dope to become lovesick to obsession over a pretty face. And
+          a pretty face will make a man do some crazy things.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Jack Harlow had made Bones Bar his new place of residence, stuck
+          to the stool in front of the bar like glue, when he wasn\u2019t stuck to
+          Loretta Dubois, that is. His affair with the wannabe Hollywood star was
+          no secret, even to Jack\u2019s wife. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Jack Harlow had made Bones Bar his new place of residence, stuck
+          to the stool in front of the bar like glue, when he wasn\u2019t stuck to
+          Loretta Dubois, that is. His affair with the wannabe Hollywood star was
+          no secret, even to Jack\u2019s wife. Dutiful, faithful Peggy Harlow, coming
+          to the bar to pick up her drunken excuse for a husband each night. And
+          everytime she said so much as a, \u201Chello\u201D to Butterbur, he heard
+          an invitation to bed. But first he knew he had to get rid of the one thing
+          that stood in the way of getting what he wanted\u2026Jack Harlow."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Dutiful, faithful Peggy Harlow, coming to the bar to pick up her
+          drunken excuse for a husband each night. And everytime she said so much
+          as a, \u201Chello\u201D to Butterbur, he heard an invitation to bed. But
+          first he knew he had to get rid of the one thing that stood in the way
+          of getting what he wanted\u2026Jack Harlow."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Dutiful, faithful Peggy Harlow, coming to the bar to pick up her
+          drunken excuse for a husband each night. And everytime she said so much
+          as a, \u201Chello\u201D to Butterbur, he heard an invitation to bed. But
+          first he knew he had to get rid of the one thing that stood in the way
+          of getting what he wanted\u2026Jack Harlow."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: So he concocted a plan. He would inject Jack with a syringe full
+          of rat poison. But he was a coward, he knew if anything led back to him
+          he would be in deeper shit than a mouse standing under the tailend of a
+          horse. The shady dealings with gambling and drugs within Bones Bar would
+          be sure to put him in the big house. So he did the unthinkable, and roped
+          the woman he supposedly loved into his scheme.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: So he concocted a plan. He would inject Jack with a syringe full
+          of rat poison. But he was a coward, he knew if anything led back to him
+          he would be in deeper shit than a mouse standing under the tailend of a
+          horse. The shady dealings with gambling and drugs within Bones Bar would
+          be sure to put him in the big house. So he did the unthinkable, and roped
+          the woman he supposedly loved into his scheme.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Maybe he got some sadistic kick out of it, maybe he thought police
+          would go easy on a dame, but whatever the reason, he got Peggy to administer
+          the rat poison under the guise of some tranquilizer that would put her
+          abusive husband to sleep. Little did Mrs. Harlow know that she\u2019d just
+          signed her husband\u2019s death certificate."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Maybe he got some sadistic kick out of it, maybe he thought police
+          would go easy on a dame, but whatever the reason, he got Peggy to administer
+          the rat poison under the guise of some tranquilizer that would put her
+          abusive husband to sleep. Little did Mrs. Harlow know that she\u2019d just
+          signed her husband\u2019s death certificate."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Whatever happened in the ladies bathroom with the gun was just
+          a convenient accident for Butterbur. Jack was already dead when the bullet
+          hit him, but this development removed Butterbur further from the murder.
+          He was sure no one would ever look at him, even if the police came sniffing
+          around. If he played the helpful barkeep he could walk away an innocent
+          man, free to console the grieving window of the man whose death he orchestrated.
+
+'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: 'Whatever happened in the ladies bathroom with the gun was just
+          a convenient accident for Butterbur. Jack was already dead when the bullet
+          hit him, but this development removed Butterbur further from the murder.
+          He was sure no one would ever look at him, even if the police came sniffing
+          around. If he played the helpful barkeep he could walk away an innocent
+          man, free to console the grieving window of the man whose death he orchestrated.
+
+'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "But what he didn\u2019t count on was Detective Dick Steele and
+          Detective Archie.\r"
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "But what he didn\u2019t count on was Detective Dick Steele and
+          Detective Archie.\r"
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: Case closed.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - key: Loretta
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Loretta
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Beautiful, desperate actresses with figures so fine you feel they\u2019d
+          crumble in your arms are a dime a dozen in this town. Loretta Dubois was
+          one little canary in an aviary of millions, a Hollywood hopeful who still
+          believed she had something to give that no other girl did. I knew that
+          given a few years reality would sink in and she\u2019d start drowning like
+          so many other starlets before her. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Beautiful, desperate actresses with figures so fine you feel they\u2019d
+          crumble in your arms are a dime a dozen in this town. Loretta Dubois was
+          one little canary in an aviary of millions, a Hollywood hopeful who still
+          believed she had something to give that no other girl did. I knew that
+          given a few years reality would sink in and she\u2019d start drowning like
+          so many other starlets before her. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "I couldn\u2019t say what she saw in Jack Harlow, though of course
+          I knew what he saw in her. She was beautiful, but he\u2026well, he was
+          by all accounts a greaseball, a gambler and a drunk. I suppose when you\u2019re
+          in show business like Miss Dubois, you\u2019re bound to come across scummier
+          men than Harlow. Whatever the reason, those two got it for each other.
+          Bad."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "I couldn\u2019t say what she saw in Jack Harlow, though of course
+          I knew what he saw in her. She was beautiful, but he\u2026well, he was
+          by all accounts a greaseball, a gambler and a drunk. I suppose when you\u2019re
+          in show business like Miss Dubois, you\u2019re bound to come across scummier
+          men than Harlow. Whatever the reason, those two got it for each other.
+          Bad."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Jack\u2019s spending on his mistress was sure to rub the thug Johnny
+          Malone the wrong way, seeing as Harlow owed him a lot of money. If Jack
+          wasn\u2019t going to pay, maybe Malone could get Loretta to open her purse.
+          After cornering her in the ladies bathrooms and roughing her up, Loretta
+          did something he didn\u2019t expect - she pulled out a gun."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Jack\u2019s spending on his mistress was sure to rub the thug Johnny
+          Malone the wrong way, seeing as Harlow owed him a lot of money. If Jack
+          wasn\u2019t going to pay, maybe Malone could get Loretta to open her purse.
+          After cornering her in the ladies bathrooms and roughing her up, Loretta
+          did something he didn\u2019t expect - she pulled out a gun."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: A struggle ensued and the gun fired. By some cruel twist of fate,
+          the bullet shot straight through the wall and hit Jack Harlow as he sat
+          at the bar. Loretta had accidentally killed Jack Harlow. The man she loved.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: A struggle ensued and the gun fired. By some cruel twist of fate,
+          the bullet shot straight through the wall and hit Jack Harlow as he sat
+          at the bar. Loretta had accidentally killed Jack Harlow. The man she loved.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "But I guess there was one man Loretta loved even more than Jack
+          Harlow, and that was Mr. Wood. First name Holly. She couldn\u2019t sacrifice
+          her chance at stardom, so she had to give her greatest performance of all
+          time. The role? An innocent bystander in her lover\u2019s murder. She ditched
+          the gun out the bathroom window and began the act."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "But I guess there was one man Loretta loved even more than Jack
+          Harlow, and that was Mr. Wood. First name Holly. She couldn\u2019t sacrifice
+          her chance at stardom, so she had to give her greatest performance of all
+          time. The role? An innocent bystander in her lover\u2019s murder. She ditched
+          the gun out the bathroom window and began the act."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: Maybe she oughta take a few more acting classes. Because even that
+          performance was no match for Detective Dick Steele and Detective Archie.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: Maybe she oughta take a few more acting classes. Because even that
+          performance was no match for Detective Dick Steele and Detective Archie.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Case Closed.
+
+          ...Or is it?'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - key: Johnny
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Johnny
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Johnny \u201CTwo Sleeves\u201D Malone is the kind of guy who would
+          spell the word dead \u201CD-E-D\u201D and if you corrected him on it he\u2019d
+          show you what the meaning of the word really meant. He wasn\u2019t a smart
+          man, but with a mug as mean as his he didn\u2019t need to be."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Johnny \u201CTwo Sleeves\u201D Malone is the kind of guy who would
+          spell the word dead \u201CD-E-D\u201D and if you corrected him on it he\u2019d
+          show you what the meaning of the word really meant. He wasn\u2019t a smart
+          man, but with a mug as mean as his he didn\u2019t need to be."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: Or at least that was the case before Jack Harlow came along.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: Or at least that was the case before Jack Harlow came along.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Harlow was as fond of gambling as he was of drinking, two dangerous
+          hobbies for a man with no dough. Sure enough, his lack of moolah caught
+          up with him. The ticket on his body showed he\u2019d bet on the ponies
+          and lost, and he owed Malone a whole lot of dough he had no way of paying
+          back."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Harlow was as fond of gambling as he was of drinking, two dangerous
+          hobbies for a man with no dough. Sure enough, his lack of moolah caught
+          up with him. The ticket on his body showed he\u2019d bet on the ponies
+          and lost, and he owed Malone a whole lot of dough he had no way of paying
+          back."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Even a pill like Harlow should have known being in debt to Two
+          Sleeves Malone was no laughing matter. You don\u2019t disrespect a thug
+          in his place of business and keep coming back to spend bread on the resident
+          singer. Not if you\u2019re fond of your legs."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Even a pill like Harlow should have known being in debt to Two
+          Sleeves Malone was no laughing matter. You don\u2019t disrespect a thug
+          in his place of business and keep coming back to spend bread on the resident
+          singer. Not if you\u2019re fond of your legs."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Eventually Johnny Malone realized Jack was a lost cause. After
+          roughing up Loretta Dubois, Jack\u2019s Hollywood wannabe mistress, he
+          realized he wasn\u2019t getting any of his money back. But in that altercation
+          he got possession of Loretta\u2019s gun and that\u2019s when he realized
+          there was a way to get Harlow out of his hair for good. Not that Malone
+          had any hair."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Eventually Johnny Malone realized Jack was a lost cause. After
+          roughing up Loretta Dubois, Jack\u2019s Hollywood wannabe mistress, he
+          realized he wasn\u2019t getting any of his money back. But in that altercation
+          he got possession of Loretta\u2019s gun and that\u2019s when he realized
+          there was a way to get Harlow out of his hair for good. Not that Malone
+          had any hair."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "The bonus was that he could frame Harlow\u2019s new flame as well
+          by using her own weapon. So he shot Harlow while he was drunk at the bar,
+          and in the ensuing chaos he threw it out the window. He was sure there
+          was no way he could be linked to the crime."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "The bonus was that he could frame Harlow\u2019s new flame as well
+          by using her own weapon. So he shot Harlow while he was drunk at the bar,
+          and in the ensuing chaos he threw it out the window. He was sure there
+          was no way he could be linked to the crime."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "What he didn\u2019t count on though was Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "What he didn\u2019t count on though was Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Case Closed.
+
+          ...Or is it?'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - key: Peggy
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Peggy
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Whiskey? Well, that\u2019s good on the rocks. A marriage? Not so
+          much. Jack and Peggy Harlow\u2019s troubles were obvious to me from the
+          moment Peggy opened her mouth. She could give Loretta Dubois a run for
+          her money, because Mrs. Harlow\u2019s act of innocence was as good as any
+          I\u2019ve seen in the flicks. But behind that meek facade she was colder
+          than her husband's body."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Whiskey? Well, that\u2019s good on the rocks. A marriage? Not so
+          much. Jack and Peggy Harlow\u2019s troubles were obvious to me from the
+          moment Peggy opened her mouth. She could give Loretta Dubois a run for
+          her money, because Mrs. Harlow\u2019s act of innocence was as good as any
+          I\u2019ve seen in the flicks. But behind that meek facade she was colder
+          than her husband's body."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "I knew Peggy was a proud woman, she couldn\u2019t bear the public
+          humiliation coming from her husband's affair with a wannabe Hollywood star
+          such as Miss Dubois. Coupled with the excessive spending, the abuse, the
+          drinking\u2026 It was all a perfect storm."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "I knew Peggy was a proud woman, she couldn\u2019t bear the public
+          humiliation coming from her husband's affair with a wannabe Hollywood star
+          such as Miss Dubois. Coupled with the excessive spending, the abuse, the
+          drinking\u2026 It was all a perfect storm."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "And eventually that stormcloud burst like the projectile vomit
+          of a drunk at 3am in some back alley. You know what they say, corner a
+          rattlesnake and you\u2019re gonna get bit. And Peggy\u2019s bite sure was
+          venomous. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "And eventually that stormcloud burst like the projectile vomit
+          of a drunk at 3am in some back alley. You know what they say, corner a
+          rattlesnake and you\u2019re gonna get bit. And Peggy\u2019s bite sure was
+          venomous. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'She overdosed Jack with a syringe full of drugs she had gotten
+          off Dale Butterbur. That drip was lovesick, he would have agreed to anything
+          Mrs. Harlow asked. If she did it right, no one would suspect a thing. Her
+          drunken husband, drinking until his body gave out on him in some dingy
+          back alley bar. No one would ever know. '
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: 'She overdosed Jack with a syringe full of drugs she had gotten
+          off Dale Butterbur. That drip was lovesick, he would have agreed to anything
+          Mrs. Harlow asked. If she did it right, no one would suspect a thing. Her
+          drunken husband, drinking until his body gave out on him in some dingy
+          back alley bar. No one would ever know. '
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "What she didn\u2019t count on was Jack getting shot. This threw
+          a spanner in the works. She knew someone would hear it, so when the lights
+          went off she made a dash for the backdoor, throwing the syringe, the evidence
+          of her murderous deed, amongst the bins, thinking no one would find it."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "What she didn\u2019t count on was Jack getting shot. This threw
+          a spanner in the works. She knew someone would hear it, so when the lights
+          went off she made a dash for the backdoor, throwing the syringe, the evidence
+          of her murderous deed, amongst the bins, thinking no one would find it."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Maybe she thought this shooting was a convenient coverup, maybe
+          she was worried it would bring attention to the puncture wound the syringe
+          left in Jack\u2019s neck\u2026 but either way, there was one thing she
+          wasn\u2019t counting on\u2026 and that\u2019s Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Maybe she thought this shooting was a convenient coverup, maybe
+          she was worried it would bring attention to the puncture wound the syringe
+          left in Jack\u2019s neck\u2026 but either way, there was one thing she
+          wasn\u2019t counting on\u2026 and that\u2019s Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Case Closed.
+
+          ...Or is it?'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!1001 &571696670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50753,6 +51639,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1946474894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203834273049922823, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+  m_PrefabInstance: {fileID: 568201837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1948666030
 PrefabInstance:
   m_ObjectHideFlags: 0

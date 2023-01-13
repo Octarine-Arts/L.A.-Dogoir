@@ -121,10 +121,11 @@ public class Cutscene_Manager : MonoBehaviour
 
     public void LoadEndScene()
     {
-        PhotonNetwork.LoadLevel(4);
+        //PhotonNetwork.LoadLevel(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
-    private void PlayNextEvent()
+    public void PlayNextEvent()
     {
         _currentIndex++;
         if(_currentIndex == eventList.eventsList.Count) FinishCutscene();
