@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 2587966663557241025}
   - component: {fileID: 2587966663557241034}
   - component: {fileID: 2587966663557241037}
+  - component: {fileID: 4902490161694054859}
   m_Layer: 5
   m_Name: FinalAccusation
   m_TagString: Untagged
@@ -378,6 +379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae64c2ec76f59aa43b631f06d49a3219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutscene: {fileID: 0}
+  cutsceneManager: {fileID: 0}
   suspectImage: {fileID: 2587966665236120291}
   suspectList:
   - {fileID: 11400000, guid: f17c3a5a957d3be4e84c95c8315214d4, type: 2}
@@ -417,6 +420,18 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!225 &4902490161694054859
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587966663557241024}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2587966663955823176
 GameObject:
   m_ObjectHideFlags: 0

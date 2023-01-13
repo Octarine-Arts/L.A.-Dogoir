@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3a0597a-dd1c-4268-8bea-707c66c5978c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.L.A.-Dogoir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.L.A.-Dogoir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Journal/Book Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Journal/Book Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Journal/SuspectButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Journal/SuspectButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/DButterbur.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/DButterbur.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/JMalone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/JMalone.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/LDubois.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/LDubois.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/PHarlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Bar/Suspects/PHarlow.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bar_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="d3a0597a-dd1c-4268-8bea-707c66c5978c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,18 +19,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Commands/ActionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Accusation/CulpriteScreen/Culprit_UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Accusation/FinalAccusation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Views/LineView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Commands/ActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscenes/AnimatorToManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/MapExpander.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/ButtonSounds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/DogCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/SceneTransition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Commands/ActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/DialogueRunner.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/DogCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/InMemoryVariableStorage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Journal/MapExpander.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/dev.yarnspinner.unity@2.1.0/Runtime/Views/LineView.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,6 +39,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/L.A. Dogoir\L.A. Dogoir.exe" />
@@ -113,6 +109,7 @@
       <workItem from="1651564484301" duration="39000" />
       <workItem from="1651564554269" duration="6005000" />
       <workItem from="1651646006587" duration="6762000" />
+      <workItem from="1651731469536" duration="4731000" />
     </task>
     <servers />
   </component>

@@ -4,18 +4,33 @@ position: -193,-44
 ---
 
 <<if  $PokerDogsIsInitialGreeting == false>>
-Bean: ...What do we do now?
-Mean: You mean what do *you* do now, the gun landed on my side of the table, I own it!
-Lean: No way! I’m the one who decided to set up here, so it should be mine!
-Bean: Well I’ll play ya for it!
-<<PromptPlayer Yarn "Those voices are coming from outside in the alley..." 1>>
+	Bean: ...What do we do now?
+	Mean: You mean what do *you* do now, the gun landed on my side of the table, I own it!
+	Lean: No way! I’m the one who decided to set up here, so it should be mine!
+	Bean: Well I’ll play ya for it!
+	<<PromptPlayer Yarn "Those voices are coming from outside in the alley..." 1>>
 <<endif>>
 
-
 <<if  $PokerDogsIsInitialGreeting == true>>
-Mean: Reckon the fuzzball will be back?
-Bean: Nah, he’s run away with his tail between his legs.
-Lean: That’s a damn shame, I was hoping he'd bring back a big juicy bone…
+	<<jump PokerDogsLikeArchie>>
+<<endif>>
+
+===
+
+title: PokerDogsLikeArchie
+position: 283,-340
+---
+
+<<if $PokerDogsGaveGun == false>>
+	Mean: Reckon the fuzzball will be back?
+	Bean: Nah, he’s run away with his tail between his legs.
+	Lean: That’s a damn shame, I was hoping he'd bring back a big juicy bone…
+<<endif>>
+
+<<if $PokerDogsGaveGun == true>>
+	Mean: Ya reckon that pooch will be back?
+	Bean: I sure hope so, how are we meant to split a bone this big?
+	Lean: What do you mean split? He gave it to me!
 <<endif>>
 
 ===

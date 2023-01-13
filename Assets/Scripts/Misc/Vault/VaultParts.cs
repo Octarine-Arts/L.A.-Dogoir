@@ -16,6 +16,8 @@ public class VaultParts : MonoBehaviour
 
     public Camera _camera;
 
+
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -30,7 +32,6 @@ public class VaultParts : MonoBehaviour
                     if(thisPart == VaultPart.OuterRing) vault.SetOuterRingSpin();
                     else if(thisPart == VaultPart.Handle) vault.SetHandleSpin();
                 }
-                
             }
         }
     }

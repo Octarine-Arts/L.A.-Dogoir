@@ -32,7 +32,7 @@ public class TriggerPrompt : MonoBehaviour
                 YarnCommands.current.SetBool("$DetectiveTriedToOpenDoor", true);
                 StartCoroutine(Cooldown());
                 StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message1, 0f));
-                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 8f));
+                StartCoroutine(PromptPlayer_CO(PlayerSpecies.Human, message2, 6f));
                 PromptPlayer(PlayerSpecies.Dog, message3);
             }
             

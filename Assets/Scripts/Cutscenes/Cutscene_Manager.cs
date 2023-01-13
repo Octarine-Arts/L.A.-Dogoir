@@ -5,6 +5,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Photon.Pun;
+using Unity.VisualScripting;
 
 public enum CutsceneState
 {
@@ -31,9 +33,23 @@ public class Cutscene_Manager : MonoBehaviour
     private void Awake()
     {
         _currentState = CutsceneState.NotStarted;
-        if(playOnAwake) StartCutscene();
     }
 
+    private void OnEnable()
+    {
+        if (playOnAwake) EventManager.I.OnPlayersSpawned += Setup;
+    }
+
+    private void OnDisable()
+    {
+        if (playOnAwake) EventManager.I.OnPlayersSpawned -= Setup;
+    }
+
+    private void Setup(GameObject human, GameObject dog)
+    {
+        StartCutscene();
+    }
+    
     public void StartCutscene()
     {
         UI_Manager.enableUI = false;
@@ -50,25 +66,36 @@ public class Cutscene_Manager : MonoBehaviour
         mousePrompt.SetActive(false);
         _currentState = CutsceneState.Playing;
 
-        if (isLastEventType)
-        {
-            isLastEventType = false;
-            StartUntypeText(_currentCutsceneEvent.tmp);
-        }
-        else
-        {
+        // if (isLastEventType)
+        // {
+        //     isLastEventType = false;
+        //     StartUntypeText(_currentCutsceneEvent.tmp);
+        // }
+        // else
+        // {
             switch (_currentCutsceneEvent.cutsceneType)
             {
                 case CutsceneType.Text:
                     isLastEventType = true;
-                    StartTypeText(_currentCutsceneEvent.tmp, _currentCutsceneEvent.message);
+                    if (PlayerManager.ThisPlayer == PlayerSpecies.Dog)
+                    {
+                        if(string.IsNullOrEmpty(_currentCutsceneEvent.dogMessage)) StartTypeText(_currentCutsceneEvent.tmp, _currentCutsceneEvent.message);
+                        else StartTypeText(_currentCutsceneEvent.tmp, _currentCutsceneEvent.dogMessage);
+                    }
+                    else if (PlayerManager.ThisPlayer == PlayerSpecies.Human)
+                    {
+                        StartTypeText(_currentCutsceneEvent.tmp, _currentCutsceneEvent.message);
+                    }
+                    break;
+                case CutsceneType.Untype:
+                    StartUntypeText(_currentCutsceneEvent.tmp);
                     break;
                 case CutsceneType.Video:
                     isLastEventType = false;
                     PlayAnimation(_currentCutsceneEvent.animator, _currentCutsceneEvent.triggerName);
                     break;
             }
-        }
+        //}
         
     }
 
@@ -92,7 +119,13 @@ public class Cutscene_Manager : MonoBehaviour
         }
     }
 
-    private void PlayNextEvent()
+    public void LoadEndScene()
+    {
+        //PhotonNetwork.LoadLevel(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void PlayNextEvent()
     {
         _currentIndex++;
         if(_currentIndex == eventList.eventsList.Count) FinishCutscene();
@@ -117,12 +150,11 @@ public class Cutscene_Manager : MonoBehaviour
             canvasGroup.alpha = 1;
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
-            //     Color currentColor = _currentCutsceneEvent.image.color;
-            // currentColor.a = 1;
-            // _currentCutsceneEvent.image.color = currentColor;
+            
+            Color currentColor = _currentCutsceneEvent.image.color;
+            currentColor.a = 1;
+            _currentCutsceneEvent.image.color = currentColor;
         }
-        Debug.Log(_currentIndex);
-        Debug.Log(triggerName);
         animator.SetTrigger(triggerName);
     }
     
@@ -148,7 +180,6 @@ public class Cutscene_Manager : MonoBehaviour
             if (tmp.text[ii] == '*')
             {
                 pauseIndex.Add(ii);
-                Debug.Log(ii);
             }
         }
 
@@ -167,7 +198,7 @@ public class Cutscene_Manager : MonoBehaviour
                 }
             }
             tmp.maxVisibleCharacters++;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
         
         tmp.maxVisibleCharacters = tmp.text.Length;
@@ -178,11 +209,7 @@ public class Cutscene_Manager : MonoBehaviour
 
     private IEnumerator UntypeText(TextMeshProUGUI tmp)
     {
-        while (tmp.maxVisibleCharacters > 0)
-        {
-            tmp.maxVisibleCharacters--;
-            yield return new WaitForSeconds(0.005f);
-        }
+        tmp.maxVisibleCharacters = 0;
 
         yield return new WaitForSeconds(0.05f);
         CutsceneEventFinished();
@@ -237,6 +264,7 @@ public class CutsceneEvent
     [Header("Text")]
     public TextMeshProUGUI tmp;
     [TextArea(3,5)]public string message;
+    [TextArea(3,5)]public string dogMessage;
 
     [Header("Video")]
     public Animator animator;

@@ -826,7 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 3831
   originOffset: 1
   camPoints:
   - {fileID: 8667507322513955992}

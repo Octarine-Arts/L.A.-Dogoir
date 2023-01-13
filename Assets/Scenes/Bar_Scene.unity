@@ -2502,11 +2502,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Syringe-Peggy
       objectReference: {fileID: 0}
+    - target: {fileID: 278522436565749790, guid: 335f69bb261614943b68431484908d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335f69bb261614943b68431484908d5b, type: 3}
 --- !u!4 &29649448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 278522436565749789, guid: 335f69bb261614943b68431484908d5b, type: 3}
+  m_PrefabInstance: {fileID: 29649447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &29649449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 278522436565749790, guid: 335f69bb261614943b68431484908d5b, type: 3}
   m_PrefabInstance: {fileID: 29649447}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &30082028
@@ -3728,15 +3737,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c21473d86381e419ba2d82404a76f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.3017
+      value: 9.014
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c21473d86381e419ba2d82404a76f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6085
+      value: 0.042
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c21473d86381e419ba2d82404a76f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.6168
+      value: 37.21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c21473d86381e419ba2d82404a76f3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4886,6 +4895,150 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 401108, guid: fbf22a12a15d3b14bb56b401ac04c523, type: 3}
   m_PrefabInstance: {fileID: 110010827}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &119537081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2587966663557241024, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_Name
+      value: FinalAccusation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: cutscene
+      value: 
+      objectReference: {fileID: 568201842}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: cutsceneManager
+      value: 
+      objectReference: {fileID: 568201841}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: cutsceneContentSetter
+      value: 
+      objectReference: {fileID: 568201843}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a770e92efde6f974eae57736ba36955d, type: 2}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17b46541d0344184693425894211b9c5, type: 2}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: suspectList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c5ef81956748ca941ad4e427036c23ba, type: 2}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241036, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241037, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: sceneViewId
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587966663557241039, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+--- !u!114 &119537082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+  m_PrefabInstance: {fileID: 119537081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae64c2ec76f59aa43b631f06d49a3219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &138345924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7644,7 +7797,7 @@ Transform:
   - {fileID: 568201838}
   - {fileID: 1907398347}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &223270856
 PrefabInstance:
@@ -11822,7 +11975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12841,8 +12994,6 @@ GameObject:
   m_Component:
   - component: {fileID: 382117630}
   - component: {fileID: 382117633}
-  - component: {fileID: 382117632}
-  - component: {fileID: 382117631}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
@@ -12865,34 +13016,6 @@ Transform:
   m_Father: {fileID: 4689947855431477}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &382117631
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382117629}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &382117632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382117629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59686b4e67deab543942e9b8a641e94b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evidence_SO: {fileID: 11400000, guid: 667b90f7124aa094c886b3d429f78561, type: 2}
-  itemPair: {fileID: 0}
-  isPair: 0
 --- !u!114 &382117633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13497,7 +13620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb95f5f66b937774390cde972f32f8f9, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb95f5f66b937774390cde972f32f8f9, type: 3}
       propertyPath: m_LocalScale.x
@@ -14448,6 +14571,7 @@ GameObject:
   - component: {fileID: 398933832}
   - component: {fileID: 398933835}
   - component: {fileID: 398933836}
+  - component: {fileID: 398933837}
   m_Layer: 0
   m_Name: PokerDogs
   m_TagString: Untagged
@@ -14548,6 +14672,102 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &398933837
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398933831}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7aed30f0516eec04c965e40ab9e5d3f7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.923
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &398951208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15236,6 +15456,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 398933837}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 398933837}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17014,7 +17262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 428078, guid: 76434141c377e994c8617384575c24e8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 428078, guid: 76434141c377e994c8617384575c24e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18272,11 +18520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -18285,11 +18533,11 @@ PrefabInstance:
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 568201839}
+      objectReference: {fileID: 568201841}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1209951510}
+      objectReference: {fileID: 568201841}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -18300,19 +18548,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTrigger
+      value: LoadEndScene
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartWriteText
+      value: LoadEndScene
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Animator, UnityEngine
+      value: Cutscene_Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TextAppearerer, Assembly-CSharp
+      value: Cutscene_Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.onEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -18377,6 +18625,888 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3203834271630929765, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
   m_PrefabInstance: {fileID: 568201837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &568201843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568201842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76135c7c3fd53984ba6e5fc8577c990d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscene: {fileID: 568201841}
+  serailisedEventLists:
+  - key: Dale
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Dale
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: The attention of some dame. The oldest motive in the book. Even
+          Adam gave his rib for a pretty broad. Dale Butterbur? Well, he was just
+          the latest dope to become lovesick to obsession over a pretty face. And
+          a pretty face will make a man do some crazy things.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: The attention of some dame. The oldest motive in the book. Even
+          Adam gave his rib for a pretty broad. Dale Butterbur? Well, he was just
+          the latest dope to become lovesick to obsession over a pretty face. And
+          a pretty face will make a man do some crazy things.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Jack Harlow had made Bones Bar his new place of residence, stuck
+          to the stool in front of the bar like glue, when he wasn\u2019t stuck to
+          Loretta Dubois, that is. His affair with the wannabe Hollywood star was
+          no secret, even to Jack\u2019s wife. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Jack Harlow had made Bones Bar his new place of residence, stuck
+          to the stool in front of the bar like glue, when he wasn\u2019t stuck to
+          Loretta Dubois, that is. His affair with the wannabe Hollywood star was
+          no secret, even to Jack\u2019s wife. Dutiful, faithful Peggy Harlow, coming
+          to the bar to pick up her drunken excuse for a husband each night. And
+          everytime she said so much as a, \u201Chello\u201D to Butterbur, he heard
+          an invitation to bed. But first he knew he had to get rid of the one thing
+          that stood in the way of getting what he wanted\u2026Jack Harlow."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Dutiful, faithful Peggy Harlow, coming to the bar to pick up her
+          drunken excuse for a husband each night. And everytime she said so much
+          as a, \u201Chello\u201D to Butterbur, he heard an invitation to bed. But
+          first he knew he had to get rid of the one thing that stood in the way
+          of getting what he wanted\u2026Jack Harlow."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Dutiful, faithful Peggy Harlow, coming to the bar to pick up her
+          drunken excuse for a husband each night. And everytime she said so much
+          as a, \u201Chello\u201D to Butterbur, he heard an invitation to bed. But
+          first he knew he had to get rid of the one thing that stood in the way
+          of getting what he wanted\u2026Jack Harlow."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: So he concocted a plan. He would inject Jack with a syringe full
+          of rat poison. But he was a coward, he knew if anything led back to him
+          he would be in deeper shit than a mouse standing under the tailend of a
+          horse. The shady dealings with gambling and drugs within Bones Bar would
+          be sure to put him in the big house. So he did the unthinkable, and roped
+          the woman he supposedly loved into his scheme.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: So he concocted a plan. He would inject Jack with a syringe full
+          of rat poison. But he was a coward, he knew if anything led back to him
+          he would be in deeper shit than a mouse standing under the tailend of a
+          horse. The shady dealings with gambling and drugs within Bones Bar would
+          be sure to put him in the big house. So he did the unthinkable, and roped
+          the woman he supposedly loved into his scheme.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Maybe he got some sadistic kick out of it, maybe he thought police
+          would go easy on a dame, but whatever the reason, he got Peggy to administer
+          the rat poison under the guise of some tranquilizer that would put her
+          abusive husband to sleep. Little did Mrs. Harlow know that she\u2019d just
+          signed her husband\u2019s death certificate."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Maybe he got some sadistic kick out of it, maybe he thought police
+          would go easy on a dame, but whatever the reason, he got Peggy to administer
+          the rat poison under the guise of some tranquilizer that would put her
+          abusive husband to sleep. Little did Mrs. Harlow know that she\u2019d just
+          signed her husband\u2019s death certificate."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Whatever happened in the ladies bathroom with the gun was just
+          a convenient accident for Butterbur. Jack was already dead when the bullet
+          hit him, but this development removed Butterbur further from the murder.
+          He was sure no one would ever look at him, even if the police came sniffing
+          around. If he played the helpful barkeep he could walk away an innocent
+          man, free to console the grieving window of the man whose death he orchestrated.
+
+'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: 'Whatever happened in the ladies bathroom with the gun was just
+          a convenient accident for Butterbur. Jack was already dead when the bullet
+          hit him, but this development removed Butterbur further from the murder.
+          He was sure no one would ever look at him, even if the police came sniffing
+          around. If he played the helpful barkeep he could walk away an innocent
+          man, free to console the grieving window of the man whose death he orchestrated.
+
+'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "But what he didn\u2019t count on was Detective Dick Steele and
+          Detective Archie.\r"
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "But what he didn\u2019t count on was Detective Dick Steele and
+          Detective Archie.\r"
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: Case closed.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - key: Loretta
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Loretta
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Beautiful, desperate actresses with figures so fine you feel they\u2019d
+          crumble in your arms are a dime a dozen in this town. Loretta Dubois was
+          one little canary in an aviary of millions, a Hollywood hopeful who still
+          believed she had something to give that no other girl did. I knew that
+          given a few years reality would sink in and she\u2019d start drowning like
+          so many other starlets before her. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Beautiful, desperate actresses with figures so fine you feel they\u2019d
+          crumble in your arms are a dime a dozen in this town. Loretta Dubois was
+          one little canary in an aviary of millions, a Hollywood hopeful who still
+          believed she had something to give that no other girl did. I knew that
+          given a few years reality would sink in and she\u2019d start drowning like
+          so many other starlets before her. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "I couldn\u2019t say what she saw in Jack Harlow, though of course
+          I knew what he saw in her. She was beautiful, but he\u2026well, he was
+          by all accounts a greaseball, a gambler and a drunk. I suppose when you\u2019re
+          in show business like Miss Dubois, you\u2019re bound to come across scummier
+          men than Harlow. Whatever the reason, those two got it for each other.
+          Bad."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "I couldn\u2019t say what she saw in Jack Harlow, though of course
+          I knew what he saw in her. She was beautiful, but he\u2026well, he was
+          by all accounts a greaseball, a gambler and a drunk. I suppose when you\u2019re
+          in show business like Miss Dubois, you\u2019re bound to come across scummier
+          men than Harlow. Whatever the reason, those two got it for each other.
+          Bad."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Jack\u2019s spending on his mistress was sure to rub the thug Johnny
+          Malone the wrong way, seeing as Harlow owed him a lot of money. If Jack
+          wasn\u2019t going to pay, maybe Malone could get Loretta to open her purse.
+          After cornering her in the ladies bathrooms and roughing her up, Loretta
+          did something he didn\u2019t expect - she pulled out a gun."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Jack\u2019s spending on his mistress was sure to rub the thug Johnny
+          Malone the wrong way, seeing as Harlow owed him a lot of money. If Jack
+          wasn\u2019t going to pay, maybe Malone could get Loretta to open her purse.
+          After cornering her in the ladies bathrooms and roughing her up, Loretta
+          did something he didn\u2019t expect - she pulled out a gun."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: A struggle ensued and the gun fired. By some cruel twist of fate,
+          the bullet shot straight through the wall and hit Jack Harlow as he sat
+          at the bar. Loretta had accidentally killed Jack Harlow. The man she loved.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: A struggle ensued and the gun fired. By some cruel twist of fate,
+          the bullet shot straight through the wall and hit Jack Harlow as he sat
+          at the bar. Loretta had accidentally killed Jack Harlow. The man she loved.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "But I guess there was one man Loretta loved even more than Jack
+          Harlow, and that was Mr. Wood. First name Holly. She couldn\u2019t sacrifice
+          her chance at stardom, so she had to give her greatest performance of all
+          time. The role? An innocent bystander in her lover\u2019s murder. She ditched
+          the gun out the bathroom window and began the act."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "But I guess there was one man Loretta loved even more than Jack
+          Harlow, and that was Mr. Wood. First name Holly. She couldn\u2019t sacrifice
+          her chance at stardom, so she had to give her greatest performance of all
+          time. The role? An innocent bystander in her lover\u2019s murder. She ditched
+          the gun out the bathroom window and began the act."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: Maybe she oughta take a few more acting classes. Because even that
+          performance was no match for Detective Dick Steele and Detective Archie.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: Maybe she oughta take a few more acting classes. Because even that
+          performance was no match for Detective Dick Steele and Detective Archie.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Case Closed.
+
+          ...Or is it?'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - key: Johnny
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Johnny
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Johnny \u201CTwo Sleeves\u201D Malone is the kind of guy who would
+          spell the word dead \u201CD-E-D\u201D and if you corrected him on it he\u2019d
+          show you what the meaning of the word really meant. He wasn\u2019t a smart
+          man, but with a mug as mean as his he didn\u2019t need to be."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Johnny \u201CTwo Sleeves\u201D Malone is the kind of guy who would
+          spell the word dead \u201CD-E-D\u201D and if you corrected him on it he\u2019d
+          show you what the meaning of the word really meant. He wasn\u2019t a smart
+          man, but with a mug as mean as his he didn\u2019t need to be."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: Or at least that was the case before Jack Harlow came along.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: Or at least that was the case before Jack Harlow came along.
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Harlow was as fond of gambling as he was of drinking, two dangerous
+          hobbies for a man with no dough. Sure enough, his lack of moolah caught
+          up with him. The ticket on his body showed he\u2019d bet on the ponies
+          and lost, and he owed Malone a whole lot of dough he had no way of paying
+          back."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Harlow was as fond of gambling as he was of drinking, two dangerous
+          hobbies for a man with no dough. Sure enough, his lack of moolah caught
+          up with him. The ticket on his body showed he\u2019d bet on the ponies
+          and lost, and he owed Malone a whole lot of dough he had no way of paying
+          back."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Even a pill like Harlow should have known being in debt to Two
+          Sleeves Malone was no laughing matter. You don\u2019t disrespect a thug
+          in his place of business and keep coming back to spend bread on the resident
+          singer. Not if you\u2019re fond of your legs."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Even a pill like Harlow should have known being in debt to Two
+          Sleeves Malone was no laughing matter. You don\u2019t disrespect a thug
+          in his place of business and keep coming back to spend bread on the resident
+          singer. Not if you\u2019re fond of your legs."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Eventually Johnny Malone realized Jack was a lost cause. After
+          roughing up Loretta Dubois, Jack\u2019s Hollywood wannabe mistress, he
+          realized he wasn\u2019t getting any of his money back. But in that altercation
+          he got possession of Loretta\u2019s gun and that\u2019s when he realized
+          there was a way to get Harlow out of his hair for good. Not that Malone
+          had any hair."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Eventually Johnny Malone realized Jack was a lost cause. After
+          roughing up Loretta Dubois, Jack\u2019s Hollywood wannabe mistress, he
+          realized he wasn\u2019t getting any of his money back. But in that altercation
+          he got possession of Loretta\u2019s gun and that\u2019s when he realized
+          there was a way to get Harlow out of his hair for good. Not that Malone
+          had any hair."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "The bonus was that he could frame Harlow\u2019s new flame as well
+          by using her own weapon. So he shot Harlow while he was drunk at the bar,
+          and in the ensuing chaos he threw it out the window. He was sure there
+          was no way he could be linked to the crime."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "The bonus was that he could frame Harlow\u2019s new flame as well
+          by using her own weapon. So he shot Harlow while he was drunk at the bar,
+          and in the ensuing chaos he threw it out the window. He was sure there
+          was no way he could be linked to the crime."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "What he didn\u2019t count on though was Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "What he didn\u2019t count on though was Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Case Closed.
+
+          ...Or is it?'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - key: Peggy
+    list:
+      eventsList:
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 1
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 2
+        tmp: {fileID: 0}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Peggy
+      - cutsceneType: 2
+        tmp: {fileID: 1946474894}
+        message: 
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Whiskey? Well, that\u2019s good on the rocks. A marriage? Not so
+          much. Jack and Peggy Harlow\u2019s troubles were obvious to me from the
+          moment Peggy opened her mouth. She could give Loretta Dubois a run for
+          her money, because Mrs. Harlow\u2019s act of innocence was as good as any
+          I\u2019ve seen in the flicks. But behind that meek facade she was colder
+          than her husband's body."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Whiskey? Well, that\u2019s good on the rocks. A marriage? Not so
+          much. Jack and Peggy Harlow\u2019s troubles were obvious to me from the
+          moment Peggy opened her mouth. She could give Loretta Dubois a run for
+          her money, because Mrs. Harlow\u2019s act of innocence was as good as any
+          I\u2019ve seen in the flicks. But behind that meek facade she was colder
+          than her husband's body."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "I knew Peggy was a proud woman, she couldn\u2019t bear the public
+          humiliation coming from her husband's affair with a wannabe Hollywood star
+          such as Miss Dubois. Coupled with the excessive spending, the abuse, the
+          drinking\u2026 It was all a perfect storm."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "I knew Peggy was a proud woman, she couldn\u2019t bear the public
+          humiliation coming from her husband's affair with a wannabe Hollywood star
+          such as Miss Dubois. Coupled with the excessive spending, the abuse, the
+          drinking\u2026 It was all a perfect storm."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "And eventually that stormcloud burst like the projectile vomit
+          of a drunk at 3am in some back alley. You know what they say, corner a
+          rattlesnake and you\u2019re gonna get bit. And Peggy\u2019s bite sure was
+          venomous. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "And eventually that stormcloud burst like the projectile vomit
+          of a drunk at 3am in some back alley. You know what they say, corner a
+          rattlesnake and you\u2019re gonna get bit. And Peggy\u2019s bite sure was
+          venomous. "
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'She overdosed Jack with a syringe full of drugs she had gotten
+          off Dale Butterbur. That drip was lovesick, he would have agreed to anything
+          Mrs. Harlow asked. If she did it right, no one would suspect a thing. Her
+          drunken husband, drinking until his body gave out on him in some dingy
+          back alley bar. No one would ever know. '
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: 'She overdosed Jack with a syringe full of drugs she had gotten
+          off Dale Butterbur. That drip was lovesick, he would have agreed to anything
+          Mrs. Harlow asked. If she did it right, no one would suspect a thing. Her
+          drunken husband, drinking until his body gave out on him in some dingy
+          back alley bar. No one would ever know. '
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "What she didn\u2019t count on was Jack getting shot. This threw
+          a spanner in the works. She knew someone would hear it, so when the lights
+          went off she made a dash for the backdoor, throwing the syringe, the evidence
+          of her murderous deed, amongst the bins, thinking no one would find it."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "What she didn\u2019t count on was Jack getting shot. This threw
+          a spanner in the works. She knew someone would hear it, so when the lights
+          went off she made a dash for the backdoor, throwing the syringe, the evidence
+          of her murderous deed, amongst the bins, thinking no one would find it."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: "Maybe she thought this shooting was a convenient coverup, maybe
+          she was worried it would bring attention to the puncture wound the syringe
+          left in Jack\u2019s neck\u2026 but either way, there was one thing she
+          wasn\u2019t counting on\u2026 and that\u2019s Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 1
+        tmp: {fileID: 1946474894}
+        message: "Maybe she thought this shooting was a convenient coverup, maybe
+          she was worried it would bring attention to the puncture wound the syringe
+          left in Jack\u2019s neck\u2026 but either way, there was one thing she
+          wasn\u2019t counting on\u2026 and that\u2019s Detective Dick Steele and
+          Detective Archie."
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      - cutsceneType: 0
+        tmp: {fileID: 1946474894}
+        message: 'Case Closed.
+
+          ...Or is it?'
+        dogMessage: 
+        animator: {fileID: 568201839}
+        image: {fileID: 568201840}
+        isFirstFrame: 0
+        triggerName: Next
+      onEndEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 568201841}
+            m_TargetAssemblyTypeName: Cutscene_Manager, Assembly-CSharp
+            m_MethodName: LoadEndScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!1001 &571696670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19220,7 +20350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21668,6 +22798,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e82b1a18790f5804e881fa96f426b0e0, type: 3}
   m_PrefabInstance: {fileID: 664218297}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &664218299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e82b1a18790f5804e881fa96f426b0e0, type: 3}
+  m_PrefabInstance: {fileID: 664218297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &664218300
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664218299}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dc05263ca7e306842b9b0106e26b09b7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.704
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &664479800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22786,7 +24017,7 @@ Transform:
   - {fileID: 1996803249}
   - {fileID: 1948666031}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &721502024
 PrefabInstance:
@@ -27636,99 +28867,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.0072293, y: 4.006303, z: 0.8874333}
   m_Center: {x: 0, y: 2.0031514, z: 0}
---- !u!1001 &866610651
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1736279423}
-    m_Modifications:
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0020000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0020000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0020000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.00005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00004
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.00027
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.77347964
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.106514074
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.02647346
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.62424606
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788933, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_Name
-      value: InteractionIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788934, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: radius
-      value: 1.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 1208452275725788934, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: showForHuman
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857531275358417336, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857531275358417336, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857531275358417336, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.339
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626756454033462869, guid: f285552725a45f74280c342c93656bae, type: 3}
-      propertyPath: m_text
-      value: Pick Up (E)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f285552725a45f74280c342c93656bae, type: 3}
 --- !u!1001 &866779795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28286,6 +29424,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1857690247}
     m_Modifications:
+    - target: {fileID: 199388445180706423, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199388446360224249, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
       propertyPath: sceneViewId
       value: 18
@@ -28377,6 +29519,22 @@ PrefabInstance:
     - target: {fileID: 199388446360224255, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577233273909979672, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 119537082}
+    - target: {fileID: 577233273909979672, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 577233273909979672, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Culprit_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 577233273909979672, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3dfdbfae53518408d5b92b6af4e532, type: 3}
@@ -28807,6 +29965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallWithBulletHole
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8bdb7e5ec843cc346b799c57eac6511c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8821623529969584324, guid: 8bdb7e5ec843cc346b799c57eac6511c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -28860,8 +30022,8 @@ MonoBehaviour:
   sceneViewId: 9
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!135 &928375867
-SphereCollider:
+--- !u!65 &928375867
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -28871,8 +30033,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.005
-  m_Center: {x: -0.025000015, y: 0.025, z: 0.003}
+  m_Size: {x: 0.01, y: 0.01, z: 0.0005}
+  m_Center: {x: -0.025000015, y: 0.027, z: 0.00027437333}
 --- !u!1001 &932640328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30486,7 +31648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.574
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30494,7 +31656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 1208452275725788932, guid: f285552725a45f74280c342c93656bae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31932,7 +33094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1802092079098578459, guid: 43f098509edd9f54984b917f334cfa6e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1802092079098578459, guid: 43f098509edd9f54984b917f334cfa6e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35444,6 +36606,7 @@ GameObject:
   - component: {fileID: 1204115335}
   - component: {fileID: 1204115340}
   - component: {fileID: 1204115341}
+  - component: {fileID: 1204115342}
   m_Layer: 0
   m_Name: AnimatorRat
   m_TagString: Untagged
@@ -35535,6 +36698,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 
+--- !u!114 &1204115342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204115334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b7206a8bff3c640b7da90956fe4c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 29649449}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 664218299}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 81144786}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 664218300}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1209951509
 GameObject:
   m_ObjectHideFlags: 0
@@ -35569,7 +36797,7 @@ MonoBehaviour:
   text: {fileID: 669592391}
   dogText: 
   humanText: 
-  charDelay: 0.05
+  charDelay: 0.02
 --- !u!224 &1209951511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36975,16 +38203,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[0].tmp
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1299470729}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[1].tmp
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1299470729}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[2].tmp
       value: 
@@ -36996,11 +38224,11 @@ PrefabInstance:
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[0].image
       value: 
-      objectReference: {fileID: 1724872451}
+      objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[1].image
       value: 
-      objectReference: {fileID: 1724872451}
+      objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[2].image
       value: 
@@ -37010,8 +38238,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1724872451}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
-      propertyPath: eventList.eventsList.Array.data[0].message
+      propertyPath: eventList.eventsList.Array.data[5].image
       value: 
+      objectReference: {fileID: 1724872451}
+    - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+      propertyPath: eventList.eventsList.Array.data[6].image
+      value: 
+      objectReference: {fileID: 1724872451}
+    - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+      propertyPath: eventList.eventsList.Array.data[0].message
+      value: "So that\u2019s how we came across Jack Harlow. Male, around forty years
+        old, and about as non-descript as a man could be - except for the fact he
+        had a hole in his chest. Sure enough, we\u2019d found out where the gunshot
+        had come from.\n\r\nThere was no time to mess around. No one in that bar
+        was going anywhere until we\u2019d gotten to the bottom of this. Everyone
+        present was a suspect. And no one was talking.\r\n\nDetective Dick Steele
+        and Detective Archie were on the case\u2026\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+      propertyPath: eventList.eventsList.Array.data[1].message
+      value: "So that\u2019s how we came across Jack Harlow. Male, around forty years
+        old, and about as non-descript as a man could be - except for the fact he
+        had a hole in his chest. Sure enough, we\u2019d found out where the gunshot
+        had come from.\n\r\nThere was no time to mess around. No one in that bar
+        was going anywhere until we\u2019d gotten to the bottom of this. Everyone
+        present was a suspect. And no one was talking.\r\n\nDetective Dick Steele
+        and Detective Archie were on the case\u2026\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[2].message
@@ -37020,11 +38272,11 @@ PrefabInstance:
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[0].animator
       value: 
-      objectReference: {fileID: 1724872450}
+      objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[1].animator
       value: 
-      objectReference: {fileID: 1724872450}
+      objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[2].animator
       value: 
@@ -37051,15 +38303,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[0].cutsceneType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[0].isFirstFrame
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[1].cutsceneType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[1].isFirstFrame
@@ -37071,7 +38323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[2].isFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271630929774, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: eventList.eventsList.Array.data[3].cutsceneType
@@ -37143,7 +38395,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: aed98824459ce9e4dba92abf6c61d47d, type: 3}
     - target: {fileID: 3203834271646638836, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203834271646638839, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
       propertyPath: m_Controller
@@ -37155,6 +38407,17 @@ PrefabInstance:
       objectReference: {fileID: -1643329822292879636, guid: f32f9b51b79aea84eb7815f262b99f9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+--- !u!114 &1299470729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203834273049922823, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+  m_PrefabInstance: {fileID: 1299470728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1300482752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38688,6 +39951,22 @@ PrefabInstance:
       propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7574510465467524754, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510465884566533, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574510465884566537, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574510465884566537, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: near clip plane
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 7574510465885801486, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -38704,6 +39983,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7574510465910403453, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: password
+      value: BDFA
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574510465910403453, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a31c30e653b64664ea1ee5387efedfa5, type: 3}
     - target: {fileID: 7574510466022966149, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -38720,6 +40007,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7574510466100729599, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
     - target: {fileID: 7574510466570722318, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -38736,6 +40027,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7574510466718595252, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510466882195465, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510466973028047, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
     - target: {fileID: 7574510466999490083, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -38750,11 +40053,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7574510466999490083, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574510467032397083, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510467311331808, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510467378851760, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 92da9d08725775a4481f4fbe807d74ac, type: 3}
+    - target: {fileID: 7574510467401424906, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7968178763926869650, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7968178763926869650, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38798,6 +40117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+--- !u!224 &1374785416 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7574510467401424902, guid: 1e74bb96b41885c4b8a217d7262e2e97, type: 3}
+  m_PrefabInstance: {fileID: 1374785415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1380898059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40373,7 +41697,7 @@ Transform:
   - {fileID: 1065588976}
   - {fileID: 2082063676}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1479983969
 PrefabInstance:
@@ -40573,8 +41897,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1.212103, z: 0.1061478}
-  m_Center: {x: -0.0000009581896, y: 0.6060515, z: 0.0000000065592314}
+  m_Size: {x: 0.5, y: 0.5, z: 0.1}
+  m_Center: {x: -0.0000009581896, y: 0.6060515, z: 0.1}
 --- !u!114 &1481474584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40883,41 +42207,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 402778, guid: 61c6796387fc7d145993a1f29092bc22, type: 3}
   m_PrefabInstance: {fileID: 1502086810}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1504373939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e82b1a18790f5804e881fa96f426b0e0, type: 3}
-  m_PrefabInstance: {fileID: 664218297}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1504373940
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504373939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 64
-  m_Height: 10.09
-  m_Direction: 1
-  m_Center: {x: -42.2, y: 0.46, z: -29.8}
---- !u!208 &1504373941
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504373939}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 53.79, y: 1, z: 53.79}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 3.31, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1001 &1508231330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41155,31 +42444,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5251139093582368508, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093582368508, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093582368508, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093582368508, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093582368508, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093582368508, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093672602091, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_Name
       value: EndingUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251139093672602091, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093672602094, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: cutscene
@@ -41199,7 +42492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093672602095, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093672602095, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMax.x
@@ -41275,99 +42568,99 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093673570208, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093673570208, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093673570208, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093673570208, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093673570208, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5251139093673570208, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094291846160, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094291846160, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094291846160, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094291846160, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094291846160, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094291846160, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -225
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094494679534, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094494679534, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094494679534, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094494679534, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094494679534, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094494679534, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -225
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094666480052, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094666480052, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094666480052, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094666480052, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094666480052, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5251139094666480052, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6609187733462031864, guid: 4896d4058cec7ae41b22b9408fad1a48, type: 3}
       propertyPath: sceneViewId
@@ -41642,7 +42935,7 @@ Transform:
   - {fileID: 222522130}
   - {fileID: 414980534}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1554512320
 PrefabInstance:
@@ -43145,6 +44438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Dialog
       objectReference: {fileID: 0}
+    - target: {fileID: 3967429266574020380, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: distanceToTrigger
+      value: 2.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -44089,7 +45386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4852767372709416, guid: 38ce382cb2ca74f3d8efb95fdb210e18, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4852767372709416, guid: 38ce382cb2ca74f3d8efb95fdb210e18, type: 3}
       propertyPath: m_LocalScale.x
@@ -44403,7 +45700,7 @@ Transform:
   - {fileID: 389797758}
   - {fileID: 1352062161}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1668941687 stripped
 Transform:
@@ -44760,7 +46057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.581
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44768,7 +46065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.465
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45911,11 +47208,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 815b485739c478d49b798ac0158711dc, type: 3}
---- !u!4 &1736279423 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 815b485739c478d49b798ac0158711dc, type: 3}
-  m_PrefabInstance: {fileID: 1736279422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1736279424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 815b485739c478d49b798ac0158711dc, type: 3}
@@ -47189,7 +48481,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1810970202
 PrefabInstance:
@@ -47550,15 +48842,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.93
+      value: -3.71
       objectReference: {fileID: 0}
     - target: {fileID: 125299257275253019, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47621,6 +48913,10 @@ PrefabInstance:
       value: ArchieJackHarlowDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020380, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
+      propertyPath: distanceToTrigger
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967429266574020380, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: canBeTriggeredByDog
       value: 1
       objectReference: {fileID: 0}
@@ -47642,11 +48938,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.125
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 3967429266574020382, guid: 0245dc7b73e83134a928363bf5e65b25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48324,6 +49620,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8bdb7e5ec843cc346b799c57eac6511c, type: 3}
       propertyPath: m_Name
       value: WallWithBulletHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8bdb7e5ec843cc346b799c57eac6511c, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bdb7e5ec843cc346b799c57eac6511c, type: 3}
       propertyPath: m_NavMeshLayer
@@ -50339,6 +51639,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1946474894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203834273049922823, guid: 796c7c23c5baf1f40a8d929e11442120, type: 3}
+  m_PrefabInstance: {fileID: 568201837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1948666030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56429,6 +57740,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 402778, guid: 61c6796387fc7d145993a1f29092bc22, type: 3}
   m_PrefabInstance: {fileID: 2098296022}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2099318702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099318703}
+  - component: {fileID: 2099318705}
+  - component: {fileID: 2099318704}
+  m_Layer: 8
+  m_Name: Arrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2099318703
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099318702}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0.575}
+  m_LocalScale: {x: 0.43431, y: 0.43431, z: 0.43431}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374785416}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.3038}
+  m_SizeDelta: {x: 0.1, y: 0.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2099318704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099318702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e657b557f984d90498d8f4c8e56d72e3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2099318705
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099318702}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2105097224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58294,6 +59681,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 219a88717e9ff49498bf14f3b1fabb1f, type: 2}
     m_RemovedComponents:
     - {fileID: 5072397199352983528, guid: e37f35ab58174d744b4c770396426b12, type: 3}
+    - {fileID: 5072264476038107954, guid: e37f35ab58174d744b4c770396426b12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e37f35ab58174d744b4c770396426b12, type: 3}
 --- !u!1 &5082096837000224096 stripped
 GameObject:
@@ -58355,6 +59743,19 @@ MonoBehaviour:
   offsetRotation: {x: 16.21464, y: 270.96432, z: 94.18713}
   scaleMultiplier: 1
   yarnBool: 
+--- !u!135 &5082096837000224100
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082096837000224096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.37
+  m_Center: {x: -0.0021632463, y: -0.0016601527, z: 0.16111511}
 --- !u!1001 &5095682868166179876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59326,6 +60727,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 311309049}
     m_Modifications:
+    - target: {fileID: 8664958432294788172, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665861430726141776, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8692982229438342104, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
       propertyPath: m_Name
       value: Shotgun
@@ -59378,7 +60787,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8715830368283186630, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b1856cbee80e9774a9150021b2600db4, type: 2}
+    - target: {fileID: 8716669839085532102, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b1856cbee80e9774a9150021b2600db4, type: 2}
+    m_RemovedComponents:
+    - {fileID: 8664958432294788172, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
+    - {fileID: 8665861430726141776, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c133edbafbadea479a89c10ba075d2b, type: 3}
 --- !u!1 &8693677146451850684 stripped
 GameObject:
@@ -59422,6 +60841,19 @@ MonoBehaviour:
   sceneViewId: 5
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!65 &8693677146451850687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693677146451850684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.050820842, y: 0.17480958, z: 1.22}
+  m_Center: {x: -0.0000017164275, y: -0.030572819, z: 0.35}
 --- !u!23 &8994836328028574473
 MeshRenderer:
   m_ObjectHideFlags: 0

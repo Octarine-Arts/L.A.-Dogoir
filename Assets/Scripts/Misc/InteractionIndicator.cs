@@ -16,7 +16,9 @@ public class InteractionIndicator : MonoBehaviour
 
     private void Awake ()
     {
-        if (EventManager.I != null)
+        if (PlayerManager.current != null && PlayerManager.current.PlayersSpawned)
+            OnPlayersSpawned(PlayerManager.current.HumanPlayer, PlayerManager.current.DogPlayer);
+        else if (EventManager.I != null)
             EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
 
         anim = GetComponent<Animator> ();

@@ -7,15 +7,6 @@ position: -338,-113
     Archie: Pleased to meet you, too. I’d like to ask you some questions about the murder that’s just taken place.
     Rattus: Hmmph.
     <<set $RatIsInitialGreeting to true>>
-<<elseif $RatIsInitialGreeting == true>>
-    <<set $RatRandomGreeting to random_range(0,2)>>
-    <<if $RatRandomGreeting == 0>>
-        Rattus: You again?
-    <<elseif $RatRandomGreeting == 1>>
-        Rattus: What?
-    <<else>>
-        Rattus: What now, Poochy?
-    <<endif>>
 <<endif>>
 
 <<jump RatQuestions>>
@@ -41,6 +32,9 @@ position: 69,-84
 
 -> Detective:  What are you doing out here? <<if $RattusMovedOutside == true>> 
     <<jump RatMovedToBin>>
+
+-> Detective: What was that code again? <<if $ArchieGaveCheese == true>> 
+    <<jump RatCodeAgain>>
 
 -> Detective: Goodbye
     <<jump RatGoodbye>>
@@ -113,6 +107,15 @@ Rattus: Outta the way!
 <<stop>>
 
 ===
+title:  RatCodeAgain
+position: -111,-477
+---
+Archie: What was that code again?
+Rattus: BDFA, ya goofball.
+
+<<jump RatQuestions>>
+
+===
 title:  RatMovedToBin
 position: -111,-477
 ---
@@ -138,14 +141,14 @@ position: -191,263
 
 <<set $RatRandomGoodbye to random_range(0,2)>>
 <<if $RatRandomGoodbye == 0>>
-Archie: Thanks.
-Rattus: Whatever.
+    Archie: Thanks.
+    Rattus: Whatever.
 <<elseif $RatRandomGoodbye == 1>>
-Archie: That’s all for now.
-Rattus: Only for now? Drat.
+    Archie: That’s all for now.
+    Rattus: Only for now? Drat.
 <<else>>
-Archie: I appreciate it.
-Rattus: Well I don’t.
+    Archie: I appreciate it.
+    Rattus: Well I don’t.
 <<endif>>
 
 <<stop>>

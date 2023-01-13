@@ -7,8 +7,6 @@ position: -522,-132
     Detective: I’d like to ask you some questions, actually.
     Dale: Of course.
     <<set $DaleIsInitialGreeting to true>>
-<<elseif $DaleIsInitialGreeting == true>>
-    Dale: How’s the investigation going?
 <<endif>>
 
 <<jump Questions>>
@@ -202,14 +200,14 @@ position: -211,486
 
 <<set $DaleRandomGoodbye to random_range(0,2)>>
 <<if $DaleRandomGoodbye == 0>>
-Detective: Thanks for your help
-Dale: Anytime!
+    Detective: Thanks for your help
+    Dale: Anytime!
 <<elseif $DaleRandomGoodbye == 1>>
-Detective: I appreciate your help.
-Dale: No problems at all, Detective.
-<<elseif $DaleRandomGoodbye == 2>>
-Detective: That’s all for now.
-Dale: Bye.
+    Detective: I appreciate your help.
+    Dale: No problems at all, Detective.
+<<else>>
+    Detective: That’s all for now.
+    Dale: Bye.
 <<endif>>
 
 <<stop>>

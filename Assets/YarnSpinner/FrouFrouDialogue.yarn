@@ -7,15 +7,6 @@ position: -338,-113
     Archie:  I’m a labrador, actually.
     FrouFrou: A labrador! How delightful! I’m not used to conversing with what you might call lesser breeds, you see. Not that you seem lesser, darling! You seem simply enchanting.
     <<set $FrouFrouIsInitialGreeting to true>>
-  <<elseif $FrouFrouIsInitialGreeting == true>>
-    <<set $FrouFrouRandomGreeting to random_range(0,2)>>
-    <<if $FrouFrouRandomGreeting == 0>>
-    FrouFrou: Bonjour, mon cher!
-    <<elseif $FrouFrouRandomGreeting == 1>>
-    FrouFrou: May I be of service, Detective?
-    <<else>>
-    FrouFrou: So lovely to see you again, darling.
-    <<endif>>
 <<endif>>
 
 <<jump FrouFrouQuestions>>
@@ -24,25 +15,28 @@ position: -338,-113
 title: FrouFrouQuestions
 position: 69,-84
 ---
--> Detective: Who are you?
+-> Archie: Who are you?
     <<jump FrouFrouWhoAreYou>>
 
--> Detective: Gunshot?
+-> Archie: Gunshot?
     <<jump FrouFrouGunshot>>
 
--> Detective: Do you know the murdered man?
+-> Archie: Do you know the murdered man?
     <<jump FrouFrouDoYouKnowHim>>
 
--> Detective: What were you doing there? <<if $HidInOffice == true>>
+-> Archie: Doing anything later?
+    <<jump FrouFrouAskingOut>>
+
+-> Archie: What were you doing there? <<if $HidInOffice == true>>
     <<jump FrouFrouWhatWereYouDoingInTheOffice>>
 
--> Detective: Heathen man? <<if $HeathenMan == true>>
+-> Archie: Heathen man? <<if $HeathenMan == true>>
     <<jump FrouFrouHeathenMan>>
 
--> Detective: Did you see or hear anything? <<if $Office == true>>
+-> Archie: Did you see or hear anything? <<if $Office == true>>
     <<jump FrouFrouSeeOrHearAnything>>
 
--> Detective: Goodbye
+-> Archie: Goodbye
     <<jump FrouFrouGoodbye>>
 
 ===
@@ -111,20 +105,33 @@ FrouFrou:I sleep on a silk pillow beside my Mistress every night without fail, e
 <<jump FrouFrouQuestions>>
 ===
 
+title: FrouFrouAskingOut
+position: -39,-503
+---
+
+Archie: So...after I solve this murder...do you fancy going out for a milkbone? We could probably find one around here somewhere. 
+FrouFrou: Oh, Detective! I would love to but I'm on a special diet. I don't eat bones - unlike those brutish gamblers out in the alleyway...
+Archie: ...What about a romantic spaghetti dinner?
+FrouFrou: I could be convinced. Come talk to me after you've solved the case. 
+
+
+<<jump FrouFrouQuestions>>
+===
+
 title: FrouFrouGoodbye
 position: 203,212
 ---
 
 <<set $FrouFrouRandomGoodbye to random_range(0,2)>>
 <<if $FrouFrouRandomGoodbye == 0 >>
-Archie: Thank you for your time, ma’am.
-FrouFrou: No thank *you*, darling.
+    Archie: Thank you for your time, ma’am.
+    FrouFrou: No thank *you*, darling.
 <<elseif $FrouFrouRandomGoodbye == 1>>
-Archie: That’ll be all.
-FrouFrou: Toodles!
+    Archie: That’ll be all.
+    FrouFrou: Toodles!
 <<else>>
-Archie: Thanks for your help.
-FrouFrou: Ta-ta, darling!
+    Archie: Thanks for your help.
+    FrouFrou: Ta-ta, darling!
 <<endif>>
 
 <<stop>>

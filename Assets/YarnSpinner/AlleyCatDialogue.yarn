@@ -1,31 +1,21 @@
 ﻿title: AlleyCatDialogue
 tags:NPC, Detective, Dog
-position: -338,-113
+position: -117,-324
 ---
 <<if $OMalleyIsInitialGreeting == false>>
     OMalley: I don’t do the whole dog-cat thing so don’t even try, pal. I could eat a mutt like you for breakfast.
     Archie: I’m just here to ask you some questions, sir, about the gunshot that sounded earlier.
     OMalley: Oh. I don’t know much about that.
     <<set $OMalleyIsInitialGreeting to true>>
-<<elseif $OMalleyIsInitialGreeting == true>>
-    <<set $OMalleyRandomGreeting to random_range(0,2)>>
-    <<if $OMalleyRandomGreeting == 0>>
-        OMalley: What do you want now? 
-    <<elseif $OMalleyRandomGreeting == 1>>
-        OMalley: You don’t quit, do you? 
-    <<else>>
-        OMalley: Can’t you see I’m busy? 
-    <<endif>>
 <<endif>>
 
 <<jump OMalleyQuestions>>
 
 ===
 title: OMalleyQuestions
-position: 69,-84
+position: -116,-159
 ---
 -> Detective: Who are you?
-    <<set $ArchieFoundTheCheese to true>>
     <<jump OMalleyWhoAreYou>>
 
 
@@ -47,7 +37,7 @@ position: 69,-84
 ===
 
 title: OMalleyWhoAreYou
-position: 283,-340
+position: 269,-162
 ---
 Archie: You got a name?
 OMalley: Yeah, O’Malley.
@@ -58,7 +48,7 @@ OMalley: Yeah, O’Malley.
 ===
 
 title: OMalleyGunshot
-position: -111,-477
+position: 266,-67
 ---
 
 Archie: Were you out here when the gunshot rang out, Mr. O’Malley?
@@ -74,7 +64,7 @@ OMalley: I don’t know, I was a bit dazed on account of their aim. Only just sa
 ===
 
 title: OMalleyWhatDidTheyThrow
-position: -111,-477
+position: 275,-251
 ---
 
 Archie: What did they throw at you?
@@ -84,7 +74,7 @@ OMalley: A little tube or something, I don’t know. It’s in this here bin som
 ===
 
 title: OMalleyCanYouGetIt
-position: -111,-477
+position: 273,-403
 ---
 
 Archie: Can you get it for me?
@@ -99,19 +89,19 @@ OMalley: I don’t think so. This is my turf, pal. I’ve answered your dumb que
 ===
 
 title: OMalleyGoodbye
-position: -191,263
+position: 278,-6
 ---
 
 <<set $OMalleyRandomGoodbye to random_range(0,2)>>
 <<if $OMalleyRandomGoodbye == 0 >>
-Archie: Thank you.
-OMalley: Sure.
+    Archie: Thank you.
+    OMalley: Sure.
 <<elseif $OMalleyRandomGoodbye == 1>>
-Archie: See you around.
-OMalley: Preferably not.
+    Archie: See you around.
+    OMalley: Preferably not.
 <<else>>
-Archie: I’ll be back if I have more questions.
-OMalley: Can’t wait…
+    Archie: I’ll be back if I have more questions.
+    OMalley: Can’t wait…
 <<endif>>
 
 <<stop>>
