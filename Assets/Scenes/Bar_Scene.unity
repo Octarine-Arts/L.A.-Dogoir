@@ -4915,6 +4915,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 568201841}
     - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+      propertyPath: partnerAccuseText
+      value: 
+      objectReference: {fileID: 119537083}
+    - target: {fileID: 2587966663557241034, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
       propertyPath: cutsceneContentSetter
       value: 
       objectReference: {fileID: 568201843}
@@ -5039,6 +5043,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae64c2ec76f59aa43b631f06d49a3219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &119537083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2950804753742757480, guid: b9ab524e8808c7947897001220d1dc43, type: 3}
+  m_PrefabInstance: {fileID: 119537081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &138345924
 PrefabInstance:
   m_ObjectHideFlags: 0

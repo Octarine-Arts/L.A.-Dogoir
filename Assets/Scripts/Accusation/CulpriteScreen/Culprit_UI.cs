@@ -31,6 +31,7 @@ public class Culprit_UI : MonoBehaviour
     public Sprite dogConfirmed;
     public GameObject humanText;
     public GameObject dogText;
+    public GameObject partnerAccuseText;
     
     private PhotonView _photonView;
     private CanvasGroup _canvasGroup;
@@ -38,13 +39,14 @@ public class Culprit_UI : MonoBehaviour
     private int _currentSuspectIndex;
     private bool _isHumanConfirmed;
     private bool _isDogConfirmed;
+    private bool _isOpen;
         
     private void Awake()
     {
         current = this;
         _currentSuspectIndex = 0;
         _photonView = GetComponent<PhotonView>();
-        _canvasGroup = GetComponent<CanvasGroup>();
+        _canvasGroup = GetComponentInChildren<CanvasGroup>();
 
         EventManager.I.OnPlayersSpawned += PlayersSpawned;
 
@@ -66,18 +68,24 @@ public class Culprit_UI : MonoBehaviour
 
     public void Open()
     {
+        _isOpen = true;
         _canvasGroup.alpha = 1;
         _canvasGroup.interactable = true;
         _canvasGroup.blocksRaycasts = true;
+
+        UpdateUI();
     }
 
     public void Close()
     {
+        _isOpen = false;
         _canvasGroup.alpha = 0;
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
+
+        UpdateUI();
     }
-    
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) Close();
@@ -144,29 +152,17 @@ public class Culprit_UI : MonoBehaviour
     {
         suspectImage.sprite = suspectList[_currentSuspectIndex].displayImage;
 
-        if (_isDogConfirmed)
-        {
-            dogButton.image.sprite = dogConfirmed;
-            dogText.SetActive(true);
-        }
-        else
-        {
-            dogButton.image.sprite = dogNotConfirmed;
-            dogText.SetActive(false);
-        }
+        partnerAccuseText.SetActive(!_isOpen && 
+            (_isDogConfirmed && PlayerManager.ThisPlayer == PlayerSpecies.Human ||
+            _isHumanConfirmed && PlayerManager.ThisPlayer == PlayerSpecies.Dog));
 
-        if (_isHumanConfirmed)
-        {
-            humanButton.image.sprite = humanConfirmed;
-            humanText.SetActive(true);
-        }
-        else
-        {
-            humanButton.image.sprite = humanNotConfirmed;
-            humanText.SetActive(false);
-        }
-        
-        if(_isHumanConfirmed && _isDogConfirmed) SetEnding();
+        dogButton.image.sprite = _isDogConfirmed ? dogConfirmed : dogNotConfirmed;
+        dogText.SetActive(_isDogConfirmed);
+
+        humanButton.image.sprite = _isHumanConfirmed ? humanConfirmed : humanNotConfirmed;
+        humanText.SetActive(_isHumanConfirmed);
+
+        if (_isHumanConfirmed && _isDogConfirmed) SetEnding();
     }
     
     private void SetEnding()
