@@ -32,7 +32,7 @@ public class SpeechIcon : MonoBehaviour
 
     private void Update()
     {
-        if (!cam) return;
+        if (!cam || !target) return;
 
         PositionIcon(out bool isOnScreen);
         anim.SetBool("isOnScreen", isOnScreen);

@@ -19,7 +19,7 @@ public class HumanCanvas : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnPlayersSpawned(GameObject human, GameObject dog)
     {
         if (PlayerManager.ThisPlayer == PlayerSpecies.Dog) Destroy(gameObject);
     }
@@ -33,7 +33,18 @@ public class HumanCanvas : MonoBehaviour
     
     private void Update()
     {
+        print(UI_Manager._isUIOpen);
         if (UI_Manager._isUIOpen) GetComponent<Canvas>().enabled = false;
         else if (!UI_Manager._isUIOpen) GetComponent<Canvas>().enabled = true;
+    }
+
+    private void OnEnable()
+    {
+        EventManager.I.OnPlayersSpawned += OnPlayersSpawned;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= OnPlayersSpawned;
     }
 }

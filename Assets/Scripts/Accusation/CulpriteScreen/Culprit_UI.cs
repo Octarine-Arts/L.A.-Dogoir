@@ -48,8 +48,6 @@ public class Culprit_UI : MonoBehaviour
         _photonView = GetComponent<PhotonView>();
         _canvasGroup = GetComponentInChildren<CanvasGroup>();
 
-        EventManager.I.OnPlayersSpawned += PlayersSpawned;
-
         leftButton.onClick.AddListener(LeftButtonPressed);
         rightButton.onClick.AddListener(RightButtonPressed);
         humanButton.onClick.AddListener(ConfirmButtonPressed);
@@ -57,6 +55,16 @@ public class Culprit_UI : MonoBehaviour
         
         UpdateUI();
         Close();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.I.OnPlayersSpawned += PlayersSpawned;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= PlayersSpawned;
     }
 
     private void PlayersSpawned(GameObject human, GameObject dog)

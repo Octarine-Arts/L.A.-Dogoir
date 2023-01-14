@@ -122,6 +122,16 @@ public class Cutscene_Manager : MonoBehaviour
     public void LoadEndScene()
     {
         //PhotonNetwork.LoadLevel(0);
+        StartCoroutine(ReturnToMenu());
+    }
+
+    private IEnumerator ReturnToMenu()
+    {
+        PhotonNetwork.LeaveRoom();
+        yield return new WaitUntil(() => !PhotonNetwork.InRoom);
+        UI_Manager.SetIsOpen(false, "");
+        Player_StaticActions.EnableDogMovement();
+        Player_StaticActions.EnableHumanMovement(); 
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 

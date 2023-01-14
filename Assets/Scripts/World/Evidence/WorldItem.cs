@@ -31,6 +31,11 @@ public class WorldItem : MonoBehaviour, IInteractable
         EventManager.I.OnPlayersSpawned += Setup;
     }
 
+    private void OnDisable()
+    {
+        EventManager.I.OnPlayersSpawned -= Setup;
+    }
+
     private void Setup(GameObject humanGO, GameObject dogGO)
     {
         if(isPair) gameObject.SetActive(false);
